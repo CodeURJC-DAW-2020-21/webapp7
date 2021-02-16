@@ -6,12 +6,12 @@
 	Kiddy's House
 
 # Web Logo:
-
+	![Imagen logo web](logo.jpg)
 # Description:
 Our page is an online children's English academy. The page is going to include the different courses offered, important information about them and the possibility to enroll in them. As a registered user, you can access the course material and visualize and comment on the teacher's posts in the forum.
 
 # Members:
-| NOMBRE Y APELLIDOS | CORREO | GITHUB |
+| NAME AND LASTNAME | EMAIL | GITHUB |
 | ------------- | ------------- | ------------- |
 | ALBA SEVILLANO PORTILLA  | a.sevilano.2018@alumnos.urjc.es  | Alba-18  |
 | MIRIAM DE FRANCISCO ALFONSO | m.defrancisco.2018@alumnos.urjc.es  | miri-fa  |
@@ -19,6 +19,8 @@ Our page is an online children's English academy. The page is going to include t
 | DEBORAH ISRAEL VILLANUEVA VASSILEVA | di.villanueva.2018@alumnos.urjc.es  | deborahisraelvillanueva  |
 | JESÚS SEBASTIÁN TOCAS ATARAMA | js.tocas.2018@alumnos.urjc.es  | mrjesuland  |
 
+# Support Links:
+	We're using [Trello](https://trello.com/b/FyoaV1rD/grupo7daw) to make easier the organization for the web product.
 # Entities: 
 	-User
 	-Course
