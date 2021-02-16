@@ -3,7 +3,7 @@
 # Phase 0:
 
 # Description:
-	Our page is an online children's English academy. The page is going to include the different courses offered, important information about them and the possibility to 		enroll in them. As a registered user, you can access the course material and visualize and comment on the teacher's posts in the forum.
+Our page is an online children's English academy. The page is going to include the different courses offered, important information about them and the possibility to 		enroll in them. As a registered user, you can access the course material and visualize and comment on the teacher's posts in the forum.
 
 # Members:
 	-ALBA SEVILLANO PORTILLA: a.sevilano.2018@alumnos.urjc.es // Alba-18
