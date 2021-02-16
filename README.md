@@ -41,7 +41,7 @@ Our page is an online children's English academy. The page is going to include t
 	We implemented a counter of the registered users and different courses and this can also be visualized in a graphic chart.
 
 # Complementary technology: 
-	We are consuming the Google Maps API to include a location map. The users also can register and login into the page.
+	The system has an internal email to facilitate communication with the teachers and users.
 
 # Algorithm: 
-	We have a rating system for clients and also a live counter for registered users. 
+	System that compares the download content from the course and recomends new material to do. This depends on the content downloaded from different users on the same course level. 
