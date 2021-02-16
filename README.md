@@ -1,6 +1,12 @@
 # webapp7
-Phase 0:
-Entities: user, course, course material, forum message.
+
+# Phase 0:
+
+# Entities: 
+	-User
+	-Course
+	-Course material
+	-Forum message.
 
 User types:
 	Admin: The admin can post new material (like pdfs) and create new posts on the forum. This type of user can access every part of the web.
