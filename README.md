@@ -20,7 +20,7 @@ Our page is an online children's English academy. The page is going to include t
 | JESÚS SEBASTIÁN TOCAS ATARAMA | js.tocas.2018@alumnos.urjc.es  | mrjesuland  |
 
 # Support Links:
-	We're using [Trello](https://trello.com/b/FyoaV1rD/grupo7daw/) to make easier the organization for the web product.
+	We're using [Trello](https://trello.com/invite/b/FyoaV1rD/1919995ae2250c7e31fa09591b830557/grupo7daw) to make easier the organization for the web product.
 # Entities: 
 	-User
 	-Course
