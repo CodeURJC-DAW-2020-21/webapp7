@@ -11,11 +11,14 @@
 Our page is an online children's English academy. The page is going to include the different courses offered, important information about them and the possibility to enroll in them. As a registered user, you can access the course material and visualize and comment on the teacher's posts in the forum.
 
 # Members:
-	-ALBA SEVILLANO PORTILLA: a.sevilano.2018@alumnos.urjc.es // Alba-18
-	-MIRIAM DE FRANCISCO ALFONSO: m.defrancisco.2018@alumnos.urjc.es // miri-fa
-	-CARIDAD ARIAS PRADAS: c.ariasp.2018@alumnos.urjc.es //ariascary
-	-DEBORAH ISRAEL VILLANUEVA VASSILEVA: di.villanueva.2018@alumnos.urjc.es // deborahisraelvillanueva
-	-JESÚS SEBASTIÁN TOCAS ATARAMA: js.tocas.2018@alumnos.urjc.es // mrjesuland
+| NOMBRE Y APELLIDOS | CORREO | GITHUB |
+| ------------- | ------------- | ------------- |
+| ALBA SEVILLANO PORTILLA  | a.sevilano.2018@alumnos.urjc.es  | Alba-18  |
+| MIRIAM DE FRANCISCO ALFONSO | m.defrancisco.2018@alumnos.urjc.es  | miri-fa  |
+| CARIDAD ARIAS PRADAS  | c.ariasp.2018@alumnos.urjc.es  | ariascary  |
+| DEBORAH ISRAEL VILLANUEVA VASSILEVA | di.villanueva.2018@alumnos.urjc.es  | deborahisraelvillanueva  |
+| JESÚS SEBASTIÁN TOCAS ATARAMA | js.tocas.2018@alumnos.urjc.es  | mrjesuland  |
+
 # Entities: 
 	-User
 	-Course
