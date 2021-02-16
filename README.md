@@ -21,11 +21,13 @@ Our page is an online children's English academy. The page is going to include t
 
 # Support Links:
 	We're using [Trello](https://trello.com/invite/b/FyoaV1rD/1919995ae2250c7e31fa09591b830557/grupo7daw) to make easier the organization for the web product.
+	
 # Entities: 
 	-User
 	-Course
 	-Course material
-	-Forum message.
+	-Blog posts
+	-Review posts
 
 # User types:
 	Admin: The admin can post new material (like pdfs) and create new posts on the forum. This type of user can access every part of the web.
