@@ -8626,7 +8626,25 @@ h1, h2, h3, h4, h5,
       background: -ms-linear-gradient(45deg, rgba(255, 102, 0, 0) 0%, rgba(255, 102, 0, 0) 55%, #ffcc00 100%);
       background: linear-gradient(45deg, rgba(255, 102, 0, 0) 0%, rgba(255, 102, 0, 0) 55%, #ffcc00 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207ce5', endColorstr='#ffcc00', GradientType=1 ); }
-  .hero-wrap.hero-wrap-2 {
+  
+      .hero-wrap .overlayCourses {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        opacity: .5;
+        background: rgba(0, 230, 203);
+        background: -moz-linear-gradient(45deg, rgba(0, 230, 203) 0%, rgba(0, 230, 203) 55%, rgb(190, 243, 237) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0, 230, 203)), color-stop(55%, rgba(0, 230, 203)), color-stop(100%, #ffcc00));
+        background: -webkit-linear-gradient(45deg, rgba(0, 230, 203) 0%, rgba(0, 230, 203) 55%, rgb(190, 243, 237) 100%);
+        background: -o-linear-gradient(45deg, rgba(0, 230, 203) 0%, rgba(0, 230, 203) 55%, rgb(190, 243, 237) 100%);
+        background: -ms-linear-gradient(45deg, rgba(0, 230, 203) 0%, rgba(0, 230, 203) 55%, rgb(190, 243, 237) 100%);
+        background: linear-gradient(45deg, rgba(0, 230, 203) 0%, rgba(0, 230, 203) 55%, rgb(190, 243, 237) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e6cb', endColorstr='rgb(190, 243, 237)', GradientType=1 ); }
+  
+    .hero-wrap.hero-wrap-2 {
     height: 600px;
     position: relative;
     background-size: cover;
@@ -8669,7 +8687,7 @@ h1, h2, h3, h4, h5,
     font-weight: 700;
     text-transform: uppercase; }
   .slider-text h1 {
-    font-size: 50px;
+    font-size: 100px;
     color: #fff;
     line-height: 1.2;
     font-weight: 700; }
@@ -8692,7 +8710,7 @@ h1, h2, h3, h4, h5,
       font-weight: 400;
       font-size: 16px; }
   .slider-text .breadcrumbs {
-    font-size: 16px;
+    font-size: 25px;
     margin-bottom: 20px;
     z-index: 99;
     font-weight: 400; }
@@ -8707,7 +8725,7 @@ h1, h2, h3, h4, h5,
           .slider-text .breadcrumbs span a:hover i, .slider-text .breadcrumbs span a:focus i {
             color: #000; }
   .slider-text .bread {
-    font-weight: 700;
+    font-weight: 800;
     color: #000; }
   .slider-text .icon-video {
     margin: 0 0 0 auto; }
