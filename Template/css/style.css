@@ -8644,6 +8644,23 @@ h1, h2, h3, h4, h5,
         background: linear-gradient(45deg, rgba(0, 230, 203) 0%, rgba(0, 230, 203) 55%, rgb(190, 243, 237) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e6cb', endColorstr='rgb(190, 243, 237)', GradientType=1 ); }
   
+      .hero-wrap .overlayInstructors {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        opacity: .5;
+        background: rgba(255, 102, 0, 0);
+        background: -moz-linear-gradient(45deg, #ffcc00 0%, #ffcc00 55%, #ffcc00 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, #ffcc00), color-stop(55%, #ffcc00), color-stop(100%, #ffcc00));
+        background: -webkit-linear-gradient(45deg, #ffcc00 0%, #ffcc00 55%, #ffcc00 100%);
+        background: -o-linear-gradient(45deg, #ffcc00 0%, #ffcc00 55%, #ffcc00 100%);
+        background: -ms-linear-gradient(45deg,#ffcc00 0%, #ffcc00 55%, #ffcc00 100%);
+        background: linear-gradient(45deg, #ffcc00 0%, #ffcc00 55%, #ffcc00 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207ce5', endColorstr='#ff6600', GradientType=1 ); }
+
     .hero-wrap.hero-wrap-2 {
     height: 600px;
     position: relative;
