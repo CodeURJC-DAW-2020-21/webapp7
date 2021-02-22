@@ -10212,3 +10212,19 @@ background-color: #fff; }
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+  
+  .header {
+    text-align: right;
+    color: rgb(14, 9, 9);
+    font-size: 30px;
+    opacity: 1;
+  }
+
+  #rowheader1{
+    background: rgba(95, 68, 149);
+  }
+
+  #rowheader2{
+    background:rgba(0, 230, 203);
+    opacity: 1;
+  }
