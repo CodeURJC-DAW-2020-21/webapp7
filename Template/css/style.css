@@ -8377,6 +8377,15 @@ h1, h2, h3, h4, h5,
 .text-primary {
   color: #4986fc !important; }
 
+
+  .ftco-navbar-light2 {
+    background: transparent !important;
+    position: relative;
+    top: -8px;
+    left: 50;
+    right: 0;
+    z-index: 3; }
+
 .ftco-navbar-light {
   background: transparent !important;
   position: absolute;
@@ -9569,7 +9578,7 @@ background-color: #fff; }
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 100%;
+    width: 50%;
     position: absolute;
     top: 0;
     bottom: 0;
