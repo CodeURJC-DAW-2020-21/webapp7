@@ -70,7 +70,7 @@
                     </ul>
                 </nav>
 
-                <!--INICIO CONTENIDO GLOBAL-->
+                <!--START GLOBAL CONTENT-->
                 <div class="container-fluid2">
 
                     <div class="progress">
@@ -85,13 +85,13 @@
                     </div>
                     <div class="row">
 
-                        <!--PARTE IZQUIERDA-->
+                        <!--START LEFT PART-->
                         <div class="col-lg-8 mb-8">
 
                            
                            
 
-                            <!--INICIO OPINIONES-->
+                            <!--START MAIL-->
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="card shadow mb-4">
@@ -144,11 +144,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--FIN OPINIONES-->
+                            <!--END MAIL-->
                         </div>
-                        <!--FIN PARTE IZQUIERDA-->
+                        <!--END LEFT PART-->
 
-                        <!--INICIO PARTE DERECHA-->
+                        <!--START RIGHT PART-->
                         <div class="col-lg-4 mb-4">
                             <div class="row">           
                                 <div class="col-lg-12 mb-12">
@@ -161,7 +161,7 @@
                                                 <table class="table table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th scope="col">Leído</th>
+                                                        <th scope="col"></th>
                                                         <th scope="col">De</th>
                                                         <th scope="col">Asunto</th>
                                                         <th scope="col">Fecha</th>
@@ -173,7 +173,9 @@
                                                             <div class="input-group mb-3">
                                                                 <div class="input-group-prepend">
                                                                 <div class="input-group-text">
-                                                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                                        <img src="images/iconoCorreo.png" style="width: 1rem; height: 1rem;"/>
+                                                                    </a>
                                                                 </div>
                                                                 </div>
 
@@ -189,7 +191,9 @@
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                     <div class="input-group-text">
-                                                                        <input type="checkbox" aria-label="Checkbox for following text input">
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                                            <img src="images/iconoCorreo.png" style="width: 1rem; height: 1rem;"/>
+                                                                        </a>
                                                                     </div>
                                                                     </div>
         
@@ -206,7 +210,9 @@
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                     <div class="input-group-text">
-                                                                        <input type="checkbox" aria-label="Checkbox for following text input">
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                                            <img src="images/iconoCorreo.png" style="width: 1rem; height: 1rem;"/>
+                                                                        </a>
                                                                     </div>
                                                                     </div>
         
@@ -249,12 +255,12 @@
                                 </div>
                             </div>
                         </div>
-                        <!--FIN PARTE DERECHA-->
+                        <!--END RIGHT PART-->
                     </div>
                 </div>
-                <!--FIN CONTENIDO GLOBAL-->
+                <!--END GLOBAL CONTENT-->
 
-                <!--INICIO FIN DE PÁGINA-->
+                <!--START END PAGE-->
                 <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
@@ -262,11 +268,34 @@
                         </div>
                     </div>
                 </footer>
-                <!--FIN FIN PÁGINA-->
+                <!--END END PAGE-->
             </div>
         </div>
-
-
+    <!--OPEN EMAIL-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Ya has terminado por hoy?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><label for="inputEmail3" class="col-sm-2 col-form-label">De: </label> persona que escribe</p>
+                    <p><label for="inputEmail3" class="col-sm-2 col-form-label">Asunto: </label> asunto del correo</p>
+                    <p><label for="inputEmail3" class="col-sm-2 col-form-label">cuerpo: </label> Hola que tal?? aaaaa aaaaa aaaa aa
+                     aaaaa aa aaaa aaaa aaa aaaa aaa sssss dff fffg g gg hh hj j j jj j j j j j j   </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="inicio_sesion.html">Salir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
