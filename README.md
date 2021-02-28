@@ -5,7 +5,7 @@
 ### Web Name: Kiddy's House
 
 ### Web Logotype:
-![Kiddy's House](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/logo.jpg?raw=true)
+![Kiddy's House](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/icon.png?raw=true)
 
 ### Description:
 Our page is an online children's English academy. The page is going to include the different courses offered, important information about them and the possibility to enroll in them. As a registered user, you can access the course material and visualize and comment on the teacher's posts in the forum.
