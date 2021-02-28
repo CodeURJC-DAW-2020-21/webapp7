@@ -1,6 +1,6 @@
 # Group 7 DAW
 
-## Phase 0
+## Phase 0: Definition of web functionalities.
 
 ### Web Name: Kiddy's House
 
@@ -38,10 +38,12 @@ Anonymous user: This user is not registered. The only parts visible are the star
 Registered user: They can comment on the admin posts and visualize the course material.
 
 ### Images: 
-we have the different official logotypes and the promotional images given by the client.
+- Teacher profile image
+- Courses images
+- Images to promote the academy
 
 ### Charts: 
-We implemented a counter of the registered users and different courses and this can also be visualized in a graphic chart.
+We are going to implement a graph, so that each of the users (students), see the progress made by each of the colleagues who take that course
 
 ### Complementary technology: 
 The system has an internal email to facilitate communication with the teachers and users.
@@ -49,10 +51,21 @@ The system has an internal email to facilitate communication with the teachers a
 ### Algorithm: 
 System that compares the download content from the course and recomends new material to do. This depends on the content downloaded from different users on the same course level. 
 	
+## Phase 1: Page layout with HTML and CSS.
+
+### Navigation Diagram:
+![Nav-Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram.png)	
+	
 ### Screenshots:
+
 #### Login
 ![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
+
+#### Home
+![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Home.gif)
+
+This is the main page which shows a review about all website’s sections and a place where a user can sign up or log in if it’s registered already.
 
 #### About
 ![About](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/About.gif)
@@ -75,12 +88,13 @@ It contains all teachers description.
 This page has all news and updates about everything related to academy stuff.
 
 #### Single Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/SingleBlog.gif)
+![Single-Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/SingleBlog.gif)
 
 This webpage shows the content about Kiddy’s House news.
 
 #### Contact
-![Contact](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/contactanos.png)
+![Contact](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/ContactUs.gif)
+
 Whenever the user needs to contact the academy for any reason there is tab with frequent questions, possibility of writting their own questions as well as phone contact, email and social media.
 
 #### Email
