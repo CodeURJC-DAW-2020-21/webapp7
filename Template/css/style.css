@@ -74,7 +74,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  color: #888888; }
 
 abbr[title],
 abbr[data-original-title] {
@@ -177,7 +178,7 @@ small {
   
   p.info{
     margin:10px;
-    text-align: center;
+    text-align: justify;
     color:#4f4f4f;
   }
   
