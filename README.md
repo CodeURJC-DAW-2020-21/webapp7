@@ -58,14 +58,14 @@ System that compares the download content from the course and recomends new mate
 	
 ### Screenshots:
 
+#### Login
+![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
+It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
+
 #### Home
 ![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Home.gif)
 
 This is the main page which shows a review about all website’s sections and a place where a user can sign up or log in if it’s registered already.
-
-#### Login
-![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
-It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
 #### About
 ![About](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/About.gif)
@@ -75,7 +75,7 @@ This tab describes main info about Kiddy’s House academy, what is offerted and
 #### Courses
 ![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Courses.gif)
 
-This tab describes the main information about the courses offered by Kiddy's House Academy, its price, the level and the teacher that teaches it.
+This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Instructor
 ![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/instructor.gif)
