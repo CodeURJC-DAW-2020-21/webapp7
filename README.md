@@ -55,23 +55,28 @@ System that compares the download content from the course and recomends new mate
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
 #### About
-![About](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/about.gif)
+![About](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/About.gif)
+
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Courses
-![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/courses.gif)
+![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Courses.gif)
+
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Instructor
 ![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/instructor.gif)
+
 It contains all teachers description.
 
 #### Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/blog.gif)
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Blog.gif)
+
 This page has all news and updates about everything related to academy stuff.
 
 #### Single Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/singleBlog.gif)
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/SingleBlog.gif)
+
 This webpage shows the content about Kiddy’s House news.
 
 #### Contact
