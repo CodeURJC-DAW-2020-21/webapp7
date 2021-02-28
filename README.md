@@ -1,6 +1,6 @@
 # Group 7 DAW
 
-## Phase 0
+## Phase 0: Definition of web functionalities.
 
 ### Web Name: Kiddy's House
 
