@@ -54,6 +54,26 @@ System that compares the download content from the course and recomends new mate
 ![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
+#### About
+![About](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/about.gif)
+This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
+
+#### Courses
+![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/courses.gif)
+This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
+
+#### Instructor
+![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/instructor.gif)
+It contains all teachers description.
+
+#### Blog
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/blog.gif)
+This page has all news and updates about everything related to academy stuff.
+
+#### Single Blog
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/singleBlog.gif)
+This webpage shows the content about Kiddy’s House news.
+
 #### Contact
 ![Contact](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/contactanos.png)
 Whenever the user needs to contact the academy for any reason there is tab with frequent questions, possibility of writting their own questions as well as phone contact, email and social media.
