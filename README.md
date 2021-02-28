@@ -2,10 +2,9 @@
 
 ## Phase 0
 
-### Web Name:
-Kiddy's House
+### Web Name: Kiddy's House
 
-### Web Logo:
+### Web Logotype:
 ![Kiddy's House](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/logo.jpg?raw=true)
 
 ### Description:
@@ -51,23 +50,23 @@ The system has an internal email to facilitate communication with the teachers a
 System that compares the download content from the course and recomends new material to do. This depends on the content downloaded from different users on the same course level. 
 	
 ### Screenshots:
-##### Login
+#### Login
 ![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
-##### Contact
+#### Contact
 ![Contact](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/contactanos.png)
 Whenever the user needs to contact the academy for any reason there is tab with frequent questions, possibility of writting their own questions as well as phone contact, email and social media.
 
-##### Email
+#### Email
 ![Email](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/email.png)
 Every user, student as well as instructor have this tab where they can see the new emails in the right part of the tab, time charge ilustrated with a  progress bar, and on the left the chance of writting a new email including files if desired. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their class material page.
 
-##### User-instructor
+#### User-instructor
 ![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/user_instructor.png)
 Every student user has their own personalized tab with their material(checked whenever has been downloaded and  seeen), personalized recommendations  and graph portraying the progress of the course.On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
-##### User student
+#### User student
 ![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/user_student.png)
 Each instructor has their own class content with the possibility of adding any type of files: from pdfs, text, titles, to  videos. It is observable in to their right a series of classes they have with their timetables and a progress graph of the course. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
