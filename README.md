@@ -49,6 +49,9 @@ The system has an internal email to facilitate communication with the teachers a
 ### Algorithm: 
 System that compares the download content from the course and recomends new material to do. This depends on the content downloaded from different users on the same course level. 
 	
+### Nav. Diagram
+![Nav-Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/ReadmePictures/Nav_Diagram.png)	
+	
 ### Screenshots:
 #### Login
 ![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
@@ -75,7 +78,7 @@ It contains all teachers description.
 This page has all news and updates about everything related to academy stuff.
 
 #### Single Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/SingleBlog.gif)
+![Single-Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/SingleBlog.gif)
 
 This webpage shows the content about Kiddy’s House news.
 
