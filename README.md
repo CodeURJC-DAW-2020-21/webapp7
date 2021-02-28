@@ -59,7 +59,9 @@ System that compares the download content from the course and recomends new mate
 ### Screenshots:
 
 #### Home
-![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/home.gif)
+![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Home.gif)
+
+This is the main page which shows a review about all website’s sections and a place where a user can sign up or log in if it’s registered already.
 
 #### Login
 ![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
@@ -91,7 +93,8 @@ This page has all news and updates about everything related to academy stuff.
 This webpage shows the content about Kiddy’s House news.
 
 #### Contact
-![Contact](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/contactanos.png)
+![Contact](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/ContactUs.gif)
+
 Whenever the user needs to contact the academy for any reason there is tab with frequent questions, possibility of writting their own questions as well as phone contact, email and social media.
 
 #### Email
