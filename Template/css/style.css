@@ -9660,7 +9660,7 @@ background-color: #fff; }
 .testimony-section {
   position: relative; }
   .testimony-section .container-2 {
-    margin: 0 0 0 auto !important;
+    margin: 2 0 0 auto !important;
     max-width: 1290px; }
   .testimony-section .overlay {
     background-size: cover;
