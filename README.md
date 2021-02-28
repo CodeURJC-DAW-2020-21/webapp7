@@ -49,7 +49,7 @@ The system has an internal email to facilitate communication with the teachers a
 ### Algorithm: 
 System that compares the download content from the course and recomends new material to do. This depends on the content downloaded from different users on the same course level. 
 	
-### Nav. Diagram
+### Nav. Diagram:
 ![Nav-Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram.png)	
 	
 ### Screenshots:
