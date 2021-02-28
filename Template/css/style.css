@@ -119,6 +119,84 @@ strong {
 small {
   font-size: 80%; }
 
+  *{
+    margin:0px;
+    padding:0px;
+    font-family: helvetica;
+  }
+  
+  html,body{
+    background-color: #4d0a0a;
+  }
+  
+  div#body{
+    margin:40px auto;
+    width:600px;
+    min-height:50px;
+    background-color: red;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  
+  div.subapartado{
+    width:600px;
+    min-height:50px;
+    background-color: #5f4495;;
+    -webkit-transiton: height 0.2s;
+  }
+ 
+  
+  div.titulo{
+    width:600px;
+    height:50px;
+    background-color: #5f4495;;
+    overflow: hidden;
+    border-bottom: 1px solid #5f4495;;
+  }
+  div.titulo1{
+    width:600px;
+    height:50px;
+    background-color: #5f4495 ;;
+    overflow: hidden;
+    border-bottom: 1px solid #5f4495;;
+  }
+  
+  
+  p.titulo{
+    margin:13px;
+    color: white;
+  }
+  
+  div.info{
+    width:600px;
+    height:0px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    -webkit-transition: height 0.2s;
+  }
+  
+  p.info{
+    margin:20px;
+    text-align: center;
+    color:#4f4f4f;
+  }
+  
+  div.subapartado:hover div.info{
+  
+    height:180px;
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
 sub,
 sup {
   position: relative;
@@ -242,7 +320,14 @@ input[type="radio"],
 input[type="checkbox"] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0; }
+  padding: 0;
+  margin:20px;
+  height:21px;
+  width:21px;
+  z-index:auto;
+  vertical-align:center;
+
+ }
 
 textarea {
   overflow: auto;
@@ -3235,17 +3320,18 @@ input[type="button"].btn-block {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e"); }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  border-color: #007bff;
-  background-color: #007bff; }
+  border-color: #40ff00;
+  background-color: #40ff00; }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e"); }
 
 .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(0, 123, 255, 0.5); }
+  background-color:#40ff00; }
 
 .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
-  background-color: rgba(0, 123, 255, 0.5); }
+  background-color: #40ff00
+  ; }
 
 .custom-radio .custom-control-label::before {
   border-radius: 50%; }
