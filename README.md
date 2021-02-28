@@ -53,6 +53,10 @@ System that compares the download content from the course and recomends new mate
 ![Nav-Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram.png)	
 	
 ### Screenshots:
+
+#### Home
+![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/home.gif)
+
 #### Login
 ![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
