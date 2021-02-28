@@ -322,12 +322,12 @@ input[type="radio"],
 input[type="checkbox"] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0;
-  margin:20px;
+  padding: 5px;
+  margin:5px;
   height:21px;
   width:21px;
   z-index:auto;
-  vertical-align:center;
+  vertical-align:right;
 
  }
 
