@@ -75,7 +75,7 @@ This tab describes main info about Kiddy’s House academy, what is offerted and
 #### Courses
 ![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Courses.gif)
 
-This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
+This tab describes the main information about the courses offered by Kiddy's House Academy, its price, the level and the teacher that teaches it.
 
 #### Instructor
 ![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/instructor.gif)
