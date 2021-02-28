@@ -71,7 +71,7 @@ It contains all teachers description.
 This page has all news and updates about everything related to academy stuff.
 
 #### Single Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/BingleBlog.gif)
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/SingleBlog.gif)
 This webpage shows the content about Kiddy’s House news.
 
 #### Contact
