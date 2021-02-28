@@ -172,7 +172,7 @@
                                                                     <div class="input-group mb-1">
                                                                         <div class="input-group-prepend">
                                                                             <div class="input-group-text">
-                                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#email">
                                                                                     <img src="images/iconoCorreo.png" style="width: 1rem; height: 1rem;"/>
                                                                                 </a>
                                                                             </div>
@@ -188,7 +188,7 @@
                                                                     <div class="input-group mb-1">
                                                                         <div class="input-group-prepend">
                                                                             <div class="input-group-text">
-                                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#email">
                                                                                     <img src="images/iconoCorreo.png" style="width: 1rem; height: 1rem;"/>
                                                                                 </a>
                                                                             </div>
@@ -326,30 +326,53 @@
             </div>
         </div>
 
-       <!--INSTRUCTOR LOGOUT MODAL-->
-       <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-       aria-hidden="true">
-           <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                   <div class="modal-header">
-                       <h5 class="modal-title" id="exampleModalLabel">¿Deseas cerrar sesión?</h5>
-                       <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                           <span aria-hidden="true">×</span>
-                       </button>
-                   </div>
-                   <div class="modal-body">
-                       <p><BR></p>
-                       <p>¿Estás seguro de querer cerrar sesión?</p>
-                       <p><BR></p>
-                       
-                   </div>
-                   <div class="modal-footer">
-                       <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
-                       <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
-                   </div>
-               </div>
-           </div>
-       </div>
+        <!--OPEN EMAIL-->
+        <div class="modal fade" id="email" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">De: <a> Persona</a>
+                            <p>Asunto: <a> Este es el asunto</a></p></h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p> Hola que tal?? aaaaa aaaaa aaaa aa
+                            aaaaa aa aaaa aaaa aaa aaaa aaa sssss dff fffg g gg hh hj j j jj j j j j j j</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Salir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!--INSTRUCTOR LOGOUT MODAL-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cerrar sesión</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p><BR></p>
+                        <p>¿Estás seguro de querer cerrar sesión?</p>
+                        <p><BR></p>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
