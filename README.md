@@ -43,7 +43,7 @@ Registered user: They can comment on the admin posts and visualize the course ma
 - Images to promote the academy
 
 ### Charts: 
-We implemented a counter of the registered users and different courses and this can also be visualized in a graphic chart.
+We are going to implement a graph, so that each of the users (students), see the progress made by each of the colleagues who take that course
 
 ### Complementary technology: 
 The system has an internal email to facilitate communication with the teachers and users.
