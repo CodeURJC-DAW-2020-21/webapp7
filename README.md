@@ -38,7 +38,9 @@ Anonymous user: This user is not registered. The only parts visible are the star
 Registered user: They can comment on the admin posts and visualize the course material.
 
 ### Images: 
-we have the different official logotypes and the promotional images given by the client.
+- Teacher profile image
+- Courses images
+- Images to promote the academy
 
 ### Charts: 
 We implemented a counter of the registered users and different courses and this can also be visualized in a graphic chart.
