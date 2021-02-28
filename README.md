@@ -56,22 +56,27 @@ It is observable the possibility given to the user to log-in by just typing in t
 
 #### About
 ![About](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/About.gif)
+
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Courses
 ![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Courses.gif)
+
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Instructor
 ![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/instructor.gif)
+
 It contains all teachers description.
 
 #### Blog
 ![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Blog.gif)
+
 This page has all news and updates about everything related to academy stuff.
 
 #### Single Blog
 ![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/SingleBlog.gif)
+
 This webpage shows the content about Kiddy’s House news.
 
 #### Contact
