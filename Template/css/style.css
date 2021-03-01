@@ -322,12 +322,12 @@ input[type="radio"],
 input[type="checkbox"] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0;
-  margin:20px;
+  padding: 5px;
+  margin:5px;
   height:21px;
   width:21px;
   z-index:auto;
-  vertical-align:center;
+  vertical-align:right;
 
  }
 
@@ -9660,7 +9660,7 @@ background-color: #fff; }
 .testimony-section {
   position: relative; }
   .testimony-section .container-2 {
-    margin: 0 0 0 auto !important;
+    margin: 2 0 0 auto !important;
     max-width: 1290px; }
   .testimony-section .overlay {
     background-size: cover;
