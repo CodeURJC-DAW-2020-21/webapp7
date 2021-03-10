@@ -1,10 +1,8 @@
 package es.webapp7.web.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class KiddysController {
@@ -29,12 +27,12 @@ public class KiddysController {
 
 		return "about";
 	}
-	@GetMapping("/instructor")
+	@GetMapping("/user_instructor")
 	public String user_instructor() {
 
 		return "user_instructor";
 	}
-	@GetMapping("/profesor")
+	@GetMapping("/instructor")
 	public String instructor() {
 
 		return "instructor";
