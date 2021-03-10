@@ -27,12 +27,12 @@ public class KiddysController {
 
 		return "about";
 	}
-	@GetMapping("/instructor")
+	@GetMapping("/user_instructor")
 	public String user_instructor() {
 
 		return "user_instructor";
 	}
-	@GetMapping("/profesor")
+	@GetMapping("/instructor")
 	public String instructor() {
 
 		return "instructor";
