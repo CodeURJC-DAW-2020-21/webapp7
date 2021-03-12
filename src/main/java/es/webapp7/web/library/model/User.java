@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import java.util.List;
 
 
