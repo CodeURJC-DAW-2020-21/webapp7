@@ -1,4 +1,4 @@
-package es.webapp7.web.controller;
+package es.webapp7.web.library.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +13,7 @@ public class KiddysController {
 		return "user_student";
 	}
 	@GetMapping("/index")
-	public String index() {
-
+	public String login() {
 		return "index";
 	}
 	@GetMapping("/email")
