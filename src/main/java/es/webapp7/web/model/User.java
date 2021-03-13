@@ -3,10 +3,10 @@ package es.webapp7.web.model;
 import javax.persistence.*;
 
 
-
 @Entity
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String email;
     private String username;
     private String password;
@@ -20,14 +20,6 @@ public class User {
         this.password = password;
     }
 
-	/*
-	public User(String email, String username, String password) {
-        super();
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
-	*/
 
     public String getEmail() {
         return email;
