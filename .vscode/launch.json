@@ -49,6 +49,16 @@
             "mainClass": "es.webapp7.web.app.KiddysAplication",
             "projectName": "webapp7",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-KiddysAplication<webapp7>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "es.webapp7.web.library.KiddysAplication",
+            "projectName": "webapp7",
+            "args": ""
         }
     ]
 }
