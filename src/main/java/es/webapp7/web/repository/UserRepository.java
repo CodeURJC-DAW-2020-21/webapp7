@@ -3,9 +3,11 @@ package es.webapp7.web.repository;
 import es.webapp7.web.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
+import java.util.List;
 
-public interface UserRepository extends JpaRepository<User,String> {
-    Optional<User> findByEmail(String email);
+/**El interfaz padre JpaRepository dispone de métodos para consultar, guardar, borrar y modificar objetos de la base de datos */
+public interface UserRepository extends JpaRepository<User,Long> {
+/**Consultas a la BBDD en base al email */
+    List<User> findByEmail(String email);
 }
 

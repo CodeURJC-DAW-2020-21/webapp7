@@ -1,12 +1,14 @@
 package es.webapp7.web.model;
-
 import javax.persistence.*;
 
-
+/*Para generar el esquema y para hacer la conversión entre objetos y filas */
 @Entity
 public class User {
+    /* la claveprimaria de la tabla.*/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String email;
     private String username;
     private String password;
@@ -19,6 +21,19 @@ public class User {
         this.username = username;
         this.password = password;
     }
+
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+    public void deleteById(long id){
+
+    }
+
 
 
     public String getEmail() {
@@ -44,5 +59,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    @Override
+	public String toString() {
+		return String.format("User[id=%d, email='%s', username='%s', password='%s']",
+				id, email, username,password);
+	}
+
+
 
 }
