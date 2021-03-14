@@ -1,5 +1,5 @@
 
-package es.webapp7.web.library;
+package es.webapp7.web;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
