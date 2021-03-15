@@ -1,4 +1,4 @@
-package es.webapp7.web.model;
+package com.webapp7.webapp7.model;
 import javax.persistence.*;
 
 /*Para generar el esquema y para hacer la conversión entre objetos y filas */

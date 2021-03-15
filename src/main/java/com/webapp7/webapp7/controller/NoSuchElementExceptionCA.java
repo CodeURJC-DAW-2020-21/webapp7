@@ -1,5 +1,5 @@
 
-package es.webapp7.web.controller;
+package com.webapp7.webapp7.controller;
 
 import java.util.NoSuchElementException;
 

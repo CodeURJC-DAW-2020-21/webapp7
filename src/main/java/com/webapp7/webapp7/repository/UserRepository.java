@@ -1,6 +1,6 @@
-package es.webapp7.web.repository;
+package com.webapp7.webapp7.repository;
 
-import es.webapp7.web.model.User;
+import com.webapp7.webapp7.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
