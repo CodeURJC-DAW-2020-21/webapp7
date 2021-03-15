@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# CodeStream ignored files
+/../../webapp7\.idea/codestream.xml
+# Datasource local storage ignored files
+/../../../../../../../:\Users\Alba Sevillano\Documents\GitHub\webapp7\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
