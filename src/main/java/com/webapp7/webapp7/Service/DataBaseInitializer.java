@@ -1,8 +1,8 @@
 package com.webapp7.webapp7.Service;
 
-import com.webapp7.webapp7.model.Comment;
+//import com.webapp7.webapp7.model.Comment;
 import com.webapp7.webapp7.model.User;
-import com.webapp7.webapp7.repository.CommentRepository;
+//import com.webapp7.webapp7.repository.CommentRepository;
 import com.webapp7.webapp7.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,16 +18,16 @@ class DataBaseInitializer {
     private UserRepository userRepository;
 
     @Autowired
-    private CommentRepository commentRepository;
+ //   private CommentRepository commentRepository;
 
     @PostConstruct
     public void init() throws IOException, URISyntaxException {
 
         // Sample books
 
-        Comment comment1 = new Comment("Deborah", "hola que tal");
+        //Comment comment1 = new Comment("Deborah", "hola que tal");
 
-        commentRepository.save(comment1);
+     //   commentRepository.save(comment1);
 //
 //        Book book2 = new Book("LA VIDA SECRETA DE LA MENTE",
 //                "La vida secreta de la mentees un viaje especular que recorre el cerebro y el pensamiento: se trata de descubrir nuestra mente para entendernos hasta en los más pequeños rincones que componen lo que somos, cómo forjamos las ideas en los primeros días de vida, cómo damos forma a las decisiones que nos constituyen, cómo soñamos y cómo imaginamos, por qué sentimos ciertas emociones hacia los demás, cómo los demás influyen en nosotros, y cómo el cerebro se transforma y, con él, lo que somos.");
@@ -47,7 +47,7 @@ class DataBaseInitializer {
 
         // Sample users
 
-        userRepository.save(new User("user@gmail.com", "user", "1234"));
-        userRepository.save(new User("admin@gmail.com", "adminpass", "5678"));
+        userRepository.save(new User("user@gmail.com", "user", "1234", "alumno"));
+        userRepository.save(new User("admin@gmail.com", "adminpass", "5678", "admisnistrador"));
     }
 }
