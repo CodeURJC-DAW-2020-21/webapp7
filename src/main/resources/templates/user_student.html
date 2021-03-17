@@ -1,7 +1,7 @@
 {{>header}}
 
 <!--START BODY-->
-<body style="background-image: url('images/fondo_nuevo.jpg');">
+<body style="background-image: url('images/fondo_nuevo.jpg');" xmlns:th="http://www.w3.org/1999/xhtml">
     <div id="wrapper">
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
@@ -97,21 +97,22 @@
                                             <h6 class="m-0 font-weight-bold" style="color: black;">¡ESCRIBE TU OPINIÓN DE NUESTRA ACADEMIA!</h6>
                                         </div>
                                         <div class="card-body">
-                                            <div class="form-group">
-                                                <label for="name">Nombre *</label>
-                                                <input type="text" class="form-control" id="name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="email">Email *</label>
-                                                <input type="email" class="form-control" id="email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="message">Mensaje</label>
-                                                <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="submit" value="Publicar" class="btn py-3 px-4 btn-primary">
-                                            </div>
+
+                                            <form action="/student/comment/createNew" method="post" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label for="name">Nombre *</label>
+                                                    <input class="form-control" id="name" name="name" type="text" placeholder="Nombre de Usuario" />
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="opinion"> Comentario *</label>
+                                                    <input class="form-control" type="text" id="opinion" name="opinion" placeholder="Escribe aqui tu comentario"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button class="btn btn-primary" type="submit">Publicar</button>
+                                                </div>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
