@@ -59,32 +59,19 @@
                                             <h6 class="m-0 font-weight-bold" style="color: black;">PRE A1 STARTERS</h6>
                                         </div>
                                         <div class="card-body">
-                                            <h3>Tema-1</h3>
-                                            <h5> &nbsp; Tema-1-Parte I-Home</h5>
-                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"></img><a href="info.pdf">Speaking.pdf</a></p>
-                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Reading.pdf</a></p>
-                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Listening.pdf</a></p>
-                                            <h5> &nbsp; Tema-1-Parte II-Games</h5>
+                                                {{#listMaterial}}
+                                                    <li><a href="/admin/{{id}}">{{name}}</a></li>
+                                                {{/listMaterial}}
                                             
                                             <!--Insert any type of material-->
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Inserte archivo" aria-label="Inserte archivo">
-                                                <div class="input-group-append">
-                                                  <button type="button" class="btn btn-outline-secondary">Añadir</button>
-                                                  <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="sr-only">Toggle Dropdown</span>
-                                                  </button>
-                                                  <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">Imágen</a>
-                                                    <a class="dropdown-item" href="#">Vide</a>
-                                                    <a class="dropdown-item" href="#">Link</a>
-                                                    <a class="dropdown-item" href="#">Título</a>
-                                                    <a class="dropdown-item" href="#">Subtítulo</a>
-                                                    <a class="dropdown-item" href="#">Texto</a>
-                                                    <div role="separator" class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#">PDF</a>
-                                                  </div>
-                                                </div>
+                                                <form th:action="@{/admin}" method="post" enctype="multipart/form-data">
+                                                    <p>
+                                                        <input type="file" name="material" required/>
+                                                    </p>
+                                                    <p>
+                                                        <input type="submit" value="Upload" class="btn btn-primary">
+                                                    </p>
                                               </div>
                                             
                                         </div>
@@ -245,38 +232,6 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="list-group">
-                                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"href="#" data-toggle="modal" data-target="#class">
-                                                  <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">Pre A1 Starters</h5>
-                                                    <small>lunes y viernes</small>
-                                                  </div>
-                                                  <p class="mb-1">Horario Tarde-A Grupo-3</p>
-                                                  <small class="text-muted">YLE Starters</small>
-                                                </a>
-                                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                                                  <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">A1 Movers</h5>
-                                                    <small class="text-muted">jueves y viernes</small>
-                                                  </div>
-                                                  <p class="mb-1">Horario Mañana-B Grupo-6</p>
-                                                  <small class="text-muted">YLE Movers</small>
-                                                </a>
-                                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                                                  <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">A2 FLyers</h5>
-                                                    <small class="text-muted">lunes y martes</small>
-                                                  </div>
-                                                  <p class="mb-1">Horario Tarde-B Grupo-2</p>
-                                                  <small class="text-muted">YLE Flyers</small>
-                                                </a>
-                                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                                                    <div class="d-flex w-100 justify-content-between">
-                                                      <h5 class="mb-1">A2 Key for Schools</h5>
-                                                      <small class="text-muted">miércoles</small>
-                                                    </div>
-                                                    <p class="mb-1">Horario Tarde-A Grupo-9</p>
-                                                    <small class="text-muted">KET</small>
-                                                </a>
                                                   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
                                                     <div class="d-flex w-100 justify-content-between">
                                                       <h5 class="mb-1">B1 Preliminary for Schools</h5>
@@ -354,6 +309,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- Bootstrap core JavaScript-->

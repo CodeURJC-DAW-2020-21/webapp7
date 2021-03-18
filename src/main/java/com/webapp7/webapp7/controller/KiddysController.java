@@ -8,11 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class KiddysController {
 
-	@GetMapping("/student")
-	public String user_student() {
-
-		return "user_student";
-	}
 	@GetMapping("/index")
 	public String login() {
 		return "index";
@@ -27,21 +22,12 @@ public class KiddysController {
 
 		return "about";
 	}
-	@GetMapping("/user_instructor")
-	public String user_instructor() {
-
-		return "user_instructor";
-	}
 	@GetMapping("/instructor")
 	public String instructor() {
 
 		return "instructor";
 	}
-	@GetMapping("/admin")
-	public String user_admin() {
 
-		return "user_admin";
-	}
 	@GetMapping("/contact")
 	public String contact() {
 

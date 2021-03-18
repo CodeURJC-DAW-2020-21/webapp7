@@ -4695,7 +4695,7 @@ concierge-bell:
       - attention
       - hotel
       - receptionist
-      - service
+      - com.webapp7.webapp7.service
       - support
   styles:
     - solid
@@ -18590,7 +18590,7 @@ taxi:
       - cab
       - cabbie
       - car
-      - car service
+      - car com.webapp7.webapp7.service
       - lyft
       - machine
       - transportation
