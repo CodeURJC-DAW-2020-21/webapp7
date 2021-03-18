@@ -47,11 +47,7 @@ public class KiddysController {
 
 		return "contact";
 	}
-	@GetMapping("/blog")
-	public String blog() {
 
-		return "blog";
-	}
 	@GetMapping("/blog-single")
 	public String blogsingle() {
 
