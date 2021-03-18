@@ -1,9 +1,14 @@
-package com.webapp7.webapp7.Service;
+package com.webapp7.webapp7.service;
 
+
+import com.webapp7.webapp7.model.Course;
+import com.webapp7.webapp7.repository.CourseRepository;
+/*
 import com.webapp7.webapp7.model.Comment;
 import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.repository.CommentRepository;
 import com.webapp7.webapp7.repository.UserRepository;
+*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +19,30 @@ import java.net.URISyntaxException;
 @Service
 class DataBaseInitializer {
 
+
+    @Autowired
+    private CourseRepository courseRepository;
+
+    @PostConstruct
+    public void init() throws IOException, URISyntaxException{
+
+        Course course1= new Course("Jolly Kids", 5, 6, "Mercedes Huasaquiche", 120);
+        courseRepository.save(course1);
+
+        Course course2= new Course("Jolly Kids", 7, 8, "Mercedes Huasaquiche", 130);
+        courseRepository.save(course2);
+
+        Course course3= new Course("Jolly Kids", 9, 10, "Mercedes Huasaquiche", 140);
+        courseRepository.save(course3);
+
+    }
+
+
+
+
+
+
+    /*
     @Autowired
     private UserRepository userRepository;
 
@@ -50,4 +79,6 @@ class DataBaseInitializer {
         userRepository.save(new User("user@gmail.com", "user", "1234"));
         userRepository.save(new User("admin@gmail.com", "adminpass", "5678"));
     }
+    */
+
 }
