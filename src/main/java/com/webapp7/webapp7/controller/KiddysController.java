@@ -1,7 +1,7 @@
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Course;
-import com.webapp7.webapp7.service.CourseService;
+import com.webapp7.webapp7.Service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -31,11 +31,7 @@ public class KiddysController {
 
 		return "email";
 	}
-	@GetMapping("/about")
-	public String about() {
 
-		return "about";
-	}
 	@GetMapping("/user_instructor")
 	public String user_instructor() {
 
@@ -46,11 +42,7 @@ public class KiddysController {
 
 		return "instructor";
 	}
-	@GetMapping("/admin")
-	public String user_admin() {
 
-		return "user_admin";
-	}
 	@GetMapping("/contact")
 	public String contact() {
 

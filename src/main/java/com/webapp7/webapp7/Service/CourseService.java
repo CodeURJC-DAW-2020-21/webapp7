@@ -1,4 +1,4 @@
-package com.webapp7.webapp7.service;
+package com.webapp7.webapp7.Service;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -25,10 +25,6 @@ public class CourseService {
     }
 
 
-    public Collection<Course> findAll(){
-        return courses.findAll();
-    }
-
     public Optional<Course> findById(long id){
         return courses.findById(id);
     }
@@ -40,6 +36,8 @@ public class CourseService {
     public void deleteById(long id){
         this.courses.deleteById(id);
     }
+
+    //public List<Course> show
 
 
 }

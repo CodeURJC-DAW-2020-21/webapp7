@@ -19,9 +19,12 @@ import java.net.URISyntaxException;
 @Service
 class DataBaseInitializer {
 
+    /*
 
     @Autowired
     private CourseRepository courseRepository;
+
+
 
     @PostConstruct
     public void init() throws IOException, URISyntaxException{
@@ -38,7 +41,7 @@ class DataBaseInitializer {
     }
 
 
-
+    */
 
 
 

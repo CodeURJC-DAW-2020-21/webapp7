@@ -1,14 +1,16 @@
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Course;
-import com.webapp7.webapp7.service.CourseService;
+import com.webapp7.webapp7.repository.CourseRepository;
+import com.webapp7.webapp7.Service.CourseService;
+import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
+import java.util.List;
 
 @Controller
 public class CourseController {
@@ -20,8 +22,11 @@ public class CourseController {
     @Qualifier("courseService")
     private CourseService courseService;
 
+    @Autowired
+    private CourseRepository courseRepository;
+
     @PostMapping("/admin/course/addCourse")
-    public String addUsers(@RequestParam String category, @RequestParam String instructor, @RequestParam int ageStart, @RequestParam int ageEnd, @RequestParam int price){
+    public String addCourse(@RequestParam String category, @RequestParam String instructor, @RequestParam int ageStart, @RequestParam int ageEnd, @RequestParam int price){
 
         Course course= new Course();
         course.setCategory(category);
@@ -34,4 +39,17 @@ public class CourseController {
         return "redirect:/admin";
     }
 
+    @GetMapping("/admin")
+    public String showCourses(Model model){
+        List<Course> courses= courseRepository.findAll();
+        model.addAttribute("courselist", courses);
+        return "user_admin";
+    }
+
+    /*
+    @GetMapping("/admin/course/deleteCourse")
+    public String deleteCourse(@RequestParam String id){
+        courseService.deleteById(id);
+    }
+    */
 }

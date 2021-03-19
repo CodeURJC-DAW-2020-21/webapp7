@@ -1,9 +1,6 @@
 package com.webapp7.webapp7.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Course {
@@ -12,17 +9,33 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(nullable= false, unique= true)
     private String category;
+
+    @Column
     private int ageStart;
+
+    @Column
     private int ageEnd;
+
+    @Column
     private String instructor;
+
+    @Column
     private int price;
 
     public Course(){
 
     }
 
+    public Course(Long id, String category){
+        super();
+        this.id= id;
+        this.category= category;
+    }
+
     public Course(String category, int ageStart, int ageEnd, String instructor, int price) {
+        super();
         this.category = category;
         this.ageStart = ageStart;
         this.ageEnd = ageEnd;

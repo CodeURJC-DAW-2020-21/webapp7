@@ -163,11 +163,13 @@
 
 
                                             <div class="form-group">
+
                                                 <label class="label" for="email">Borrar curso</label>
                                                 <p><select class="form-select" aria-label="Default select example">
                                                     <option selected>Selecciona una opción</option>
-                                                    <option value="1">Keen Kids</option>
-                                                    <option value="2">Jolly Kids</option>
+                                                    {{#courselist}}
+                                                    <option>{{category}}</option>
+                                                    {{/courselist}}
                                                 </select></p>
                                                 <input href="" type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
                                             </div>
