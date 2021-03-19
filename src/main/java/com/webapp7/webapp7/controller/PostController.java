@@ -2,6 +2,7 @@ package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Post;
 import com.webapp7.webapp7.service.PostService;
+import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -10,7 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -44,14 +47,36 @@ public class PostController {
 
      */
 
-    @PostMapping("/admin/newPost")
-    public String addPost(@RequestParam String title, @RequestParam String description){
+    /*
+    @PostMapping("/student/comment/createNew")
+    public String addComment(@RequestParam String name, @RequestParam String opinion){
+        Comment comment = new Comment();
+        comment.setName(name);
+        comment.setComment(opinion);
+
+        commentService.save(comment);
+
+        return "redirect:/student";
+    }
+     */
+
+    @PostMapping("/admin/post/createNew")
+    public String addPost(Model model, @RequestParam String title, @RequestParam String description, MultipartFile imageField) throws IOException {
         Post post = new Post();
         post.setTitle(title);
         post.setDescription(description);
 
+        if (!imageField.isEmpty()) {
+            post.setImageFile(BlobProxy.generateProxy(imageField.getInputStream(), imageField.getSize()));
+            post.setImage(true);
+        }
+
+        model.addAttribute("postId", post.getId());
+
+        service.save(post);
         return "redirect:/admin";
     }
+
 
     @GetMapping("/blog")
     public String blog(Model model){
