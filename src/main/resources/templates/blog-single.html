@@ -27,7 +27,8 @@
           <h2 class="mb-3">{{post.title}}</h2>
           <p>{{post.description}}</p>
           <p>
-            <img src="images/MatriculasAbiertas.png" alt="" class="img-fluid">
+            <img src="/post/{{id}}/image" alt="" class="img-fluid">
+            <!--<img src="images/MatriculasAbiertas.png" alt="" class="img-fluid">-->
           </p>
           <p>Para ello, es necesario que nos contacten, ya sea por nuestro número de teléfono o por el correo electrónico que tenemos disponible, indicándonos el curso por el que esté interesado en inscribir a sus hijos. Posteriormente les contactaremos para enviarle los formularios necesarios para continuar con el proceso de matriculación.</p>
           <div class="tag-widget post-tag-container mb-5 mt-5">
@@ -45,7 +46,8 @@
             <h3>Entradas Recientes</h3>
             {{#posts}}
             <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(/static/images/MatriculasAbiertas.png);"></a>
+              <!--<a class="blog-img mr-4" style="background-image: url(/static/images/MatriculasAbiertas.png);"></a>-->
+              <img src="/post/{{id}}/image" class="blog-img mr-4">
               <div class="text">
                 <h3 class="heading"><a href="post/{{id}}">{{title}}</a></h3>
               </div>
