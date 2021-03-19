@@ -140,15 +140,18 @@
                                         <h6 class="m-0 font-weight-bold" style="color: black;">ESRIBE UNA NUEVA ENTRADA AL BLOG:</h6>
                                     </div>
                                     <div class="card-body">
-                                        <form action="/admin/newPost" method = "post" enctype="multipart/form-data">
+                                        <form action="/admin/post/createNew" method = "post" enctype="multipart/form-data">
                                             <div class="form-group">
-                                                <label class="label" for="title">Título</label>
-                                                <input type="text" class="form-control" >
+                                                <label for="title">Título</label>
+                                                <input type="text" class="form-control" id="title" name="title" placeholder="Título del post" >
                                             </div>
                                             <div class="form-group">
                                                 <label class="label" for="description">Descrición</label>
-                                                <input type="text" class="form-control" >
+                                                <input type="text" class="form-control" id="description" name="description" placeholder="Descripción del post">
                                             </div>
+
+
+                                            <input type='file' name='imageField' accept=".jpg, .jpeg" />
 
                                             <div class="form-group">
                                                 <input type="submit" value="Post" class="btn py-3 px-4 btn-primary">
