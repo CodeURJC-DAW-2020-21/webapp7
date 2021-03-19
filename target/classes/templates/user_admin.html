@@ -129,6 +129,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                         <!--End register user-->
 
@@ -146,6 +147,87 @@
                                                     <input class="form-control" id="name" name="name" type="text" placeholder="Nombre de Usuario" />
                                                 </div>
                                             -->
+
+
+                            <!--End register user-->
+                            <!--Start courses administration-->
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 class="m-0 font-weight-bold" style="color: black;">ADMINISTRA LOS CURSOS</h6>
+                                        </div>
+                                        <div class="card-body">
+
+
+
+
+
+                                            <div class="form-group">
+                                                <label class="label" >Crear curso</label>
+                                                <form action="/admin/course/addCourse" method="post" enctype="multipart/form-data">
+                                                    <input type="text" id="category" name="category"  placeholder="Nombre" class="form-control"/>
+                                                    <input type="text" id="ageStart" name="ageStart" placeholder="Edad Inicial" class="form-control"/>
+                                                    <input type="text" id="ageEnd" name="ageEnd" placeholder="Edad Final" class="form-control"/>
+                                                    <input type="text" id="instructor" name="instructor" placeholder="Instructor" class="form-control"/>
+                                                    <input type="text" id="price" name="price" placeholder="Precio" class="form-control"/>
+                                                    <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary">
+                                                </form>
+                                            </div>
+
+
+
+
+
+
+
+                                            <div class="form-group">
+                                                <label class="label">Borrar curso</label>
+
+
+                                                {{#courselist}}
+                                                <p>{{category}}
+                                                <a href="/admin/course/{{id}}/delete"  class="btn py-3 px-4 btn-primary">Borrar</a></p>
+                                                {{/courselist}}
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label" for="password">Añadir alumno a curso</label>
+                                                <p><select class="form-select" aria-label="Default select example">
+                                                    <option selected>Selecciona un curso</option>
+                                                    <option value="1">C 1</option>
+                                                    <option value="2">C 2</option>
+                                                </select></p>
+                                                <p><select class="form-select" aria-label="Default select example">
+                                                    <option selected>Selecciona un alumno</option>
+                                                    <option value="1">A1</option>
+                                                    <option value="2">A2</option>
+                                                </select></p>
+                                                <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label" for="password">Borrar alumno del curso</label>
+                                                <p><select class="form-select" aria-label="Default select example">
+                                                    <option selected>Selecciona un curso</option>
+                                                    <option value="1">C 1</option>
+                                                    <option value="2">C 2</option>
+                                                </select></p>
+                                                <p><select class="form-select" aria-label="Default select example">
+                                                    <option selected>Selecciona un alumno</option>
+                                                    <option value="1">A1</option>
+                                                    <option value="2">A2</option>
+                                                </select></p>
+                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label" for="password">Borrar alumno de la academia</label>
+                                                <p><select class="form-select" aria-label="Default select example">
+                                                    <option selected>Selecciona un alumno</option>
+                                                    <option value="1">A1</option>
+                                                    <option value="2">A2</option>
+                                                </select></p>
+                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                            </div>
 
                                             <div class="form-group">
                                                 <label for="title">Título</label>
