@@ -8,7 +8,7 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id = null;
+    private Long id;
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String title;

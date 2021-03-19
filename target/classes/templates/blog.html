@@ -28,19 +28,19 @@
         {{#posts}}
         <div class="col-lg-4 ftco-animate">
           <div class="blog-entry">
-            {{#post.image}}
-            <a href="blog-single" class="block-20" style="background-image: url('images/Matriculas\ Abiertas.PNG');"></a>
-            {{/post.image}}
+
+            <!--<a href="blog-single" class="block-20" style="background-image: url(images/MatriculasAbiertas.png);"></a>-->
+            <img src="/post/{{id}}/image" class="block-20" >
             <div class="text d-block">
-              <h3 class="heading"><a href="blog-single">{{title}}</a></h3>
+              <h3 class="heading"><a href="post/{{id}}">{{title}}</a></h3>
                 <p>{{description}}</p>
-                <p><a href="blog-single" class="btn btn-secondary py-2 px-3">Leer más</a></p>
+                <p><a href="post/{{id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
             </div>
           </div>
         </div>
         {{/posts}}
         <!--END FIRST POST-->
-<
+
         <!--START SECOND POST
         <div class="col-lg-4 ftco-animate">
           <div class="blog-entry">
