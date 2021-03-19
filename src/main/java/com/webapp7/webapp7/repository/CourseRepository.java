@@ -14,6 +14,7 @@ public interface CourseRepository extends JpaRepository<Course, Long>{
     @Query("SELECT new Course (c.id, c.category) FROM Course c ORDER BY c.id ASC")
     List<Course>findAll();
 
+
     /*
     List<Course> findByCategory(String category);
     List<Course> findByAgeStartOrAgeEnd(int ageStart, int ageEnd);

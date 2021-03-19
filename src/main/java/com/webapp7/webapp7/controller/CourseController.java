@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class CourseController {
@@ -44,6 +46,17 @@ public class CourseController {
         List<Course> courses= courseRepository.findAll();
         model.addAttribute("courselist", courses);
         return "user_admin";
+    }
+
+    @GetMapping("/admin/course/{id}/delete")
+    public String deleteCourse(Model model, @PathVariable long id) throws IOException {
+
+        Course course = courseService.findById(id).orElseThrow();
+
+        courseService.deleteById(id);
+
+
+        return "redirect:/admin";
     }
 
     /*
