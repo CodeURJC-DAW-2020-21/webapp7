@@ -1,4 +1,4 @@
-package com.webapp7.webapp7.Service;
+package com.webapp7.webapp7.service;
 
 import java.util.Collection;
 import java.util.Optional;
