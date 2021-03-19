@@ -44,13 +44,13 @@ public class PostController {
 
      */
 
-    @PostMapping("/admin/newBlog")
+    @PostMapping("/admin/newPost")
     public String addPost(@RequestParam String title, @RequestParam String description){
         Post post = new Post();
         post.setTitle(title);
         post.setDescription(description);
 
-        return "redirect:/admin ";
+        return "redirect:/admin";
     }
 
     @GetMapping("/blog")

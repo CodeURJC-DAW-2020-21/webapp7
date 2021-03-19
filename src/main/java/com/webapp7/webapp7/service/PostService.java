@@ -27,7 +27,7 @@ public class PostService {
     }
 
     public void deletePost(long id) {
-         posts.deleteById(id);
+        posts.deleteById(id);
     }
 
     public Optional<Post> findById(long id) {

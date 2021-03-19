@@ -13,7 +13,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String title;
 
-   @Column(columnDefinition="TEXT")
+    @Column(columnDefinition="TEXT")
     private String description;
 
     @Lob

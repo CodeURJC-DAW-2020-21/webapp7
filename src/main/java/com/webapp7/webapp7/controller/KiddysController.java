@@ -22,11 +22,7 @@ public class KiddysController {
 
 		return "email";
 	}
-	@GetMapping("/about")
-	public String about() {
 
-		return "about";
-	}
 	@GetMapping("/user_instructor")
 	public String user_instructor() {
 
@@ -47,7 +43,6 @@ public class KiddysController {
 
 		return "contact";
 	}
-
 
 	@GetMapping("/blog-single2")
 	public String blogsingle2() {
