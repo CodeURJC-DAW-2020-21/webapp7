@@ -1,21 +1,19 @@
 package com.webapp7.webapp7.service;
 
-
-import com.webapp7.webapp7.model.Post;
-
-import com.webapp7.webapp7.repository.PostRepository;
-import org.hibernate.engine.jdbc.BlobProxy;
-
-
-import com.webapp7.webapp7.model.Course;
-import com.webapp7.webapp7.repository.CourseRepository;
-/*
 import com.webapp7.webapp7.model.Comment;
 import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.repository.CommentRepository;
 import com.webapp7.webapp7.repository.UserRepository;
-*/
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import com.webapp7.webapp7.model.Post;
+
+import com.webapp7.webapp7.repository.PostRepository;
+import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.core.io.ClassPathResource;
@@ -26,34 +24,19 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 @Service
-
 public class DatabaseInitializer {
-
-
-    @Autowired
-    private UserRepository userRepository;
-
 
     @Autowired
     private PostRepository posts;
 
+    @Autowired
+    private CommentRepository commentRepository;
 
     @Autowired
-    private CourseRepository courseRepository;
-
-
+    private UserRepository userRepository;
 
     @PostConstruct
-    public void init() throws IOException, URISyntaxException{
-
-        Course course1= new Course("Jolly Kids", 5, 6, "Mercedes Huasaquiche", 120);
-        courseRepository.save(course1);
-
-        Course course2= new Course("Jolly Kids", 7, 8, "Mercedes Huasaquiche", 130);
-        courseRepository.save(course2);
-
-        Course course3= new Course("Jolly Kids", 9, 10, "Mercedes Huasaquiche", 140);
-        courseRepository.save(course3);
+    public void init() throws IOException, URISyntaxException {
 
         //Sample Comments
         //Comment comment1 = new Comment("Marga Jimenez Lopez", "La mejor academia de todas en las que he estado,muy buen profesorado y la directora muy maja y amable");
@@ -71,6 +54,7 @@ public class DatabaseInitializer {
         //Comment comment5 = new Comment("Caridad Arias Pradas", "Muchas gracias a todo el equipo de KiddysHouse! Habéis sido súper simpaticos conmigo. Recomendaré está academia a todo el que me pregunte.");
         //commentRepository.save(comment5);
 
+                /*
         //Sample Posts
         Post post1 = new Post(
                 "Matrículas abiertas para el nuevo curso",
@@ -90,17 +74,19 @@ public class DatabaseInitializer {
                 //puedan enterarse de toda nuestra oferta educativa y nuestra dinámica de trabajo. Esto es todo los que les podemos decir por el momento, pero empezamos este proyecto con mucha ilusión y con ganas que sus pequeños puedan aprender todo lo necesario del inglés para que tengan una buena base en el futuro.
         setPostImage(post3, "static/images/AperturaKiddysHouseBlog.png");
         posts.save(post3);
-        
+        */
+
+        // Sample users
+
+        userRepository.save(new User("user@gmail.com", "user", "1234"));
+        userRepository.save(new User("admin@gmail.com", "adminpass", "5678"));
 
     }
-
 
     public void setPostImage(Post post, String classpathResource) throws IOException {
         post.setImage(true);
         Resource image = new ClassPathResource(classpathResource);
         post.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
     }
-
-
 
 }
