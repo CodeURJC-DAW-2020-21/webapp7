@@ -102,7 +102,7 @@ public class PostController {
     //{{blog_page}}
     //...
     //{{/blog_page}
-    /*@GetMapping("/post/post/{id}")
+    @GetMapping("/post/post/{id}")
     public String showPostlinked(Model model, @PathVariable long id) {
 
         Post post = service.findById(id).orElseThrow();
@@ -113,7 +113,9 @@ public class PostController {
 
         return "blog-single";
     }
-    */
+
+
+
 /*
     @GetMapping("/blog-single")
     public String blog_single(Model model){
