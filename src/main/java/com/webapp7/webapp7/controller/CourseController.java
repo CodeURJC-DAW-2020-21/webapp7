@@ -2,7 +2,7 @@ package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.repository.CourseRepository;
-import com.webapp7.webapp7.Service.CourseService;
+import com.webapp7.webapp7.service.CourseService;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
