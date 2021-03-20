@@ -59,12 +59,9 @@
                                             <h6 class="m-0 font-weight-bold" style="color: black;">MATERIAL CLASE: Pre A1 Starters</h6>
                                         </div>
                                         <div class="card-body">
-                                            <h3>Tema1</h3>
-                                            <h5> &nbsp; Tema1-Parte I-Home</h5>
-                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"></img><a href="info.pdf">Speaking.pdf</a></p>
-                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Reading.pdf</a></p>
-                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Listening.pdf</a></p>
-                                            <h5> &nbsp; Tema1-Parte II-Games</h5>
+                                            {{#listMaterial}}
+                                            <li><a href="/download/{{id}}">{{name}}</a></li>
+                                            {{/listMaterial}}
                                         </div>
                                     </div>
                                 </div>
