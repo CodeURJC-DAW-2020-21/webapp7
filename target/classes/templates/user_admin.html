@@ -1,333 +1,396 @@
 {{>header}}
 
 <!--START BODY-->
-<body style="background-image: url('images/fondo_nuevo.jpg');">
-    <div id="wrapper">
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-                <nav class="navbar navbar-expand navbar-light bg-white2 topbar mb-4 static-top shadow" id="linea">
-                    <a class="block-10">
-                        <a href="index"> 
-                            <img src="images/LogoMorado.png" width="200" height="80">
-                        </a>
+<body style="background-image: url('images/fondo_nuevo.jpg');" xmlns:th="http://www.w3.org/1999/xhtml">
+<div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <nav class="navbar navbar-expand navbar-light bg-white2 topbar mb-4 static-top shadow" id="linea">
+                <a class="block-10">
+                    <a href="index">
+                        <img src="images/LogoMorado.png" width="200" height="80">
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="oi oi-menu"></span> Menu
-                    </button>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <a href="email">
-                                    <i class="fas fa-envelope fa-2x fa-fw" style="color: white;"></i> 
-                                </a>
-                                  
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span> Menu
+                </button>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="email">
+                                <i class="fas fa-envelope fa-2x fa-fw" style="color: white;"></i>
                             </a>
-                        </li>
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">Nombre de Usuario</span>
+
+                        </a>
+                    </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">Nombre de Usuario</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Cerrar Sesión
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar Sesión
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-
-                <!--Start global content-->
-                <div class="container-fluid2">
-                    <div class="d-sm-flex">
-                        <h1 class="h1">CONTENIDO DEL CURSO</h1>
-                    </div>
-                    <div class="row">
-
-                        <!--Left side-->
-                        <div class="col-lg-8 mb-8">
-
-                            <!--PFD'S-->
-                            <div class="row">           
-                                <div class="col-lg-12 mb-12">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header2 py-3">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">PRE A1 STARTERS</h6>
-                                        </div>
-                                        <div class="card-body">
-                                                {{#listMaterial}}
-                                                    <li><a href="/download/{{id}}">{{name}}</a></li>
-                                                {{/listMaterial}}
-                                            
-                                            <!--Insert any type of material-->
-                                            <div class="input-group">
-                                                <form th:action="@{/admin}" method="post" enctype="multipart/form-data">
-                                                    <p>
-                                                        <input type="file" name="material" required/>
-                                                    </p>
-                                                    <p>
-                                                        <input type="submit" value="Upload" class="btn btn-primary">
-                                                    </p>
-                                              </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End PDF'S-->
-
-                           
-
-                            <!--Start register user-->
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">REGISTRA A UN NUEVO ALUMNO/PROFESOR</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <label class="label" for="name">Nombre Completo</label>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="email">Correo Electrónico</label>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="password">Contraseña</label>
-                                                <input id="password-field" type="password" class="form-control" >
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="password">Profesor o alumno</label>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona una opción</option>
-                                                    <option value="1">Profesor</option>
-                                                    <option value="2">Alumno</option>
-                                                </select></p>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="submit" value="Registrar" class="btn py-3 px-4 btn-primary">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End register user-->
-                            <!--Start courses administration-->
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">ADMINISTRA LOS CURSOS</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <label class="label" for="name">Crear curso</label>
-                                                <input type="text" class="form-control" >
-                                                <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="email">Borrar curso</label>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona una opción</option>
-                                                    <option value="1">Keen Kids</option>
-                                                    <option value="2">Jolly Kids</option>
-                                                </select></p>
-                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="password">Añadir alumno a curso</label>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un curso</option>
-                                                    <option value="1">C 1</option>
-                                                    <option value="2">C 2</option>
-                                                </select></p>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un alumno</option>
-                                                    <option value="1">A1</option>
-                                                    <option value="2">A2</option>
-                                                </select></p>
-                                                <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="password">Borrar alumno del curso</label>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un curso</option>
-                                                    <option value="1">C 1</option>
-                                                    <option value="2">C 2</option>
-                                                </select></p>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un alumno</option>
-                                                    <option value="1">A1</option>
-                                                    <option value="2">A2</option>
-                                                </select></p>
-                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="password">Borrar alumno de la academia</label>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un alumno</option>
-                                                    <option value="1">A1</option>
-                                                    <option value="2">A2</option>
-                                                </select></p>
-                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="password">Añadir profesor al curso</label>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un curso</option>
-                                                    <option value="1">C 1</option>
-                                                    <option value="2">C 2</option>
-                                                </select></p>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un profesor</option>
-                                                    <option value="1">P1</option>
-                                                    <option value="2">P2</option>
-                                                </select></p>
-                                                <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="password">Borrar profesor del curso</label>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un curso</option>
-                                                    <option value="1">C 1</option>
-                                                    <option value="2">C 2</option>
-                                                </select></p>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un profesor</option>
-                                                    <option value="1">P1</option>
-                                                    <option value="2">P2</option>
-                                                </select></p>
-                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">  
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="label" for="password">Borrar profesor de la academia</label>
-                                                <p><select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecciona un profesor</option>
-                                                    <option value="1">P1</option>
-                                                    <option value="2">P2</option>
-                                                </select></p>
-                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End courses administration-->
                         </div>
-                        <!--End left side-->
+                    </li>
+                </ul>
+            </nav>
 
-                        <!--Start right side-->
-                        <div class="col-lg-4 mb-4">
-                            <div class="row">           
-                                <div class="col-lg-12 mb-12">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header2 py-3">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">CLASES</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="list-group">
-                                                  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                                                    <div class="d-flex w-100 justify-content-between">
-                                                      <h5 class="mb-1">B1 Preliminary for Schools</h5>
-                                                      <small class="text-muted">jueves</small>
-                                                    </div>
-                                                    <p class="mb-1">Horario Mañana-B Grupo-4</p>
-                                                    <small class="text-muted">PET</small>
-                                                </a>
-                                              </div>
-                                        </div>
+            <!--Start global content-->
+            <div class="container-fluid2">
+                <div class="d-sm-flex">
+                    <h1 class="h1">CONTENIDO DEL CURSO</h1>
+                </div>
+                <div class="row">
+
+                    <!--Left side-->
+                    <div class="col-lg-8 mb-8">
+
+                        <!--PFD'S-->
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">PRE A1 STARTERS</h6>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">           
-                                <div class="col-lg-12 mb-12">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header2 py-3">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">CLASES</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <img src="images/timetable.png" width="100%" height="auto"></img></p>
-                                            <a href="pdfinfo.pdf"><img src="images/PDF_logo.png" width="50px" height="30px">MiHorario.pdf</img></a></p>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Inserte archivo" aria-label="Inserte archivo">
-                                                <div class="input-group-append">
-                                                  <button type="button" class="btn btn-outline-secondary">Añadir</button>
+                                    <div class="card-body">
+                                        <h3>Tema-1</h3>
+                                        <h5> &nbsp; Tema-1-Parte I-Home</h5>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"></img><a href="info.pdf">Speaking.pdf</a></p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Reading.pdf</a></p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Listening.pdf</a></p>
+                                        <h5> &nbsp; Tema-1-Parte II-Games</h5>
+
+                                        <!--Insert any type of material-->
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Inserte archivo" aria-label="Inserte archivo">
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-outline-secondary">Añadir</button>
+                                                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="sr-only">Toggle Dropdown</span>
-                                                  </button>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#">Imágen</a>
+                                                    <a class="dropdown-item" href="#">Vide</a>
+                                                    <a class="dropdown-item" href="#">Link</a>
+                                                    <a class="dropdown-item" href="#">Título</a>
+                                                    <a class="dropdown-item" href="#">Subtítulo</a>
+                                                    <a class="dropdown-item" href="#">Texto</a>
+                                                    <div role="separator" class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#">PDF</a>
                                                 </div>
-                                              </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End PDF'S-->
+
+
+
+                        <!--Start register user-->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">REGISTRA A UN NUEVO ALUMNO/PROFESOR</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label class="label" for="name">Nombre Completo</label>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label" for="email">Correo Electrónico</label>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label" for="password">Contraseña</label>
+                                            <input id="password-field" type="password" class="form-control" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label" for="password">Profesor o alumno</label>
+                                            <p><select class="form-select" aria-label="Default select example">
+                                                <option selected>Selecciona una opción</option>
+                                                <option value="1">Profesor</option>
+                                                <option value="2">Alumno</option>
+                                            </select></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" value="Registrar" class="btn py-3 px-4 btn-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--End register user-->
+
+                        <!--Start Post-->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">ESRIBE UNA NUEVA ENTRADA AL BLOG:</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="/admin/post/createNew" method = "post" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="title">Título</label>
+                                                <input type="text" class="form-control" id="title" name="title" placeholder="Título del post" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label" for="description">Descrición</label>
+                                                <input type="text" class="form-control" id="description" name="description" placeholder="Descripción del post">
+                                            </div>
+
+
+                                            <input type='file' name='imageField' accept=".jpg, .jpeg" />
+
+                                            <div class="form-group">
+                                                <input type="submit" value="Post" class="btn py-3 px-4 btn-primary">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Post-->
+
+
+                        <!--End register user-->
+                        <!--Start courses administration-->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">ADMINISTRA LOS CURSOS</h6>
+                                    </div>
+                                    <div class="card-body">
+
+
+
+
+
+                                        <div class="form-group">
+                                            <label class="label" >Crear curso</label>
+                                            <form action="/admin/course/addCourse" method="post" enctype="multipart/form-data">
+                                                <input type="text" id="category" name="category"  placeholder="Nombre" class="form-control"/>
+                                                <input type="text" id="ageStart" name="ageStart" placeholder="Edad Inicial" class="form-control"/>
+                                                <input type="text" id="ageEnd" name="ageEnd" placeholder="Edad Final" class="form-control"/>
+                                                <input type="text" id="instructor" name="instructor" placeholder="Instructor" class="form-control"/>
+                                                <input type="text" id="price" name="price" placeholder="Precio" class="form-control"/>
+                                                <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary">
+                                            </form>
+                                        </div>
+
+
+
+
+
+
+
+                                        <div class="form-group">
+                                            <label class="label">Borrar curso</label>
+
+
+                                            {{#courselist}}
+                                            <p>{{category}}
+                                                <a href="/admin/course/{{id}}/delete"  class="btn py-3 px-4 btn-primary">Borrar</a></p>
+                                            {{/courselist}}
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label" for="password">Añadir alumno a curso</label>
+                                            <p><select class="form-select" aria-label="Default select example">
+                                                <option selected>Selecciona un curso</option>
+                                                <option value="1">C 1</option>
+                                                <option value="2">C 2</option>
+                                            </select></p>
+                                            <p><select class="form-select" aria-label="Default select example">
+                                                <option selected>Selecciona un alumno</option>
+                                                <option value="1">A1</option>
+                                                <option value="2">A2</option>
+                                            </select></p>
+                                            <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label" for="password">Borrar alumno del curso</label>
+                                            <p><select class="form-select" aria-label="Default select example">
+                                                <option selected>Selecciona un curso</option>
+                                                <option value="1">C 1</option>
+                                                <option value="2">C 2</option>
+                                            </select></p>
+                                            <p><select class="form-select" aria-label="Default select example">
+                                                <option selected>Selecciona un alumno</option>
+                                                <option value="1">A1</option>
+                                                <option value="2">A2</option>
+                                            </select></p>
+                                            <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label" for="password">Borrar alumno de la academia</label>
+                                            <p><select class="form-select" aria-label="Default select example">
+                                                <option selected>Selecciona un alumno</option>
+                                                <option value="1">A1</option>
+                                                <option value="2">A2</option>
+                                            </select></p>
+                                            <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Post-->
+                    </div>
+                    <!--End left side-->
+
+                    <!--Start right side-->
+                    <div class="col-lg-4 mb-4">
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">CLASES</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"href="#" data-toggle="modal" data-target="#class">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h5 class="mb-1">Pre A1 Starters</h5>
+                                                    <small>lunes y viernes</small>
+                                                </div>
+                                                <p class="mb-1">Horario Tarde-A Grupo-3</p>
+                                                <small class="text-muted">YLE Starters</small>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h5 class="mb-1">A1 Movers</h5>
+                                                    <small class="text-muted">jueves y viernes</small>
+                                                </div>
+                                                <p class="mb-1">Horario Mañana-B Grupo-6</p>
+                                                <small class="text-muted">YLE Movers</small>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h5 class="mb-1">A2 FLyers</h5>
+                                                    <small class="text-muted">lunes y martes</small>
+                                                </div>
+                                                <p class="mb-1">Horario Tarde-B Grupo-2</p>
+                                                <small class="text-muted">YLE Flyers</small>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h5 class="mb-1">A2 Key for Schools</h5>
+                                                    <small class="text-muted">miércoles</small>
+                                                </div>
+                                                <p class="mb-1">Horario Tarde-A Grupo-9</p>
+                                                <small class="text-muted">KET</small>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h5 class="mb-1">B1 Preliminary for Schools</h5>
+                                                    <small class="text-muted">jueves</small>
+                                                </div>
+                                                <p class="mb-1">Horario Mañana-B Grupo-4</p>
+                                                <small class="text-muted">PET</small>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--End right side-->
-                    </div>
-                </div>
-                <!--End global content-->
-
-                <!--Start of the end of page-->
-                <footer class="sticky-footer">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2020</span>
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">CLASES</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <img src="images/timetable.png" width="100%" height="auto"></img></p>
+                                        <a href="pdfinfo.pdf"><img src="images/PDF_logo.png" width="50px" height="30px">MiHorario.pdf</img></a></p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Inserte archivo" aria-label="Inserte archivo">
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-outline-secondary">Añadir</button>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </footer>
-                <!--End of the end of page-->
-            </div>
-        </div>
-        
-        <!--INSTRUCTOR LOGOUT MODAL-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Cerrar sesión</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p><BR></p>
-                        <p>¿Estás seguro de querer cerrar sesión?</p>
-                        <p><BR></p>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
-                        
-                    </div>
+                    <!--End right side-->
                 </div>
             </div>
-        </div>
+            <!--End global content-->
 
+            <!--Start of the end of page-->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!--End of the end of page-->
+        </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--INSTRUCTOR LOGOUT MODAL-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cerrar sesión</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><BR></p>
+                    <p>¿Estás seguro de querer cerrar sesión?</p>
+                    <p><BR></p>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-            
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+
 </body>
 </html>
