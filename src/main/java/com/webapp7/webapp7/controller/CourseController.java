@@ -89,7 +89,7 @@ public class CourseController {
         return "redirect:/admin";
     }
 
-    @GetMapping("/admin/course/{id}/image")
+    @GetMapping("/course/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException {
 
         Optional<Course> course = courseService.findById(id);
@@ -105,6 +105,8 @@ public class CourseController {
         }
 
     }
+
+
 
     /*
     @GetMapping("/admin/course/deleteCourse")
