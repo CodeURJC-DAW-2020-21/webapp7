@@ -1,15 +1,7 @@
 package com.webapp7.webapp7.controller;
 
-import com.webapp7.webapp7.model.Course;
-import com.webapp7.webapp7.service.CourseService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 //import java.net.URI;
 //import java.util.Collection;
 
@@ -49,5 +41,20 @@ public class KiddysController {
 	@GetMapping("/login")
 	public String login(){
 		return "login";
+	}
+
+	@GetMapping("/error_404")
+	public String error_404(){
+		return "error_404";
+	}
+
+	@GetMapping("/error")
+	public String error(){
+		return "error";
+	}
+
+	@GetMapping("/login_error")
+	public String login_error(){
+		return "login_error";
 	}
 }
