@@ -20,11 +20,6 @@ import java.util.List;
 public class KiddysController {
 
 
-	@GetMapping("/student")
-	public String user_student() {
-
-		return "user_student";
-	}
 
 	@GetMapping("/email")
 	public String email() {
@@ -32,11 +27,6 @@ public class KiddysController {
 		return "email";
 	}
 
-	@GetMapping("/user_instructor")
-	public String user_instructor() {
-
-		return "user_instructor";
-	}
 	@GetMapping("/instructor")
 	public String instructor() {
 

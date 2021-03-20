@@ -1,7 +1,9 @@
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Course;
+import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.repository.CourseRepository;
+import com.webapp7.webapp7.repository.MaterialRepository;
 import com.webapp7.webapp7.service.CourseService;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,8 @@ public class CourseController {
     private CourseService courseService;
 
     @Autowired
+    private MaterialRepository materialRepository;
+    @Autowired
     private CourseRepository courseRepository;
 
     @PostMapping("/admin/course/addCourse")
@@ -45,6 +49,8 @@ public class CourseController {
     public String showCourses(Model model){
         List<Course> courses= courseRepository.findAll();
         model.addAttribute("courselist", courses);
+        List<Material> listMaterial = materialRepository.findAll();
+        model.addAttribute("listMaterial",listMaterial);
         return "user_admin";
     }
 
