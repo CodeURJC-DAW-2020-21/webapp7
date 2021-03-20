@@ -59,32 +59,20 @@
                                         <h6 class="m-0 font-weight-bold" style="color: black;">PRE A1 STARTERS</h6>
                                     </div>
                                     <div class="card-body">
-                                        <h3>Tema-1</h3>
-                                        <h5> &nbsp; Tema-1-Parte I-Home</h5>
-                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"></img><a href="info.pdf">Speaking.pdf</a></p>
-                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Reading.pdf</a></p>
-                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Listening.pdf</a></p>
-                                        <h5> &nbsp; Tema-1-Parte II-Games</h5>
+                                        {{#listMaterial}}
+                                        <li><a href="/download/{{id}}">{{name}}</a></li>
+                                        {{/listMaterial}}
 
                                         <!--Insert any type of material-->
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Inserte archivo" aria-label="Inserte archivo">
-                                            <div class="input-group-append">
-                                                <button type="button" class="btn btn-outline-secondary">Añadir</button>
-                                                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="sr-only">Toggle Dropdown</span>
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">Imágen</a>
-                                                    <a class="dropdown-item" href="#">Vide</a>
-                                                    <a class="dropdown-item" href="#">Link</a>
-                                                    <a class="dropdown-item" href="#">Título</a>
-                                                    <a class="dropdown-item" href="#">Subtítulo</a>
-                                                    <a class="dropdown-item" href="#">Texto</a>
-                                                    <div role="separator" class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#">PDF</a>
-                                                </div>
-                                            </div>
+                                            <form th:action="@{/admin}" method="post" enctype="multipart/form-data">
+                                                <p>
+                                                    <input type="file" name="material" required/>
+                                                </p>
+                                                <p>
+                                                    <input type="submit" value="Upload" class="btn btn-primary">
+                                                </p>
+                                            </form>
                                         </div>
 
                                     </div>
@@ -182,12 +170,34 @@
                                         <div class="form-group">
                                             <label class="label" >Crear curso</label>
                                             <form action="/admin/course/addCourse" method="post" enctype="multipart/form-data">
+                                                <div class="form-group">
                                                 <input type="text" id="category" name="category"  placeholder="Nombre" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="text" id="ageStart" name="ageStart" placeholder="Edad Inicial" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="text" id="ageEnd" name="ageEnd" placeholder="Edad Final" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="text" id="instructor" name="instructor" placeholder="Instructor" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="text" id="price" name="price" placeholder="Precio" class="form-control"/>
-                                                <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type='file' name='imageField' accept=".jpg, .jpeg" />
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary">
+                                                </div>
+
                                             </form>
                                         </div>
 

@@ -1,6 +1,7 @@
 package com.webapp7.webapp7.model;
 
 import javax.persistence.*;
+import java.sql.Blob;
 
 @Entity
 public class Course {
@@ -10,29 +11,33 @@ public class Course {
     private long id;
 
     @Column(nullable= false, unique= true)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String category;
 
     @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ageStart;
 
     @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ageEnd;
 
     @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String instructor;
 
     @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int price;
+
+    @Lob
+    private Blob imageFile;
+    private boolean image;
 
     public Course(){
 
     }
 
-    public Course(Long id, String category){
-        super();
-        this.id= id;
-        this.category= category;
-    }
 
     public Course(String category, int ageStart, int ageEnd, String instructor, int price) {
         super();
@@ -89,6 +94,22 @@ public class Course {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public Blob getImageFile() {
+        return imageFile;
+    }
+
+    public void setImageFile(Blob image) {
+        this.imageFile = image;
+    }
+
+    public boolean hasImage(){
+        return this.image;
+    }
+
+    public void setImage(boolean image){
+        this.image = image;
     }
 
     @Override
