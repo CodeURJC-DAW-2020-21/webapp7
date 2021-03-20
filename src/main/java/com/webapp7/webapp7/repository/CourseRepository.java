@@ -10,10 +10,12 @@ import java.util.List;
 
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long>{
-
+    /*
     @Query("SELECT new Course (c.id, c.category) FROM Course c ORDER BY c.id ASC")
     List<Course>findAll();
 
+
+     */
 
     /*
     List<Course> findByCategory(String category);
