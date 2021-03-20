@@ -43,6 +43,12 @@ public class PostController {
         return "redirect:/admin";
     }
 
+    @GetMapping("/index")
+    public String login(Model model) {
+        List<Post> posts =  service.listPosts();
+        model.addAttribute("posts",posts);
+        return "index";
+    }
 
     @GetMapping("/blog")
     public String blog(Model model){
