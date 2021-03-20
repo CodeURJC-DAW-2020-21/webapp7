@@ -1,7 +1,6 @@
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Course;
-import com.webapp7.webapp7.model.Post;
 import com.webapp7.webapp7.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,14 +10,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 //import java.net.URI;
 //import java.util.Collection;
 
 @Controller
 public class KiddysController {
-
 
 
 	@GetMapping("/email")
@@ -48,10 +44,5 @@ public class KiddysController {
 	public String blogsingle3() {
 
 		return "blog-single3";
-	}
-	@GetMapping("/course")
-	public String course() {
-
-		return "course";
 	}
 }

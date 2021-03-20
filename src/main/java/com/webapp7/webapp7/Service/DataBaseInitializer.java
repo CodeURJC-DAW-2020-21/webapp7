@@ -31,38 +31,27 @@ public class DataBaseInitializer {
 
     @PostConstruct
     public void init() throws IOException, URISyntaxException{
-/*
+
 
         //Sample courses
-        Course course1= new Course("Jolly Kids", 5, 6, "Mercedes Huasaquiche", 120);
+        Course course1= new Course("Jolly Kids 4", 5, 6, "Mercedes Huasaquiche", 120);
+        setCourseImage(course1, "static/images/Niño_5a6.png");
         courseRepository.save(course1);
 
-        Course course2= new Course("Jolly Kids", 7, 8, "Mercedes Huasaquiche", 130);
+        Course course2= new Course("Jolly Kids 5", 7, 8, "Mercedes Huasaquiche", 130);
+        setCourseImage(course1, "static/images/Niño_5a6.png");
         courseRepository.save(course2);
 
-        Course course3= new Course("Jolly Kids", 9, 10, "Mercedes Huasaquiche", 140);
+        Course course3= new Course("Jolly Kids 6", 9, 10, "Mercedes Huasaquiche", 140);
+        setCourseImage(course1, "static/images/Niño_5a6.png");
         courseRepository.save(course3);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- */
-
-
 /*
+
+
         //Sample Comments
         Comment comment1 = new Comment("Marga Jimenez Lopez", "La mejor academia de todas en las que he estado,muy buen profesorado y la directora muy maja y amable");
         commentRepository.save(comment1);
@@ -109,6 +98,12 @@ public class DataBaseInitializer {
         post.setImage(true);
         Resource image = new ClassPathResource(classpathResource);
         post.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
+    }
+
+    public void setCourseImage(Course course, String classpathResource) throws IOException {
+        course.setImage(true);
+        Resource image = new ClassPathResource(classpathResource);
+        course.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
     }
 
 }

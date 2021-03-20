@@ -52,32 +52,33 @@
                     <div class="col-lg-8 mb-8">
 
                         <!--PFD'S-->
-                            <div class="row">           
-                                <div class="col-lg-12 mb-12">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header2 py-3">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">PRE A1 STARTERS</h6>
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">PRE A1 STARTERS</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        {{#listMaterial}}
+                                        <li><a href="/download/{{id}}">{{name}}</a></li>
+                                        {{/listMaterial}}
+
+                                        <!--Insert any type of material-->
+                                        <div class="input-group">
+                                            <form th:action="@{/admin}" method="post" enctype="multipart/form-data">
+                                                <p>
+                                                    <input type="file" name="material" required/>
+                                                </p>
+                                                <p>
+                                                    <input type="submit" value="Upload" class="btn btn-primary">
+                                                </p>
+                                            </form>
                                         </div>
-                                        <div class="card-body">
-                                                {{#listMaterial}}
-                                                    <li><a href="/download/{{id}}">{{name}}</a></li>
-                                                {{/listMaterial}}
-                                            
-                                            <!--Insert any type of material-->
-                                            <div class="input-group">
-                                                <form th:action="@{/admin}" method="post" enctype="multipart/form-data">
-                                                    <p>
-                                                        <input type="file" name="material" required/>
-                                                    </p>
-                                                    <p>
-                                                        <input type="submit" value="Upload" class="btn btn-primary">
-                                                    </p>
-                                                </form>
-                                              </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         <!--End PDF'S-->
 
 
@@ -169,12 +170,34 @@
                                         <div class="form-group">
                                             <label class="label" >Crear curso</label>
                                             <form action="/admin/course/addCourse" method="post" enctype="multipart/form-data">
+                                                <div class="form-group">
                                                 <input type="text" id="category" name="category"  placeholder="Nombre" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="text" id="ageStart" name="ageStart" placeholder="Edad Inicial" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="text" id="ageEnd" name="ageEnd" placeholder="Edad Final" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="text" id="instructor" name="instructor" placeholder="Instructor" class="form-control"/>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="text" id="price" name="price" placeholder="Precio" class="form-control"/>
-                                                <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type='file' name='imageField' accept=".jpg, .jpeg" />
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary">
+                                                </div>
+
                                             </form>
                                         </div>
 
