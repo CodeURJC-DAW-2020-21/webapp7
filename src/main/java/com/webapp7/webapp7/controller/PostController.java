@@ -25,40 +25,6 @@ public class PostController {
     @Autowired
     private PostService service;
 
-    /*@GetMapping("/")
-    public String showBooks(Model model) {
-
-        model.addAttribute("blogs", service.findAll());
-
-        return "blogs";
-    }
-    @GetMapping("/posts/{id}")
-    public String showBook(Model model, @PathVariable long id) {
-
-        Optional<Post> post = service.findById(id);
-        if (post.isPresent()) {
-            model.addAttribute("book", post.get());
-            return "post";
-        } else {
-            return "posts";
-        }
-
-    }
-
-     */
-
-    /*
-    @PostMapping("/student/comment/createNew")
-    public String addComment(@RequestParam String name, @RequestParam String opinion){
-        Comment comment = new Comment();
-        comment.setName(name);
-        comment.setComment(opinion);
-
-        commentService.save(comment);
-
-        return "redirect:/student";
-    }
-     */
 
     @PostMapping("/admin/post/createNew")
     public String addPost(Model model, @RequestParam String title, @RequestParam String description, MultipartFile imageField) throws IOException {
@@ -77,6 +43,12 @@ public class PostController {
         return "redirect:/admin";
     }
 
+    @GetMapping("/index")
+    public String login(Model model) {
+        List<Post> posts =  service.listPosts();
+        model.addAttribute("posts",posts);
+        return "index";
+    }
 
     @GetMapping("/blog")
     public String blog(Model model){
@@ -85,19 +57,7 @@ public class PostController {
         return "blog";
     }
 
-    /*
-     @GetMapping("/books/{id}")
-	public String showBook(Model model, @PathVariable long id) {
 
-		Optional<Book> book = service.findById(id);
-		if (book.isPresent()) {
-			model.addAttribute("book", book.get());
-			return "book";
-		} else {
-			return "books";
-		}
-
-	}*/
     @GetMapping("/post/{id}")
     public String showPost(Model model, @PathVariable long id) {
 
@@ -124,9 +84,7 @@ public class PostController {
             return ResponseEntity.notFound().build();
         }
     }
-    //{{blog_page}}
-    //...
-    //{{/blog_page}
+
     @GetMapping("/post/post/{id}")
     public String showPostlinked(Model model, @PathVariable long id) {
 
@@ -138,18 +96,6 @@ public class PostController {
 
         return "blog-single";
     }
-
-
-
-/*
-    @GetMapping("/blog-single")
-    public String blog_single(Model model){
-        List<Post> posts =  service.listPosts();
-        model.addAttribute("blog_page",posts);
-
-        return "blog-single";
-    }
-    */
 
 
 
