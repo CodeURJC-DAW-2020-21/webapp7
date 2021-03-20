@@ -1,62 +1,40 @@
 package com.webapp7.webapp7.controller;
 
+import com.webapp7.webapp7.model.Course;
+import com.webapp7.webapp7.service.CourseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 //import java.net.URI;
 //import java.util.Collection;
 
 @Controller
 public class KiddysController {
 
-	@GetMapping("/student")
-	public String user_student() {
 
-		return "user_student";
-	}
-	@GetMapping("/index")
-	public String indeex() {
-		return "index";
-	}
 	@GetMapping("/email")
 	public String email() {
 
 		return "email";
 	}
-	@GetMapping("/about")
-	public String about() {
 
-		return "about";
-	}
-	@GetMapping("/user_instructor")
-	public String user_instructor() {
-
-		return "user_instructor";
-	}
 	@GetMapping("/instructor")
 	public String instructor() {
 
 		return "instructor";
 	}
-	@GetMapping("/admin")
-	public String user_admin() {
 
-		return "user_admin";
-	}
 	@GetMapping("/contact")
 	public String contact() {
 
 		return "contact";
 	}
-	@GetMapping("/blog")
-	public String blog() {
 
-		return "blog";
-	}
-	@GetMapping("/blog-single")
-	public String blogsingle() {
-
-		return "blog-single";
-	}
 	@GetMapping("/blog-single2")
 	public String blogsingle2() {
 
@@ -67,9 +45,9 @@ public class KiddysController {
 
 		return "blog-single3";
 	}
-	@GetMapping("/course")
-	public String course() {
 
-		return "course";
+	@GetMapping("/login")
+	public String login(){
+		return "login";
 	}
 }

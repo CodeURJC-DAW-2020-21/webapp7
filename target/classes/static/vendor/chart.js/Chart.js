@@ -3401,7 +3401,7 @@ var exports$3 = core_element.extend({
 	currentStep: 0, // the current animation step
 	numSteps: 60, // default number of steps
 	easing: '', // the easing to use for this animation
-	render: null, // render function used by the animation service
+	render: null, // render function used by the animation com.webapp7.webapp7.service
 
 	onAnimationProgress: null, // user specified callback to fire on each step of the animation
 	onAnimationComplete: null, // user specified callback to fire when the animation finishes
@@ -7220,9 +7220,9 @@ core_defaults._set('global', {
  * @prop {number} bottom - Bottom edge of the item. Set by layout system and cannot be used in update
  */
 
-// The layout service is very self explanatory.  It's responsible for the layout within a chart.
-// Scales, Legends and Plugins all rely on the layout service and can easily register to be placed anywhere they need
-// It is this service's responsibility of carrying out that layout.
+// The layout com.webapp7.webapp7.service is very self explanatory.  It's responsible for the layout within a chart.
+// Scales, Legends and Plugins all rely on the layout com.webapp7.webapp7.service and can easily register to be placed anywhere they need
+// It is this com.webapp7.webapp7.service's responsibility of carrying out that layout.
 var core_layouts = {
 	defaults: {},
 
@@ -7931,7 +7931,7 @@ core_defaults._set('global', {
 });
 
 /**
- * The plugin service singleton
+ * The plugin com.webapp7.webapp7.service singleton
  * @namespace Chart.plugins
  * @since 2.1.0
  */

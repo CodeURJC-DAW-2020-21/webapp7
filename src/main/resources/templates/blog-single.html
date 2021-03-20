@@ -3,84 +3,84 @@
 <!--START BODY-->
 <body>
 
-  {{>navbar}}
- 
-  <!--START FIRST PART-->
-  <section class="hero-wrap hero-wrap-2" style="background-image: url('images/fondo.jpg');">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text align-items-end justify-content-center">
-        <div class="col-md-9 ftco-animate pb-5 text-center">
-          <p class="breadcrumbs"><span class="mr-2"><a href="index">Inicio <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="blog">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Matrículas abiertas para el nuevo curso<i class="fa fa-chevron-right"></i></span></p>
-          <h1 class="mb-0 bread">Blog</h1>
-        </div>
+{{>navbar}}
+
+<!--START FIRST PART-->
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/images/fondo.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index">Inicio <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="blog">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Matrículas abiertas para el nuevo curso<i class="fa fa-chevron-right"></i></span></p>
+        <h1 class="mb-0 bread">Blog</h1>
       </div>
     </div>
-  </section>
-  <!--END FIRST PART-->
+  </div>
+</section>
+<!--END FIRST PART-->
 
-  <!---->
-  <section class="ftco-section ftco-no-pt ftco-no-pb">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 ftco-animate py-md-5 mt-md-5">
-          <h2 class="mb-3">Matrículas abiertas para el nuevo curso</h2>
-          <p>Desde el lunes 22 de febrero, usted ya puede solicitar la matrícula de nuestros cursos de inglés para sus hijos. Les recordamos que ustedes pueden ver nuestra oferta educativa dentro de la sección de "Cursos", para que puedan averiguar un poco más de información al respecto.</p>
-          <p>
-            <img src="images/Matriculas Abiertas.PNG" alt="" class="img-fluid">
-          </p>
-          <p>Para ello, es necesario que nos contacten, ya sea por nuestro número de teléfono o por el correo electrónico que tenemos disponible, indicándonos el curso por el que esté interesado en inscribir a sus hijos. Posteriormente les contactaremos para enviarle los formularios necesarios para continuar con el proceso de matriculación.</p>
-          <div class="tag-widget post-tag-container mb-5 mt-5">
-
-          </div>
-
-        </div> <!-- .col-md-8 -->
-        <div class="col-lg-4 sidebar ftco-animate pl-md-4 py-md-5">
-
-          <div class="sidebar-box ftco-animate">
-
-          </div>
-
-          <div class="sidebar-box ftco-animate">
-            <h3>Entradas Recientes</h3>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/Matriculas\ Abiertas.PNG);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="blog-single">Matrículas abiertas para el nuevo curso</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="fa fa-calendar"></span> 19 febrero, 2021</a></div>
-                  <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/MasInfoKiddysHouse.png);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="blog-single2">Información sobre los nuevos cursos</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="fa fa-calendar"></span> 1 febrero, 2020</a></div>
-                  <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/AperturaKiddysHouse.png);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="blog-single3">¡Apertura de Kiddy's House!</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="fa fa-calendar"></span> 15 enero, 2021</a></div>
-                  <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+<!---->
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 ftco-animate py-md-5 mt-md-5">
+        <h2 class="mb-3">{{post.title}}</h2>
+        <p>{{post.description}}</p>
+        <p>
+          <img src="/post/{{id}}/image" alt="" class="img-fluid">
+          <!--<img src="images/MatriculasAbiertas.png" alt="" class="img-fluid">-->
+        </p>
+        <div class="tag-widget post-tag-container mb-5 mt-5">
 
         </div>
 
-      </div>
-    </div>
-  </section> 
-  <!---->	
+      </div> <!-- .col-md-8 -->
+      <div class="col-lg-4 sidebar ftco-animate pl-md-4 py-md-5">
 
-  {{>footer}}
+        <div class="sidebar-box ftco-animate">
+
+        </div>
+
+        <div class="sidebar-box ftco-animate">
+          <h3>Entradas Recientes</h3>
+          {{#posts}}
+          <div class="block-21 mb-4 d-flex">
+            <!--<a class="blog-img mr-4" style="background-image: url(/static/images/MatriculasAbiertas.png);"></a>-->
+            <img src="/post/{{id}}/image" class="blog-img mr-4">
+            <div class="text">
+              <h3 class="heading"><a href="post/{{id}}">{{title}}</a></h3>
+            </div>
+          </div>
+          {{/posts}}
+          <!--
+          <div class="block-21 mb-4 d-flex">
+            <a class="blog-img mr-4" style="background-image: url(images/MasInfoKiddysHouse.png);"></a>
+            <div class="text">
+              <h3 class="heading"><a href="blog-single2">Información sobre los nuevos cursos</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="fa fa-calendar"></span> 1 febrero, 2020</a></div>
+                <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="block-21 mb-4 d-flex">
+            <a class="blog-img mr-4" style="background-image: url(images/AperturaKiddysHouse.png);"></a>
+            <div class="text">
+              <h3 class="heading"><a href="blog-single3">¡Apertura de Kiddy's House!</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="fa fa-calendar"></span> 15 enero, 2021</a></div>
+                <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+              </div>
+            </div>
+          </div>-->
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<!---->
+
+{{>footer}}
