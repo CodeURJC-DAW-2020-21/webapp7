@@ -45,4 +45,9 @@ public class KiddysController {
 
 		return "blog-single3";
 	}
+
+	@GetMapping("/login")
+	public String login(){
+		return "login";
+	}
 }

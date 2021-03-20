@@ -32,7 +32,7 @@ public class DataBaseInitializer {
     @PostConstruct
     public void init() throws IOException, URISyntaxException{
 
-
+        /*
         //Sample courses
         Course course1= new Course("Jolly Kids 4", 5, 6, "Mercedes Huasaquiche", 120);
         setCourseImage(course1, "static/images/Niño_5a6.png");
@@ -47,7 +47,7 @@ public class DataBaseInitializer {
         courseRepository.save(course3);
 
 
-
+        */
 
 /*
 
@@ -94,6 +94,8 @@ public class DataBaseInitializer {
 
     }
 
+    /*
+
     public void setPostImage(Post post, String classpathResource) throws IOException {
         post.setImage(true);
         Resource image = new ClassPathResource(classpathResource);
@@ -105,5 +107,7 @@ public class DataBaseInitializer {
         Resource image = new ClassPathResource(classpathResource);
         course.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
     }
+
+    */
 
 }
