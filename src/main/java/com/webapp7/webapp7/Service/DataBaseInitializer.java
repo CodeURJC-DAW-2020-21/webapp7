@@ -3,10 +3,11 @@ package com.webapp7.webapp7.Service;
 import com.webapp7.webapp7.model.Comment;
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Post;
-
+import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.repository.CommentRepository;
 import com.webapp7.webapp7.repository.CourseRepository;
 import com.webapp7.webapp7.repository.PostRepository;
+import com.webapp7.webapp7.repository.UserRepository;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,9 @@ public class DataBaseInitializer {
 
     @Autowired
     private CourseRepository courseRepository;
+    @Autowired
+    private UserRepository userRepository;
+
 
     @PostConstruct
     public void init() throws IOException, URISyntaxException{
@@ -91,7 +95,8 @@ public class DataBaseInitializer {
         setPostImage(post3, "static/images/AperturaKiddysHouseBlog.png");
         posts.save(post3);
 */
-
+       // userRepository.save(new User("user@gmail.com", "user", "1234", "alumno" ));
+        //userRepository.save(new User("admin@gmail.com", "adminpass", "5678", "admisnistrador"));
     }
 
     /*
@@ -109,5 +114,6 @@ public class DataBaseInitializer {
     }
 
     */
+
 
 }

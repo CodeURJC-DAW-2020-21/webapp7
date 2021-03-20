@@ -23,19 +23,17 @@
                         <div class="centered-box card w-100">
                             <div class="card-body">
                                 <h3 class="mb-4">Inicio De Sesión</h3>
-                                <form action="/user_admin" class="signup-form" id="login-form">
+                                <form action="/checkLogin" class="signup-form" id="login-form">
                                 <div class="input-group mb-3 px-4">
-                                    <span class="input-group-text bg-transparent text-white" id="email1">
-                                      <i class="bi bi-at"></i>
-                                    </span>
-                                        <input id="email" type="text" class="form-control" placeholder="Email">
+                                    <label class="input-group-text bg-transparent text-white" for="email" >
+                                    </label>
+                                        <input id="email" type="text" class="form-control" placeholder="Email" name="email">
                                 </div>
 
                                 <div class="input-group mb-3 px-4">
-                                    <span class="input-group-text bg-transparent text-white" id="password1">
-                                      <i class="bi bi-key-fill"></i>
-                                    </span>
-                                    <input id="password" type="password" class="form-control" placeholder="Password">
+                                    <label class="input-group-text bg-transparent text-white" for="password">
+                                    </label>
+                                    <input id="password" type="password" class="form-control" placeholder="Password" name="password">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary submit" id = "login-form-submit"><span class="fa fa-paper-plane"></span></button>

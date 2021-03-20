@@ -1,5 +1,10 @@
 package com.webapp7.webapp7.model;
-import javax.persistence.*;
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /*Para generar el esquema y para hacer la conversión entre objetos y filas */
 @Entity
@@ -12,23 +17,32 @@ public class User {
     private String email;
     private String username;
     private String password;
-    
-    public User() {}
+    private String rol;
+    public User(User user){}
 
-    public User(String email, String username, String password) {
-        super();
+
+
+
+    public User(String email, String username, String password, String rol) {
+
         this.email = email;
         this.username = username;
         this.password = password;
+        this.rol= rol;
     }
 
-    public Long getId() {
-		return id;
-	}
+    public User() {
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public void deleteById(long id){
 
@@ -59,11 +73,21 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+
     @Override
-	public String toString() {
-		return String.format("User[id=%d, email='%s', username='%s', password='%s']",
-				id, email, username,password);
-	}
+    public String toString() {
+        return String.format("User[id=%d, email='%s', username='%s', password='%s', rol='%s']",
+                id, email, username,password, rol);
+    }
 
 
 
