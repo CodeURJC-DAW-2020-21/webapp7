@@ -1,5 +1,5 @@
 package com.webapp7.webapp7.Service;
-
+import java.util.ArrayList;
 //import com.webapp7.webapp7.model.Comment;
 import com.webapp7.webapp7.model.User;
 //import com.webapp7.webapp7.repository.CommentRepository;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 @Service
-class DataBaseInitializer {
+public class DataBaseInitializer {
 
     @Autowired
     private UserRepository userRepository;
@@ -22,7 +22,27 @@ class DataBaseInitializer {
 
     @PostConstruct
     public void init() throws IOException, URISyntaxException {
+     /*   private UserRepository users;
 
+        public String findById(long id) {
+            return users.findById(id);
+        }
+
+        public boolean exist(long id) {
+            return users.existsById(id);
+        }
+
+        public List<User> findAll() {
+            return User.findAll();
+        }
+
+        public void save(User user){
+            users.save(User);
+        }
+
+        public void delete(long id) {
+            users.deleteById(id);
+        }*/
         // Sample books
 
         //Comment comment1 = new Comment("Deborah", "hola que tal");

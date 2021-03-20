@@ -18,7 +18,7 @@ public class User {
     private String username;
     private String password;
     private String rol;
-    public User(){}
+    public User(User user){}
 
 
 
@@ -29,6 +29,10 @@ public class User {
         this.username = username;
         this.password = password;
         this.rol= rol;
+    }
+
+    public User() {
+
     }
 
 

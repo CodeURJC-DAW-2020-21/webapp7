@@ -14,7 +14,7 @@ public class KiddysController {
 		return "user_student";
 	}
 	@GetMapping("/index")
-	public String login() {
+	public String indeex() {
 		return "index";
 	}
 	@GetMapping("/email")
