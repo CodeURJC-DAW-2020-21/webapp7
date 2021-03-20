@@ -1,6 +1,7 @@
 package com.webapp7.webapp7.service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.PostRemove;
@@ -22,6 +23,10 @@ public class CourseService {
     @PostRemove
     public void finish(){
         courses.deleteAll();
+    }
+
+    public List<Course> listCourse (){
+        return courses.findAll();
     }
 
 
