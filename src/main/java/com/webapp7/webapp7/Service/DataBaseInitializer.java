@@ -88,17 +88,26 @@ public class DataBaseInitializer {
 
         //Sample users
 
-
-        userRepository.save(new User("user@gmail.com", "user", "1234", "alumno" ));
-        userRepository.save(new User("admin@gmail.com", "admin", "5678", "administrador"));
-        userRepository.save(new User("profesor@gmail.com", "profesor", "7777", "profesor"));
-
 */
+       // userRepository.save(new User("user@gmail.com", "user", "1234", "alumno" ));
+        //userRepository.save(new User("admin@gmail.com", "admin", "5678", "administrador"));
+        //userRepository.save(new User("profesor@gmail.com", "profesor", "7777", "profesor"));
 
+
+
+
+        User user= new User("profesor2@gmail.com", "blanca", "7777", "profesor");
+        setUserImage(user, "static/images/Niño_5a6.png");
+        userRepository.save(user);
 
     }
 
 
+    public void setUserImage(User user, String classpathResource) throws IOException {
+        user.setImage(true);
+        Resource image = new ClassPathResource(classpathResource);
+        user.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
+    }
 
     public void setPostImage(Post post, String classpathResource) throws IOException {
         post.setImage(true);

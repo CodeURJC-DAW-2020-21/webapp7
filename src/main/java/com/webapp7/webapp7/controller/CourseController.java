@@ -3,8 +3,10 @@ package com.webapp7.webapp7.controller;
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.model.Post;
+import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.repository.CourseRepository;
 import com.webapp7.webapp7.repository.MaterialRepository;
+import com.webapp7.webapp7.repository.UserRepository;
 import com.webapp7.webapp7.service.CourseService;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.core.io.InputStreamResource;
@@ -40,6 +42,9 @@ public class CourseController {
     @Autowired
     private MaterialRepository materialRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @PostMapping("/admin/course/addCourse")
     public String addCourse(@RequestParam String category, @RequestParam String instructor, @RequestParam int ageStart, @RequestParam int ageEnd, @RequestParam int price, MultipartFile imageField) throws IOException {
 
@@ -67,22 +72,24 @@ public class CourseController {
         return "course";
     }
 
-
-
     @GetMapping("/admin")
     public String showCourses(Model model){
         List<Course> courses= courseRepository.findAll();
         model.addAttribute("courselist", courses);
         List<Material> listMaterial = materialRepository.findAll();
         model.addAttribute("listMaterial",listMaterial);
+        List<User> listTeachers = userRepository.findByRol("profesor");
+        model.addAttribute("listTeacher",listTeachers);
+        List<User> listStudents = userRepository.findByRol("alumno");
+        model.addAttribute("listStudent", listStudents);
         return "user_admin";
     }
 
-    @GetMapping("/admin/course/{id}/delete")
-    public String deleteCourse(Model model, @PathVariable long id) throws IOException {
+    @GetMapping("/admin/course/delete")
+    public String deleteCourse(@RequestParam("category_delete") String category) throws IOException {
 
-        Course course = courseService.findById(id).orElseThrow();
-
+        Course course = courseService.findByCategory(category);
+        Long id = course.getId();
         courseService.deleteById(id);
 
 

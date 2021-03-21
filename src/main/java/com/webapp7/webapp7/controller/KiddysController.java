@@ -16,12 +16,6 @@ public class KiddysController {
 		return "email";
 	}
 
-	@GetMapping("/instructor")
-	public String instructor() {
-
-		return "instructor";
-	}
-
 	@GetMapping("/contact")
 	public String contact() {
 
@@ -33,11 +27,6 @@ public class KiddysController {
 	public String error_404(){
 		return "error_404";
 	}
-/*
-	@GetMapping("/error")
-	public String error(){
-		return "error";
-	}*/
 
 	@GetMapping("/login_error")
 	public String login_error(){

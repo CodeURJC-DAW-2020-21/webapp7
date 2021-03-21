@@ -18,8 +18,8 @@
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <a href="email">
-                                <i class="fas fa-envelope fa-2x fa-fw" style="color: white;"></i>
+                            <a href="email" >
+                                <img src="images/email.png" style="width:42px;height:42px;">
                             </a>
 
                         </a>
@@ -60,7 +60,10 @@
                                     </div>
                                     <div class="card-body">
                                         {{#listMaterial}}
-                                        <li><a href="/download/{{id}}">{{name}}</a></li>
+                                        <li>
+                                            <a href="/download/{{id}}">{{name}}</a>
+                                            <a href="/delete/admin/{{id}}"  class="btn py-2 px-2 btn-primary">Eliminar</a>
+                                        </li>
                                         {{/listMaterial}}
 
                                         <!--Insert any type of material-->
@@ -91,29 +94,31 @@
                                         <h6 class="m-0 font-weight-bold" style="color: black;">REGISTRA A UN NUEVO ALUMNO/PROFESOR</h6>
                                     </div>
                                     <div class="card-body">
+                                        <form action="/register" method = "post" modelAttribute="user">
                                         <div class="form-group">
-                                            <label class="label" for="name">Nombre Completo</label>
-                                            <input type="text" class="form-control" >
+                                            <label  for="username">Nombre Completo</label>
+                                            <input type="text" id="username" name="username" class="form-control" >
                                         </div>
                                         <div class="form-group">
-                                            <label class="label" for="email">Correo Electrónico</label>
-                                            <input type="text" class="form-control" >
+                                            <label for="email">Correo Electrónico</label>
+                                            <input type="text" id="email" name="email"class="form-control" >
                                         </div>
                                         <div class="form-group">
-                                            <label class="label" for="password">Contraseña</label>
-                                            <input id="password-field" type="password" class="form-control" >
+                                            <label  for="password">Contraseña</label>
+                                            <input id="password" name="password" type="text" class="form-control" >
                                         </div>
                                         <div class="form-group">
-                                            <label class="label" for="password">Profesor o alumno</label>
-                                            <p><select class="form-select" aria-label="Default select example">
-                                                <option selected>Selecciona una opción</option>
-                                                <option value="1">Profesor</option>
-                                                <option value="2">Alumno</option>
+                                            <label  for="rol">Profesor o alumno</label>
+                                            <input id="rol" name="rol" type="text" class="form-control" >
                                             </select></p>
                                         </div>
+
+                                            <input type='file' name='imageField' accept=".jpg, .jpeg" />
+
                                         <div class="form-group">
                                             <input type="submit" value="Registrar" class="btn py-3 px-4 btn-primary">
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +134,7 @@
                                         <h6 class="m-0 font-weight-bold" style="color: black;">ESRIBE UNA NUEVA ENTRADA AL BLOG:</h6>
                                     </div>
                                     <div class="card-body">
-                                        <form action="/admin/post/createNew" method = "post" enctype="multipart/form-data">
+                                        <form action="/admin/post/createNew" method = "post"  enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label for="title">Título</label>
                                                 <input type="text" class="form-control" id="title" name="title" placeholder="Título del post" >
@@ -138,7 +143,6 @@
                                                 <label class="label" for="description">Descrición</label>
                                                 <input type="text" class="form-control" id="description" name="description" placeholder="Descripción del post">
                                             </div>
-
 
                                             <input type='file' name='imageField' accept=".jpg, .jpeg" />
 
@@ -153,7 +157,6 @@
                         <!--End Post-->
 
 
-                        <!--End register user-->
                         <!--Start courses administration-->
                         <div class="row">
                             <div class="col-xl-12 col-lg-12">
@@ -162,12 +165,9 @@
                                         <h6 class="m-0 font-weight-bold" style="color: black;">ADMINISTRA LOS CURSOS</h6>
                                     </div>
                                     <div class="card-body">
-
-
-
-
-
                                         <div class="form-group">
+
+                                            <!--REGISTER COURSE-->
                                             <label class="label" >Crear curso</label>
                                             <form action="/admin/course/addCourse" method="post" enctype="multipart/form-data">
                                                 <div class="form-group">
@@ -197,75 +197,74 @@
                                                 <div class="form-group">
                                                     <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary">
                                                 </div>
+                                            </form>
 
+                                        </div>
+
+                                        <!--DELETE COURSE-->
+                                        <div class="form-group">
+                                            <label class="label" for="password">Borrar curso</label>
+                                            <form action="/admin/course/delete" method="get" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <input type="text" id="category_delete" name="category_delete"  placeholder="Curso a borrar" class="form-control"/>
+                                                </div>
+                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
                                             </form>
                                         </div>
 
-
-
-
-
-
-
+                                        <!--ADD STUDENT/TEACHER TO A COURSE-->
                                         <div class="form-group">
-                                            <label class="label">Borrar curso</label>
+                                            <label class="label" for="password">Añadir alumno/profesor a curso</label>
+                                            <form action="/" method="post" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <input type="text" id="course_category" name="course_category"  placeholder="Nombre del Curso" class="form-control"/>
+                                                </div>
 
-
-                                            {{#courselist}}
-                                            <p>{{category}}
-                                                <a href="/admin/course/{{id}}/delete"  class="btn py-3 px-4 btn-primary">Borrar</a></p>
-                                            {{/courselist}}
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="label" for="password">Añadir alumno a curso</label>
-                                            <p><select class="form-select" aria-label="Default select example">
-                                                <option selected>Selecciona un curso</option>
-                                                <option value="1">C 1</option>
-                                                <option value="2">C 2</option>
-                                            </select></p>
-                                            <p><select class="form-select" aria-label="Default select example">
-                                                <option selected>Selecciona un alumno</option>
-                                                <option value="1">A1</option>
-                                                <option value="2">A2</option>
-                                            </select></p>
+                                                <div class="form-group">
+                                                    <input type="text" id="email1" name="email1" placeholder="Email del Alumno/Profesor" class="form-control"/>
+                                                </div>
                                             <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="label" for="password">Borrar alumno del curso</label>
-                                            <p><select class="form-select" aria-label="Default select example">
-                                                <option selected>Selecciona un curso</option>
-                                                <option value="1">C 1</option>
-                                                <option value="2">C 2</option>
-                                            </select></p>
-                                            <p><select class="form-select" aria-label="Default select example">
-                                                <option selected>Selecciona un alumno</option>
-                                                <option value="1">A1</option>
-                                                <option value="2">A2</option>
-                                            </select></p>
-                                            <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="label" for="password">Borrar alumno de la academia</label>
-                                            <p><select class="form-select" aria-label="Default select example">
-                                                <option selected>Selecciona un alumno</option>
-                                                <option value="1">A1</option>
-                                                <option value="2">A2</option>
-                                            </select></p>
-                                            <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                            </form>
                                         </div>
 
+                                        <!--DELETE STUDENT/TEACHER FROM COURSE-->
+                                        <div class="form-group">
+                                            <label class="label" for="password">Borrar alumno/profesor del curso</label>
+                                            <form action="/" method="post" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <input type="text" id="course_category_delete" name="course_category_delete"  placeholder="Nombre del Curso" class="form-control"/>
+                                                </div>
 
+                                                <div class="form-group">
+                                                    <input type="text" id="email_delete1" name="email_delete1" placeholder="Email del Alumno/Profesor" class="form-control"/>
+                                                </div>
+                                            <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                            </form>
+                                        </div>
+
+                                        <!--DELETE STUDENT/TEACHER-->
+                                        <div class="form-group">
+                                            <label class="label" for="password">Borrar alumno/profesor de la academia</label>
+                                            <form action="/admin/user/delete" method="get" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <input type="text" id="email_delete" name="email_delete"  placeholder="Email del usuario a borrar" class="form-control"/>
+                                                </div>
+                                            <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--End Post-->
+                        <!--End Course Administration-->
                     </div>
                     <!--End left side-->
 
+
                     <!--Start right side-->
                     <div class="col-lg-4 mb-4">
+
+                        <!--START COURSE-->
                         <div class="row">
                             <div class="col-lg-12 mb-12">
                                 <div class="card shadow mb-4">
@@ -282,43 +281,15 @@
                                                 <p class="mb-1">Horario Tarde-A Grupo-3</p>
                                                 <small class="text-muted">YLE Starters</small>
                                             </a>
-                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">A1 Movers</h5>
-                                                    <small class="text-muted">jueves y viernes</small>
-                                                </div>
-                                                <p class="mb-1">Horario Mañana-B Grupo-6</p>
-                                                <small class="text-muted">YLE Movers</small>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">A2 FLyers</h5>
-                                                    <small class="text-muted">lunes y martes</small>
-                                                </div>
-                                                <p class="mb-1">Horario Tarde-B Grupo-2</p>
-                                                <small class="text-muted">YLE Flyers</small>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">A2 Key for Schools</h5>
-                                                    <small class="text-muted">miércoles</small>
-                                                </div>
-                                                <p class="mb-1">Horario Tarde-A Grupo-9</p>
-                                                <small class="text-muted">KET</small>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">B1 Preliminary for Schools</h5>
-                                                    <small class="text-muted">jueves</small>
-                                                </div>
-                                                <p class="mb-1">Horario Mañana-B Grupo-4</p>
-                                                <small class="text-muted">PET</small>
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- END COURSES-->
+
+
+                        <!-- START TIMETABLE-->
                         <div class="row">
                             <div class="col-lg-12 mb-12">
                                 <div class="card shadow mb-4">
@@ -340,6 +311,78 @@
                                 </div>
                             </div>
                         </div>
+                        <!--END TIMETABLE-->
+
+                        <!--START COURSES LIST-->
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">CURSOS</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <div class="card-body">
+                                                    {{#courselist}}
+                                                    <li><a>{{category}}</a></li>
+                                                    {{/courselist}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END COURSES LIST-->
+
+
+                        <!--START TEACHERS LIST-->
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">PROFESORES</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <div class="card-body">
+                                                    {{#listTeacher}}
+                                                    <li><a>{{email}}</a></li>
+                                                    {{/listTeacher}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END TEACHERS LIST-->
+
+                        <!--START STUDENTS LIST-->
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">ALUMNOS</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <div class="card-body">
+                                                    {{#listStudent}}
+                                                    <li><a>{{email}}</a></li>
+                                                    {{/listStudent}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END STUDENTS LIST-->
+
                     </div>
                     <!--End right side-->
                 </div>
