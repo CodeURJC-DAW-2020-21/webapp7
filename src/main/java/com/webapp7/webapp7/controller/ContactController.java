@@ -5,13 +5,11 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import java.io.UnsupportedEncodingException;
 
 
@@ -21,13 +19,12 @@ public class ContactController {
     @Autowired
     private JavaMailSender mailSender;
 
-    @GetMapping("/contactanos")
+    @GetMapping("/contact")
     public String contact() {
-
         return "contact";
     }
 
-    @PostMapping("/contactanos")
+    @PostMapping("/contactUs")
     public String submitContact(HttpServletRequest request) throws MessagingException, UnsupportedEncodingException {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
@@ -52,5 +49,4 @@ public class ContactController {
 
         return "message";
     }
-
 }

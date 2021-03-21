@@ -1,6 +1,5 @@
 package com.webapp7.webapp7.controller;
 
-import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.repository.MaterialRepository;
 import org.springframework.ui.Model;
@@ -16,6 +15,7 @@ import java.util.Optional;
 
 @Controller
 public class MaterialController {
+
     @Autowired
     private MaterialRepository materialRepository;
 
@@ -25,12 +25,14 @@ public class MaterialController {
         model.addAttribute("listMaterial",listMaterial);
         return "user_student";
     }
+
     @GetMapping("/user_instructor")
     public String viewInstructorPage(Model model){
         List<Material> listMaterial = materialRepository.findAll();
         model.addAttribute("listMaterial",listMaterial);
         return "user_instructor";
     }
+
     @PostMapping("/admin")
     public String uploadfileAdmin(@RequestParam("material")MultipartFile multipartFile) throws IOException {
         String fileName = multipartFile.getOriginalFilename();
@@ -40,6 +42,7 @@ public class MaterialController {
         materialRepository.save(material);
         return "redirect:/admin";
     }
+
     @PostMapping("/user_instructor")
     public String uploadfileInstructor(@RequestParam("material")MultipartFile multipartFile) throws IOException {
         String fileName = multipartFile.getOriginalFilename();
@@ -79,6 +82,7 @@ public class MaterialController {
         materialRepository.deleteById(id);
         return "redirect:/user_instructor";
     }
+
     @GetMapping("/delete/admin/{id}")
     public String deleteMaterialAdmin(Model model, @PathVariable long id) throws IOException {
         Material material = materialRepository.findById(id).orElseThrow();

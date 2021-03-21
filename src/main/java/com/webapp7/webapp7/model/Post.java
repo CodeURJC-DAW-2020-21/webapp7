@@ -3,6 +3,7 @@ package com.webapp7.webapp7.model;
 import javax.persistence.*;
 import java.sql.Blob;
 
+//DATE BASE TABLE
 @Entity
 public class Post {
 
@@ -20,23 +21,21 @@ public class Post {
     private Blob imageFile;
     private boolean image;
 
+
     public Post() {}
 
     public Post(String title, String description) {
         super();
         this.title = title;
         this.description = description;
-
     }
 
     public Long getId() { return id; }
-
     public void setId(Long id) { this.id = id; }
 
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -44,7 +43,6 @@ public class Post {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -52,7 +50,6 @@ public class Post {
     public Blob getImageFile() {
         return imageFile;
     }
-
     public void setImageFile(Blob image) {
         this.imageFile = image;
     }
@@ -60,7 +57,6 @@ public class Post {
     public boolean hasImage(){
         return this.image;
     }
-
     public void setImage(boolean image){
         this.image = image;
     }
@@ -70,7 +66,6 @@ public class Post {
         return String.format("Comment[id=%d, title='%s', description='%s']",
                 id, title, description);
     }
-
 
 }
 
