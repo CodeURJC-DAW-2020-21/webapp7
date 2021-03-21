@@ -87,11 +87,13 @@ public class DataBaseInitializer {
         posts.save(post3);
 
         //Sample users
+
+
         userRepository.save(new User("user@gmail.com", "user", "1234", "alumno" ));
         userRepository.save(new User("admin@gmail.com", "admin", "5678", "administrador"));
         userRepository.save(new User("profesor@gmail.com", "profesor", "7777", "profesor"));
 
- */
+*/
 
 
     }
