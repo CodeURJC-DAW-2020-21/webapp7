@@ -1,5 +1,5 @@
 package com.webapp7.webapp7.controller;
-/*
+
 import org.springframework.http.HttpStatus;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -22,9 +22,8 @@ public class ErrorWebController implements ErrorController {
 
         if (statusCode == HttpStatus.NOT_FOUND.value()) {
             return "error_404";
-        } if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-            return "error";
-        } if (statusCode == HttpStatus.UNAUTHORIZED.value()) {
+        }
+        if (statusCode == HttpStatus.UNAUTHORIZED.value()) {
             return "login_error";
         }
         }
@@ -39,4 +38,4 @@ public class ErrorWebController implements ErrorController {
 
 }
 
- */
+
