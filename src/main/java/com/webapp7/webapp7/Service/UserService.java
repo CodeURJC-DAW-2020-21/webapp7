@@ -9,10 +9,14 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     private UserRepository userrepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userrepository = userRepository;
+    }
+
     public Optional<User> findById(long id) {
         return userrepository.findById(id);
     }
-
 
     public List<User> findAll() {
         return userrepository.findAll();
@@ -21,13 +25,9 @@ public class UserService {
     public void  save (User user) {
         userrepository.save(user);
     }
+
     public void delete(long id) {
         userrepository.deleteById(id);
-    }
-
-
-    public UserService(UserRepository userRepository) {
-        this.userrepository = userRepository;
     }
 
     public User selectByEmail(String email) {
@@ -37,4 +37,12 @@ public class UserService {
     public Optional<User> selectById(long id) {
         return Optional.empty();
     }
+
+    /*
+    public List<User> findByRol(String rol) {
+        List<User> user = userrepository.findByRol(rol);
+        return user;
+    }
+    */
+
 }

@@ -43,6 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/contact").permitAll();
         http.authorizeRequests().antMatchers("/course").permitAll();
         http.authorizeRequests().antMatchers("/blog-single").permitAll();
+        http.authorizeRequests().antMatchers("/instructor").permitAll();
 
 
         // Private pages
