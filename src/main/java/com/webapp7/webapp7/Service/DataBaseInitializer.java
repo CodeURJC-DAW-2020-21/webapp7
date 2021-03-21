@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import com.webapp7.webapp7.model.User;
+import com.webapp7.webapp7.repository.UserRepository;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -29,10 +31,12 @@ public class DataBaseInitializer {
     @Autowired
     private CourseRepository courseRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @PostConstruct
     public void init() throws IOException, URISyntaxException{
-
-        /*
+/*
         //Sample courses
         Course course1= new Course("Jolly Kids 4", 5, 6, "Mercedes Huasaquiche", 120);
         setCourseImage(course1, "static/images/Niño_5a6.png");
@@ -45,12 +49,6 @@ public class DataBaseInitializer {
         Course course3= new Course("Jolly Kids 6", 9, 10, "Mercedes Huasaquiche", 140);
         setCourseImage(course1, "static/images/Niño_5a6.png");
         courseRepository.save(course3);
-
-
-        */
-
-/*
-
 
         //Sample Comments
         Comment comment1 = new Comment("Marga Jimenez Lopez", "La mejor academia de todas en las que he estado,muy buen profesorado y la directora muy maja y amable");
@@ -67,9 +65,6 @@ public class DataBaseInitializer {
 
         Comment comment5 = new Comment("Caridad Arias Pradas", "Muchas gracias a todo el equipo de KiddysHouse! Habéis sido súper simpaticos conmigo. Recomendaré está academia a todo el que me pregunte.");
         commentRepository.save(comment5);
-
-
-
 
         //Sample Posts
         Post post1 = new Post(
@@ -90,11 +85,18 @@ public class DataBaseInitializer {
                 //puedan enterarse de toda nuestra oferta educativa y nuestra dinámica de trabajo. Esto es todo los que les podemos decir por el momento, pero empezamos este proyecto con mucha ilusión y con ganas que sus pequeños puedan aprender todo lo necesario del inglés para que tengan una buena base en el futuro.
         setPostImage(post3, "static/images/AperturaKiddysHouseBlog.png");
         posts.save(post3);
-*/
+
+        //Sample users
+        userRepository.save(new User("user@gmail.com", "user", "1234", "alumno" ));
+        userRepository.save(new User("admin@gmail.com", "admin", "5678", "administrador"));
+        userRepository.save(new User("profesor@gmail.com", "profesor", "7777", "profesor"));
+
+ */
+
 
     }
 
-    /*
+
 
     public void setPostImage(Post post, String classpathResource) throws IOException {
         post.setImage(true);
@@ -108,6 +110,6 @@ public class DataBaseInitializer {
         course.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
     }
 
-    */
+
 
 }
