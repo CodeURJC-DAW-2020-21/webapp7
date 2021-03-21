@@ -13,19 +13,28 @@ public class UserService {
         return userrepository.findById(id);
     }
 
-    public boolean exist(long id) {
-        return userrepository.existsById(id);
-    }
 
     public List<User> findAll() {
         return userrepository.findAll();
     }
 
-    public void save(User user){
+    public void  save (User user) {
         userrepository.save(user);
     }
-
     public void delete(long id) {
         userrepository.deleteById(id);
+    }
+
+
+    public UserService(UserRepository userRepository) {
+        this.userrepository = userRepository;
+    }
+
+    public User selectByEmail(String email) {
+        User u = userrepository.selectByEmail(email);
+        return u;
+    }
+    public Optional<User> selectById(long id) {
+        return Optional.empty();
     }
 }

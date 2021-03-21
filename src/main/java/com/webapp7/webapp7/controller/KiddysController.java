@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class KiddysController {
-
+	@GetMapping("/login")
+	public String login (){ return "login";}
 
 	@GetMapping("/email")
 	public String email() {
@@ -27,21 +28,6 @@ public class KiddysController {
 		return "contact";
 	}
 
-	@GetMapping("/blog-single2")
-	public String blogsingle2() {
-
-		return "blog-single2";
-	}
-	@GetMapping("/blog-single3")
-	public String blogsingle3() {
-
-		return "blog-single3";
-	}
-
-	@GetMapping("/login")
-	public String login(){
-		return "login";
-	}
 
 	@GetMapping("/error_404")
 	public String error_404(){
