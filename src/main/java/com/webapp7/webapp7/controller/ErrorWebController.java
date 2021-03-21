@@ -1,5 +1,5 @@
 package com.webapp7.webapp7.controller;
-
+/*
 import org.springframework.http.HttpStatus;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -38,3 +38,5 @@ public class ErrorWebController implements ErrorController {
 
 
 }
+
+ */

@@ -23,7 +23,7 @@ public class LoginWebController {
     public String loginUser (@RequestParam("email") String email, @RequestParam("password") String password, HttpServletRequest request){
         User user = userservice.selectByEmail(email);
         if (user == null)
-            return "loginError";
+            return "login_error";
         if(user.getPassword().equals(password)){
             HttpSession mysession= request.getSession(true);
             mysession.setAttribute("actualUser",user);
@@ -37,7 +37,7 @@ public class LoginWebController {
                 return "redirect:/user_instructor";
             }
         } else {
-            return "loginError";
+            return "login_error";
         }
         return "/login";
     }

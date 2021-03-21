@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // Public pages
         http.authorizeRequests().antMatchers("/").permitAll();
         http.authorizeRequests().antMatchers("/login").permitAll();
-        http.authorizeRequests().antMatchers("/loginerror").permitAll();
+        http.authorizeRequests().antMatchers("/login_error").permitAll();
         http.authorizeRequests().antMatchers("/logout").permitAll();
         http.authorizeRequests().antMatchers("/index").permitAll();
         http.authorizeRequests().antMatchers("/about").permitAll();
@@ -46,14 +46,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         // Private pages
-        /*
-       http.authorizeRequests().antMatchers("/student").hasRole("alumno");
-        http.authorizeRequests().antMatchers("/user_instructor").hasRole("profesor");
-        http.authorizeRequests().antMatchers("/user_instructor").hasRole("administrador");
-        http.authorizeRequests().antMatchers("/admin").hasRole("admisnistrador");
+/*
+       http.authorizeRequests().antMatchers("/student").hasAnyRole("alumno");
+        http.authorizeRequests().antMatchers("/user_instructor").hasAnyRole("profesor");
+        http.authorizeRequests().antMatchers("/user_instructor").hasAnyRole("administrador");
+        http.authorizeRequests().antMatchers("/admin").hasAnyRole("admisnistrador");
        // http.authorizeRequests().antMatchers("/email").hasAnyRole("alumno", "administrador", "profesor");
 
-         */
+
+
+ */
 
         // Login form SE PUEDE DEJAR IGUAL SI MANTENEMOS LA URL de login, si no tocamos controlador del login
         http.formLogin().loginPage("/login");
@@ -65,7 +67,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // Logout
         http.logout().logoutUrl("/logout");
         http.logout().logoutSuccessUrl("/");
-        // http.csrf().disable();
+
+
+        http.csrf().disable();
     }
 
 }
