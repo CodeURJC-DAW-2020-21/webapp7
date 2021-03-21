@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import javax.persistence.PostRemove;
 
+import com.webapp7.webapp7.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +42,12 @@ public class CourseService {
     public void deleteById(long id){
         courses.deleteById(id);
     }
+
+    public Course findByCategory(String category) {
+        Course c = courses.selectByCategory(category);
+        return c;
+    }
+
 
     //public List<Course> show
 

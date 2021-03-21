@@ -15,8 +15,11 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User,Long> {
 /**Consultas a la BBDD en base al email */
 
-@Query(value = "SELECT id, email, username,  password, rol  FROM kiddyshouse.user WHERE email=:email", nativeQuery = true)
-User selectByEmail(@Param("email")String email);
+@Query(value = "SELECT id, email, username, password, rol, image, image_file  FROM kiddyshouse.user WHERE email=:userEmail", nativeQuery = true)
+User selectByEmail(@Param("userEmail")String email);
+
+@Query(value = "SELECT id, email, username, password, rol, image, image_file  FROM kiddyshouse.user WHERE rol=:userRol", nativeQuery = true)
+List<User> findByRol(@Param("userRol")String rol);
 
 }
 
