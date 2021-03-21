@@ -164,4 +164,18 @@ Springboot starter security.
 		-Error control system: ErrorWebController.
 		-
 	-TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
-	-Top 5 most modified files:
+	-TOP 5 MOST MODIFIED FILES:
+	
+-Miriam de Francisco Alonso
+	-TASKS:
+		-Login: HTML, Controller, Service, Repository.
+		-Error control system: ErrorWebController.
+		-
+	-TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
+		-![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b8067f59a16ce9e60c7109aec995e263dfbf2bd9)
+		-![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4f930939aeb59809bef257e2f59e9206b0f39f0d)
+		-![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/3159c3c23b0b91f697aeaa40d18219b0d1b74270)     
+		-![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/9b7bb8beecab111a00c35938a92750f100ef456d)
+		-![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/68264317d73ab6b08a547426ba2e0ecd8c8ee1a4)
+		
+	-TOP 5 MOST MODIFIED FILES:
