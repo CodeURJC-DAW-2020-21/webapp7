@@ -5,6 +5,7 @@ import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 @Service
 public class UserService {
     @Autowired
@@ -37,12 +38,5 @@ public class UserService {
     public Optional<User> selectById(long id) {
         return Optional.empty();
     }
-
-    /*
-    public List<User> findByRol(String rol) {
-        List<User> user = userrepository.findByRol(rol);
-        return user;
-    }
-    */
 
 }

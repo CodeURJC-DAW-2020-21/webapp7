@@ -2,12 +2,11 @@ package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Material;
-import com.webapp7.webapp7.model.Post;
 import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.repository.CourseRepository;
 import com.webapp7.webapp7.repository.MaterialRepository;
 import com.webapp7.webapp7.repository.UserRepository;
-import com.webapp7.webapp7.service.CourseService;
+import com.webapp7.webapp7.Service.CourseService;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -19,35 +18,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
 @Controller
 public class CourseController {
 
-
-    //PRUEBA PARA INSERTAR REGISTROS EN LA TABLA DE COURSES
-
     @Autowired
     @Qualifier("courseService")
     private CourseService courseService;
 
-    @Autowired
-    private CourseRepository courseRepository;
-
-    @Autowired
-    private MaterialRepository materialRepository;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @PostMapping("/admin/course/addCourse")
     public String addCourse(@RequestParam String category, @RequestParam String instructor, @RequestParam int ageStart, @RequestParam int ageEnd, @RequestParam int price, MultipartFile imageField) throws IOException {
-
         Course course= new Course();
         course.setCategory(category);
         course.setInstructor(instructor);
@@ -72,26 +57,13 @@ public class CourseController {
         return "course";
     }
 
-    @GetMapping("/admin")
-    public String showCourses(Model model){
-        List<Course> courses= courseRepository.findAll();
-        model.addAttribute("courselist", courses);
-        List<Material> listMaterial = materialRepository.findAll();
-        model.addAttribute("listMaterial",listMaterial);
-        List<User> listTeachers = userRepository.findByRol("profesor");
-        model.addAttribute("listTeacher",listTeachers);
-        List<User> listStudents = userRepository.findByRol("alumno");
-        model.addAttribute("listStudent", listStudents);
-        return "user_admin";
-    }
+
 
     @GetMapping("/admin/course/delete")
     public String deleteCourse(@RequestParam("category_delete") String category) throws IOException {
-
         Course course = courseService.findByCategory(category);
         Long id = course.getId();
         courseService.deleteById(id);
-
 
         return "redirect:/admin";
     }
@@ -112,13 +84,4 @@ public class CourseController {
         }
 
     }
-
-
-
-    /*
-    @GetMapping("/admin/course/deleteCourse")
-    public String deleteCourse(@RequestParam String id){
-        courseService.deleteById(id);
-    }
-    */
 }

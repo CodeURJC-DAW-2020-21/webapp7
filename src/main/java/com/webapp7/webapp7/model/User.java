@@ -1,28 +1,32 @@
 package com.webapp7.webapp7.model;
 
-
 import javax.persistence.*;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Blob;
 
-/*Para generar el esquema y para hacer la conversión entre objetos y filas */
+//DATA BASE TABLE
 @Entity
 public class User {
-    /* la claveprimaria de la tabla.*/
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String email;
+
     private String username;
+
     private String password;
+
     private String rol;
+
     @Lob
     private Blob imageFile;
     private boolean image;
+
 
     public User(User user){}
 
@@ -33,8 +37,7 @@ public class User {
         this.rol= rol;
     }
 
-    public User() {
-    }
+    public User() { }
 
     public Long getId() {
 		return id;
@@ -76,15 +79,12 @@ public class User {
     public Blob getImageFile() {
         return imageFile;
     }
-
     public void setImageFile(Blob image) {
         this.imageFile = image;
     }
-
     public boolean hasImage(){
         return this.image;
     }
-
     public void setImage(boolean image){
         this.image = image;
     }
