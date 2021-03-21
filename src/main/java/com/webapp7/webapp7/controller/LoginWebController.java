@@ -1,53 +1,45 @@
+
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.Service.UserService;
-import com.webapp7.webapp7.model.User;
- import com.webapp7.webapp7.repository.UserRepository;
-import com.webapp7.webapp7.Service.DataBaseInitializer;
-import com.webapp7.webapp7.security.WebSecurityConfig;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
+import com.webapp7.webapp7.Service.UserService;
+import com.webapp7.webapp7.model.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginWebController {
+    private final UserService userservice;
 
-    /*@RequestMapping("/login")
-    public String login() {
-        return "login";
-    }*/
+    public LoginWebController(UserService userservice) {
+        this.userservice = userservice;
+    }
 
-
-    private DataBaseInitializer  dataBaseInitializer;
-    @Autowired
-    UserService userservice;
-    @PostMapping("/login")
-    public String login( String email,  String password){
-        List<User> userList = userservice.findAll();
-        for(int i=0; i<userList.size(); i++) {
-            if (userList.get(i).getEmail().equals(email) && userList.get(i).getPassword().equals(password) ) {
-                if (userList.get(i).getRol().equals("admin")) {
-                    return "redirect: /admin";
-
-                }
-                if (userList.get(i).getRol().equals("alumno")) {
-                    return "redirect: /student";
-                }
-                if (userList.get(i).getRol().equals("profesor")) {
-                    return "redirect: /user_instructor";
-
-                }
+    @GetMapping("/checkLogin")
+    public String loginUser (@RequestParam("email") String email, @RequestParam("password") String password, HttpServletRequest request){
+        User user = userservice.selectByEmail(email);
+        if (user == null)
+            return "login_error";
+        if(user.getPassword().equals(password)){
+            HttpSession mysession= request.getSession(true);
+            mysession.setAttribute("actualUser",user);
+            if (user.getRol().equals(("alumno"))){
+                return "redirect:/student";
             }
+            if (user.getRol().equals(("administrador"))){
+                return "redirect:/admin";
+            }
+            if (user.getRol().equals(("profesor"))){
+                return "redirect:/user_instructor";
+            }
+        } else {
+            return "login_error";
         }
-
-
-        return "redirect: /index";
-
+        return "/login";
     }
-    }
-
+}
 
