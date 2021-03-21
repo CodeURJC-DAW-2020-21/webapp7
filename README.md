@@ -164,13 +164,18 @@ Springboot starter security.
     - Login: HTML, Controller, Service, Repository.
     - Error control system: ErrorWebController.
     -
-  - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
+  - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
+  
   - TOP 5 MOST MODIFIED FILES:
+    1. [User] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/User.java)
+    2. [ErrorWebController] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ErrorWebController.java)
+    3. [LoginWebController] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/LoginWebController.java)
+    4. [UserRepository] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/repository/UserRepository.java)
+    5. [CSRFHandlerConfiguration.java] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/security/CSRFHandlerConfiguration.java)
 	
 - Miriam de Francisco Alonso
   - TASKS:
-    - Login: HTML, Controller, Service, Repository.
-    - Error control system: ErrorWebController.
+    
     -
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b8067f59a16ce9e60c7109aec995e263dfbf2bd9)
@@ -180,7 +185,12 @@ Springboot starter security.
     - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/68264317d73ab6b08a547426ba2e0ecd8c8ee1a4)
 		
   - TOP 5 MOST MODIFIED FILES:
-  
+    1. [Material] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/Material.java) 
+    2. [CourseController] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/CourseController.java)
+    3. [MaterialController] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/MaterialController.java)
+    4. [MaterialRepository] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/repository/MaterialRepository.java)
+    5. [User_Student] (https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/resources/templates/user_student.html)
+    
 - Alba Sevillano Portilla:
   - TASKS:
     - Login: HTML, Controller, Service, Repository.
