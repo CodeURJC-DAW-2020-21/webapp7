@@ -43,6 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/contact").permitAll();
         http.authorizeRequests().antMatchers("/course").permitAll();
         http.authorizeRequests().antMatchers("/blog-single").permitAll();
+        http.authorizeRequests().antMatchers("/instructor").permitAll();
 
 
         // Private pages
@@ -50,7 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
        http.authorizeRequests().antMatchers("/student").hasAnyRole("alumno");
         http.authorizeRequests().antMatchers("/user_instructor").hasAnyRole("profesor");
         http.authorizeRequests().antMatchers("/user_instructor").hasAnyRole("administrador");
-        http.authorizeRequests().antMatchers("/admin").hasAnyRole("admisnistrador");
+        http.authorizeRequests().antMatchers("/admin").hasAnyRole("administrador");
        // http.authorizeRequests().antMatchers("/email").hasAnyRole("alumno", "administrador", "profesor");
 
 

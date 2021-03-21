@@ -1,5 +1,6 @@
 package com.webapp7.webapp7.controller;
 
+import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.repository.MaterialRepository;
 import org.springframework.ui.Model;
@@ -18,12 +19,6 @@ public class MaterialController {
     @Autowired
     private MaterialRepository materialRepository;
 
- /*   @GetMapping("/admin")
-    public String viewAdminPage(Model model){
-        List<Material> listMaterial = materialRepository.findAll();
-        model.addAttribute("listMaterial",listMaterial);
-        return "user_admin";
-    }*/
     @GetMapping("/student")
     public String viewStudentPage(Model model){
         List<Material> listMaterial = materialRepository.findAll();
@@ -70,4 +65,24 @@ public class MaterialController {
         }
     }
 
+    @GetMapping("/checkbox/{id}")
+    public String CheckboxChangeValues(@PathVariable long id) {
+        Material material = materialRepository.findById(id).orElseThrow();
+        material.setChecked(true);
+        materialRepository.save(material);
+        return "redirect:/student";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteMaterialInstructor(Model model, @PathVariable long id) throws IOException {
+        Material material = materialRepository.findById(id).orElseThrow();
+        materialRepository.deleteById(id);
+        return "redirect:/user_instructor";
+    }
+    @GetMapping("/delete/admin/{id}")
+    public String deleteMaterialAdmin(Model model, @PathVariable long id) throws IOException {
+        Material material = materialRepository.findById(id).orElseThrow();
+        materialRepository.deleteById(id);
+        return "redirect:/admin";
+    }
 }

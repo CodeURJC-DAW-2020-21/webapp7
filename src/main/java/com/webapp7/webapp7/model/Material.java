@@ -13,23 +13,34 @@ public class Material{
         @Column(length = 200000)
         private byte[] content;
         @Column
-        private String curso;
+        private String course;
+        @Column
+        private Boolean checked;
 
-        public String getCurso() {
-                return curso;
+        public Boolean getChecked() {
+                return checked;
         }
 
-        public void setCurso(String curso) {
-                this.curso = curso;
+        public void setChecked(Boolean checked) {
+                this.checked = checked;
+        }
+
+        public String getCourse() {
+                return course;
+        }
+
+        public void setCourse(String course) {
+                this.course = course;
         }
 
         public Material(){
-
+                checked = false;
         }
         public Material(Long id, String name){
                 super();
                 this.id = id;
                 this.name = name;
+                checked = false;
         }
         public void setName(String name) {
                 this.name = name;
