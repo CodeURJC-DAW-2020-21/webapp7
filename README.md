@@ -112,3 +112,56 @@ Every student user has their own personalized tab with their material(checked wh
 
 Each instructor has their own class content with the possibility of adding any type of files: from pdfs, text, titles, to  videos. It is observable in to their right a series of classes they have with their timetables and a progress graph of the course. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
+## Phase 2: Web with HTML generated  in server and AJAX
+
+In this phase, we made the dynamic part of the web. First, we connected the app to Spring Boot, and then we started building the controllers. After that, we created the database and distributed evenly all the work. We created the models: Comment, Course, Material, Post, and User. We also have different controllers depending on their function: commentController, contactController, courseController, errorWebController, KiddysController, loginWebController, materialController, postController, registerController, and userController. We also made some security changes, like changing the port to 8443.
+
+### New and Modify Screenshots:
+
+
+### Development:
+
+#### Source Code:
+
+#### Development Tools:
+Spring Tool Suite 4.
+MySQL WorkBench 8.0.
+JAVA version 11
+Maven 3.8.1
+MyAQL 8.0.23
+Javax.validation 2.0.1.Final
+
+#### Dependencies:
+MSQL Server Workbench
+Spring framework.
+Mustache.
+Springboot starter mail.
+Springboot starter security.
+
+#### Basic installarion of MySQL Server and MySQL Workbench (recommended) on Windows.
+1.Download MySQL Windows Installer.
+2.Run it as administrator.
+3.In 'Choosing a Setup Type' select Developer Default.
+4.In 'Check Requirements' screen install every of the items showed so the app works fine.
+5.Execute the installation of the products (MySQL Server must be there).
+6.Next.
+7.In 'High Avaliability' screen select Standalone MySQL Server / Classic MySQL Replication option.
+8.Next >> Next.
+9.Write a Password.
+10.Next >> Execute >> Finnish till installation ends.
+
+### Navigation Diagram:
+
+### Entity Diagram:
+
+### Classes and templates Diagram:
+
+
+## Authors' Participation:
+-Caridad Arias Prada
+	-TASKS:
+		-Login: HTML, Controller, Service, Repository.
+		-Error control system: ErrorWebController.
+		-
+	-TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
+	-Top 5 most modified files:
