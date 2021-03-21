@@ -6,10 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
-/*
+
 @Controller
 public class ErrorWebController implements ErrorController {
-
 
     public ErrorWebController() {}
 
@@ -21,22 +20,19 @@ public class ErrorWebController implements ErrorController {
         if (status != null) {
             Integer statusCode = Integer.valueOf(status.toString());
 
-        if (statusCode == HttpStatus.NOT_FOUND.value()) {
-            return "error_404";
+            if (statusCode == HttpStatus.NOT_FOUND.value()) {
+                return "error_404";
+            }
+            if (statusCode == HttpStatus.UNAUTHORIZED.value()) {
+                return "login_error";
+            }
         }
-        if (statusCode == HttpStatus.UNAUTHORIZED.value()) {
-            return "login_error";
-        }
-        }
-
         return "error";
     }
+
     @Override
     public String getErrorPath() {
         return "index.html";
     }
-
-
 }
 
-*/
