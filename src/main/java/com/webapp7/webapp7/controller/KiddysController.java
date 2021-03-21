@@ -33,11 +33,11 @@ public class KiddysController {
 	public String error_404(){
 		return "error_404";
 	}
-
+/*
 	@GetMapping("/error")
 	public String error(){
 		return "error";
-	}
+	}*/
 
 	@GetMapping("/login_error")
 	public String login_error(){
