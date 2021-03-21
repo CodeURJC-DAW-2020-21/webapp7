@@ -2,20 +2,12 @@ package com.webapp7.webapp7.controller;
 
 import java.util.List;
 
-
-
 import com.webapp7.webapp7.Service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
 import org.springframework.web.bind.annotation.*;
-
 import com.webapp7.webapp7.model.Comment;
-
-
-
 
 @Controller
 public class CommentController {
@@ -29,9 +21,7 @@ public class CommentController {
         Comment comment = new Comment();
         comment.setName(name);
         comment.setComment(opinion);
-
         commentService.save(comment);
-
         return "redirect:/student";
     }
 
