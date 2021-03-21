@@ -112,6 +112,7 @@ Every student user has their own personalized tab with their material(checked wh
 
 Each instructor has their own class content with the possibility of adding any type of files: from pdfs, text, titles, to  videos. It is observable in to their right a series of classes they have with their timetables and a progress graph of the course. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
+
 ## Phase 2: Web with HTML generated  in server and AJAX
 
 In this phase, we made the dynamic part of the web. First, we connected the app to Spring Boot, and then we started building the controllers. After that, we created the database and distributed evenly all the work. We created the models: Comment, Course, Material, Post, and User. We also have different controllers depending on their function: commentController, contactController, courseController, errorWebController, KiddysController, loginWebController, materialController, postController, registerController, and userController. We also made some security changes, like changing the port to 8443.
@@ -178,4 +179,28 @@ Springboot starter security.
     - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/9b7bb8beecab111a00c35938a92750f100ef456d)
     - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/68264317d73ab6b08a547426ba2e0ecd8c8ee1a4)
 		
+  - TOP 5 MOST MODIFIED FILES:
+  
+- Alba Sevillano Portilla:
+  - TASKS:
+    - Login: HTML, Controller, Service, Repository.
+    - Error control system: ErrorWebController.
+    -
+  - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
+  - TOP 5 MOST MODIFIED FILES:
+  
+- Jesús Sebastián Tocas Atarama:
+  - TASKS:
+    - Login: HTML, Controller, Service, Repository.
+    - Error control system: ErrorWebController.
+    -
+  - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
+  - TOP 5 MOST MODIFIED FILES:
+  
+- Deborah Israel Villanueva:
+  - TASKS:
+    - Login: HTML, Controller, Service, Repository.
+    - Error control system: ErrorWebController.
+    -
+  - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
   - TOP 5 MOST MODIFIED FILES:
