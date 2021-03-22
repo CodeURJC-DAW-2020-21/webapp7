@@ -114,15 +114,19 @@ Each instructor has their own class content with the possibility of adding any t
 
 ### User admin
 ![User-admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/admin3.png)
+This page was created to manage all users, courses and posts within the organization.
 
 ### Error
 ![Error](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/errorNormal.png)
+This page is shown when server connection is failing or there is another problem.
 
 ### Error_404
 ![Error 404](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/error404.png)
+This page is displayed when user tries to enter in an unknown page.
 
 ### Login_Error
 ![Login_Error](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/login_error.png)
+This page is shown when someone has failed to sign up.
 
 
 ## Phase 2: Web with HTML generated  in server and AJAX
