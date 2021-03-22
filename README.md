@@ -253,7 +253,12 @@ Springboot starter security.
     - Sample data embedded on MYSQL database
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
-  
+    - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/908daab33a8f323f1502a2a3e818a51cc8c9ca34)
+    - ![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/adc8388baca69fe673120b486f15800ca8e53393)
+    - ![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b05759d85800199889c85944a483860b6c4d9e54)
+    - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/52afb2ab041f7375e55ab4d27cff8531b479cec6)
+    - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b0ada66e54ba68713556f5e63aa80f7966371c4d)
+    
   - TOP 5 MOST MODIFIED FILES:
     1. ![Post](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/Post.java) 
     2. ![ContactController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ContactController.java)
