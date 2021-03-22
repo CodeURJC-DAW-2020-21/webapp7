@@ -36,6 +36,7 @@ public class DataBaseInitializer {
     @PostConstruct
     public void init() throws IOException, URISyntaxException{
 
+        /*
         //Sample Courses
         Course course1= new Course("Jolly Kids", 5, 6, "Mercedes Huasaquiche", 120);
         setCourseImage(course1, "static/images/Niño_5a6.png");
@@ -101,6 +102,10 @@ public class DataBaseInitializer {
         setUserImage(user3, "static/images/teacher-2.jpg");
         userRepository.save(user3);
 
+        User user4= new User("alumno2@gmail.com", "alum2", "0000", "alumno");
+        setUserImage(user4, "static/images/teacher-2.jpg");
+        userRepository.save(user4);
+         */
 
 
     }
