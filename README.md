@@ -144,7 +144,7 @@ The new changes made in this phase, are in the screenshots section in phase 1.
 ### Development:
 
 #### Source Code:
-![WebApp7 Code](https://github.com/CodeURJC-DAW-2020-21/webapp7.git)
+[WebApp7 Code](https://github.com/CodeURJC-DAW-2020-21/webapp7.git)
 
 #### Development Tools:
 Spring Tool Suite 4.
@@ -177,10 +177,10 @@ Springboot starter security.
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase3.png)
 
 ### Entity Diagram:
-![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Entity_Diagram.png)
+![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Entity_Diagram.jpeg)
 
 ### Classes and templates Diagram:
-![Class Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Class_Diagram.png)
+![Class Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Class_Diagram.jpeg)
 
 ## Authors' Participation:
 - Caridad Arias Prada
