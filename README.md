@@ -98,7 +98,7 @@ This webpage shows the content about Kiddy’s House news.
 Whenever the user needs to contact the academy for any reason there is tab with frequent questions, possibility of writting their own questions as well as phone contact, email and social media.
 
 #### Contact (email sent)
-![Contact-sent](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/Captura de pantalla (4).png)
+![Contact-sent](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/Captura%20de%20pantalla%20(4).png)
 
 Whenthe user sents a doubt or concern via the contact page, this page will appear, making sure that the user knows that their question is sent.
 
