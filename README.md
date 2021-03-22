@@ -168,9 +168,10 @@ Springboot starter security.
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase3.png)
 
 ### Entity Diagram:
+![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Entity_Diagram.png)
 
 ### Classes and templates Diagram:
-
+![Class Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Class_Diagram.png)
 
 ## Authors' Participation:
 - Caridad Arias Prada
