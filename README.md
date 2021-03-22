@@ -189,18 +189,18 @@ Springboot starter security.
     - Error control system: ErrorWebController.
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
-    - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/366531d7e57513a6a43bdbfeded0db3f7ffc635a)
-    - ![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/ee88d2896e75b70a90864c496d91d163f5337531)
-    - ![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/bb9c21a2b01f709454438d71197847f63f2e9a5f)
-    - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/40d9e52307127a96548afd5462e7b0ebf8f5940e)
-    - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/7b9083980ae2985c9531f08c8f4973247ecffff5)
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/366531d7e57513a6a43bdbfeded0db3f7ffc635a)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/ee88d2896e75b70a90864c496d91d163f5337531)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/bb9c21a2b01f709454438d71197847f63f2e9a5f)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/40d9e52307127a96548afd5462e7b0ebf8f5940e)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/7b9083980ae2985c9531f08c8f4973247ecffff5)
     
   - TOP 5 MOST MODIFIED FILES:
-    1. ![User](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/User.java)
-    2. ![ErrorWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ErrorWebController.java)
-    3. ![LoginWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/LoginWebController.java)
-    4. ![UserRepository](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/repository/UserRepository.java)
-    5. ![CSRFHandlerConfiguration.java](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/security/CSRFHandlerConfiguration.java)
+    1. [User](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/User.java)
+    2. [ErrorWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ErrorWebController.java)
+    3. [LoginWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/LoginWebController.java)
+    4. [UserRepository](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/repository/UserRepository.java)
+    5. [CSRFHandlerConfiguration.java](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/security/CSRFHandlerConfiguration.java)
 	
 - Miriam de Francisco Alonso
   - TASKS:
@@ -233,18 +233,18 @@ Springboot starter security.
     - Do the SQL Query
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
-    - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4e96792fea4b945bafd7d42ca642c75d20ae25d3)
-    - ![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/2bfa6f9b08e7efa42d26a1f4d56b2949787f79c3)
-    - ![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/3146e719ef0043cec4d9ae45baacadc7e8a73b40)
-    - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8cdde3224ae6f1ab4e7b15a1f046640f2a04a832)
-    - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8cdde3224ae6f1ab4e7b15a1f046640f2a04a832)
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4e96792fea4b945bafd7d42ca642c75d20ae25d3)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/2bfa6f9b08e7efa42d26a1f4d56b2949787f79c3)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/3146e719ef0043cec4d9ae45baacadc7e8a73b40)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8cdde3224ae6f1ab4e7b15a1f046640f2a04a832)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8cdde3224ae6f1ab4e7b15a1f046640f2a04a832)
     
   - TOP 5 MOST MODIFIED FILES:
-    1. ![Comment](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/src/main/java/com/webapp7/webapp7/model/Comment.java)
-    2. ![User](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/User.java)
-    3. ![CommentController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/CommentController.java)
-    4. ![InstructorController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/InstructorController.java)
-    5. ![RegisterController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/RegisterController.java)
+    1. [Comment](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/src/main/java/com/webapp7/webapp7/model/Comment.java)
+    2. [User](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/User.java)
+    3. [CommentController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/CommentController.java)
+    4. [InstructorController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/InstructorController.java)
+    5. [RegisterController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/RegisterController.java)
   
 - Jesús Sebastián Tocas Atarama:
   - TASKS:
@@ -255,18 +255,18 @@ Springboot starter security.
     - Support some teammates with some errors and bugs fixed
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
-    - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1d5685338933319f9b15049e3a8236e04ccb4787)
-    - ![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1454c50d4bd49bb800ebaaecbf8b0a35886314cf)
-    - ![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/0a4387643c10255b9af363fb6d4f02d5f68e7827)
-    - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/886042ad2a9ac99b54f6b187ca74661ca2407ca0)
-    - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/08b874ca1d9e7dc612a4ecaec21503389714eb5b)
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1d5685338933319f9b15049e3a8236e04ccb4787)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1454c50d4bd49bb800ebaaecbf8b0a35886314cf)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/0a4387643c10255b9af363fb6d4f02d5f68e7827)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/886042ad2a9ac99b54f6b187ca74661ca2407ca0)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/08b874ca1d9e7dc612a4ecaec21503389714eb5b)
     
   - TOP 5 MOST MODIFIED FILES:
-    1. ![Course](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/Course.java) 
-    2. ![CourseController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/CourseController.java)
-    3. ![CourseRepository](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/repository/CourseRepository.java)
-    4. ![DataBaseInitializer](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/Service/DataBaseInitializer.java)
-    5. ![User_Admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/resources/templates/user_admin.html)
+    1. [Course](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/Course.java) 
+    2. [CourseController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/CourseController.java)
+    3. [CourseRepository](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/repository/CourseRepository.java)
+    4. [DataBaseInitializer](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/Service/DataBaseInitializer.java)
+    5. [User_Admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/resources/templates/user_admin.html)
   
 - Deborah Israel Villanueva:
   - TASKS:
@@ -277,15 +277,15 @@ Springboot starter security.
     - Sample data embedded on MYSQL database
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
-    - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/908daab33a8f323f1502a2a3e818a51cc8c9ca34)
-    - ![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/adc8388baca69fe673120b486f15800ca8e53393)
-    - ![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b05759d85800199889c85944a483860b6c4d9e54)
-    - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/52afb2ab041f7375e55ab4d27cff8531b479cec6)
-    - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b0ada66e54ba68713556f5e63aa80f7966371c4d)
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/908daab33a8f323f1502a2a3e818a51cc8c9ca34)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/adc8388baca69fe673120b486f15800ca8e53393)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b05759d85800199889c85944a483860b6c4d9e54)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/52afb2ab041f7375e55ab4d27cff8531b479cec6)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b0ada66e54ba68713556f5e63aa80f7966371c4d)
     
   - TOP 5 MOST MODIFIED FILES:
-    1. ![Post](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/Post.java) 
-    2. ![ContactController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ContactController.java)
-    3. ![ErrorWebControl](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ErrorWebController.java)
-    4. ![LoginWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/LoginWebController.java)
-    5. ![PostController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/PostController.java)
+    1. [Post](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/Post.java) 
+    2. [ContactController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ContactController.java)
+    3. [ErrorWebControl](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ErrorWebController.java)
+    4. [LoginWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/LoginWebController.java)
+    5. [PostController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/PostController.java)
