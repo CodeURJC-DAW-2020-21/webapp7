@@ -5,7 +5,7 @@
 ### Web Name: Kiddy's House
 
 ### Web Logotype:
-![Kiddy's House](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/icon.png?raw=true)
+![Kiddy's House](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/logo.png)
 
 ### Description:
 Our page is an online children's English academy. The page is going to include the different courses offered, important information about them and the possibility to enroll in them. As a registered user, you can access the course material and visualize and comment on the teacher's posts in the forum.
@@ -63,7 +63,7 @@ System that compares the download content from the course and recomends new mate
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
 #### Home
-![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/home3.png)
+![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Home.gif)
 
 This is the main page which shows a review about all website’s sections and a place where a user can sign up or log in if it’s registered already.
 
@@ -78,7 +78,7 @@ This tab describes main info about Kiddy’s House academy, what is offerted and
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Instructor
-![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/instructo3.png)
+![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Instructor.gif)
 
 It contains all teachers description.
 
