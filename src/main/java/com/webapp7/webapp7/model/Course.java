@@ -3,6 +3,7 @@ package com.webapp7.webapp7.model;
 import javax.persistence.*;
 import java.sql.Blob;
 
+//DATA BASE TABLE
 @Entity
 public class Course {
 
@@ -34,10 +35,9 @@ public class Course {
     private Blob imageFile;
     private boolean image;
 
+
     public Course(){
-
     }
-
 
     public Course(String category, int ageStart, int ageEnd, String instructor, int price) {
         super();
@@ -51,7 +51,6 @@ public class Course {
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -59,7 +58,6 @@ public class Course {
     public String getCategory() {
         return category;
     }
-
     public void setCategory(String category) {
         this.category = category;
     }
@@ -67,7 +65,6 @@ public class Course {
     public int getAgeStart() {
         return ageStart;
     }
-
     public void setAgeStart(int ageStart) {
         this.ageStart = ageStart;
     }
@@ -75,7 +72,6 @@ public class Course {
     public int getAgeEnd() {
         return ageEnd;
     }
-
     public void setAgeEnd(int ageEnd) {
         this.ageEnd = ageEnd;
     }
@@ -83,7 +79,6 @@ public class Course {
     public String getInstructor() {
         return instructor;
     }
-
     public void setInstructor(String instructor) {
         this.instructor = instructor;
     }
@@ -91,7 +86,6 @@ public class Course {
     public int getPrice() {
         return price;
     }
-
     public void setPrice(int price) {
         this.price = price;
     }
@@ -99,7 +93,6 @@ public class Course {
     public Blob getImageFile() {
         return imageFile;
     }
-
     public void setImageFile(Blob image) {
         this.imageFile = image;
     }
@@ -107,7 +100,6 @@ public class Course {
     public boolean hasImage(){
         return this.image;
     }
-
     public void setImage(boolean image){
         this.image = image;
     }
@@ -116,6 +108,5 @@ public class Course {
     public String toString(){
         return "Course [id=" + id + ", category=" + category + ", ageStart=" + ageStart + ", ageEnd=" + ageEnd + ", instructor=" + instructor + ", price=" + price + "]";
     }
-
 
 }

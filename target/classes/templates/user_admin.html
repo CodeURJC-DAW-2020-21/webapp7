@@ -294,19 +294,10 @@
                             <div class="col-lg-12 mb-12">
                                 <div class="card shadow mb-4">
                                     <div class="card-header2 py-3">
-                                        <h6 class="m-0 font-weight-bold" style="color: black;">CLASES</h6>
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">HORARIO</h6>
                                     </div>
                                     <div class="card-body">
                                         <img src="images/timetable.png" width="100%" height="auto"></img></p>
-                                        <a href="pdfinfo.pdf"><img src="images/PDF_logo.png" width="50px" height="30px">MiHorario.pdf</img></a></p>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Inserte archivo" aria-label="Inserte archivo">
-                                            <div class="input-group-append">
-                                                <button type="button" class="btn btn-outline-secondary">Añadir</button>
-                                                <span class="sr-only">Toggle Dropdown</span>
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -419,7 +410,9 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
+                    <form action="/logout">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
+                    </form>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
 
                 </div>
