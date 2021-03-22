@@ -183,7 +183,7 @@ Springboot starter security.
 ![Class Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Class_Diagram.jpeg)
 
 ## Authors' Participation:
-- Caridad Arias Prada
+- Caridad Arias Pradas
   - TASKS:
     - Login: HTML, Controller, Service, Repository.
     - Error control system: ErrorWebController.
