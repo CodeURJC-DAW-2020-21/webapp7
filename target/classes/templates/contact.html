@@ -27,30 +27,30 @@
 						<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
 							<div class="contact-wrap w-100 p-md-5 p-4">
 								<h3 class="mb-4">¿En qué podemos ayudarte?</h3>
-								<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+								<form action="/contactUs" method = "post" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="label" for="name">Nombre y apellidos</label>
+												<label for="name">Nombre y apellidos</label>
 												<input type="text" class="form-control" name="name" id="name" placeholder="Name">
 											</div>
 										</div>
 										<div class="col-md-6"> 
 											<div class="form-group">
-												<label class="label" for="email">Dirección de email </label>
+												<label for="email">Dirección de email </label>
 												<input type="email" class="form-control" name="email" id="email" placeholder="Email">
 											</div>
 										</div>
 										<div class="col-md-12">
 											<div class="form-group">
-												<label class="label" for="subject">Asunto</label>
+												<label for="subject">Asunto</label>
 												<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
 											</div>
 										</div>
 										<div class="col-md-12">
 											<div class="form-group">
-												<label class="label" for="#">Mensaje</label>
-												<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+												<label class="label" for="content">Mensaje</label>
+												<textarea name="content" class="form-control" id="content" cols="30" rows="4" placeholder="Message"></textarea>
 											</div>
 										</div>
 										<div class="col-md-12">

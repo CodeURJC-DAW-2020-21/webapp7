@@ -1,21 +1,47 @@
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Course;
-import com.webapp7.webapp7.service.CourseService;
+import com.webapp7.webapp7.model.Material;
+import com.webapp7.webapp7.model.User;
+import com.webapp7.webapp7.repository.CourseRepository;
+import com.webapp7.webapp7.repository.MaterialRepository;
+import com.webapp7.webapp7.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 //import java.net.URI;
 //import java.util.Collection;
 
 @Controller
 public class KiddysController {
 
+	@Autowired
+	private CourseRepository courseRepository;
+
+	@Autowired
+	private MaterialRepository materialRepository;
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@GetMapping("/admin")
+	public String showCourses(Model model){
+		List<Course> courses= courseRepository.findAll();
+		model.addAttribute("courselist", courses);
+		List<Material> listMaterial = materialRepository.findAll();
+		model.addAttribute("listMaterial",listMaterial);
+		List<User> listTeachers = userRepository.findByRol("profesor");
+		model.addAttribute("listTeacher",listTeachers);
+		List<User> listStudents = userRepository.findByRol("alumno");
+		model.addAttribute("listStudent", listStudents);
+		return "user_admin";
+	}
+
+	@GetMapping("/login")
+	public String login (){ return "login";}
 
 	@GetMapping("/email")
 	public String email() {
@@ -23,31 +49,14 @@ public class KiddysController {
 		return "email";
 	}
 
-	@GetMapping("/instructor")
-	public String instructor() {
 
-		return "instructor";
+	@GetMapping("/error_404")
+	public String error_404(){
+		return "error_404";
 	}
 
-	@GetMapping("/contact")
-	public String contact() {
-
-		return "contact";
-	}
-
-	@GetMapping("/blog-single2")
-	public String blogsingle2() {
-
-		return "blog-single2";
-	}
-	@GetMapping("/blog-single3")
-	public String blogsingle3() {
-
-		return "blog-single3";
-	}
-
-	@GetMapping("/login")
-	public String login(){
-		return "login";
+	@GetMapping("/login_error")
+	public String login_error(){
+		return "login_error";
 	}
 }

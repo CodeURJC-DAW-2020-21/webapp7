@@ -28,29 +28,44 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
-    @Override //DE AQUI SOL)O CAMBIAR ESTO
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
-       // DECIDIR QUE PAGINAS SON PUBLICAS O PRIVADAS
+
         // Public pages
         http.authorizeRequests().antMatchers("/").permitAll();
         http.authorizeRequests().antMatchers("/login").permitAll();
-        http.authorizeRequests().antMatchers("/loginerror").permitAll();
+        http.authorizeRequests().antMatchers("/login_error").permitAll();
         http.authorizeRequests().antMatchers("/logout").permitAll();
+        http.authorizeRequests().antMatchers("/index").permitAll();
+        http.authorizeRequests().antMatchers("/about").permitAll();
+        http.authorizeRequests().antMatchers("/blog").permitAll();
+        http.authorizeRequests().antMatchers("/contact").permitAll();
+        http.authorizeRequests().antMatchers("/course").permitAll();
+        http.authorizeRequests().antMatchers("/blog-single").permitAll();
+        http.authorizeRequests().antMatchers("/instructor").permitAll();
+
 
         // Private pages
-        http.authorizeRequests().antMatchers("/newbook").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/editbook/*").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/removebook/*").hasAnyRole("ADMIN");
+        /*
+        http.authorizeRequests().antMatchers("/student").hasAnyRole("alumno");
+        http.authorizeRequests().antMatchers("/user_instructor").hasAnyRole("profesor");
+        http.authorizeRequests().antMatchers("/user_instructor").hasAnyRole("administrador");
+        http.authorizeRequests().antMatchers("/admin").hasAnyRole("administrador");
+        http.authorizeRequests().antMatchers("/email").hasAnyRole("alumno", "administrador", "profesor");
+        */
 
-        // Login form SE PUEDE DEJAR IGUAL SI MANTENEMOS LA URL de login, si no tocamos controlador del login
+        //Login pages
         http.formLogin().loginPage("/login");
         http.formLogin().usernameParameter("username");
         http.formLogin().passwordParameter("password");
         http.formLogin().defaultSuccessUrl("/");
-        http.formLogin().failureUrl("/loginerror");
+        http.formLogin().failureUrl("/login_error");
 
-        // Logout
+        //Logout
         http.logout().logoutUrl("/logout");
         http.logout().logoutSuccessUrl("/");
+
+        http.csrf().disable();
     }
+
 }

@@ -20,42 +20,28 @@
 	<!--END FIRST PART-->
 
 	<!--START SECOND PART-->
+
 	<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
 
 				<!--START FIRST TEACHER-->
+				{{#users}}
 				<div class="col-md-6 col-lg-5 ">
+
 					<div class="staff">
 						<div class="img-wrap d-flex align-items-stretch">
-							<div class="img align-self-stretch" style="background-image: url(images/profesor-1.jpeg);"></div>
+							<img src="/user/{{id}}/image" class="block-20" >
 						</div>
 						<div class="text pt-3">
-							<h3><a>Mercedes Huasaquiche</a></h3>
-							<span class="position mb-2">Profesora</span>
-							<div class="faded">
-								<p>10 años de experiencia en la enseñanza del idioma Inglés.</p>
-								<p>Especialista en la aplicación de recursos digitales en la enseñanza virtual.
-									Certificada internacionalmente en la enseñanza del idioma Inglés.</p>
-									<!--
-								<ul class="ftco-social text-center">
-									<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="fa fa-google"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-								</ul>
-								-->
-							</div>
+							<h3><a>{{username}}</a></h3>
+							<span class="position mb-2">{{rol}}</span>
 						</div>
 					</div>
 				</div>
+				{{/users}}
 				<!--END FIRST TEACHER-->
 
-				
-
-				
-
-				
 			</div>
 			<div class="row mt-5">
 				<div class="col text-center">
@@ -64,6 +50,7 @@
 			</div>
 		</div>
 	</section>
+
 	<!--END SECOND PART-->
 
 	{{>footer}}

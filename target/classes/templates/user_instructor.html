@@ -60,7 +60,11 @@
                                         </div>
                                         <div class="card-body">
                                             {{#listMaterial}}
-                                            <li><a href="/download/{{id}}">{{name}}</a></li>
+                                            <li>
+                                                <a href="/download/{{id}}">{{name}}</a>
+                                                <a href="/delete/{{id}}"  class="btn py-2 px-2 btn-primary">Eliminar</a>
+                                            </li>
+                                            <br/>
                                             {{/listMaterial}}
                                             
                                             <!--Insert any type of material-->
