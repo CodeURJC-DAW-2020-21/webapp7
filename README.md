@@ -59,58 +59,70 @@ System that compares the download content from the course and recomends new mate
 ### Screenshots:
 
 #### Login
-![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/README_Images/login.png)
+![Login](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/login3.png)
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
 #### Home
-![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Home.gif)
+![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/home3.png)
 
 This is the main page which shows a review about all website’s sections and a place where a user can sign up or log in if it’s registered already.
 
 #### About
-![About](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/About.gif)
+![About](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/about3.png)
 
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Courses
-![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Courses.gif)
+![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/courses3.png)
 
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Instructor
-![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Instructor.gif)
+![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/instructo3.png)
 
 It contains all teachers description.
 
 #### Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Blog.gif)
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/blog3.png)
 
 This page has all news and updates about everything related to academy stuff.
 
 #### Single Blog
-![Single-Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/SingleBlog.gif)
+![Single-Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/blogSingle3.png)
 
 This webpage shows the content about Kiddy’s House news.
 
 #### Contact
-![Contact](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/ContactUs.gif)
+![Contact](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/contactUs3.png)
 
 Whenever the user needs to contact the academy for any reason there is tab with frequent questions, possibility of writting their own questions as well as phone contact, email and social media.
 
 #### Email
-![Email](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Email.gif)
+![Email](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/email.png)
 
 Every user, student as well as instructor have this tab where they can see the new emails in the right part of the tab, time charge ilustrated with a  progress bar, and on the left the chance of writting a new email including files if desired. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their class material page.
 
 #### User-instructor
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/User%20Instructor.gif)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_instructor.png)
 
 Every student user has their own personalized tab with their material(checked whenever has been downloaded and  seeen), personalized recommendations  and graph portraying the progress of the course.On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
 #### User student
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/User%20Student.gif)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_student.png)
 
 Each instructor has their own class content with the possibility of adding any type of files: from pdfs, text, titles, to  videos. It is observable in to their right a series of classes they have with their timetables and a progress graph of the course. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
+
+### User admin
+![User-admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/admin3.png)
+
+### Error
+![Error](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/errorNormal.png)
+
+### Error_404
+![Error 404](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/error404.png)
+
+### Login_Error
+![Login_Error](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/login_error.png)
 
 
 ## Phase 2: Web with HTML generated  in server and AJAX
@@ -118,12 +130,13 @@ Each instructor has their own class content with the possibility of adding any t
 In this phase, we made the dynamic part of the web. First, we connected the app to Spring Boot, and then we started building the controllers. After that, we created the database and distributed evenly all the work. We created the models: Comment, Course, Material, Post, and User. We also have different controllers depending on their function: commentController, contactController, courseController, errorWebController, KiddysController, loginWebController, materialController, postController, registerController, and userController. We also made some security changes, like changing the port to 8443.
 
 ### New and Modify Screenshots:
-
+The new changes made in this phase, are in the screenshots section in phase 1.
 
 ### Development:
 
 #### Source Code:
 ![WebApp7 Code](https://github.com/CodeURJC-DAW-2020-21/webapp7.git)
+
 #### Development Tools:
 Spring Tool Suite 4.
 MySQL WorkBench 8.0.
@@ -152,6 +165,7 @@ Springboot starter security.
 10.Next >> Execute >> Finnish till installation ends.
 
 ### Navigation Diagram:
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase3.png)
 
 ### Entity Diagram:
 
