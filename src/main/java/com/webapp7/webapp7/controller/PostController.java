@@ -1,7 +1,6 @@
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Post;
-import com.webapp7.webapp7.Service.PostService;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -22,7 +21,7 @@ import java.util.Optional;
 public class PostController {
 
     @Autowired
-    private PostService service;
+    private com.webapp7.webapp7.service.PostService service;
 
     @PostMapping("/admin/post/createNew")
     public String addPost(Model model, @RequestParam String title, @RequestParam String description, MultipartFile imageField) throws IOException {
