@@ -123,7 +123,7 @@ In this phase, we made the dynamic part of the web. First, we connected the app 
 ### Development:
 
 #### Source Code:
-
+![WebApp7 Code](https://github.com/CodeURJC-DAW-2020-21/webapp7.git)
 #### Development Tools:
 Spring Tool Suite 4.
 MySQL WorkBench 8.0.
@@ -163,9 +163,14 @@ Springboot starter security.
   - TASKS:
     - Login: HTML, Controller, Service, Repository.
     - Error control system: ErrorWebController.
-    -
+    
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
-  
+    - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/366531d7e57513a6a43bdbfeded0db3f7ffc635a)
+    - ![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/ee88d2896e75b70a90864c496d91d163f5337531)
+    - ![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/bb9c21a2b01f709454438d71197847f63f2e9a5f)
+    - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/40d9e52307127a96548afd5462e7b0ebf8f5940e)
+    - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/7b9083980ae2985c9531f08c8f4973247ecffff5)
+    
   - TOP 5 MOST MODIFIED FILES:
     1. ![User](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/User.java)
     2. ![ErrorWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ErrorWebController.java)
@@ -175,7 +180,11 @@ Springboot starter security.
 	
 - Miriam de Francisco Alonso
   - TASKS:
-    
+    - Moustache mapping at the beginning of the phase.
+    - Creating new slots for PDFs, pictures, etc. to be posted in user_admin, user_student and user_instructor.
+    - Create the ability to post new content to those pages.
+    - Create the ability to download said content, also deleting it.
+    - Fix bugs and errors.
     -
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b8067f59a16ce9e60c7109aec995e263dfbf2bd9)
@@ -193,10 +202,19 @@ Springboot starter security.
     
 - Alba Sevillano Portilla:
   - TASKS:
-    - 
-    -
+    - Create the ability to post new comments in the about page.
+    - Create the ability to register users.
+    - Create HTML of error, loginerror, error 404.
+    - Instructor: Controller, Service, Repository.
+    - Do the SQL Query
+    
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
-  - 
+    - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4e96792fea4b945bafd7d42ca642c75d20ae25d3)
+    - ![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/2bfa6f9b08e7efa42d26a1f4d56b2949787f79c3)
+    - ![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/3146e719ef0043cec4d9ae45baacadc7e8a73b40)
+    - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8cdde3224ae6f1ab4e7b15a1f046640f2a04a832)
+    - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8cdde3224ae6f1ab4e7b15a1f046640f2a04a832)
+    
   - TOP 5 MOST MODIFIED FILES:
     1. ![Comment](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/src/main/java/com/webapp7/webapp7/model/Comment.java)
     2. ![User](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/User.java)
@@ -206,10 +224,19 @@ Springboot starter security.
   
 - Jesús Sebastián Tocas Atarama:
   - TASKS:
-    - Login: HTML, Controller, Service, Repository.
-    - Error control system: ErrorWebController.
-    -
-  - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
+    - Course: HTML, Controller, Service, Repositoty
+    - Post new courses in user_admin (info and image)
+    - Show courses posted in /courses
+    - Delete courses
+    - Support some teammates with some errors and bugs fixed
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
+    - ![Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1d5685338933319f9b15049e3a8236e04ccb4787)
+    - ![Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1454c50d4bd49bb800ebaaecbf8b0a35886314cf)
+    - ![Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/0a4387643c10255b9af363fb6d4f02d5f68e7827)
+    - ![Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/886042ad2a9ac99b54f6b187ca74661ca2407ca0)
+    - ![Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/08b874ca1d9e7dc612a4ecaec21503389714eb5b)
+    
   - TOP 5 MOST MODIFIED FILES:
     1. ![Course](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/Course.java) 
     2. ![CourseController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/CourseController.java)
@@ -226,6 +253,7 @@ Springboot starter security.
     - Sample data embedded on MYSQL database
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
+  
   - TOP 5 MOST MODIFIED FILES:
     1. ![Post](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/model/Post.java) 
     2. ![ContactController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ContactController.java)
