@@ -6,7 +6,7 @@ import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.repository.CourseRepository;
 import com.webapp7.webapp7.repository.MaterialRepository;
 import com.webapp7.webapp7.repository.UserRepository;
-import com.webapp7.webapp7.service.CourseService;
+import com.webapp7.webapp7.Service.CourseService;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
