@@ -2,7 +2,7 @@ package com.webapp7.webapp7.controller;
 
 import java.util.List;
 
-import com.webapp7.webapp7.service.CommentService;
+import com.webapp7.webapp7.Service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
