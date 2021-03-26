@@ -110,11 +110,11 @@ public class DataBaseInitializer {
         userRepository.save(user4);
 
 
-*/
-        User user4= new User("admin2@gmail.com", "admin2", passwordEncoder.encode("pass"), "administrador");
+
+        User user4= new User("profesor2@gmail.com", "profesor2", passwordEncoder.encode("pass"), "profesor");
         setUserImage(user4, "static/images/teacher-2.jpg");
         userRepository.save(user4);
-
+*/
     }
 
     public void setUserImage(User user, String classpathResource) throws IOException {
