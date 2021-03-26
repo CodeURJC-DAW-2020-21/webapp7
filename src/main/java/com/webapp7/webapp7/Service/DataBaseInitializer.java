@@ -1,5 +1,6 @@
 package com.webapp7.webapp7.Service;
 
+import antlr.BaseAST;
 import com.webapp7.webapp7.model.Comment;
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Post;
@@ -8,6 +9,7 @@ import com.webapp7.webapp7.repository.CourseRepository;
 import com.webapp7.webapp7.repository.PostRepository;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -31,12 +33,13 @@ public class DataBaseInitializer {
 
     @Autowired
     private UserRepository userRepository;
-
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @PostConstruct
     public void init() throws IOException, URISyntaxException{
+/*
 
-        /*
         //Sample Courses
         Course course1= new Course("Jolly Kids", 5, 6, "Mercedes Huasaquiche", 120);
         setCourseImage(course1, "static/images/Niño_5a6.png");
@@ -102,12 +105,16 @@ public class DataBaseInitializer {
         setUserImage(user3, "static/images/teacher-2.jpg");
         userRepository.save(user3);
 
-        User user4= new User("alumno2@gmail.com", "alum2", "0000", "alumno");
+        User user4= new User("alumno3@gmail.com", "alum2", passwordEncoder.encode("pass"), "alumno");
         setUserImage(user4, "static/images/teacher-2.jpg");
         userRepository.save(user4);
-         */
 
 
+
+        User user4= new User("profesor2@gmail.com", "profesor2", passwordEncoder.encode("pass"), "profesor");
+        setUserImage(user4, "static/images/teacher-2.jpg");
+        userRepository.save(user4);
+*/
     }
 
     public void setUserImage(User user, String classpathResource) throws IOException {
