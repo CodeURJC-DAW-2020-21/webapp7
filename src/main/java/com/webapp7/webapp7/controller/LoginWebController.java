@@ -15,5 +15,29 @@ public class LoginWebController {
         this.userservice = userservice;
     }
 
+    @GetMapping("/checkLogin")
+    public String loginUser (@RequestParam("email") String email, @RequestParam("password") String password, HttpServletRequest request){
+        User user = userservice.selectByEmail(email);
+        if (user == null)
+            return "login_error";
+        if(user.getPassword().equals(password)){
+            HttpSession mysession= request.getSession(true);
+            mysession.setAttribute("actualUser",user);
+            if (user.getRol().equals(("alumno"))){
+                return "redirect:/student";
+            }
+            if (user.getRol().equals(("administrador"))){
+                return "redirect:/admin";
+            }
+            if (user.getRol().equals(("profesor"))){
+                return "redirect:/user_instructor";
+            }
+
+        }
+        else {
+            return "login_error";
+        }
+        return "/login";
+    }
 }
 
