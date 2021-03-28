@@ -22,11 +22,11 @@
 <!--START SECOND PART-->
 <section class="ftco-section bg-light">
   <div class="container">
-    <div class="row d-flex">
+    <div class="row d-flex" id="result">
 
       <!--START FIRST POST-->
       {{#posts}}
-      <div class="col-lg-4 ftco-animate">
+      <div class="col-lg-4 ftco-animate" id="container">
         <div class="blog-entry">
 
           <!--<a href="blog-single" class="block-20" style="background-image: url(images/MatriculasAbiertas.png);"></a>-->
@@ -39,6 +39,8 @@
         </div>
       </div>
       {{/posts}}
+
+      <button class="btn btn-secondary py-2 px-3 loadMore">Cargar más</button>
       <!--END FIRST POST-->
 
       <!--START SECOND POST
@@ -81,5 +83,17 @@
 
 </section>
 <!--END SECOND PART-->
+<script>
+
+  $("#container").slice(0, 3).show();
+
+  $(".loadMore").on("click", function () {
+    //$( "#result" ).load( "templates/blog.html #container" );
+    $("#container:hidden").slice(0, 3).show();
+
+  });
+
+
+</script>
 
 {{>footer}}

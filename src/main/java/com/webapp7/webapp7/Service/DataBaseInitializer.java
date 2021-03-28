@@ -109,12 +109,21 @@ public class DataBaseInitializer {
         setUserImage(user4, "static/images/teacher-2.jpg");
         userRepository.save(user4);
 
+        User user1= new User("alumno@gmail.com", "alum", passwordEncoder.encode("pass"), "alumno");
+        setUserImage(user1, "static/images/teacher-4.jpg");
+        userRepository.save(user1);
+
+        User user2= new User("admin@gmail.com", "Mercedes", passwordEncoder.encode("pass"), "administrador");
+        setUserImage(user2, "static/images/profesor-1.jpeg");
+        userRepository.save(user2);
+
 
 
         User user4= new User("profesor2@gmail.com", "profesor2", passwordEncoder.encode("pass"), "profesor");
         setUserImage(user4, "static/images/teacher-2.jpg");
         userRepository.save(user4);
 */
+
     }
 
     public void setUserImage(User user, String classpathResource) throws IOException {
