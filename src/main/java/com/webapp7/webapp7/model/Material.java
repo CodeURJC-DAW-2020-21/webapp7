@@ -16,34 +16,25 @@ public class Material{
         @Column(length = 200000)
         private byte[] content;
 
-        @Column
-        private String course;
+        @OneToOne
+        private Course course;
 
-        @Column
-        private Boolean checked;
+
+
 
         public Material(){
-                checked = false;
         }
 
         public Material(Long id, String name){
                 super();
                 this.id = id;
                 this.name = name;
-                checked = false;
         }
 
-        public Boolean getChecked() {
-                return checked;
-        }
-        public void setChecked(Boolean checked) {
-                this.checked = checked;
-        }
-
-        public String getCourse() {
+        public Course getCourse() {
                 return course;
         }
-        public void setCourse(String course) {
+        public void setCourse(Course course) {
                 this.course = course;
         }
 

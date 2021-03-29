@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.security.Principal;
 import java.util.List;
 //import java.net.URI;
 //import java.util.Collection;
@@ -33,6 +35,22 @@ public class KiddysController {
 	@Autowired
 	private UserService userService;
 
+/*	@ModelAttribute
+	public void addAttributes(Model model, HttpServletRequest request) {
+
+		Principal principal = request.getUserPrincipal();
+
+		if (principal != null) {
+
+			model.addAttribute("logged", true);
+			model.addAttribute("userName", principal.getName());
+			model.addAttribute("admin", request.isUserInRole("ADMIN"));
+
+		} else {
+			model.addAttribute("logged", false);
+		}
+	}*/
+
 	@GetMapping("/")
 	public String sendToPage(Model model, HttpServletRequest request){
 		if (request.isUserInRole("profesor")){
@@ -48,7 +66,9 @@ public class KiddysController {
 	}
 
 	@GetMapping("/admin")
-	public String showCourses(Model model){
+	public String showCourses(Model model, HttpServletRequest request){
+		String username = request.getUserPrincipal().getName();
+		model.addAttribute("userName", username);
 		List<Course> courses= courseRepository.findAll();
 		model.addAttribute("courselist", courses);
 		List<Material> listMaterial = materialRepository.findAll();

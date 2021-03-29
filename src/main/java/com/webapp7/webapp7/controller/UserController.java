@@ -1,5 +1,7 @@
 package com.webapp7.webapp7.controller;
 
+import com.webapp7.webapp7.Service.CourseService;
+import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.repository.UserRepository;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,6 +27,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private CourseService courseService;
 
     @Autowired
     private UserRepository userRepository;
@@ -54,6 +60,24 @@ public class UserController {
         User user = userService.selectByEmail(email);
         Long id = user.getId();
         userService.delete(id);
+        return "redirect:/admin";
+    }
+
+    @PostMapping("/admin/user/addcourse")
+    public String addToCourse(@RequestParam("add_user") String email, @RequestParam("add_category") String category) throws IOException {
+        User user = userService.selectByEmail(email);
+        Course course =courseService.findByCategory(category);
+        user.setCourse(course);
+        userService.save(user);
+        return "redirect:/admin";
+    }
+
+    @GetMapping("/admin/user/deletecourse")
+    public String deleteFromCourse(@RequestParam("delete_user") String email, @RequestParam("delete_category") String category) throws IOException {
+        User user = userService.selectByEmail(email);
+        Course course =courseService.findByCategory(category);
+        user.setCourse(null);
+        userService.save(user);
         return "redirect:/admin";
     }
 
