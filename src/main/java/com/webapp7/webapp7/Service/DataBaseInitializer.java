@@ -90,36 +90,31 @@ public class DataBaseInitializer {
         setPostImage(post3, "static/images/AperturaKiddysHouseBlog.png");
         postRepository.save(post3);
 
-
         //Sample users
 
-        User user1= new User("alumno@gmail.com", "alum", "1234", "alumno");
-        setUserImage(user1, "static/images/teacher-4.jpg");
+
+        User user1= new User("alumno@gmail.com", "alumno", passwordEncoder.encode("pass"), "alumno");
+        setUserImage(user1, "static/images/teacher-2.jpg");
         userRepository.save(user1);
 
-        User user2= new User("admin@gmail.com", "Mercedes", "5678", "administrador");
-        setUserImage(user2, "static/images/profesor-1.jpeg");
+
+
+        User user2= new User("admin@gmail.com", "admin", passwordEncoder.encode("pass"), "administrador");
+        setUserImage(user2, "static/images/teacher-2.jpg");
         userRepository.save(user2);
 
-        User user3= new User("profesor@gmail.com", "prof", "1111", "profesor");
-        setUserImage(user3, "static/images/teacher-2.jpg");
-        userRepository.save(user3);
 
-        User user4= new User("alumno3@gmail.com", "alum2", passwordEncoder.encode("pass"), "alumno");
+        User user4= new User("profesor@gmail.com", "profesor", passwordEncoder.encode("pass"), "profesor");
         setUserImage(user4, "static/images/teacher-2.jpg");
         userRepository.save(user4);
 
+        User user5= new User("alumno2@gmail.com", "al2", passwordEncoder.encode("pass"), "alumno");
+        setUserImage(user5, "static/images/teacher-2.jpg");
+        userRepository.save(user5);
 
-
-        User user4= new User("profesor2@gmail.com", "profesor2", passwordEncoder.encode("pass"), "profesor");
-        setUserImage(user4, "static/images/teacher-2.jpg");
-        userRepository.save(user4);
-*/
-
-        User user4= new User("profesor2@gmail.com", "profesor2", passwordEncoder.encode("pass"), "profesor");
-        setUserImage(user4, "static/images/teacher-2.jpg");
-        userRepository.save(user4);
-*/
+        User user6= new User("alumno3@gmail.com", "al3", passwordEncoder.encode("pass"), "alumno");
+        setUserImage(user6, "static/images/teacher-2.jpg");
+        userRepository.save(user6);*/
     }
 
     public void setUserImage(User user, String classpathResource) throws IOException {
