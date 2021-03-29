@@ -52,6 +52,9 @@ public class MaterialController {
 
     @GetMapping("/user_instructor")
     public String viewInstructorPage(Model model, HttpServletRequest request){
+        List <User> users= userService.findAllUsers();
+        model.addAttribute("users", users);
+
         String username = request.getUserPrincipal().getName();
         User user = userService.selectByEmail(username);
         Course course = user.getCourse();
@@ -65,8 +68,10 @@ public class MaterialController {
                 index++;
             }
         }
+
             //model.addAttribute("course_imparted", course);
             model.addAttribute("listMaterial", listMaterial);
+
 
         return "user_instructor";
     }
