@@ -31,6 +31,10 @@ public class UserService {
         userrepository.deleteById(id);
     }
 
+    public List<User> findAllUsers(){
+       return userrepository.findAllUsers();
+    }
+
     public User selectByEmail(String email) {
         User u = userrepository.selectByEmail(email);
         return u;

@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Blob;
+import java.util.List;
 
 //DATA BASE TABLE
 @Entity
@@ -17,24 +18,53 @@ public class User {
 
     private String email;
 
-    private String username;
+    private String name;
 
     private String password;
 
     private String rol;
-
     @Lob
     private Blob imageFile;
     private boolean image;
 
+    @OneToMany
+    private List<Material> finishedMaterials;
+
+    @OneToOne
+    private Course course;
+
+   public List<Material> getFinishedMaterials() {
+        return finishedMaterials;
+    }
+
+    public void setFinishedMaterials(List<Material> finishedMaterials) {
+        this.finishedMaterials = finishedMaterials;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+
+
 
     public User(User user){}
 
-    public User(String email, String username, String password, String rol) {
+    public User(String email, String name, String password, String rol) {
         this.email = email;
-        this.username = username;
+        this.name = name;
         this.password = password;
         this.rol= rol;
+        this.course = null;
+        this.finishedMaterials = null;
     }
 
     public User() { }
@@ -54,11 +84,11 @@ public class User {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -92,7 +122,7 @@ public class User {
     @Override
 	public String toString() {
 		return String.format("User[id=%d, email='%s', username='%s', password='%s', rol='%s']",
-				id, email, username,password, rol);
+				id, email, name,password, rol);
 	}
 
 }

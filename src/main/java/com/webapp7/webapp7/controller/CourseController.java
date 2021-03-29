@@ -1,5 +1,6 @@
 package com.webapp7.webapp7.controller;
 
+import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.model.User;
@@ -25,6 +26,8 @@ import java.util.Optional;
 
 @Controller
 public class CourseController {
+    @Autowired
+    private UserService userService;
 
     @Autowired
     @Qualifier("courseService")
@@ -63,8 +66,18 @@ public class CourseController {
     public String deleteCourse(@RequestParam("category_delete") String category) throws IOException {
         Course course = courseService.findByCategory(category);
         Long id = course.getId();
+        List<User> users = userService.findAllUsers();
+        int index = 0;
+        while (index<users.size()){
+            Course auxCourse = users.get(index).getCourse();
+            if (auxCourse!=null && auxCourse.equals(course)){
+                User u = users.get(index);
+                u.setCourse(null);
+                userService.save(u);
+            }
+            index ++;
+        }
         courseService.deleteById(id);
-
         return "redirect:/admin";
     }
 
