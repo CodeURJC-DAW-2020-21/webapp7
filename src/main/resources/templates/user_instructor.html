@@ -2,168 +2,273 @@
 
 <!--START BODY-->
 <body style="background-image: url('images/fondo_nuevo.jpg');">
-    <div id="wrapper">
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-                <nav class="navbar navbar-expand navbar-light bg-white2 topbar mb-4 static-top shadow" id="linea">
-                    <a class="block-10">
-                        <a href="index"> 
-                            <img src="images/LogoMorado.png" width="200" height="80">
-                        </a>
+<div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <nav class="navbar navbar-expand navbar-light bg-white2 topbar mb-4 static-top shadow" id="linea">
+                <a class="block-10">
+                    <a href="index">
+                        <img src="images/LogoMorado.png" width="200" height="80">
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="oi oi-menu"></span> Menu
-                    </button>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span> Menu
+                </button>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                    </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{userName}}</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Cerrar Sesión
                             </a>
-                        </li>
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{userName}}</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar Sesión
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
 
-                <!--Start global content-->
-                <div class="container-fluid2">
-                    <div class="d-sm-flex">
-                        <h1 class="h1">CONTENIDO DEL CURSO</h1>
+            <!--Start global content-->
+            <div class="container-fluid2">
+                <div class="d-sm-flex">
+                    <h1 class="h1">CONTENIDO DEL CURSO</h1>
+                </div>
+                <div class="row">
+
+                    <!--Left side-->
+                    <div class="col-lg-8 mb-8">
+
+                        <!--PFD'S-->
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">PRE A1 STARTERS</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        {{#listMaterial}}
+                                        <li>
+                                            <a href="/download/{{id}}">{{name}}</a>
+                                            <a href="/delete/{{id}}"  class="btn py-2 px-2 btn-primary">Eliminar</a>
+                                        </li>
+                                        <br/>
+                                        {{/listMaterial}}
+
+                                        <!--Insert any type of material-->
+                                        <div class="input-group">
+                                            <form th:action="@{/admin}" method="post" enctype="multipart/form-data">
+                                                <p>
+                                                    <input type="file" name="material" required/>
+                                                </p>
+                                                <p>
+                                                    <input type="submit" value="Upload" class="btn btn-primary">
+                                                </p>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End PDF'S-->
+
+                        <!--START GRAPH-->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow mb-4">
+                                    <div
+                                            class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">AVANCE DEL CURSO</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-area">
+                                            <canvas id="myChart" width="400" height="400"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END GRAPH-->
+
+
+
                     </div>
-                    <div class="row">
+                    <!--End left side-->
 
-                        <!--Left side-->
-                        <div class="col-lg-8 mb-8">
 
-                            <!--PFD'S-->
-                            <div class="row">           
-                                <div class="col-lg-12 mb-12">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header2 py-3">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">PRE A1 STARTERS</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            {{#listMaterial}}
-                                            <li>
-                                                <a href="/download/{{id}}">{{name}}</a>
-                                                <a href="/delete/{{id}}"  class="btn py-2 px-2 btn-primary">Eliminar</a>
-                                            </li>
-                                            <br/>
-                                            {{/listMaterial}}
-                                            
-                                            <!--Insert any type of material-->
-                                            <div class="input-group">
-                                                <form th:action="@{/admin}" method="post" enctype="multipart/form-data">
-                                                    <p>
-                                                        <input type="file" name="material" required/>
-                                                    </p>
-                                                    <p>
-                                                        <input type="submit" value="Upload" class="btn btn-primary">
-                                                    </p>
-                                                </form>
-                                            </div>
-                                            
-                                        </div>
+
+                    <!--Start right side-->
+                    <div class="col-lg-4 mb-4">
+                        <div class="row">
+                            <div class="col-lg-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header2 py-3">
+                                        <h6 class="m-0 font-weight-bold" style="color: black;">CLASE</h6>
                                     </div>
-                                </div>
-                            </div>
-                            <!--End PDF'S-->
-                        </div>
-                        <!--End left side-->
+                                    <div class="card-body">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"href="#" data-toggle="modal" data-target="#class">
+                                                <div class="d-flex w-100 justify-content-between">
 
-                        <!--Start right side-->
-                        <div class="col-lg-4 mb-4">
-                            <div class="row">           
-                                <div class="col-lg-12 mb-12">
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header2 py-3">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">CLASE</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="list-group">
-                                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"href="#" data-toggle="modal" data-target="#class">
-                                                  <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1" style="color: white">{{course_imparted}}</h5>
-                                                  </div>
-                                                </a>
-                                              </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--End right side-->
+                    </div>
+                    <!--End right side-->
+                </div>
+            </div>
+            <!--End global content-->
+
+
+
+
+            <!--Start of the end of page-->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
-                <!--End global content-->
-
-                <!--Start of the end of page-->
-                <footer2 id="foo∫ter2">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2020</span>
-                        </div>
-                    </div>
-                </footer2>
-                <!--End of the end of page-->
-            </div>
+            </footer>
+            <!--End of the end of page-->
         </div>
-        <!--INSTRUCTOR LOGOUT MODAL-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Cerrar sesión</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p><BR></p>
-                        <p>¿Estás seguro de querer cerrar sesión?</p>
-                        <p><BR></p>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <form action="/logout" method="post">
-                            <input type="submit" value="Sí" class="btn btn-secondary"/>
-                        </form>
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
-                        
-                    </div>
+    </div>
+    <!--INSTRUCTOR LOGOUT MODAL-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cerrar sesión</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><BR></p>
+                    <p>¿Estás seguro de querer cerrar sesión?</p>
+                    <p><BR></p>
+
+                </div>
+                <div class="modal-footer">
+                    <form action="/logout" method="post">
+                        <input type="submit" value="Sí" class="btn btn-secondary"/>
+                    </form>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+</div>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+<div class="d-none">
+    {{#users}}
+    <div id="{{id}}" class="user">
+        <span class="name">{{name}}</span>
+        <span class="email">{{email}}</span>
+    </div>
+    {{/users}}
+</div>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-            
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+
+
+
+<script>
+    const users = [];
+
+    $(".user").each(function() {
+        const parent = $(this);
+        const userId = parent.attr('id');
+
+        const name = $("#" + userId + " > .name").text();
+        const email = $("#" + userId + " > .email").text();
+
+        const user = {
+            name: name,
+            email: email
+        };
+
+        users.push(user);
+
+    });
+
+    const names = users.map(user => user.name);
+
+    //variables o const o let nunca var
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: names,
+
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 10, 5, 2, 3, 7],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(16, 134, 28, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(16,134,28, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
 </body>
 </html>

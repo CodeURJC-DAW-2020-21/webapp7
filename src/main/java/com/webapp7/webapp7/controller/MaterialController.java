@@ -26,10 +26,14 @@ public class MaterialController {
     @Autowired
     private UserService userService;
 
+
+
     @GetMapping("/student")
     public String viewStudentPage(Model model, HttpServletRequest request){
-        String username = request.getUserPrincipal().getName();
-        User user = userService.selectByEmail(username);
+        String username = request.getUserPrincipal().getName(); //Correo del usuario
+        User user = userService.selectByEmail(username);//te saca el usuario  loggeado
+        List<User> users = userService.findAllUsers();
+        model.addAttribute("users",users);
         Course course = user.getCourse();
         model.addAttribute("userName", username);
         List<Material> listMaterial = materialRepository.findAll();
@@ -61,8 +65,9 @@ public class MaterialController {
                 index++;
             }
         }
-        model.addAttribute("course_imparted",course);
-        model.addAttribute("listMaterial",listMaterial);
+            //model.addAttribute("course_imparted", course);
+            model.addAttribute("listMaterial", listMaterial);
+
         return "user_instructor";
     }
 
