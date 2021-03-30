@@ -18,17 +18,13 @@
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <a href="email" >
-                                <img src="images/email.png" style="width:42px;height:42px;">
-                            </a>
-
                         </a>
                     </li>
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">Nombre de Usuario</span>
+                            <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{userName}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
@@ -97,10 +93,10 @@
                                         <h6 class="m-0 font-weight-bold" style="color: black;">REGISTRA A UN NUEVO ALUMNO/PROFESOR</h6>
                                     </div>
                                     <div class="card-body">
-                                        <form action="/register" method = "post" modelAttribute="user">
+                                        <form action="/register" method = "post" modelAttribute="user" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label  for="username">Nombre Completo</label>
-                                            <input type="text" id="username" name="username" class="form-control" >
+                                            <label  for="name">Nombre Completo</label>
+                                            <input type="text" id="name" name="name" class="form-control" >
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Correo Electrónico</label>
@@ -218,13 +214,13 @@
                                         <!--ADD STUDENT/TEACHER TO A COURSE-->
                                         <div class="form-group">
                                             <label class="label" for="password">Añadir alumno/profesor a curso</label>
-                                            <form action="/" method="post" enctype="multipart/form-data">
+                                            <form action="/admin/user/addcourse" method="post" enctype="multipart/form-data">
                                                 <div class="form-group">
-                                                    <input type="text" id="course_category" name="course_category"  placeholder="Nombre del Curso" class="form-control"/>
+                                                    <input type="text" id="add_category" name="add_category"  placeholder="Nombre del Curso" class="form-control"/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <input type="text" id="email1" name="email1" placeholder="Email del Alumno/Profesor" class="form-control"/>
+                                                    <input type="text" id="add_user" name="add_user" placeholder="Email del Alumno/Profesor" class="form-control"/>
                                                 </div>
                                             <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
                                             </form>
@@ -233,13 +229,13 @@
                                         <!--DELETE STUDENT/TEACHER FROM COURSE-->
                                         <div class="form-group">
                                             <label class="label" for="password">Borrar alumno/profesor del curso</label>
-                                            <form action="/" method="post" enctype="multipart/form-data">
+                                            <form action="/admin/user/deletecourse" method="get" enctype="multipart/form-data">
                                                 <div class="form-group">
-                                                    <input type="text" id="course_category_delete" name="course_category_delete"  placeholder="Nombre del Curso" class="form-control"/>
+                                                    <input type="text" id="delete_category" name="delete_category"  placeholder="Nombre del Curso" class="form-control"/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <input type="text" id="email_delete1" name="email_delete1" placeholder="Email del Alumno/Profesor" class="form-control"/>
+                                                    <input type="text" id="delete_user" name="delete_user" placeholder="Email del Alumno/Profesor" class="form-control"/>
                                                 </div>
                                             <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
                                             </form>

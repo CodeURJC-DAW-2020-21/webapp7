@@ -51,6 +51,10 @@ public class MaterialController {
         List <User> users= userService.findAllUsers();
         model.addAttribute("users", users);
 
+
+
+
+
         String username = request.getUserPrincipal().getName();
         User user = userService.selectByEmail(username);
         Course course = user.getCourse();
@@ -64,6 +68,21 @@ public class MaterialController {
                 index++;
             }
         }
+
+
+        List<User> listUsers = userService.findAllUsers();
+        index = 0;
+        while (!listUsers.isEmpty() && index < listUsers.size()){
+            if (listUsers.get(index).getCourse()==null || !listUsers.get(index).getCourse().equals(course) || !listUsers.get(index).getRol().equals("alumno")){
+                listUsers.remove(index);
+            }else{
+                index++;
+            }
+        }
+        model.addAttribute("students_in_course",listUsers);
+
+
+
         //model.addAttribute("course_imparted",course);
         model.addAttribute("listMaterial",listMaterial);
         return "user_instructor";
@@ -99,14 +118,22 @@ public class MaterialController {
     }
 
     @GetMapping("/checkbox/{id}")
-    public String CheckboxChangeValues(@PathVariable long id) {
+    public String CheckboxChangeValues(@PathVariable long id, HttpServletRequest request) {
+
+        String username = request.getUserPrincipal().getName();
+        User user = userService.selectByEmail(username);
+
         Material material = materialRepository.findById(id).orElseThrow();
-        materialRepository.save(material);
+        user.getFinishedMaterials().add(material);
+        user.setNumberMaterial(user.getFinishedMaterials().size());
+        userService.save(user);
+
         return "redirect:/student";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteMaterialInstructor(Model model, @PathVariable long id) throws IOException {
+
         Material material = materialRepository.findById(id).orElseThrow();
         materialRepository.deleteById(id);
         return "redirect:/user_instructor";
