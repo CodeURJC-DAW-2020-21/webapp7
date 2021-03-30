@@ -144,5 +144,6 @@ public class MaterialController {
         Material material = materialRepository.findById(id).orElseThrow();
         materialRepository.deleteById(id);
         return "redirect:/admin";
+        
     }
 }

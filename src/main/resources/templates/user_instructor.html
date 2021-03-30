@@ -193,12 +193,12 @@
 
 
     <div class="d-none">
-        {{#users}}
+        {{#students_in_course}}
         <div id="{{id}}" class="user">
             <span class="name">{{name}}</span>
-            <span class="email">{{email}}</span>
+            <span class="numberMaterial">{{numberMaterial}}</span>
         </div>
-        {{/users}}
+        {{/students_in_course}}
     </div>
 
     <script>
@@ -209,11 +209,11 @@
             const userId = parent.attr('id');
 
             const name = $("#" + userId + " > .name").text();
-            const email = $("#" + userId + " > .email").text();
+            const numberMaterial = $("#" + userId + " > .numberMaterial").text();
 
             const user = {
                 name: name,
-                email: email
+                numberMaterial: numberMaterial
             };
 
             users.push(user);
@@ -221,6 +221,7 @@
         });
 
         const names = users.map(user => user.name);
+        const numberMaterials=users.map((user => user.numberMaterial));
 
         //variables o const o let nunca var
         var ctx = document.getElementById('myChart').getContext('2d');
@@ -231,7 +232,7 @@
 
                 datasets: [{
                     label: '# of Votes',
-                    data: [12, 19, 10, 5, 2, 3, 7],
+                    data: numberMaterials,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -257,7 +258,8 @@
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            precision:0
                         }
                     }]
                 }
