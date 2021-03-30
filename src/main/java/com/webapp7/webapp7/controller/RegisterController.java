@@ -69,6 +69,5 @@ public class RegisterController {
         user.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
     }
 
-
 }
 
