@@ -18,6 +18,7 @@ import com.webapp7.webapp7.repository.UserRepository;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 @Service
 public class DataBaseInitializer {
@@ -38,20 +39,9 @@ public class DataBaseInitializer {
 
     @PostConstruct
     public void init() throws IOException, URISyntaxException{
+
+
 /*
-
-        //Sample Courses
-        Course course1= new Course("Jolly Kids", 5, 6, "Mercedes Huasaquiche", 120);
-        setCourseImage(course1, "static/images/Niño_5a6.png");
-        courseRepository.save(course1);
-
-        Course course2= new Course("Explorer Kids", 7, 8, "Mercedes Huasaquiche", 130);
-        setCourseImage(course2, "static/images/Niño_7a8.png");
-        courseRepository.save(course2);
-
-        Course course3= new Course("Keen Kids", 9, 10, "Mercedes Huasaquiche", 140);
-        setCourseImage(course3, "static/images/Niño_9a10.png");
-        courseRepository.save(course3);
 
         //Sample Comments
         Comment comment1 = new Comment("Deborah Israel Villanueva", "La mejor academia de todas en las que he estado,muy buen profesorado y la directora muy maja y amable");
@@ -90,8 +80,8 @@ public class DataBaseInitializer {
         setPostImage(post3, "static/images/AperturaKiddysHouseBlog.png");
         postRepository.save(post3);
 
-        //Sample users
 
+        //Sample users
 
         User user1= new User("alumno@gmail.com", "alumno", passwordEncoder.encode("pass"), "alumno");
         setUserImage(user1, "static/images/teacher-2.jpg");
@@ -117,7 +107,35 @@ public class DataBaseInitializer {
 
         User user6= new User("alumno3@gmail.com", "al3", passwordEncoder.encode("pass"), "alumno");
         setUserImage(user6, "static/images/teacher-2.jpg");
-        userRepository.save(user6);*/
+        userRepository.save(user6);
+
+
+
+
+        //Sample Courses
+        ArrayList<User> list1 = new ArrayList<User>();
+        list1.add(user1);
+        list1.add(user5);
+        list1.add(user6);
+
+        Course course1= new Course("Jolly Kids", 5, 6,"profesor@gmail.com",  120,list1);
+        setCourseImage(course1, "static/images/Niño_5a6.png");
+        courseRepository.save(course1);
+
+        ArrayList<User> list2 = new ArrayList<User>();
+
+        Course course2= new Course("Explorer Kids", 7, 8,"profesor@gmail.com",  130,list2);
+        setCourseImage(course2, "static/images/Niño_7a8.png");
+        courseRepository.save(course2);
+
+        ArrayList<User> list3 = new ArrayList<User>();
+
+        Course course3= new Course("Keen Kids", 9, 10, "profesor@gmail.com", 140,list3);
+        setCourseImage(course3, "static/images/Niño_9a10.png");
+        courseRepository.save(course3);
+
+
+ */
     }
 
     public void setUserImage(User user, String classpathResource) throws IOException {
