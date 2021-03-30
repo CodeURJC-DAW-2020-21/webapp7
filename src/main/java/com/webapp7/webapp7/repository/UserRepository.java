@@ -11,13 +11,13 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
 
-@Query(value = "SELECT id, email, name, password, rol, image, image_file, course_id FROM kiddyshouse.user WHERE email=:userEmail", nativeQuery = true)
+@Query(value = "SELECT id, email, name, password, rol, image, image_file, course_id, number_material FROM kiddyshouse.user WHERE email=:userEmail", nativeQuery = true)
 User selectByEmail(@Param("userEmail")String email);
 
-@Query(value = "SELECT id, email, name, password, rol, image, image_file, course_id FROM kiddyshouse.user WHERE rol=:userRol", nativeQuery = true)
+@Query(value = "SELECT id, email, name, password, rol, image, image_file, course_id, number_material FROM kiddyshouse.user WHERE rol=:userRol", nativeQuery = true)
 List<User> findByRol(@Param("userRol")String rol);
 
-@Query(value = "SELECT id, email, name, password, rol, image, image_file, course_id FROM kiddyshouse.user", nativeQuery = true)
+@Query(value = "SELECT id, email, name, password, rol, image, image_file, course_id, number_material FROM kiddyshouse.user", nativeQuery = true)
 List<User> findAllUsers();
 
 }
