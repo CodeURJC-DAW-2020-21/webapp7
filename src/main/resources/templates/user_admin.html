@@ -93,10 +93,10 @@
                                         <h6 class="m-0 font-weight-bold" style="color: black;">REGISTRA A UN NUEVO ALUMNO/PROFESOR</h6>
                                     </div>
                                     <div class="card-body">
-                                        <form action="/register" method = "post" modelAttribute="user">
+                                        <form action="/register" method = "post" modelAttribute="user" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label  for="username">Nombre Completo</label>
-                                            <input type="text" id="username" name="username" class="form-control" >
+                                            <label  for="name">Nombre Completo</label>
+                                            <input type="text" id="name" name="name" class="form-control" >
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Correo Electrónico</label>

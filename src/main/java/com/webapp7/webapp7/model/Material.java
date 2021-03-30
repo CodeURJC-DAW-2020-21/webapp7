@@ -1,6 +1,7 @@
 package com.webapp7.webapp7.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 //DATA BASE TABLE
 @Entity
@@ -10,7 +11,7 @@ public class Material{
         @GeneratedValue (strategy = GenerationType.AUTO)
         private Long id;
 
-        @Column(nullable = false, unique = true)
+        @Column(nullable = false)
         private String name;
 
         @Column(length = 200000)
@@ -19,7 +20,8 @@ public class Material{
         @OneToOne
         private Course course;
 
-
+        @ManyToMany
+        public List<User> users;
 
 
         public Material(){
