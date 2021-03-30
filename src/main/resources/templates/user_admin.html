@@ -63,7 +63,7 @@
                                         </li>
                                         {{/listMaterial}}
     -->
-                                        <!--Insert any type of material-->
+                        <!--Insert any type of material-->
                         <!--
                                         <div class="input-group">
                                             <form th:action="@{/admin}" method="post" enctype="multipart/form-data">
@@ -94,29 +94,29 @@
                                     </div>
                                     <div class="card-body">
                                         <form action="/register" method = "post" modelAttribute="user" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label  for="name">Nombre Completo</label>
-                                            <input type="text" id="name" name="name" class="form-control" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Correo Electrónico</label>
-                                            <input type="text" id="email" name="email"class="form-control" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label  for="password">Contraseña</label>
-                                            <input id="password" name="password" type="text" class="form-control" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label  for="rol">Profesor o alumno</label>
-                                            <input id="rol" name="rol" type="text" class="form-control" >
-                                            </select></p>
-                                        </div>
+                                            <div class="form-group">
+                                                <label  for="name">Nombre Completo</label>
+                                                <input type="text" id="name" name="name" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Correo Electrónico</label>
+                                                <input type="text" id="email" name="email"class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label  for="password">Contraseña</label>
+                                                <input id="password" name="password" type="text" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label  for="rol">Profesor o alumno</label>
+                                                <input id="rol" name="rol" type="text" class="form-control" >
+                                                </select></p>
+                                            </div>
 
                                             <input type='file' name='imageField' accept=".jpg, .jpeg" />
 
-                                        <div class="form-group">
-                                            <input type="submit" value="Registrar" class="btn py-3 px-4 btn-primary">
-                                        </div>
+                                            <div class="form-group">
+                                                <input type="submit" value="Registrar" class="btn py-3 px-4 btn-primary">
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -170,23 +170,23 @@
                                             <label class="label" >Crear curso</label>
                                             <form action="/admin/course/addCourse" method="post" enctype="multipart/form-data">
                                                 <div class="form-group">
-                                                <input type="text" id="category" name="category"  placeholder="Nombre" class="form-control"/>
+                                                    <input type="text" id="category" name="category"  placeholder="Nombre" class="form-control"/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                <input type="text" id="ageStart" name="ageStart" placeholder="Edad Inicial" class="form-control"/>
+                                                    <input type="text" id="ageStart" name="ageStart" placeholder="Edad Inicial" class="form-control"/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                <input type="text" id="ageEnd" name="ageEnd" placeholder="Edad Final" class="form-control"/>
+                                                    <input type="text" id="ageEnd" name="ageEnd" placeholder="Edad Final" class="form-control"/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                <input type="text" id="instructor" name="instructor" placeholder="Instructor" class="form-control"/>
+                                                    <input type="text" id="instructor" name="instructor" placeholder="Instructor" class="form-control"/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                <input type="text" id="price" name="price" placeholder="Precio" class="form-control"/>
+                                                    <input type="text" id="price" name="price" placeholder="Precio" class="form-control"/>
                                                 </div>
 
                                                 <div class="form-group">
@@ -222,7 +222,7 @@
                                                 <div class="form-group">
                                                     <input type="text" id="add_user" name="add_user" placeholder="Email del Alumno/Profesor" class="form-control"/>
                                                 </div>
-                                            <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
+                                                <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
                                             </form>
                                         </div>
 
@@ -237,7 +237,7 @@
                                                 <div class="form-group">
                                                     <input type="text" id="delete_user" name="delete_user" placeholder="Email del Alumno/Profesor" class="form-control"/>
                                                 </div>
-                                            <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
                                             </form>
                                         </div>
 
@@ -248,7 +248,7 @@
                                                 <div class="form-group">
                                                     <input type="text" id="email_delete" name="email_delete"  placeholder="Email del usuario a borrar" class="form-control"/>
                                                 </div>
-                                            <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                                                <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
                                             </form>
                                         </div>
                                     </div>
