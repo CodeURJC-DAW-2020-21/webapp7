@@ -77,11 +77,11 @@ public class User {
     public User() { }
 
     public Long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
     public void deleteById(long id){ }
 
     public String getEmail() {
@@ -127,9 +127,9 @@ public class User {
     }
 
     @Override
-    public String toString() {
-        return String.format("User[id=%d, email='%s', username='%s', password='%s', rol='%s']",
-                id, email, name,password, rol);
-    }
+	public String toString() {
+		return String.format("User[id=%d, email='%s', username='%s', password='%s', rol='%s']",
+				id, email, name,password, rol);
+	}
 
 }
