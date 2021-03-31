@@ -33,38 +33,40 @@
 						</form>
 					</div>
 
+
 					<!--START "CATEGORÍAS"-->
 					<div class="sidebar-box bg-white p-4 ftco-animate">
 						<h3 class="heading-sidebar">Categorías</h3>
+						{{#courses}}
 						<form action="#" class="browse-form">
-							<label for="option-category-1"><input type="checkbox" id="option-category-1" name="vehicle" value=""> Jolly Kids </label><br>
-							<label for="option-category-2"><input type="checkbox" id="option-category-2" name="vehicle" value=""> Explorer Kids</label><br>
-							<label for="option-category-3"><input type="checkbox" id="option-category-3" name="vehicle" value=""> Keen Kids</label><br>
+							<label><input type="checkbox" id="option-category-1" name="vehicle" value=""> {{category}} </label><br>
 						</form>
+						{{/courses}}
 					</div>
 					<!--END "CATEGORÍAS"-->
 
 					<!--START "PROFESOR"-->
+
 					<div class="sidebar-box bg-white p-4 ftco-animate">
 						<h3 class="heading-sidebar">Profesor</h3>
+						{{#courses}}
 						<form action="#" class="browse-form">
-							<label for="option-instructor-1"><input type="checkbox" id="option-instructor-1" name="vehicle" value=""> Profesor 1</label><br>
-							<label for="option-instructor-2"><input type="checkbox" id="option-instructor-2" name="vehicle" value=""> Profesor 2</label><br>
-							<label for="option-instructor-3"><input type="checkbox" id="option-instructor-3" name="vehicle" value=""> Profesor 3</label><br>
+							<label ><input type="checkbox" id="option-instructor-1" name="vehicle" value="">{{instructor}}</label><br>
+						</form>
+						{{/courses}}
 					</div>
+
 					<!--END "PROFESOR"-->
 
 					<!--START "EDAD"-->
 					<div class="sidebar-box bg-white p-4 ftco-animate">
 						<h3 class="heading-sidebar">Edad</h3>
+						{{#courses}}
 						<form action="#" class="browse-form">
-							<label for="option-course-type-1"><input type="checkbox" id="option-course-type-1" name="vehicle" value=""> 5 Años</label><br>
-							<label for="option-course-type-2"><input type="checkbox" id="option-course-type-2" name="vehicle" value=""> 6 Años</label><br>
-							<label for="option-course-type-3"><input type="checkbox" id="option-course-type-3" name="vehicle" value=""> 7 Años</label><br>
-							<label for="option-course-type-3"><input type="checkbox" id="option-course-type-3" name="vehicle" value=""> 8 Años</label><br>
-							<label for="option-course-type-3"><input type="checkbox" id="option-course-type-3" name="vehicle" value=""> 9 Años</label><br>
-							<label for="option-course-type-3"><input type="checkbox" id="option-course-type-3" name="vehicle" value=""> 10 Años</label><br>
+							<label><input type="checkbox" id="option-course-type-1" name="vehicle" value=""> {{ageStart}} Años</label><br>
+							<label><input type="checkbox" id="option-course-type-2" name="vehicle" value=""> {{ageEnd}} Años</label><br>
 						</form>
+						{{/courses}}
 					</div>
 					<!--END "EDAD"-->
 				</div>

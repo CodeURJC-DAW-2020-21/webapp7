@@ -18,17 +18,15 @@
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <a href="email" >
-                                    <img src="images/email.png" style="width:42px;height:42px;">
-                                </a>
-                                  
                             </a>
                         </li>
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">Nombre de Usuario</span>
+
+                                <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{userName}}</span>
+
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -72,23 +70,6 @@
                             </div>
                             <!--END PDF'S-->
 
-                            <!--START COURSE-->
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12">
-                                    <div class="card shadow mb-4">
-                                        <div
-                                            class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">AVANCE DEL CURSO</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="chart-area">
-                                                <canvas id="myAreaChart"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--END COURSE-->
 
                             <!--START OPINIONS-->
                             <div class="row">
@@ -234,7 +215,9 @@
                         
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
+                        <form action="/logout" method="post">
+                            <input type="submit" value="Sí" class="btn btn-secondary"/>
+                        </form>
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
                         
                     </div>
@@ -259,6 +242,7 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
             
 </body>
 </html>
