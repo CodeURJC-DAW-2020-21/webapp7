@@ -27,13 +27,15 @@ public class User {
     private Blob imageFile;
     private boolean image;
 
-    @OneToMany
+    @ManyToMany
     private List<Material> finishedMaterials;
+
+    private int numberMaterial ;
 
     @OneToOne
     private Course course;
 
-   public List<Material> getFinishedMaterials() {
+    public List<Material> getFinishedMaterials() {
         return finishedMaterials;
     }
 
@@ -53,6 +55,11 @@ public class User {
         this.course = course;
     }
 
+    public void setNumberMaterial(int numberMaterial) {
+        this.numberMaterial = numberMaterial;
+    }
+
+    public int getNumberMaterial(){return numberMaterial;}
 
 
 
