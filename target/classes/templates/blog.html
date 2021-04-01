@@ -1,4 +1,54 @@
-{{>header}}
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeLeaf.org">
+
+<!--START HEAD-->
+<head>
+  <title>Inicio - Kiddy's House</title>
+
+
+  <link rel="shortcut icon" href="/images/Icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/css/animate.css">
+
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="/css/jquery.timepicker.css">
+
+  <link rel="stylesheet" href="/css/flaticon.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#loadMore').click(function(){
+        $.ajax({
+          url:"/blog"
+        }).done(function(data){
+          var result=$(data).find("#postsZone");
+          $("#loadZone").append(result);
+        });
+      });
+    });
+    /*
+
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("#box").load("test-content");
+      });
+    });
+
+     */
+  </script>
+</head>
+<!--END HEAD-->
 
 <!--START BODY-->
 <body>
@@ -21,26 +71,33 @@
 
 <!--START SECOND PART-->
 <section class="ftco-section bg-light">
-  <div class="container">
-    <div class="row d-flex" id="result">
-
+  <div class="container" >
+    <div class="row d-flex"   id="postsZone">
       <!--START FIRST POST-->
-      {{#posts}}
-      <div class="col-lg-4 ftco-animate" id="container">
-        <div class="blog-entry">
+        {{#posts}}
+        <div class="col-lg-4 ftco-animate" id="container">
+          <div class="blog-entry">
 
-          <!--<a href="blog-single" class="block-20" style="background-image: url(images/MatriculasAbiertas.png);"></a>-->
-          <img src="/post/{{id}}/image" class="block-20" >
-          <div class="text d-block">
-            <h3 class="heading"><a href="post/{{id}}">{{title}}</a></h3>
-            <p>{{description}}</p>
-            <p><a href="post/{{id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
+            <!--<a href="blog-single" class="block-20" style="background-image: url(images/MatriculasAbiertas.png);"></a>-->
+            <img src="/post/{{id}}/image" class="block-20" >
+            <div class="text d-block">
+              <h3 class="heading"><a href="post/{{id}}">{{title}}</a></h3>
+              <p>{{description}}</p>
+              <p><a href="post/{{id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      {{/posts}}
+        {{/posts}}
 
-      <button class="btn btn-secondary py-2 px-3 loadMore">Cargar más</button>
+    </div>
+
+    <div id="loadZone"></div>
+    {{#canLoadMore}}
+    <button  id="loadMore" class="btn btn-secondary py-2 px-3 -align-center" >Cargar más</button>
+    {{/canLoadMore}}
+
+
+
       <!--END FIRST POST-->
 
       <!--START SECOND POST
@@ -79,10 +136,13 @@
     END THIRD POST-->
 
     </div>
-  </div>
+
 
 </section>
 <!--END SECOND PART-->
+
+
+<!--
 <script>
 
   $("#container").slice(0, 3).show();
@@ -95,5 +155,6 @@
 
 
 </script>
+-->
 
 {{>footer}}
