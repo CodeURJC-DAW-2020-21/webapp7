@@ -31,6 +31,7 @@ public class CourseService {
         courses.deleteById(id);
     }
 
+
     public Course findByCategory(String category) {
         Course c = courses.selectByCategory(category);
         return c;

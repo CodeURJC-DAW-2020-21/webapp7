@@ -18,17 +18,13 @@
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <a href="email">
-                                    <img src="images/email.png" style="width:42px;height:42px;">
-                                </a>
-                                  
                             </a>
                         </li>
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">Nombre de Usuario</span>
+                                <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{userName}}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -76,6 +72,7 @@
                                                     <p>
                                                         <input type="submit" value="Upload" class="btn btn-primary">
                                                     </p>
+                                                </form>
                                             </div>
                                             
                                         </div>
@@ -83,8 +80,31 @@
                                 </div>
                             </div>
                             <!--End PDF'S-->
+
+                            <!--START GRAPH-->
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12">
+                                    <div class="card shadow mb-4">
+                                        <div
+                                                class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 class="m-0 font-weight-bold" style="color: black;">AVANCE DEL CURSO</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="chart-area">
+                                                <canvas id="myChart" width="400" height="400"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END GRAPH-->
+
+
+
                         </div>
                         <!--End left side-->
+
+
 
                         <!--Start right side-->
                         <div class="col-lg-4 mb-4">
@@ -92,17 +112,14 @@
                                 <div class="col-lg-12 mb-12">
                                     <div class="card shadow mb-4">
                                         <div class="card-header2 py-3">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">CLASES</h6>
+                                            <h6 class="m-0 font-weight-bold" style="color: black;">CLASE</h6>
                                         </div>
                                         <div class="card-body">
                                             <div class="list-group">
                                                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"href="#" data-toggle="modal" data-target="#class">
                                                   <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">Pre A1 Starters</h5>
-                                                    <small>lunes y viernes</small>
+
                                                   </div>
-                                                  <p class="mb-1">Horario Tarde-A Grupo-3</p>
-                                                  <small class="text-muted">YLE Starters</small>
                                                 </a>
                                               </div>
                                         </div>
@@ -115,14 +132,17 @@
                 </div>
                 <!--End global content-->
 
+
+
+
                 <!--Start of the end of page-->
-                <footer2 id="foo∫ter2">
+                <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
                             <span>Copyright &copy; Your Website 2020</span>
                         </div>
                     </div>
-                </footer2>
+                </footer>
                 <!--End of the end of page-->
             </div>
         </div>
@@ -144,7 +164,9 @@
                         
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
+                        <form action="/logout" method="post">
+                            <input type="submit" value="Sí" class="btn btn-secondary"/>
+                        </form>
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
                         
                     </div>
@@ -168,6 +190,82 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
+
+    <div class="d-none">
+        {{#students_in_course}}
+        <div id="{{id}}" class="user">
+            <span class="name">{{name}}</span>
+            <span class="numberMaterial">{{numberMaterial}}</span>
+        </div>
+        {{/students_in_course}}
+    </div>
+
+    <script>
+        const users = [];
+
+        $(".user").each(function() {
+            const parent = $(this);
+            const userId = parent.attr('id');
+
+            const name = $("#" + userId + " > .name").text();
+            const numberMaterial = $("#" + userId + " > .numberMaterial").text();
+
+            const user = {
+                name: name,
+                numberMaterial: numberMaterial
+            };
+
+            users.push(user);
+
+        });
+
+        const names = users.map(user => user.name);
+        const numberMaterials=users.map((user => user.numberMaterial));
+
+        //variables o const o let nunca var
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: names,
+
+                datasets: [{
+                    label: '# of Votes',
+                    data: numberMaterials,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(16, 134, 28, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(16,134,28, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            precision:0
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
             
 </body>
 </html>

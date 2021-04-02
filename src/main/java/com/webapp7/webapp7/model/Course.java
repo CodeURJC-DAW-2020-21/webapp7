@@ -2,6 +2,8 @@ package com.webapp7.webapp7.model;
 
 import javax.persistence.*;
 import java.sql.Blob;
+import java.util.ArrayList;
+import java.util.List;
 
 //DATA BASE TABLE
 @Entity
@@ -12,20 +14,24 @@ public class Course {
     private long id;
 
     @Column(nullable= false, unique= true)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String category;
 
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ageStart;
 
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ageEnd;
 
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String instructor;
+
+    @Column (nullable = true)
+    @OneToMany
+    private List<User> students;
+
+    @Column (nullable = true)
+    @OneToMany
+    private List<Material> materials;
 
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,17 +41,33 @@ public class Course {
     private Blob imageFile;
     private boolean image;
 
+    public List<Material> getMaterials() {
+        return materials;
+    }
+
+    public void setMaterials(List<Material> materials) {
+        this.materials = materials;
+    }
 
     public Course(){
     }
 
-    public Course(String category, int ageStart, int ageEnd, String instructor, int price) {
+    public Course(String category, int ageStart, int ageEnd, String instructor, int price, ArrayList<User> students) {
         super();
         this.category = category;
         this.ageStart = ageStart;
         this.ageEnd = ageEnd;
         this.instructor = instructor;
         this.price = price;
+        this.students = students;
+    }
+
+    public List<User> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<User> students) {
+        this.students = students;
     }
 
     public long getId() {

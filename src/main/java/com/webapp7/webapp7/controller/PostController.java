@@ -1,11 +1,11 @@
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.model.Post;
-import com.webapp7.webapp7.Service.PostService;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,7 @@ import java.util.Optional;
 public class PostController {
 
     @Autowired
-    private PostService service;
+    private com.webapp7.webapp7.service.PostService service;
 
     @PostMapping("/admin/post/createNew")
     public String addPost(Model model, @RequestParam String title, @RequestParam String description, MultipartFile imageField) throws IOException {
@@ -49,8 +50,19 @@ public class PostController {
 
     @GetMapping("/blog")
     public String blog(Model model){
-        List<Post> posts =  service.listPosts();
-        model.addAttribute("posts",posts);
+        int size=5;
+        //List<Post> posts =  service.listPosts();
+        //model.addAttribute("posts",posts);
+        ArrayList<Post> posts=service.findPost(PageRequest.of(0, 2));
+        model.addAttribute("posts", posts);
+
+        if(posts.size()>=size){
+            model.addAttribute("loadingPermission",false) ;
+        } else{
+            model.addAttribute("loadingPermission",true) ;
+        }
+
+
         return "blog";
     }
 
@@ -61,6 +73,8 @@ public class PostController {
         model.addAttribute("post", post);
         List<Post> posts =  service.listPosts();
         model.addAttribute("posts",posts);
+
+
 
         return "blog-single";
     }

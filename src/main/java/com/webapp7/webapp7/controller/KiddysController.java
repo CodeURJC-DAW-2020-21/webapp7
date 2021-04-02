@@ -1,5 +1,6 @@
 package com.webapp7.webapp7.controller;
 
+import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.model.User;
@@ -10,7 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.security.Principal;
 import java.util.List;
 //import java.net.URI;
 //import java.util.Collection;
@@ -27,8 +32,43 @@ public class KiddysController {
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	private UserService userService;
+
+/*	@ModelAttribute
+	public void addAttributes(Model model, HttpServletRequest request) {
+
+		Principal principal = request.getUserPrincipal();
+
+		if (principal != null) {
+
+			model.addAttribute("logged", true);
+			model.addAttribute("userName", principal.getName());
+			model.addAttribute("admin", request.isUserInRole("ADMIN"));
+
+		} else {
+			model.addAttribute("logged", false);
+		}
+	}*/
+
+	@GetMapping("/")
+	public String sendToPage(Model model, HttpServletRequest request){
+		if (request.isUserInRole("profesor")){
+			return "redirect:/user_instructor";
+		}
+		if (request.isUserInRole("alumno")){
+			return "redirect:/student";
+		}
+		if (request.isUserInRole("administrador")){
+			return "redirect:/admin";
+		}
+		return "/index";
+	}
+
 	@GetMapping("/admin")
-	public String showCourses(Model model){
+	public String showCourses(Model model, HttpServletRequest request){
+		String username = request.getUserPrincipal().getName();
+		model.addAttribute("userName", username);
 		List<Course> courses= courseRepository.findAll();
 		model.addAttribute("courselist", courses);
 		List<Material> listMaterial = materialRepository.findAll();
@@ -39,6 +79,9 @@ public class KiddysController {
 		model.addAttribute("listStudent", listStudents);
 		return "user_admin";
 	}
+
+	@GetMapping("/test-content")
+	public String testContent (){ return "test-content";}
 
 	@GetMapping("/login")
 	public String login (){ return "login";}
