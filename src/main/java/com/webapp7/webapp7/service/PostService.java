@@ -42,9 +42,7 @@ public class PostService {
     public ArrayList<Post> findPost(Pageable pageable){
         Page<Post> p=posts.findAll(pageable);
         ArrayList<Post> aux=new ArrayList<Post>();
-        p.forEach(post->{
-                aux.add(post);
-        });
+        p.forEach(post->{ aux.add(post); });
         return aux;
     }
 }

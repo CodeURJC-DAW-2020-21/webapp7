@@ -50,16 +50,16 @@ public class PostController {
 
     @GetMapping("/blog")
     public String blog(Model model){
-        int quantity=10;
+        int size=5;
         //List<Post> posts =  service.listPosts();
         //model.addAttribute("posts",posts);
-        ArrayList<Post> toShow=service.findPost(PageRequest.of(0, 2));
-        model.addAttribute("posts", toShow);
+        ArrayList<Post> posts=service.findPost(PageRequest.of(0, 2));
+        model.addAttribute("posts", posts);
 
-        if(toShow.size()>=quantity){
-            model.addAttribute("canLoadMore",false) ;
+        if(posts.size()>=size){
+            model.addAttribute("loadingPermission",false) ;
         } else{
-            model.addAttribute("canLoadMore",true) ;
+            model.addAttribute("loadingPermission",true) ;
         }
 
 

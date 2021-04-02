@@ -32,8 +32,8 @@
         $.ajax({
           url:"/blog"
         }).done(function(data){
-          var result=$(data).find("#postsZone");
-          $("#loadZone").append(result);
+          var result=$(data).find("#postsArea");
+          $("#loadArea").append(result);
         });
       });
     });
@@ -72,7 +72,7 @@
 <!--START SECOND PART-->
 <section class="ftco-section bg-light">
   <div class="container" >
-    <div class="row d-flex"   id="postsZone">
+    <div class="row d-flex"   id="postsArea">
       <!--START FIRST POST-->
         {{#posts}}
         <div class="col-lg-4 ftco-animate" id="container">
@@ -91,10 +91,10 @@
 
     </div>
 
-    <div id="loadZone"></div>
-    {{#canLoadMore}}
+    <div id="loadArea"></div>
+    {{#loadingPermission}}
     <button  id="loadMore" class="btn btn-secondary py-2 px-3 -align-center" >Cargar más</button>
-    {{/canLoadMore}}
+    {{/loadingPermission}}
 
 
 
