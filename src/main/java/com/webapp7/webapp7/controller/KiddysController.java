@@ -80,6 +80,9 @@ public class KiddysController {
 		return "user_admin";
 	}
 
+	@GetMapping("/test-content")
+	public String testContent (){ return "test-content";}
+
 	@GetMapping("/login")
 	public String login (){ return "login";}
 
