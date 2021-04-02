@@ -14,6 +14,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,9 +43,44 @@ public class MaterialController {
             }
         }
 
+        List<Material> listRecomendations = new ArrayList<>();
+        List<User> listUsers = userService.findAllUsers();
+        int i = 0;
+        int j = 0;
+        while (!listUsers.isEmpty() && i < listUsers.size()){
+            List<Material> listStudentMaterial = listUsers.get(i).getFinishedMaterials();
+            while (!listStudentMaterial.isEmpty() && j < listStudentMaterial.size()) {
+                if (user.getCourse().equals(listUsers.get(i).getCourse())) {
+                    if (listRecomendations.isEmpty() || !listRecomendations.contains(listStudentMaterial.get(j))) {
+                        listRecomendations.add(listStudentMaterial.get(j));
+                    }
+                }
+                j ++;
+            }
+            j = 0;
+            i++;
+        }
+
+        List<Material> listStudent = user.getFinishedMaterials();
+        i = 0;
+        j = 0;
+        while   (!listStudent.isEmpty() && !listRecomendations.isEmpty() && i < listStudent.size()){
+            while (!listRecomendations.isEmpty() && j < listRecomendations.size()){
+                if (listRecomendations.get(j).equals(listStudent.get(i))){
+                    listRecomendations.remove(j);
+                }else {
+                    j++;
+                }
+            }
+            j = 0;
+            i++;
+        }
+
+        model.addAttribute("listRecomendations", listRecomendations);
         model.addAttribute("listMaterial",listMaterial);
         return "user_student";
     }
+
 
     @GetMapping("/user_instructor")
     public String viewInstructorPage(Model model, HttpServletRequest request){
@@ -144,6 +180,5 @@ public class MaterialController {
         Material material = materialRepository.findById(id).orElseThrow();
         materialRepository.deleteById(id);
         return "redirect:/admin";
-        
     }
 }
