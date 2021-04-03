@@ -1,6 +1,8 @@
 package com.webapp7.webapp7.controller;
 
+import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Post;
+import com.webapp7.webapp7.model.User;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -24,7 +26,20 @@ public class PostController {
 
     @Autowired
     private com.webapp7.webapp7.service.PostService service;
+    @Autowired
+    private com.webapp7.webapp7.Service.CourseService courseService;
+    @Autowired
+    private com.webapp7.webapp7.Service.UserService userService;
 
+    /**
+     *
+     * @param model
+     * @param title
+     * @param description
+     * @param imageField
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/admin/post/createNew")
     public String addPost(Model model, @RequestParam String title, @RequestParam String description, MultipartFile imageField) throws IOException {
         Post post = new Post();
@@ -41,19 +56,55 @@ public class PostController {
         return "redirect:/admin";
     }
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/index")
     public String login(Model model) {
         List<Post> posts =  service.listPosts();
         model.addAttribute("posts",posts);
+        List<Course> courses = courseService.listCourse();
+        model.addAttribute("courses_size",courses.size());
+        List<User> users = userService.findAllUsers();
+        List<User> instructors = new ArrayList<>();
+        List<User> students = new ArrayList<>();
+        int count =0;
+        while (!users.isEmpty() && count<users.size()){
+            if(users.get(count).getRol().equals("profesor")){
+                instructors.add(users.get(count));
+            }
+            if(users.get(count).getRol().equals("alumno")){
+                students.add(users.get(count));
+            }
+            count++;
+        }
+        model.addAttribute("instructors",instructors.size());
+        model.addAttribute("students",students.size());
+        model.addAttribute("courses_size",courses.size());
         return "index";
     }
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/blog")
     public String blog(Model model){
-
         ArrayList<Post> posts=service.findPost(PageRequest.of(0, 3));
         model.addAttribute("posts", posts);
         List<Post> restOfPosts =  service.listPosts();
+     /*List<Post> trocito = new ArrayList<>();
+        for (int i = 2; i<restOfPosts.size();i++) {
+            trocito.add(restOfPosts.get(i));
+        }
+        if (!trocito.isEmpty()) {
+            model.addAttribute("trocito", trocito);
+        }
+
+         */
         restOfPosts.remove(0);
         restOfPosts.remove(0);
         restOfPosts.remove(0);
@@ -63,7 +114,12 @@ public class PostController {
         return "blog";
     }
 
-
+    /**
+     *
+     * @param model
+     * @param id
+     * @return
+     */
     @GetMapping("/post/{id}")
     public String showPost(Model model, @PathVariable long id) {
         Post post = service.findById(id).orElseThrow();
@@ -76,6 +132,12 @@ public class PostController {
         return "blog-single";
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     @GetMapping("/post/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException {
         Optional<Post> post = service.findById(id);
@@ -88,6 +150,12 @@ public class PostController {
         }
     }
 
+    /**
+     *
+     * @param model
+     * @param id
+     * @return
+     */
     @GetMapping("/post/post/{id}")
     public String showPostlinked(Model model, @PathVariable long id) {
         Post post = service.findById(id).orElseThrow();
