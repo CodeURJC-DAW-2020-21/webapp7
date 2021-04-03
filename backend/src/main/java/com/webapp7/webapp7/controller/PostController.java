@@ -1,6 +1,8 @@
 package com.webapp7.webapp7.controller;
 
+import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Post;
+import com.webapp7.webapp7.model.User;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -24,6 +26,10 @@ public class PostController {
 
     @Autowired
     private com.webapp7.webapp7.service.PostService service;
+    @Autowired
+    private com.webapp7.webapp7.Service.CourseService courseService;
+    @Autowired
+    private com.webapp7.webapp7.Service.UserService userService;
 
     /**
      *
@@ -59,6 +65,24 @@ public class PostController {
     public String login(Model model) {
         List<Post> posts =  service.listPosts();
         model.addAttribute("posts",posts);
+        List<Course> courses = courseService.listCourse();
+        model.addAttribute("courses_size",courses.size());
+        List<User> users = userService.findAllUsers();
+        List<User> instructors = new ArrayList<>();
+        List<User> students = new ArrayList<>();
+        int count =0;
+        while (!users.isEmpty() && count<users.size()){
+            if(users.get(count).getRol().equals("profesor")){
+                instructors.add(users.get(count));
+            }
+            if(users.get(count).getRol().equals("alumno")){
+                students.add(users.get(count));
+            }
+            count++;
+        }
+        model.addAttribute("instructors",instructors.size());
+        model.addAttribute("students",students.size());
+        model.addAttribute("courses_size",courses.size());
         return "index";
     }
 

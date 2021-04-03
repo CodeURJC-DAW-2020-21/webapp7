@@ -62,7 +62,7 @@ public class KiddysController {
 		if (request.isUserInRole("administrador")){
 			return "redirect:/admin";
 		}
-		return "/index";
+		return "redirect:/index";
 	}
 
 	@GetMapping("/admin")

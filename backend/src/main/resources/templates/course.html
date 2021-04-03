@@ -23,53 +23,7 @@
 	<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 sidebar">
-					<div class="sidebar-box bg-white ftco-animate">
-						<form action="#" class="search-form">
-							<div class="form-group">
-								<span class="icon fa fa-search"></span>
-								<input type="text" class="form-control" placeholder="Buscar...">
-							</div>
-						</form>
-					</div>
 
-
-					<!--START "CATEGORÍAS"-->
-					<div class="sidebar-box bg-white p-4 ftco-animate">
-						<h3 class="heading-sidebar">Categorías</h3>
-						{{#courses}}
-						<form action="#" class="browse-form">
-							<label><input type="checkbox" id="option-category-1" name="vehicle" value=""> {{category}} </label><br>
-						</form>
-						{{/courses}}
-					</div>
-					<!--END "CATEGORÍAS"-->
-
-					<!--START "PROFESOR"-->
-
-					<div class="sidebar-box bg-white p-4 ftco-animate">
-						<h3 class="heading-sidebar">Profesor</h3>
-						{{#courses}}
-						<form action="#" class="browse-form">
-							<label ><input type="checkbox" id="option-instructor-1" name="vehicle" value="">{{instructor}}</label><br>
-						</form>
-						{{/courses}}
-					</div>
-
-					<!--END "PROFESOR"-->
-
-					<!--START "EDAD"-->
-					<div class="sidebar-box bg-white p-4 ftco-animate">
-						<h3 class="heading-sidebar">Edad</h3>
-						{{#courses}}
-						<form action="#" class="browse-form">
-							<label><input type="checkbox" id="option-course-type-1" name="vehicle" value=""> {{ageStart}} Años</label><br>
-							<label><input type="checkbox" id="option-course-type-2" name="vehicle" value=""> {{ageEnd}} Años</label><br>
-						</form>
-						{{/courses}}
-					</div>
-					<!--END "EDAD"-->
-				</div>
 
 				<!--START COURSES-->
 				<div class="col-lg-9">
@@ -82,10 +36,6 @@
 							<div class="project-wrap">
 
 								<img src="/course/{{id}}/image" class="block-20" >
-								<!--
-								<a class="img" style="background-image: url(images/Niño_5a6.png);">
-								</a>
-								-->
 								<div class="text p-4">
 									<h3><a>Curso "{{category}}" para niños entre {{ageStart}}-{{ageEnd}} años</a></h3>
 									<p class="advisor">{{instructor}}</span></p>
@@ -103,22 +53,6 @@
 
 					</div>
 
-					<!--TO INTRODUCE MORE COURSES-->
-					<!--<div class="row mt-5">
-						<div class="col">
-							<div class="block-27">
-								<ul>
-									<li><a href="#">&lt;</a></li>
-									<li class="active"><span>1</span></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">&gt;</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					-->
 				</div>
 				<!--END COURSES-->
 			</div>

@@ -88,13 +88,13 @@ public class DataBaseInitializer {
         userRepository.save(user1);
 
 
-*/
+
 
 
         User user2= new User("admin@gmail.com", "admin", passwordEncoder.encode("pass"), "administrador");
         setUserImage(user2, "static/images/teacher-2.jpg");
         userRepository.save(user2);
-/*
+
 
 
         User user4= new User("profesor@gmail.com", "profesor", passwordEncoder.encode("pass"), "profesor");

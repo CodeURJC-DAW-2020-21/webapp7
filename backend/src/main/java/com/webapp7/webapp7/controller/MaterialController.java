@@ -104,8 +104,6 @@ public class MaterialController {
                 index++;
             }
         }
-
-
         List<User> listUsers = userService.findAllUsers();
         index = 0;
         while (!listUsers.isEmpty() && index < listUsers.size()){
@@ -116,10 +114,7 @@ public class MaterialController {
             }
         }
         model.addAttribute("students_in_course",listUsers);
-
-
-
-        //model.addAttribute("course_imparted",course);
+        model.addAttribute("course_imparted",course);
         model.addAttribute("listMaterial",listMaterial);
         return "user_instructor";
     }
