@@ -110,17 +110,18 @@
                         <div class="col-lg-4 mb-4">
                             <div class="row">           
                                 <div class="col-lg-12 mb-12">
-                                    <div class="card shadow mb-4">
+                                    <div class="card shadow">
                                         <div class="card-header2 py-3">
-                                            <h6 class="m-0 font-weight-bold" style="color: black;">CLASE</h6>
+                                            <h6 class="m-0 font-weight-bold" style="color: black;">CLASE : {{course_imparted.category}}</h6>
                                         </div>
                                         <div class="card-body">
                                             <div class="list-group">
-                                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"href="#" data-toggle="modal" data-target="#class">
-                                                  <div class="d-flex w-100 justify-content-between">
-
-                                                  </div>
-                                                </a>
+                                                <h4>Lista alumnos:</h4>
+                                                    {{#students_in_course}}
+                                                    <p> <a style="color:#5f4495">Nombre:</a> {{name}}</p>
+                                                    <p> <a style="color:#5f4495">Email:</a>  {{email}}</p>
+                                                    <br>
+                                                    {{/students_in_course}}
                                               </div>
                                         </div>
                                     </div>
