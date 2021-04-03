@@ -25,6 +25,15 @@ public class PostController {
     @Autowired
     private com.webapp7.webapp7.service.PostService service;
 
+    /**
+     *
+     * @param model
+     * @param title
+     * @param description
+     * @param imageField
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/admin/post/createNew")
     public String addPost(Model model, @RequestParam String title, @RequestParam String description, MultipartFile imageField) throws IOException {
         Post post = new Post();
@@ -41,6 +50,11 @@ public class PostController {
         return "redirect:/admin";
     }
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/index")
     public String login(Model model) {
         List<Post> posts =  service.listPosts();
@@ -48,12 +62,25 @@ public class PostController {
         return "index";
     }
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/blog")
     public String blog(Model model){
-
         ArrayList<Post> posts=service.findPost(PageRequest.of(0, 3));
         model.addAttribute("posts", posts);
         List<Post> restOfPosts =  service.listPosts();
+     /*List<Post> trocito = new ArrayList<>();
+        for (int i = 2; i<restOfPosts.size();i++) {
+            trocito.add(restOfPosts.get(i));
+        }
+        if (!trocito.isEmpty()) {
+            model.addAttribute("trocito", trocito);
+        }
+
+         */
         restOfPosts.remove(0);
         restOfPosts.remove(0);
         restOfPosts.remove(0);
@@ -63,7 +90,12 @@ public class PostController {
         return "blog";
     }
 
-
+    /**
+     *
+     * @param model
+     * @param id
+     * @return
+     */
     @GetMapping("/post/{id}")
     public String showPost(Model model, @PathVariable long id) {
         Post post = service.findById(id).orElseThrow();
@@ -76,6 +108,12 @@ public class PostController {
         return "blog-single";
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     @GetMapping("/post/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException {
         Optional<Post> post = service.findById(id);
@@ -88,6 +126,12 @@ public class PostController {
         }
     }
 
+    /**
+     *
+     * @param model
+     * @param id
+     * @return
+     */
     @GetMapping("/post/post/{id}")
     public String showPostlinked(Model model, @PathVariable long id) {
         Post post = service.findById(id).orElseThrow();
