@@ -50,19 +50,16 @@ public class PostController {
 
     @GetMapping("/blog")
     public String blog(Model model){
-        int size=5;
-        //List<Post> posts =  service.listPosts();
-        //model.addAttribute("posts",posts);
-        ArrayList<Post> posts=service.findPost(PageRequest.of(0, 2));
+        ArrayList<Post> posts=service.findPost(PageRequest.of(0, 3  ));
         model.addAttribute("posts", posts);
-
-        if(posts.size()>=size){
-            model.addAttribute("loadingPermission",false) ;
-        } else{
-            model.addAttribute("loadingPermission",true) ;
+        List<Post> restOfPosts =  service.listPosts();
+        restOfPosts.remove(0);
+        restOfPosts.remove(0);
+        restOfPosts.remove(0);
+        if (!restOfPosts.isEmpty()) {
+            //restOfPosts=service.findPost(PageRequest.of(0, 0  ));
+            model.addAttribute("restOfPosts", restOfPosts);
         }
-
-
         return "blog";
     }
 
