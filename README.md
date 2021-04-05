@@ -104,7 +104,7 @@ Whenthe user sents a doubt or concern via the contact page, this page will appea
 
 
 #### User-instructor
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserInstructor.if)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserInstructor.gif)
 
 Every student user has their own personalized tab with their material(checked whenever has been downloaded and  seeen), personalized recommendations  and graph portraying the progress of the course.On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
