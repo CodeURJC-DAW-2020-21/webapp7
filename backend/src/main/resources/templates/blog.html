@@ -56,7 +56,6 @@
         {{#posts}}
         <div class="col-lg-4 ftco-animate">
           <div class="blog-entry">
-
             <!--<a href="blog-single" class="block-20" style="background-image: url(images/MatriculasAbiertas.png);"></a>-->
             <img src="/post/{{id}}/image" class="block-20" >
             <div class="text d-block">
@@ -67,29 +66,28 @@
           </div>
         </div>
         {{/posts}}
-
     </div>
-<div  style="display: none">
-    <div class="row d-flex" id="postsArea">
-      <!--START FIRST POST-->
-      {{#restOfPosts}}
-      <div class="col-lg-4 ftco-animate" >
-        <div class="blog-entry">
 
-          <!--<a href="blog-single" class="block-20" style="background-image: url(images/MatriculasAbiertas.png);"></a>-->
-          <img src="/post/{{id}}/image" class="block-20" >
-          <div class="text d-block">
-            <h3 class="heading"><a href="post/{{id}}">{{title}}</a></h3>
-            <p>{{description}}</p>
-            <p><a href="post/{{id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
+  <div  style="display: none">
+      <div class="row d-flex" id="postsArea">
+        <!--START FIRST POST-->
+        {{#restOfPosts}}
+        <div class="col-lg-4 ftco-animate" >
+          <div class="blog-entry">
+
+            <!--<a href="blog-single" class="block-20" style="background-image: url(images/MatriculasAbiertas.png);"></a>-->
+            <img src="/post/{{id}}/image" class="block-20" >
+            <div class="text d-block">
+              <h3 class="heading"><a href="post/{{id}}">{{title}}</a></h3>
+              <p>{{description}}</p>
+              <p><a href="post/{{id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
+            </div>
           </div>
         </div>
+        {{/restOfPosts}}
+
       </div>
-      {{/restOfPosts}}
-
-    </div>
-</div>
-
+  </div>
     <div id="loadArea">
 
     </div>
