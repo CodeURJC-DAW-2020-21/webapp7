@@ -102,10 +102,6 @@ Whenever the user needs to contact the academy for any reason there is tab with 
 
 Whenthe user sents a doubt or concern via the contact page, this page will appear, making sure that the user knows that their question is sent.
 
-#### Email
-![Email](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/email.png)
-
-Every user, student as well as instructor have this tab where they can see the new emails in the right part of the tab, time charge ilustrated with a  progress bar, and on the left the chance of writting a new email including files if desired. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their class material page.
 
 #### User-instructor
 ![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_instructor.png)
@@ -177,7 +173,7 @@ Springboot starter security.
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase3.png)
 
 ### Entity Diagram:
-![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Entity_Diagram.jpeg)
+![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/EntityDiagram.png)
 
 ### Classes and templates Diagram:
 ![Class Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Class_Diagram.jpeg)
