@@ -170,7 +170,7 @@ Springboot starter security.
 10.Next >> Execute >> Finnish till installation ends.
 
 ### Navigation Diagram:
-![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase3.png)
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase31.png)
 
 ### Entity Diagram:
 ![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/EntityDiagram.png)
