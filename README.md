@@ -187,6 +187,8 @@ Springboot starter security.
   - TASKS:
     - Login: HTML, Controller, Service, Repository.
     - Error control system: ErrorWebController.
+    - Algorithm 
+    - Ajax
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/366531d7e57513a6a43bdbfeded0db3f7ffc635a)
@@ -209,6 +211,9 @@ Springboot starter security.
     - Create the ability to post new content to those pages.
     - Create the ability to download said content, also deleting it.
     - Fix bugs and errors.
+    - Algorithm 
+    - Graph
+    - Queries
     -
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b8067f59a16ce9e60c7109aec995e263dfbf2bd9)
@@ -231,6 +236,9 @@ Springboot starter security.
     - Create HTML of error, loginerror, error 404.
     - Instructor: Controller, Service, Repository.
     - Do the SQL Query
+    - Algorithm
+    - Graph
+    - Queries
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4e96792fea4b945bafd7d42ca642c75d20ae25d3)
@@ -253,6 +261,8 @@ Springboot starter security.
     - Show courses posted in /courses
     - Delete courses
     - Support some teammates with some errors and bugs fixed
+    - Ajax 
+    - Graph
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1d5685338933319f9b15049e3a8236e04ccb4787)
@@ -275,6 +285,8 @@ Springboot starter security.
     - Email with SMPT
     - Message feedback html
     - Sample data embedded on MYSQL database
+    - Ajax
+    - Graph
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/908daab33a8f323f1502a2a3e818a51cc8c9ca34)
