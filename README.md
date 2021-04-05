@@ -63,7 +63,7 @@ System that compares the download content from the course and recomends new mate
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
 #### Home
-![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Home.gif)
+![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Index.gif)
 
 This is the main page which shows a review about all website’s sections and a place where a user can sign up or log in if it’s registered already.
 
@@ -73,7 +73,7 @@ This is the main page which shows a review about all website’s sections and a 
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Courses
-![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/courses3.png)
+![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Course.gif)
 
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
@@ -83,7 +83,7 @@ This tab describes main info about Kiddy’s House academy, what is offerted and
 It contains all teachers description.
 
 #### Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/blog3.png)
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Blog.gif)
 
 This page has all news and updates about everything related to academy stuff.
 
@@ -104,17 +104,17 @@ Whenthe user sents a doubt or concern via the contact page, this page will appea
 
 
 #### User-instructor
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_instructor.png)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserInstructor.if)
 
 Every student user has their own personalized tab with their material(checked whenever has been downloaded and  seeen), personalized recommendations  and graph portraying the progress of the course.On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
 #### User student
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_student.png)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserStudent.gif)
 
 Each instructor has their own class content with the possibility of adding any type of files: from pdfs, text, titles, to  videos. It is observable in to their right a series of classes they have with their timetables and a progress graph of the course. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
 ### User admin
-![User-admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/admin3.png)
+![User-admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserAdmin.gif)
 This page was created to manage all users, courses and posts within the organization.
 
 ### Error
