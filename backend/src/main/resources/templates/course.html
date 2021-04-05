@@ -22,19 +22,13 @@
 	<!--START SECOND PART-->
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<div class="row">
-
-
+			<div class="row d-flex">
 				<!--START COURSES-->
-				<div class="col-lg-9">
-					<div class="row">
-
 
 						<!--START FIRST COURSE-->
 						{{#courses}}
-						<div class="col-md-6 d-flex align-items-stretch ftco-animate">
+						<div class="col-lg-4  ftco-animate">
 							<div class="project-wrap">
-
 								<img src="/course/{{id}}/image" class="block-20" >
 								<div class="text p-4">
 									<h3><a>Curso "{{category}}" para niños entre {{ageStart}}-{{ageEnd}} años</a></h3>
@@ -42,18 +36,12 @@
 									<ul class="d-flex justify-content-between">
 										<li class="price">{{price}} €/mes</li>
 									</ul>
-
-
 								</div>
-
 							</div>
 						</div>
 						{{/courses}}
 						<!--END FIRST COURSE-->
 
-					</div>
-
-				</div>
 				<!--END COURSES-->
 			</div>
 		</div>
