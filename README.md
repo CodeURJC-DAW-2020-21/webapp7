@@ -78,7 +78,7 @@ This tab describes main info about Kiddy’s House academy, what is offerted and
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Instructor
-![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Instructor.gif)
+![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Instructor2.gif)
 
 It contains all teachers description.
 
