@@ -136,6 +136,7 @@ public class DataBaseInitializer {
 
 
  */
+
     }
 
     public void setUserImage(User user, String classpathResource) throws IOException {

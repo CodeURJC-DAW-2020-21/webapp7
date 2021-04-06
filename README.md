@@ -63,7 +63,7 @@ System that compares the download content from the course and recomends new mate
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
 #### Home
-![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Home.gif)
+![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Index.gif)
 
 This is the main page which shows a review about all website’s sections and a place where a user can sign up or log in if it’s registered already.
 
@@ -73,17 +73,17 @@ This is the main page which shows a review about all website’s sections and a 
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Courses
-![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/courses3.png)
+![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Course.gif)
 
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Instructor
-![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Instructor.gif)
+![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Instructor2.gif)
 
 It contains all teachers description.
 
 #### Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/blog3.png)
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Blog.gif)
 
 This page has all news and updates about everything related to academy stuff.
 
@@ -102,23 +102,19 @@ Whenever the user needs to contact the academy for any reason there is tab with 
 
 Whenthe user sents a doubt or concern via the contact page, this page will appear, making sure that the user knows that their question is sent.
 
-#### Email
-![Email](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/email.png)
-
-Every user, student as well as instructor have this tab where they can see the new emails in the right part of the tab, time charge ilustrated with a  progress bar, and on the left the chance of writting a new email including files if desired. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their class material page.
 
 #### User-instructor
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_instructor.png)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserInstructor.gif)
 
 Every student user has their own personalized tab with their material(checked whenever has been downloaded and  seeen), personalized recommendations  and graph portraying the progress of the course.On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
 #### User student
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_student.png)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserStudent.gif)
 
 Each instructor has their own class content with the possibility of adding any type of files: from pdfs, text, titles, to  videos. It is observable in to their right a series of classes they have with their timetables and a progress graph of the course. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
 ### User admin
-![User-admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/admin3.png)
+![User-admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserAdmin.gif)
 This page was created to manage all users, courses and posts within the organization.
 
 ### Error
@@ -174,10 +170,10 @@ Springboot starter security.
 10.Next >> Execute >> Finnish till installation ends.
 
 ### Navigation Diagram:
-![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase3.png)
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase31.png)
 
 ### Entity Diagram:
-![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Entity_Diagram.jpeg)
+![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/EntityDiagram.png)
 
 ### Classes and templates Diagram:
 ![Class Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Class_Diagram.jpeg)
@@ -187,6 +183,8 @@ Springboot starter security.
   - TASKS:
     - Login: HTML, Controller, Service, Repository.
     - Error control system: ErrorWebController.
+    - Algorithm 
+    - Ajax
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/366531d7e57513a6a43bdbfeded0db3f7ffc635a)
@@ -209,6 +207,9 @@ Springboot starter security.
     - Create the ability to post new content to those pages.
     - Create the ability to download said content, also deleting it.
     - Fix bugs and errors.
+    - Algorithm 
+    - Graph
+    - Queries
     -
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b8067f59a16ce9e60c7109aec995e263dfbf2bd9)
@@ -231,6 +232,9 @@ Springboot starter security.
     - Create HTML of error, loginerror, error 404.
     - Instructor: Controller, Service, Repository.
     - Do the SQL Query
+    - Algorithm
+    - Graph
+    - Queries
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4e96792fea4b945bafd7d42ca642c75d20ae25d3)
@@ -253,6 +257,8 @@ Springboot starter security.
     - Show courses posted in /courses
     - Delete courses
     - Support some teammates with some errors and bugs fixed
+    - Ajax 
+    - Graph
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1d5685338933319f9b15049e3a8236e04ccb4787)
@@ -275,6 +281,8 @@ Springboot starter security.
     - Email with SMPT
     - Message feedback html
     - Sample data embedded on MYSQL database
+    - Ajax
+    - Graph
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/908daab33a8f323f1502a2a3e818a51cc8c9ca34)
