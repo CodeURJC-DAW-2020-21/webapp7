@@ -1,5 +1,7 @@
 package com.webapp7.webapp7.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Blob;
 
@@ -18,6 +20,7 @@ public class Post {
     private String description;
 
     @Lob
+    @JsonIgnore
     private Blob imageFile;
     private boolean image;
 
@@ -57,6 +60,7 @@ public class Post {
     public boolean hasImage(){
         return this.image;
     }
+
     public void setImage(boolean image){
         this.image = image;
     }
