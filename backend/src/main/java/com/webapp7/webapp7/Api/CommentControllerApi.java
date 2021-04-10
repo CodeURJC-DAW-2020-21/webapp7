@@ -2,12 +2,10 @@ package com.webapp7.webapp7.Api;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.webapp7.webapp7.model.Comment;
-import com.webapp7.webapp7.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
@@ -17,7 +15,8 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/comments")
 public class CommentControllerApi {
 
-    interface CommentBasic extends Comment.Basic {}
+    interface CommentBasic extends Comment.Basic {
+    }
 
     @Autowired
     private com.webapp7.webapp7.Service.CommentService commentService;
