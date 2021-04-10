@@ -18,15 +18,11 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/posts")
 public class PostControllerApi {
 
-    interface PostBasic extends  Post.Basic {
+    interface PostBasic extends Post.Basic {
     }
 
     @Autowired
     private com.webapp7.webapp7.Service.PostService service;
-    @Autowired
-    private com.webapp7.webapp7.Service.CourseService courseService;
-    @Autowired
-    private com.webapp7.webapp7.Service.UserService userService;
 
     @JsonView(PostBasic.class)
     @GetMapping("/")
@@ -41,9 +37,9 @@ public class PostControllerApi {
 
     @JsonView(PostBasic.class)
     @GetMapping("/{id}")
-    public ResponseEntity<Post> getPost( @PathVariable long id) {
+    public ResponseEntity<Post> getPost(@PathVariable long id) {
         Post post = service.findById(id).orElseThrow();
-        if (post!=null) {
+        if (post != null) {
             return ResponseEntity.ok(post);
         } else {
             return ResponseEntity.notFound().build();
@@ -85,22 +81,16 @@ public class PostControllerApi {
  */
 
 
-@PostMapping("/")
-public ResponseEntity<Post> addPost(@RequestBody Post post) throws IOException {
+    @PostMapping("/")
+    public ResponseEntity<Post> addPost(@RequestBody Post post) throws IOException {
 
-    if (post.getImageFile()!=null) {
-        MultipartFile imageFile = (MultipartFile) post.getImageFile();
-        post.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
+        if (post.getImageFile() != null) {
+            MultipartFile imageFile = (MultipartFile) post.getImageFile();
+            post.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
+        }
+        service.save(post);
+        return ResponseEntity.created(fromCurrentRequest().path("/{id}").buildAndExpand(post.getId()).toUri()).body(post);
     }
-    service.save(post);
-    return ResponseEntity.created(fromCurrentRequest().path("/{id}").buildAndExpand(post.getId()).toUri()).body(post);
-}
-
-
-
-
-
-
 
 
 }

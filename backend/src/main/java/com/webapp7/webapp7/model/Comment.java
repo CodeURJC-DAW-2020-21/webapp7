@@ -1,18 +1,25 @@
 package com.webapp7.webapp7.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 
 //DATA BASE TABLE
 @Entity
 public class Comment {
 
+    public interface Basic {}
+
+    @JsonView(Comment.Basic.class)
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id = null;
 
+    @JsonView(Comment.Basic.class)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String name;
 
+    @JsonView(Comment.Basic.class)
     @Column(columnDefinition = "TEXT")
     private String comment;
 
