@@ -20,6 +20,7 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/posts")
 public class PostControllerApi {
 
+    interface PostBasic extends Post.Basic {}
     @Autowired
     private UserService userService;
     @Autowired
@@ -108,8 +109,6 @@ public class PostControllerApi {
  */
 
 
-    interface PostBasic extends Post.Basic {
-    }
 
 
 
