@@ -1,6 +1,8 @@
 package com.webapp7.webapp7.Api;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.webapp7.webapp7.Service.PostService;
+import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.model.Post;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +20,31 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/posts")
 public class PostControllerApi {
 
-    interface PostBasic extends Post.Basic {
+    interface PostBasic extends Post.Basic {}
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private PostService postService;
+
+/*
+
+    private final UserService userService;
+    private final PostService postService;
+    private final ModelMapper modelMapper;
+
+
+    public  PostControllerApi(UserService userService, PostService postService, ModelMapper modelMapper) {
+        this.userService = userService;
+        this.postService = postService;
+        this.modelMapper = modelMapper;
     }
 
-    @Autowired
-    private com.webapp7.webapp7.Service.PostService service;
+ */
 
     @JsonView(PostBasic.class)
     @GetMapping("/")
     public ResponseEntity<Collection<Post>> getPosts() {
-        List<Post> posts = service.listPosts();
+        List<Post> posts = postService.listPosts();
         if (!posts.isEmpty()) {
             return ResponseEntity.ok(posts);
         } else {
@@ -38,12 +55,23 @@ public class PostControllerApi {
     @JsonView(PostBasic.class)
     @GetMapping("/{id}")
     public ResponseEntity<Post> getPost(@PathVariable long id) {
-        Post post = service.findById(id).orElseThrow();
+        Post post = postService.findById(id).orElseThrow();
         if (post != null) {
             return ResponseEntity.ok(post);
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<Post> addPost(@RequestBody Post post) throws IOException {
+
+        if (post.getImageFile() != null) {
+            MultipartFile imageFile = (MultipartFile) post.getImageFile();
+            post.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
+        }
+        postService.save(post);
+        return ResponseEntity.created(fromCurrentRequest().path("/{id}").buildAndExpand(post.getId()).toUri()).body(post);
     }
 /*INTENTO POSTMAPPING CON IMAGEN1
     @JsonView(PostBasic.class)
@@ -81,16 +109,21 @@ public class PostControllerApi {
  */
 
 
-    @PostMapping("/")
-    public ResponseEntity<Post> addPost(@RequestBody Post post) throws IOException {
 
-        if (post.getImageFile() != null) {
-            MultipartFile imageFile = (MultipartFile) post.getImageFile();
-            post.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
-        }
-        service.save(post);
+
+
+
+/*INTENTO POSTMAPPING CON PostDTO
+    @PostMapping("/")
+    public ResponseEntity<Post> addPost(@ModelAttribute PostDTO entryDTO, HttpServletRequest request){
+        Principal principal = request.getUserPrincipal();
+        User user = userService.findByName(principal.getName());
+        Post post = modelMapper.map(entryDTO, Post.class);
+        postService.save(post);
         return ResponseEntity.created(fromCurrentRequest().path("/{id}").buildAndExpand(post.getId()).toUri()).body(post);
     }
+
+ */
 
 
 }
