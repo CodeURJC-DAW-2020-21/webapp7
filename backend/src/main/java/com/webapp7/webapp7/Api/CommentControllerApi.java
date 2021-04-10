@@ -1,4 +1,4 @@
-package com.webapp7.webapp7.ApiController;
+package com.webapp7.webapp7.Api;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
