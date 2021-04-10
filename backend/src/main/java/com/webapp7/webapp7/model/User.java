@@ -4,10 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.sql.Blob;
 import java.util.List;
 
@@ -46,12 +42,12 @@ public class User {
     @JsonIgnore
     private List<Material> finishedMaterials;
 
-    @JsonIgnore
+    @JsonView(User.Basic.class)
     private int numberMaterial;
 
 
     @OneToOne
-    @JsonIgnore
+    @JsonView(User.Basic.class)
     private Course course;
 
     public List<Material> getFinishedMaterials() {

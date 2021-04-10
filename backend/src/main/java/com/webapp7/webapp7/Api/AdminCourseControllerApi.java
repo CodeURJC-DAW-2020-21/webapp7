@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
@@ -17,11 +16,8 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/admin/courses")
 public class AdminCourseControllerApi {
 
-    interface CourseBasic extends Course.Basic {}
-
     @Autowired
     private com.webapp7.webapp7.Service.CourseService courseService;
-
     @Autowired
     private com.webapp7.webapp7.Service.UserService userService;
 
@@ -43,6 +39,19 @@ public class AdminCourseControllerApi {
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(course.getId()).toUri()).body(course);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Course> replacePost(@PathVariable long id,
+                                              @RequestBody Course newCourse) {
+        Course course = courseService.findById(id).orElse(null);
+        if (course != null) {
+            newCourse.setId(id);
+            courseService.save(newCourse);
+            return ResponseEntity.ok(course);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @JsonView(CourseBasic.class)
     @DeleteMapping("/{id}")
     public ResponseEntity<Course> deleteCourse(@PathVariable long id) {
@@ -56,5 +65,8 @@ public class AdminCourseControllerApi {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    interface CourseBasic extends Course.Basic {
     }
 }

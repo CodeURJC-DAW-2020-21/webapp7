@@ -15,9 +15,6 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/comments")
 public class CommentControllerApi {
 
-    interface CommentBasic extends Comment.Basic {
-    }
-
     @Autowired
     private com.webapp7.webapp7.Service.CommentService commentService;
 
@@ -37,5 +34,8 @@ public class CommentControllerApi {
     public ResponseEntity<Comment> addComment(@RequestBody Comment comment) {
         commentService.save(comment);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(comment.getId()).toUri()).body(comment);
+    }
+
+    interface CommentBasic extends Comment.Basic {
     }
 }

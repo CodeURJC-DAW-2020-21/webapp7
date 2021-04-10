@@ -35,8 +35,8 @@ public class Course {
     @Column
     private String instructor;
 
-    @JsonIgnore
-    @Column (nullable = true)
+    @JsonView(Course.Basic.class)
+    @Column(nullable = true)
     @OneToMany
     private List<User> students;
 
