@@ -1,5 +1,8 @@
 package com.webapp7.webapp7.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,19 +15,29 @@ import java.util.List;
 @Entity
 public class User {
 
+    public interface Basic {}
+
+    @JsonView(User.Basic.class)
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @JsonView(User.Basic.class)
     private String email;
 
+    @JsonView(User.Basic.class)
     private String name;
 
+    @JsonView(User.Basic.class)
     private String password;
 
+    @JsonView(User.Basic.class)
     private String rol;
+
     @Lob
+    @JsonIgnore
     private Blob imageFile;
+    @JsonIgnore
     private boolean image;
 
     @ManyToMany
