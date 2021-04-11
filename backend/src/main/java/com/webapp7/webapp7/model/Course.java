@@ -1,5 +1,8 @@
 package com.webapp7.webapp7.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 import java.sql.Blob;
 import java.util.ArrayList;
@@ -9,36 +12,48 @@ import java.util.List;
 @Entity
 public class Course {
 
+    public interface Basic {}
+
+    @JsonView(Course.Basic.class)
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @JsonView(Course.Basic.class)
     @Column(nullable= false, unique= true)
     private String category;
 
+    @JsonView(Course.Basic.class)
     @Column
     private int ageStart;
 
+    @JsonView(Course.Basic.class)
     @Column
     private int ageEnd;
 
+    @JsonView(Course.Basic.class)
     @Column
     private String instructor;
 
-    @Column (nullable = true)
+    @JsonView(Course.Basic.class)
+    @Column(nullable = true)
     @OneToMany
     private List<User> students;
 
+    @JsonIgnore
     @Column (nullable = true)
     @OneToMany
     private List<Material> materials;
 
+    @JsonView(Course.Basic.class)
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int price;
 
     @Lob
+    @JsonIgnore
     private Blob imageFile;
+    @JsonIgnore
     private boolean image;
 
     public List<Material> getMaterials() {

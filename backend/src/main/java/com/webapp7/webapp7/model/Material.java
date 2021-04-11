@@ -1,27 +1,37 @@
 package com.webapp7.webapp7.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 import java.util.List;
 
 //DATA BASE TABLE
 @Entity
 @Table
-public class Material{
+public class Material {
+        @JsonIgnore
+        @ManyToMany
+        public List<User> users;
+        @JsonView(Material.Basic.class)
         @Id
-        @GeneratedValue (strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.AUTO)
         private Long id;
 
+        @JsonView(Material.Basic.class)
         @Column(nullable = false)
         private String name;
 
+        @JsonIgnore
         @Column(length = 200000)
         private byte[] content;
 
+        @JsonIgnore
         @OneToOne
         private Course course;
 
-        @ManyToMany
-        public List<User> users;
+        public interface Basic {
+        }
 
 
         public Material(){

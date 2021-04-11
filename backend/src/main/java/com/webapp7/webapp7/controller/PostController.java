@@ -25,7 +25,7 @@ import java.util.Optional;
 public class PostController {
 
     @Autowired
-    private com.webapp7.webapp7.service.PostService service;
+    private com.webapp7.webapp7.Service.PostService service;
     @Autowired
     private com.webapp7.webapp7.Service.CourseService courseService;
     @Autowired
