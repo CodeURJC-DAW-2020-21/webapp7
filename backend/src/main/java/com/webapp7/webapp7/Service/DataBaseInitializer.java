@@ -41,8 +41,6 @@ public class DataBaseInitializer {
     public void init() throws IOException, URISyntaxException{
 
 
-/*
-
         //Sample Comments
         Comment comment1 = new Comment("Deborah Israel Villanueva", "La mejor academia de todas en las que he estado,muy buen profesorado y la directora muy maja y amable");
         commentRepository.save(comment1);
@@ -80,22 +78,15 @@ public class DataBaseInitializer {
         setPostImage(post3, "static/images/AperturaKiddysHouseBlog.png");
         postRepository.save(post3);
 
-
         //Sample users
 
         User user1= new User("alumno@gmail.com", "alumno", passwordEncoder.encode("pass"), "alumno");
         setUserImage(user1, "static/images/teacher-2.jpg");
         userRepository.save(user1);
 
-
-
-
-
         User user2= new User("admin@gmail.com", "admin", passwordEncoder.encode("pass"), "administrador");
         setUserImage(user2, "static/images/teacher-2.jpg");
         userRepository.save(user2);
-
-
 
         User user4= new User("profesor@gmail.com", "profesor", passwordEncoder.encode("pass"), "profesor");
         setUserImage(user4, "static/images/teacher-2.jpg");
@@ -108,9 +99,6 @@ public class DataBaseInitializer {
         User user6= new User("alumno3@gmail.com", "al3", passwordEncoder.encode("pass"), "alumno");
         setUserImage(user6, "static/images/teacher-2.jpg");
         userRepository.save(user6);
-
-
-
 
         //Sample Courses
         ArrayList<User> list1 = new ArrayList<User>();
@@ -135,7 +123,8 @@ public class DataBaseInitializer {
         courseRepository.save(course3);
 
 
- */
+
+
     }
 
     public void setUserImage(User user, String classpathResource) throws IOException {
@@ -155,7 +144,5 @@ public class DataBaseInitializer {
         Resource image = new ClassPathResource(classpathResource);
         course.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
     }
-
-
 
 }

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.sql.Blob;
 
 @Controller
 public class RegisterController {
@@ -32,33 +31,26 @@ public class RegisterController {
     private UserRepository userRepository;
 
     @PostMapping("/register")
-    public String registerUser (@ModelAttribute User user, MultipartFile imageField) throws IOException {
+    public String registerUser(@ModelAttribute User user, MultipartFile imageField) throws IOException {
         String email = user.getEmail();
-        String name= user.getName();
-        String password= user.getPassword();
+        String name = user.getName();
+        String password = user.getPassword();
 
         if (!imageField.isEmpty()) {
             user.setImageFile(BlobProxy.generateProxy(imageField.getInputStream(), imageField.getSize()));
             user.setImage(true);
         }
-        //Blob imageFile= user.getImageFile();
-
-
-        //user.setImage(true);
-        //user.setImageFile(imageFile);
         user.setPassword(passwordEncoder.encode(password));
         user.setName(name);
         user.setEmail(email);
         userRepository.save(user);
 
 
-
         User userAux = userService.selectByEmail(email);
-        if (userAux == null){
+        if (userAux == null) {
             userService.save(user);
             return "redirect:/admin";
-        }
-        else{
+        } else {
             return "redirect:/admin";
         }
     }
