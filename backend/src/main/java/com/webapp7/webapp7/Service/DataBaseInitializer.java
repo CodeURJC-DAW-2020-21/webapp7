@@ -68,7 +68,7 @@ public class DataBaseInitializer {
         Post post2 = new Post(
                 "Información sobre los nuevos cursos",
                 "A partir de ahora, los padres de familia podrán tener a disposición la información necesaria sobre los cursos que tendremos a disposición, el rango de edades en los que está centrado esta institución, los horarios, etc.Toda esta información y más podrá encontrarla dentro de la sección de \"Cursos\", donde podrá consultar todos datos que usted necesita para los cursos que vayan a cursar sus hijos");
-        setPostImage(post2, "static/images/MasInfoKiddysHouse.png");
+        setPostImage(post2, "static/images/ParteDeNuestroEquipo.jpeg");
         postRepository.save(post2);
 
         Post post3 = new Post(

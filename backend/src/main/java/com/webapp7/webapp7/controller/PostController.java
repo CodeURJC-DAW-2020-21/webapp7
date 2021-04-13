@@ -31,15 +31,7 @@ public class PostController {
     @Autowired
     private com.webapp7.webapp7.Service.UserService userService;
 
-    /**
-     *
-     * @param model
-     * @param title
-     * @param description
-     * @param imageField
-     * @return
-     * @throws IOException
-     */
+
     @PostMapping("/admin/post/createNew")
     public String addPost(Model model, @RequestParam String title, @RequestParam String description, MultipartFile imageField) throws IOException {
         Post post = new Post();
@@ -96,15 +88,6 @@ public class PostController {
         ArrayList<Post> posts=service.findPost(PageRequest.of(0, 3));
         model.addAttribute("posts", posts);
         List<Post> restOfPosts =  service.listPosts();
-     /*List<Post> trocito = new ArrayList<>();
-        for (int i = 2; i<restOfPosts.size();i++) {
-            trocito.add(restOfPosts.get(i));
-        }
-        if (!trocito.isEmpty()) {
-            model.addAttribute("trocito", trocito);
-        }
-
-         */
         restOfPosts.remove(0);
         restOfPosts.remove(0);
         restOfPosts.remove(0);
