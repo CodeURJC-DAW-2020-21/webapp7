@@ -34,7 +34,8 @@ public class User {
     @Lob
     @JsonIgnore
     private Blob imageFile;
-    @JsonIgnore
+
+    @JsonView(User.Basic.class)
     private boolean image;
 
 
