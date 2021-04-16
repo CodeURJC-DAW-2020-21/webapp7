@@ -68,13 +68,13 @@ public class DataBaseInitializer {
         Post post2 = new Post(
                 "Información sobre los nuevos cursos",
                 "A partir de ahora, los padres de familia podrán tener a disposición la información necesaria sobre los cursos que tendremos a disposición, el rango de edades en los que está centrado esta institución, los horarios, etc.Toda esta información y más podrá encontrarla dentro de la sección de \"Cursos\", donde podrá consultar todos datos que usted necesita para los cursos que vayan a cursar sus hijos");
-        setPostImage(post2, "static/images/ParteDeNuestroEquipo.jpeg");
+        setPostImage(post2, "static/images/AperturaKiddysHouseBlog.png");
         postRepository.save(post2);
 
         Post post3 = new Post(
                 "¡Apertura de Kiddy's House!",
                 "Les anunciamos a todos que próximamente se llevará a cabo la apertura de nuestra escuela de inglés \"Kiddy's House\", enfocada para los niños más pequeños de la casa para que, desde una edad temprana, puedan introducirse a un nuevo idioma de una forma muy divertida y entretenida desde la comodidad de sus casas. En breve les anunciaremos toda la información necesaria a los padres de familia para que ");
-                //puedan enterarse de toda nuestra oferta educativa y nuestra dinámica de trabajo. Esto es todo los que les podemos decir por el momento, pero empezamos este proyecto con mucha ilusión y con ganas que sus pequeños puedan aprender todo lo necesario del inglés para que tengan una buena base en el futuro.
+        //puedan enterarse de toda nuestra oferta educativa y nuestra dinámica de trabajo. Esto es todo los que les podemos decir por el momento, pero empezamos este proyecto con mucha ilusión y con ganas que sus pequeños puedan aprender todo lo necesario del inglés para que tengan una buena base en el futuro.
         setPostImage(post3, "static/images/AperturaKiddysHouseBlog.png");
         postRepository.save(post3);
 
@@ -101,27 +101,29 @@ public class DataBaseInitializer {
         userRepository.save(user6);
 
         //Sample Courses
-        ArrayList<User> list1 = new ArrayList<User>();
+       /* ArrayList<User> list1 = new ArrayList<User>();
         list1.add(user1);
         list1.add(user5);
-        list1.add(user6);
+        list1.add(user6);*/
 
-        Course course1= new Course("Jolly Kids", 5, 6,"profesor@gmail.com",  120,list1);
+        Course course1= new Course("Jolly Kids", 5, 6,"profesor@gmail.com",  120,null);
         setCourseImage(course1, "static/images/Niño_5a6.png");
         courseRepository.save(course1);
 
-        ArrayList<User> list2 = new ArrayList<User>();
 
-        Course course2= new Course("Explorer Kids", 7, 8,"profesor@gmail.com",  130,list2);
+        Course course2= new Course("Explorer Kids", 7, 8,"profesor@gmail.com",  130,null);
         setCourseImage(course2, "static/images/Niño_7a8.png");
         courseRepository.save(course2);
 
-        ArrayList<User> list3 = new ArrayList<User>();
 
-        Course course3= new Course("Keen Kids", 9, 10, "profesor@gmail.com", 140,list3);
+        Course course3= new Course("Keen Kids", 9, 10, "profesor@gmail.com", 140,null);
         setCourseImage(course3, "static/images/Niño_9a10.png");
         courseRepository.save(course3);
 
+      /*  user1.setCourse(course1);
+        user2.setCourse(course1);
+        user4.setCourse(course2);
+        user6.setCourse(course2); */
 
 
 
@@ -146,3 +148,5 @@ public class DataBaseInitializer {
     }
 
 }
+
+
