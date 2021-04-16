@@ -29,6 +29,7 @@ public class PostControllerApi {
 
     @Autowired
     private PostService postService;
+
     @Autowired
     private ImageService imgService;
 
@@ -68,7 +69,7 @@ public class PostControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @JsonView(PostBasic.class)
     @PostMapping("/{id}/image")
     public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
             throws IOException {
@@ -93,10 +94,9 @@ public class PostControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @JsonView(PostBasic.class)
     @GetMapping("/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
-
         return this.imgService.createResponseFromImage(POSTS_FOLDER, id);
     }
 //INTENTO POSTMAPPING SIN IMAGEN (FUNCIONA)
