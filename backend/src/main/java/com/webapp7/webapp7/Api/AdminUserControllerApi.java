@@ -22,12 +22,12 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/admin/users")
 public class AdminUserControllerApi {
 
-    interface UserBasic extends User.Basic {
-    }
-    private static final String POSTS_FOLDER = "posts";
+    interface UserBasic extends User.Basic {}
+    private static final String USERS_FOLDER = "users";
 
     @Autowired
     private com.webapp7.webapp7.Service.UserService userService;
+
     @Autowired
     private ImageService imgService;
 
@@ -49,7 +49,7 @@ public class AdminUserControllerApi {
         userService.save(user);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(user.getId()).toUri()).body(user);
     }
-
+    @JsonView(UserBasic.class)
     @PostMapping("/{id}/image")
     public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
             throws IOException {
@@ -66,7 +66,7 @@ public class AdminUserControllerApi {
             }
             userService.save(user);
 
-            imgService.saveImage(POSTS_FOLDER, user.getId(), imageFile);
+            imgService.saveImage(USERS_FOLDER, user.getId(), imageFile);
 
             return ResponseEntity.created(location).build();
 
@@ -74,11 +74,11 @@ public class AdminUserControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @JsonView(UserBasic.class)
     @GetMapping("/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
 
-        return this.imgService.createResponseFromImage(POSTS_FOLDER, id);
+        return this.imgService.createResponseFromImage(USERS_FOLDER, id);
     }
 
     @JsonView(UserBasic.class)
