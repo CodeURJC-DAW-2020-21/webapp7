@@ -2,6 +2,7 @@ package com.webapp7.webapp7.Api;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.webapp7.webapp7.model.Material;
+import com.webapp7.webapp7.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,21 +41,6 @@ public class MaterialControllerApi {
         materialService.save(material);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(material.getId()).toUri()).body(material);
     }
-    /*
-     @PostMapping("/user_instructor")
-    public String uploadfileInstructor(@RequestParam("material") MultipartFile multipartFile, HttpServletRequest request) throws IOException {
-        String username = request.getUserPrincipal().getName();
-        User user = userService.selectByEmail(username);
-        Course course = user.getCourse();
-        String fileName = multipartFile.getOriginalFilename();
-        Material material = new Material();
-        material.setCourse(course);
-        material.setName(fileName);
-        material.setContent(multipartFile.getBytes());
-        materialRepository.save(material);
-        return "redirect:/user_instructor";
-    }
-     */
 
     @JsonView(MaterialBasic.class)
     @PostMapping("/{id}/file")
@@ -82,5 +68,16 @@ public class MaterialControllerApi {
         }
     }
 
+    @JsonView(AdminUserControllerApi.UserBasic.class)
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Material> deleteMaterial(@PathVariable long id) throws IOException{
+        Material material = materialService.findById(id).orElse(null);
+        if (material!=null){
+            materialService.deleteMaterial(id);
+            return ResponseEntity.ok(material);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }

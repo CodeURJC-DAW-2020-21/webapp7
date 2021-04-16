@@ -18,6 +18,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -33,8 +34,9 @@ public class MaterialController {
 
     @GetMapping("/student")
     public String viewStudentPage(Model model, HttpServletRequest request) {
+        Principal principal = request.getUserPrincipal();
         String username = request.getUserPrincipal().getName();
-        User user = userService.selectByEmail(username);
+        User user = userService.findByName(principal.getName());
         Course course = user.getCourse();
         model.addAttribute("userName", username);
         List<Material> listMaterial = materialRepository.findAll();
@@ -88,10 +90,11 @@ public class MaterialController {
 
     @GetMapping("/user_instructor")
     public String viewInstructorPage(Model model, HttpServletRequest request) {
+        Principal principal = request.getUserPrincipal();
         List<User> users = userService.findAllUsers();
         model.addAttribute("users", users);
         String username = request.getUserPrincipal().getName();
-        User user = userService.selectByEmail(username);
+        User user = userService.findByName(principal.getName());
         Course course = user.getCourse();
         model.addAttribute("userName", username);
         List<Material> listMaterial = materialRepository.findAll();
@@ -113,15 +116,16 @@ public class MaterialController {
             }
         }
         model.addAttribute("students_in_course", listUsers);
-        model.addAttribute("course_imparted", course);
+        model.addAttribute("course_imparted", course.getCategory());
         model.addAttribute("listMaterial", listMaterial);
         return "user_instructor";
     }
 
     @PostMapping("/user_instructor")
     public String uploadfileInstructor(@RequestParam("material") MultipartFile multipartFile, HttpServletRequest request) throws IOException {
+        Principal principal = request.getUserPrincipal();
         String username = request.getUserPrincipal().getName();
-        User user = userService.selectByEmail(username);
+        User user = userService.findByName(principal.getName());
         Course course = user.getCourse();
         String fileName = multipartFile.getOriginalFilename();
         Material material = new Material();
@@ -149,8 +153,8 @@ public class MaterialController {
 
     @GetMapping("/checkbox/{id}")
     public String CheckboxChangeValues(@PathVariable long id, HttpServletRequest request) {
-        String username = request.getUserPrincipal().getName();
-        User user = userService.selectByEmail(username);
+        Principal principal = request.getUserPrincipal();
+        User user = userService.findByName(principal.getName());
 
         Material material = materialRepository.findById(id).orElseThrow();
         user.getFinishedMaterials().add(material);

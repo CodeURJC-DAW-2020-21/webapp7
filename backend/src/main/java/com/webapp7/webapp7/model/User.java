@@ -3,6 +3,11 @@ package com.webapp7.webapp7.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.sql.Delete;
+
 import javax.persistence.*;
 import java.sql.Blob;
 import java.util.List;
@@ -34,7 +39,6 @@ public class User {
     @Lob
     @JsonIgnore
     private Blob imageFile;
-
     @JsonIgnore
     private boolean image;
 
@@ -162,3 +166,4 @@ public class User {
     }
 
 }
+
