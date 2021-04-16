@@ -14,6 +14,10 @@ public class MaterialService {
     @Autowired
     private MaterialRepository materials;
 
+    public void deleteMaterial(long id) {
+        materials.deleteById(id);
+    }
+
     public List<Material> listMaterials() {
         return materials.findAll();
     }
