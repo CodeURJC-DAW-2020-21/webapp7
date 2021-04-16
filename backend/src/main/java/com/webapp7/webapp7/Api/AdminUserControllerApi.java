@@ -1,12 +1,18 @@
 package com.webapp7.webapp7.Api;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.webapp7.webapp7.Service.ImageService;
+import com.webapp7.webapp7.model.Post;
 import com.webapp7.webapp7.model.User;
+import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.util.Collection;
 import java.util.List;
 
@@ -16,11 +22,14 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/admin/users")
 public class AdminUserControllerApi {
 
-    interface UserBasic extends User.Basic {
-    }
+    interface UserBasic extends User.Basic {}
+    private static final String USERS_FOLDER = "users";
 
     @Autowired
     private com.webapp7.webapp7.Service.UserService userService;
+
+    @Autowired
+    private ImageService imgService;
 
     @JsonView(UserBasic.class)
     @GetMapping("/")
@@ -39,6 +48,37 @@ public class AdminUserControllerApi {
         //we need to change this structure due to passwordEncoder
         userService.save(user);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(user.getId()).toUri()).body(user);
+    }
+    @JsonView(UserBasic.class)
+    @PostMapping("/{id}/image")
+    public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
+            throws IOException {
+
+        User user = userService.findById(id).orElseThrow(null);
+
+        if (user != null) {
+
+            URI location = fromCurrentRequest().build().toUri();
+
+            if (!imageFile.isEmpty()) {
+                user.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
+                user.setImage(true);
+            }
+            userService.save(user);
+
+            imgService.saveImage(USERS_FOLDER, user.getId(), imageFile);
+
+            return ResponseEntity.created(location).build();
+
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @JsonView(UserBasic.class)
+    @GetMapping("/{id}/image")
+    public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
+
+        return this.imgService.createResponseFromImage(USERS_FOLDER, id);
     }
 
     @JsonView(UserBasic.class)

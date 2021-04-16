@@ -27,6 +27,7 @@ public class Post {
     @Lob
     @JsonIgnore
     private Blob imageFile;
+
     @JsonIgnore
     private boolean image;
 

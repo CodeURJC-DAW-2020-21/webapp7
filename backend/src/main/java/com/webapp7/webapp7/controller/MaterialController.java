@@ -5,11 +5,15 @@ import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.model.User;
 import com.webapp7.webapp7.repository.MaterialRepository;
-import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,17 +32,17 @@ public class MaterialController {
     private UserService userService;
 
     @GetMapping("/student")
-    public String viewStudentPage(Model model, HttpServletRequest request){
+    public String viewStudentPage(Model model, HttpServletRequest request) {
         String username = request.getUserPrincipal().getName();
         User user = userService.selectByEmail(username);
         Course course = user.getCourse();
         model.addAttribute("userName", username);
         List<Material> listMaterial = materialRepository.findAll();
         int index = 0;
-        while (!listMaterial.isEmpty() && index < listMaterial.size()){
-            if (listMaterial.get(index).getCourse()!=null && !listMaterial.get(index).getCourse().equals(course)){
+        while (!listMaterial.isEmpty() && index < listMaterial.size()) {
+            if (listMaterial.get(index).getCourse() != null && !listMaterial.get(index).getCourse().equals(course)) {
                 listMaterial.remove(index);
-            }else{
+            } else {
                 index++;
             }
         }
@@ -47,7 +51,7 @@ public class MaterialController {
         List<User> listUsers = userService.findAllUsers();
         int i = 0;
         int j = 0;
-        while (!listUsers.isEmpty() && i < listUsers.size()){
+        while (!listUsers.isEmpty() && i < listUsers.size()) {
             List<Material> listStudentMaterial = listUsers.get(i).getFinishedMaterials();
             while (!listStudentMaterial.isEmpty() && j < listStudentMaterial.size()) {
                 if (user.getCourse().equals(listUsers.get(i).getCourse())) {
@@ -55,7 +59,7 @@ public class MaterialController {
                         listRecomendations.add(listStudentMaterial.get(j));
                     }
                 }
-                j ++;
+                j++;
             }
             j = 0;
             i++;
@@ -64,11 +68,11 @@ public class MaterialController {
         List<Material> listStudent = user.getFinishedMaterials();
         i = 0;
         j = 0;
-        while   (!listStudent.isEmpty() && !listRecomendations.isEmpty() && i < listStudent.size()){
-            while (!listRecomendations.isEmpty() && j < listRecomendations.size()){
-                if (listRecomendations.get(j).equals(listStudent.get(i))){
+        while (!listStudent.isEmpty() && !listRecomendations.isEmpty() && i < listStudent.size()) {
+            while (!listRecomendations.isEmpty() && j < listRecomendations.size()) {
+                if (listRecomendations.get(j).equals(listStudent.get(i))) {
                     listRecomendations.remove(j);
-                }else {
+                } else {
                     j++;
                 }
             }
@@ -77,50 +81,45 @@ public class MaterialController {
         }
 
         model.addAttribute("listRecomendations", listRecomendations);
-        model.addAttribute("listMaterial",listMaterial);
+        model.addAttribute("listMaterial", listMaterial);
         return "user_student";
     }
 
 
     @GetMapping("/user_instructor")
-    public String viewInstructorPage(Model model, HttpServletRequest request){
-        List <User> users= userService.findAllUsers();
+    public String viewInstructorPage(Model model, HttpServletRequest request) {
+        List<User> users = userService.findAllUsers();
         model.addAttribute("users", users);
-
-
-
-
-
         String username = request.getUserPrincipal().getName();
         User user = userService.selectByEmail(username);
         Course course = user.getCourse();
         model.addAttribute("userName", username);
         List<Material> listMaterial = materialRepository.findAll();
         int index = 0;
-        while (!listMaterial.isEmpty() && index < listMaterial.size()){
-            if (listMaterial.get(index).getCourse()!=null && !listMaterial.get(index).getCourse().equals(course)){
+        while (!listMaterial.isEmpty() && index < listMaterial.size()) {
+            if (listMaterial.get(index).getCourse() != null && !listMaterial.get(index).getCourse().equals(course)) {
                 listMaterial.remove(index);
-            }else{
+            } else {
                 index++;
             }
         }
         List<User> listUsers = userService.findAllUsers();
         index = 0;
-        while (!listUsers.isEmpty() && index < listUsers.size()){
-            if (listUsers.get(index).getCourse()==null || !listUsers.get(index).getCourse().equals(course) || !listUsers.get(index).getRol().equals("alumno")){
+        while (!listUsers.isEmpty() && index < listUsers.size()) {
+            if (listUsers.get(index).getCourse() == null || !listUsers.get(index).getCourse().equals(course) || !listUsers.get(index).getRol().equals("alumno")) {
                 listUsers.remove(index);
-            }else{
+            } else {
                 index++;
             }
         }
-        model.addAttribute("students_in_course",listUsers);
-        model.addAttribute("course_imparted",course);
-        model.addAttribute("listMaterial",listMaterial);
+        model.addAttribute("students_in_course", listUsers);
+        model.addAttribute("course_imparted", course);
+        model.addAttribute("listMaterial", listMaterial);
         return "user_instructor";
     }
 
     @PostMapping("/user_instructor")
-    public String uploadfileInstructor(@RequestParam("material")MultipartFile multipartFile, HttpServletRequest request) throws IOException {
+    public String uploadfileInstructor(@RequestParam("material") MultipartFile multipartFile, HttpServletRequest request) throws IOException {
         String username = request.getUserPrincipal().getName();
         User user = userService.selectByEmail(username);
         Course course = user.getCourse();
@@ -134,7 +133,7 @@ public class MaterialController {
     }
 
     @GetMapping("/download/{id}")
-    public void downloadImageAdmin(@PathVariable long id,HttpServletResponse response) throws IOException {
+    public void downloadImageAdmin(@PathVariable long id, HttpServletResponse response) throws IOException {
         Optional<Material> result = materialRepository.findById(id);
         if (result.isPresent() && result.get().getContent() != null) {
             Material material = result.get();
@@ -150,7 +149,6 @@ public class MaterialController {
 
     @GetMapping("/checkbox/{id}")
     public String CheckboxChangeValues(@PathVariable long id, HttpServletRequest request) {
-
         String username = request.getUserPrincipal().getName();
         User user = userService.selectByEmail(username);
 
@@ -164,7 +162,6 @@ public class MaterialController {
 
     @GetMapping("/delete/{id}")
     public String deleteMaterialInstructor(Model model, @PathVariable long id) throws IOException {
-
         Material material = materialRepository.findById(id).orElseThrow();
         materialRepository.deleteById(id);
         return "redirect:/user_instructor";

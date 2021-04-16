@@ -1,6 +1,7 @@
 package com.webapp7.webapp7.Api;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.webapp7.webapp7.Service.ImageService;
 import com.webapp7.webapp7.Service.PostService;
 import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.model.Post;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.sql.Blob;
 import java.util.Collection;
 import java.util.List;
 
@@ -21,10 +25,13 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 public class PostControllerApi {
 
     interface PostBasic extends Post.Basic {}
-    @Autowired
-    private UserService userService;
+    private static final String POSTS_FOLDER = "posts";
+
     @Autowired
     private PostService postService;
+
+    @Autowired
+    private ImageService imgService;
 
 /*
 
@@ -62,52 +69,90 @@ public class PostControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
+    @JsonView(PostBasic.class)
+    @PostMapping("/{id}/image")
+    public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
+            throws IOException {
 
+        Post post = postService.findById(id).orElseThrow(null);
+
+        if (post != null) {
+
+            URI location = fromCurrentRequest().build().toUri();
+
+            if (!imageFile.isEmpty()) {
+                post.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
+                post.setImage(true);
+            }
+            postService.save(post);
+
+            imgService.saveImage(POSTS_FOLDER, post.getId(), imageFile);
+
+            return ResponseEntity.created(location).build();
+
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @JsonView(PostBasic.class)
+    @GetMapping("/{id}/image")
+    public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
+        return this.imgService.createResponseFromImage(POSTS_FOLDER, id);
+    }
+//INTENTO POSTMAPPING SIN IMAGEN (FUNCIONA)
     @PostMapping("/")
     public ResponseEntity<Post> addPost(@RequestBody Post post) throws IOException {
-
-        if (post.getImageFile() != null) {
-            MultipartFile imageFile = (MultipartFile) post.getImageFile();
-            post.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
-        }
         postService.save(post);
         return ResponseEntity.created(fromCurrentRequest().path("/{id}").buildAndExpand(post.getId()).toUri()).body(post);
     }
-/*INTENTO POSTMAPPING CON IMAGEN1
+
+
+
+/*
+//INTENTO POSTMAPPING CON IMAGEN1
     @JsonView(PostBasic.class)
     @GetMapping("/{id}")
-    public ResponseEntity<Category> createCategory(@RequestParam String title,
+    public ResponseEntity<Post> createPost(@RequestParam String title,
                                                     @RequestParam String description,
                                                     @RequestParam MultipartFile imageFile) throws IOException {
+            Post post = new Post();
+            post.setTitle(title);
+            post.setDescription(description);
+            //post.setImageFile((Blob)imageFile);
 
             if (!imageFile.isEmpty()) {
             post.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
-            service.save(post);
+            postService.save(post);
             return ResponseEntity.created(fromCurrentRequest().path("/{id}").buildAndExpand(post.getId()).toUri()).body(post);
             }
             else{
                 return ResponseEntity.notFound().build();
             }
         }
- */
 
-/*INTENTO POSTMAPPING CON IMAGEN2
+
+     */
+/*
+//INTENTO POSTMAPPING CON IMAGEN2
     @JsonView(PostBasic.class)
     @PostMapping("/")
     public ResponseEntity<Post> addPost(@RequestBody Post post,
                                         @RequestParam MultipartFile imageFile) throws IOException {
 
+        downloadImage(post.getId());
         if (!imageFile.isEmpty()) {
             post.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
-            service.save(post);
+            postService.save(post);
             return ResponseEntity.created(fromCurrentRequest().path("/{id}").buildAndExpand(post.getId()).toUri()).body(post);
         }
         else{
             return ResponseEntity.notFound().build();
         }
     }
- */
 
+
+
+ */
 
 
 
@@ -115,7 +160,7 @@ public class PostControllerApi {
 
 /*INTENTO POSTMAPPING CON PostDTO
     @PostMapping("/")
-    public ResponseEntity<Post> addPost(@ModelAttribute PostDTO entryDTO, HttpServletRequest request){
+    public ResponseEntity<Post> addPost(@RequestBody PostDTO entryDTO, HttpServletRequest request){
         Principal principal = request.getUserPrincipal();
         User user = userService.findByName(principal.getName());
         Post post = modelMapper.map(entryDTO, Post.class);
