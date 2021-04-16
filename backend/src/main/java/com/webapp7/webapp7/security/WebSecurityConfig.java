@@ -44,6 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/course").permitAll();
         http.authorizeRequests().antMatchers("/blog-single").permitAll();
         http.authorizeRequests().antMatchers("/instructor").permitAll();
+        /*
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/comments/**").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/comments/**").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/posts/**").permitAll();
@@ -58,6 +59,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/materials/**").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/materials/**").permitAll();
 
+
+         */
         // Private pages
 
         http.authorizeRequests().antMatchers("/student").hasAnyRole("alumno");
