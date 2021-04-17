@@ -28,6 +28,7 @@ public class User {
     private String email;
 
     @JsonView(User.Basic.class)
+    @Column(length = 135, nullable = false, unique = true)
     private String name;
 
     @JsonView(User.Basic.class)
