@@ -44,23 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/course").permitAll();
         http.authorizeRequests().antMatchers("/blog-single").permitAll();
         http.authorizeRequests().antMatchers("/instructor").permitAll();
-        /*
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/comments/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/comments/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/posts/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/posts/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/users/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/users/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/users/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/courses/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/courses/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/courses/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/courses/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/materials/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/materials/**").permitAll();
 
-
-         */
         // Private pages
 
         http.authorizeRequests().antMatchers("/student").hasAnyRole("alumno");
