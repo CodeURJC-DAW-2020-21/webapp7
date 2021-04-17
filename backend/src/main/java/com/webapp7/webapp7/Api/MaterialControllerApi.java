@@ -2,10 +2,12 @@ package com.webapp7.webapp7.Api;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.webapp7.webapp7.Service.UserService;
+import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.URI;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -43,7 +46,11 @@ public class MaterialControllerApi {
 
     @JsonView(MaterialBasic.class)
     @PostMapping("/")
-    public ResponseEntity<Material> addMaterials(@RequestBody Material material) throws IOException {
+    public ResponseEntity<Material> addMaterials(@RequestBody Material material, HttpServletRequest request) throws IOException {
+        Principal principal = request.getUserPrincipal();
+        User user = userService.findByName(principal.getName());
+        Course course = user.getCourse();
+        material.setCourse(course);
         materialService.save(material);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(material.getId()).toUri()).body(material);
     }
@@ -86,22 +93,6 @@ public class MaterialControllerApi {
         }
     }
 
-
-    /*
-     @GetMapping("/checkbox/{id}")
-    public String CheckboxChangeValues(@PathVariable long id, HttpServletRequest request) {
-        Principal principal = request.getUserPrincipal();
-        User user = userService.findByName(principal.getName());
-
-        Material material = materialRepository.findById(id).orElseThrow();
-        user.getFinishedMaterials().add(material);
-        user.setNumberMaterial(user.getFinishedMaterials().size());
-        userService.save(user);
-
-        return "redirect:/student";
-    }
-     */
-
     @JsonView(MaterialBasic.class)
     @PutMapping("/{id}")
     public ResponseEntity<Collection<Material>> UpdateMaterial(@PathVariable long id, HttpServletRequest request) {
@@ -117,19 +108,59 @@ public class MaterialControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
-    /*
-       @JsonView(CourseBasic.class)
-    @PutMapping("/{id}")
-    public ResponseEntity<Course> replacePost(@PathVariable long id,
-                                              @RequestBody Course newCourse) {
-        Course course = courseService.findById(id).orElse(null);
-        if (course != null) {
-            newCourse.setId(id);
-            courseService.save(newCourse);
-            return ResponseEntity.ok(course);
+    @JsonView(MaterialBasic.class)
+    @GetMapping("/recomendations")
+    public ResponseEntity<Collection<Material>> materialRecomendations(HttpServletRequest request) {
+        Principal principal = request.getUserPrincipal();
+        User user = userService.findByName(principal.getName());
+        if (user != null) {
+            Course course = user.getCourse();
+            List<Material> listMaterial = materialService.listMaterials();
+            int index = 0;
+            while (!listMaterial.isEmpty() && index < listMaterial.size()) {
+                if (listMaterial.get(index).getCourse() != null && !listMaterial.get(index).getCourse().equals(course)) {
+                    listMaterial.remove(index);
+                } else {
+                    index++;
+                }
+            }
+
+            List<Material> listRecomendations = new ArrayList<>();
+            List<User> listUsers = userService.findAllUsers();
+            int i = 0;
+            int j = 0;
+            while (!listUsers.isEmpty() && i < listUsers.size()) {
+                List<Material> listStudentMaterial = listUsers.get(i).getFinishedMaterials();
+                while (!listStudentMaterial.isEmpty() && j < listStudentMaterial.size()) {
+                    if (user.getCourse().equals(listUsers.get(i).getCourse())) {
+                        if (listRecomendations.isEmpty() || !listRecomendations.contains(listStudentMaterial.get(j))) {
+                            listRecomendations.add(listStudentMaterial.get(j));
+                        }
+                    }
+                    j++;
+                }
+                j = 0;
+                i++;
+            }
+
+            List<Material> listStudent = user.getFinishedMaterials();
+            i = 0;
+            j = 0;
+            while (!listStudent.isEmpty() && !listRecomendations.isEmpty() && i < listStudent.size()) {
+                while (!listRecomendations.isEmpty() && j < listRecomendations.size()) {
+                    if (listRecomendations.get(j).equals(listStudent.get(i))) {
+                        listRecomendations.remove(j);
+                    } else {
+                        j++;
+                    }
+                }
+                j = 0;
+                i++;
+            }
+            return ResponseEntity.ok(listRecomendations);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
-     */
+
 }
