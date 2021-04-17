@@ -29,6 +29,7 @@ public class PostService {
     public List<Post> listPosts() {
         return posts.findAll();
     }
+    public Page<Post> listPostsPageable (Pageable pageable){return posts.findAll(pageable);};
 
     public Post save(Post post) {
         return posts.save(post);

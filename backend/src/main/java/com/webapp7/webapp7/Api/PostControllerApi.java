@@ -5,8 +5,13 @@ import com.webapp7.webapp7.Service.ImageService;
 import com.webapp7.webapp7.Service.PostService;
 import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.model.Post;
+import io.swagger.v3.oas.annotations.Parameter;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,8 +29,11 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/posts")
 public class PostControllerApi {
 
+    private static final int DEFAULT_SIZE_PAGE = 3;
+
     interface PostBasic extends Post.Basic {}
     private static final String POSTS_FOLDER = "posts";
+    Pageable page = null;
 
     @Autowired
     private PostService postService;
@@ -50,10 +58,11 @@ public class PostControllerApi {
 
     @JsonView(PostBasic.class)
     @GetMapping("/")
-    public ResponseEntity<Collection<Post>> getPosts() {
-        List<Post> posts = postService.listPosts();
-        if (!posts.isEmpty()) {
-            return ResponseEntity.ok(posts);
+    public ResponseEntity<Collection<Post>> getEntries(@Parameter(description = "number of the page you want to get") @RequestParam(defaultValue = "0") int Page){
+        page = PageRequest.of(Page, DEFAULT_SIZE_PAGE, Sort.by("id").ascending());
+        Page<Post> entries = postService.listPostsPageable(page);
+        if (!entries.isEmpty()){
+            return ResponseEntity.ok(entries.getContent());
         } else {
             return ResponseEntity.notFound().build();
         }
@@ -99,7 +108,7 @@ public class PostControllerApi {
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
         return this.imgService.createResponseFromImage(POSTS_FOLDER, id);
     }
-    //INTENTO POSTMAPPING SIN IMAGEN (FUNCIONA)
+
     @PostMapping("/")
     public ResponseEntity<Post> addPost(@RequestBody Post post) throws IOException {
         postService.save(post);
