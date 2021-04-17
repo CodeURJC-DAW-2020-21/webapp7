@@ -1,6 +1,7 @@
 package com.webapp7.webapp7.Api;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.URI;
+import java.security.Principal;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,10 +22,13 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("/api/materials")
 public class MaterialControllerApi {
 
-    interface MaterialBasic extends Material.Basic {}
+    interface MaterialBasic extends Material.Basic {
+    }
 
     @Autowired
     private com.webapp7.webapp7.Service.MaterialService materialService;
+    @Autowired
+    private UserService userService;
 
     @JsonView(MaterialBasic.class)
     @GetMapping("/")
@@ -68,11 +74,11 @@ public class MaterialControllerApi {
         }
     }
 
-    @JsonView(AdminUserControllerApi.UserBasic.class)
+    @JsonView(MaterialBasic.class)
     @DeleteMapping("/{id}")
-    public ResponseEntity<Material> deleteMaterial(@PathVariable long id) throws IOException{
+    public ResponseEntity<Material> deleteMaterial(@PathVariable long id) throws IOException {
         Material material = materialService.findById(id).orElse(null);
-        if (material!=null){
+        if (material != null) {
             materialService.deleteMaterial(id);
             return ResponseEntity.ok(material);
         } else {
@@ -80,4 +86,50 @@ public class MaterialControllerApi {
         }
     }
 
+
+    /*
+     @GetMapping("/checkbox/{id}")
+    public String CheckboxChangeValues(@PathVariable long id, HttpServletRequest request) {
+        Principal principal = request.getUserPrincipal();
+        User user = userService.findByName(principal.getName());
+
+        Material material = materialRepository.findById(id).orElseThrow();
+        user.getFinishedMaterials().add(material);
+        user.setNumberMaterial(user.getFinishedMaterials().size());
+        userService.save(user);
+
+        return "redirect:/student";
+    }
+     */
+
+    @JsonView(MaterialBasic.class)
+    @PutMapping("/{id}")
+    public ResponseEntity<Collection<Material>> UpdateMaterial(@PathVariable long id, HttpServletRequest request) {
+        Material material = materialService.findById(id).orElseThrow(null);
+        Principal principal = request.getUserPrincipal();
+        User user = userService.findByName(principal.getName());
+        if (user != null) {
+            user.getFinishedMaterials().add(material);
+            user.setNumberMaterial(user.getFinishedMaterials().size());
+            userService.save(user);
+            return ResponseEntity.ok(user.getFinishedMaterials());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    /*
+       @JsonView(CourseBasic.class)
+    @PutMapping("/{id}")
+    public ResponseEntity<Course> replacePost(@PathVariable long id,
+                                              @RequestBody Course newCourse) {
+        Course course = courseService.findById(id).orElse(null);
+        if (course != null) {
+            newCourse.setId(id);
+            courseService.save(newCourse);
+            return ResponseEntity.ok(course);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+     */
 }
