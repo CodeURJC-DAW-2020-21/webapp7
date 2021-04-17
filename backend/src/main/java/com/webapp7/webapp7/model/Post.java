@@ -1,24 +1,34 @@
 package com.webapp7.webapp7.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 import java.sql.Blob;
 
 //DATE BASE TABLE
 @Entity
 public class Post {
+    public interface Basic {}
 
+    @JsonView(Basic.class)
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @JsonView(Basic.class)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String title;
 
+    @JsonView(Basic.class)
     @Column(columnDefinition="TEXT")
     private String description;
 
     @Lob
+    @JsonIgnore
     private Blob imageFile;
+
+    @JsonIgnore
     private boolean image;
 
 
@@ -57,6 +67,7 @@ public class Post {
     public boolean hasImage(){
         return this.image;
     }
+
     public void setImage(boolean image){
         this.image = image;
     }
