@@ -20,8 +20,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
+        <!--
         <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
         <thymeleaf-layout-dialect.version>2.1.1</thymeleaf-layout-dialect.version>
+        -->
     </properties>
 
     <dependencies>
@@ -72,10 +74,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
+
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+
         </dependency>
+        -->
 
         <dependency>
             <groupId>javax.validation</groupId>
@@ -113,6 +119,7 @@
     </dependencies>
 
 
+
     <build>
         <plugins>
             <plugin>
@@ -121,6 +128,8 @@
             </plugin>
 
         </plugins>
+
+
     </build>
 
 </project>
