@@ -6,20 +6,20 @@ services:
     restart: always
     ports:
       - 8443:8443
-    container_name: webapp7/webapp7
+    container_name: webapp7
     links:
       - db
 
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/kiddyshouse
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db/kiddyshouse
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=webapp7
 
   db:
-    container_name: webapp7
-    image: mysql:8.0.22
+    container_name: webapp7DataBase
+    image: mysql:5.7
     restart: always
 
     environment:
       - MYSQL_ROOT_PASSWORD=webapp7
-      - MYSQL_DATABASE=webapp7
+      - MYSQL_DATABASE=kiddyshouse
