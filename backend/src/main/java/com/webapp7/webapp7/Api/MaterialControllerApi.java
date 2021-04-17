@@ -7,7 +7,6 @@ import com.webapp7.webapp7.model.Material;
 import com.webapp7.webapp7.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,12 +23,11 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RestController
 @RequestMapping("/api/materials")
 public class MaterialControllerApi {
-
-    interface MaterialBasic extends Material.Basic {
-    }
+    interface MaterialBasic extends Material.Basic {}
 
     @Autowired
     private com.webapp7.webapp7.Service.MaterialService materialService;
+
     @Autowired
     private UserService userService;
 
@@ -108,8 +106,9 @@ public class MaterialControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
+
     @JsonView(MaterialBasic.class)
-    @GetMapping("/recomendations")
+    @GetMapping("/recommendations")
     public ResponseEntity<Collection<Material>> materialRecomendations(HttpServletRequest request) {
         Principal principal = request.getUserPrincipal();
         User user = userService.findByName(principal.getName());
@@ -162,5 +161,29 @@ public class MaterialControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
+    @JsonView(User.NumberMaterial.class)
+    @GetMapping("/graph")
+    public ResponseEntity<Collection<User>> materialGraph(HttpServletRequest request) {
+        Principal principal = request.getUserPrincipal();
+        if (principal != null) {
+            User user = userService.findByName(principal.getName());
+            Course course = user.getCourse();
+            List<User> listUsers = userService.findAllUsers();
+
+            int index = 0;
+
+            while (!listUsers.isEmpty() && index < listUsers.size()) {
+                if (listUsers.get(index).getCourse() == null || !listUsers.get(index).getCourse().equals(course) || !listUsers.get(index).getRol().equals("alumno")) {
+                    listUsers.remove(index);
+                } else {
+                    index++;
+                }
+            }
+            return ResponseEntity.ok(listUsers);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
 }
