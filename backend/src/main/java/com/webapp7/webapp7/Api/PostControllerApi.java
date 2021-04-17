@@ -41,21 +41,6 @@ public class PostControllerApi {
     @Autowired
     private ImageService imgService;
 
-/*
-
-    private final UserService userService;
-    private final PostService postService;
-    private final ModelMapper modelMapper;
-
-
-    public  PostControllerApi(UserService userService, PostService postService, ModelMapper modelMapper) {
-        this.userService = userService;
-        this.postService = postService;
-        this.modelMapper = modelMapper;
-    }
-
- */
-
     @JsonView(PostBasic.class)
     @GetMapping("/")
     public ResponseEntity<Collection<Post>> getEntries(@Parameter(description = "number of the page you want to get") @RequestParam(defaultValue = "0") int Page){
@@ -85,7 +70,7 @@ public class PostControllerApi {
 
         Post post = postService.findById(id).orElseThrow(null);
 
-        if (post != null) {
+        if (post != null){
 
             URI location = fromCurrentRequest().build().toUri();
 
