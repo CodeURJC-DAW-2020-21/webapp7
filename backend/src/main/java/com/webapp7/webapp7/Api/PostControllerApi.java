@@ -99,7 +99,7 @@ public class PostControllerApi {
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
         return this.imgService.createResponseFromImage(POSTS_FOLDER, id);
     }
-//INTENTO POSTMAPPING SIN IMAGEN (FUNCIONA)
+    //INTENTO POSTMAPPING SIN IMAGEN (FUNCIONA)
     @PostMapping("/")
     public ResponseEntity<Post> addPost(@RequestBody Post post) throws IOException {
         postService.save(post);

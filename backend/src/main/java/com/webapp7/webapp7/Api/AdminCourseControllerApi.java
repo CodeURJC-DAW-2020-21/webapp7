@@ -20,7 +20,7 @@ import java.util.List;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
 @RestController
-@RequestMapping("/api/admin/courses")
+@RequestMapping("/api/courses")
 public class AdminCourseControllerApi {
 
     interface CourseBasic extends Course.Basic {}

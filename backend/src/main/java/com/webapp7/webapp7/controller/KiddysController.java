@@ -67,7 +67,9 @@ public class KiddysController {
 
 	@GetMapping("/admin")
 	public String showCourses(Model model, HttpServletRequest request){
-		String username = request.getUserPrincipal().getName();
+		Principal principal = request.getUserPrincipal();
+		User user = userService.findByName(principal.getName());
+		String username = user.getName();
 		model.addAttribute("userName", username);
 		List<Course> courses= courseRepository.findAll();
 		model.addAttribute("courselist", courses);

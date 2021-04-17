@@ -11,7 +11,7 @@ import java.util.List;
 @Table
 public class Material {
         @JsonIgnore
-        @ManyToMany
+        @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
         public List<User> users;
         @JsonView(Material.Basic.class)
         @Id
@@ -73,3 +73,4 @@ public class Material {
         }
 
 }
+
