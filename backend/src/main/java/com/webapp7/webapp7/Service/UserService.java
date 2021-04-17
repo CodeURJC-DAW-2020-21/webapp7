@@ -11,38 +11,38 @@ import java.util.Optional;
 @Service
 public class UserService {
     @Autowired
-    private UserRepository userrepository;
+    private UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
-        this.userrepository = userRepository;
+        this.userRepository = userRepository;
     }
 
     public Optional<User> findById(long id) {
-        return userrepository.findById(id);
+        return userRepository.findById(id);
     }
 
     public User findByName(String name) {
-        return userrepository.selectByName(name);
+        return userRepository.selectByName(name);
     }
 
     public List<User> findAll() {
-        return userrepository.findAll();
+        return userRepository.findAll();
     }
 
     public void save(User user) {
-        userrepository.save(user);
+        userRepository.save(user);
     }
 
     public void delete(long id) {
-        userrepository.deleteById(id);
+        userRepository.deleteById(id);
     }
 
     public List<User> findAllUsers(){
-       return userrepository.findAllUsers();
+       return userRepository.findAllUsers();
     }
 
     public User selectByEmail(String email) {
-        User u = userrepository.selectByEmail(email);
+        User u = userRepository.selectByEmail(email);
         return u;
     }
     public Optional<User> selectById(long id) {
