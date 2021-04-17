@@ -1,68 +1,63 @@
-
 package com.webapp7.webapp7.security;
 
+import com.webapp7.webapp7.security.jwt.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import java.security.SecureRandom;
-/*
+
 @Configuration
+@Order(1)
 public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Qualifier("repositoryUserDetailsService")
     @Autowired
-    RepositoryUserDetailsService userDetailsService;
+    private UserDetailsService userDetailsService;
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(10, new SecureRandom());
-    }
+    @Autowired
+    private JwtRequestFilter jwtRequestFilter;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
-    protected void configure(HttpSecurity http) throws Exception{
+    //Expose AuthenticationManager as a Bean to be used in other services
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
 
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/comments/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/comments/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/posts/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/posts/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/users/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/users/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/users/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/courses/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/courses/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/courses/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/courses/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/materials/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/materials/**").permitAll();
+    protected void configure(HttpSecurity http) throws Exception {
+
+        http.antMatcher("/api/**");
 
 
-
-        //  Permitted to every user
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/posts/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/comments/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/admin/courses/**").permitAll();
-
-        //  Permitted only to admin
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/posts/").hasRole("admin");
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "api/admin/users/**").hasRole("admin");
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "api/admin/users/").hasRole("admin");
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "api/admin/users/**").hasRole("admin");
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "api/admin/users/** / course/**").hasRole("admin");
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "api/admin/users/** / course/**").hasRole("admin");
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/courses/").hasRole("admin");
-        http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/courses/**").hasRole("admin");
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/courses/**").hasRole("admin");
+        //  Permitted only to administrador
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/posts/").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "api/admin/users/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "api/admin/users/").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "api/admin/users/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "api/admin/users/** / course/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "api/admin/users/** / course/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/courses/").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/courses/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/courses/**").hasRole("administrador");
 
         //  Permitted only to instructor
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/materials/").hasRole("profesor");
@@ -72,23 +67,27 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/comments/").hasRole("alumno");
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/materials/**").hasRole("alumno");
 
-        // Other endpoints are public
+        // Permitted to every user
         http.authorizeRequests().anyRequest().permitAll();
 
         // Disable CSRF protection (it is difficult to implement in REST APIs)
         http.csrf().disable();
 
-        // Enable Basic Authentication
-        http.httpBasic();
+        // Disable Http Basic Authentication
+        http.httpBasic().disable();
 
         // Disable Form login Authentication
         http.formLogin().disable();
 
-        // Avoid creating session (because every request has credentials)
+        // Avoid creating session
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+        // Add JWT Token filter
+        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+
     }
 
 
 }
- */
+
 
