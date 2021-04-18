@@ -301,6 +301,11 @@ Springboot starter security.
 ## Phase 3:  API REST and deployment with docker.
 In this phase, we implemented all of our web functionality as an API REST. We tested everything with Postman and then, we deployed the app with Docker.
 
+### API REST documentation :
+[api-docs.html](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.html)
+[api-docs.yaml](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.yaml)
+
+
 ### Executing Dockerized app :
 To run the app follow the next steps
 - Step 1: Install docker desktop and docker compose https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header
@@ -338,7 +343,7 @@ To run the app follow the next steps
     - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/778204617bb2e34ff29d693e8f4cdb9aa0071d56)
     - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/49717ebc4f8d14e0fd22c3b2230c27caeb568925)
     - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8a14bde995b9b81485fd0a66190d974c18a098a5)
-    - [Commit 5]()
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/9a86fb87897391ff2fec5cbc974383d47144e76e)
     
   - TOP 5 MOST MODIFIED FILES:
     1. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java) 
