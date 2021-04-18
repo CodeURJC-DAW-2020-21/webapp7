@@ -297,3 +297,155 @@ Springboot starter security.
     3. [ErrorWebControl](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ErrorWebController.java)
     4. [LoginWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/LoginWebController.java)
     5. [PostController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/PostController.java)
+    
+## Phase 3:  API REST and deployment with docker.
+In this phase, we implemented all of our web functionality as an API REST. We tested everything with Postman and then, we deployed the app with Docker.
+
+### API REST documentation :
+- [HTML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.html)
+- [YAML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.yaml)
+- [Interpreted HTML documentation](http://raw.githack.com/CodeURJC-DAW-2020-21/webapp7/main/api-docs/api-docs.html)
+
+
+
+### Executing Dockerized app :
+To run the app follow the next steps
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)
+- Step 2: download project in github [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip )
+- Step 3: Open terminal
+- Step 4: Login dockerized database```docker run --rm -e MYSQL_ROOT_PASSWORD=webapp7 -e MYSQL_DATABASE=kiddyshouse -p 3306:3306 -d mysql:8.0.22```
+- Step 5: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
+- Step 6: Build image in docker```docker build -t webapp7/webapp7 . ```
+- Step 7: Push previous image in dockerHub```docker push webapp7/webapp7:latest ```
+- Step 8: ```docker-compose up ```
+- Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app!
+
+### Building docker image:
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)  
+- Step 2: Clone project [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7.git)
+- Step 3: Open terminal
+- Step 4: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
+- Step 5: Execute ``` create_image.sh```
+
+### Classes and templates Diagram:
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase30.png)
+
+## Authors' Participation:
+- Caridad Arias Pradas
+  - TASKS:
+    - Admin User Controller Api
+    - Material Controller Api
+    - Graphic in Api rest
+    - Comment Controller Api
+    - Pageable
+    - Api documentation
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/778204617bb2e34ff29d693e8f4cdb9aa0071d56)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/778204617bb2e34ff29d693e8f4cdb9aa0071d56)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/49717ebc4f8d14e0fd22c3b2230c27caeb568925)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8a14bde995b9b81485fd0a66190d974c18a098a5)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/9a86fb87897391ff2fec5cbc974383d47144e76e)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java) 
+    2. [MaterialControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/MaterialControllerApi.java)
+    3. [PostControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/PostControllerApi.java)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
+    5. [LoginControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/LoginControllerApi.java)
+   
+  - Miriam de Francisco Alonso
+  - TASKS:
+    - Admin Course Controller Api
+    - Post Controller Api
+    - Admin User Controller Api
+    - Material Controller Api
+    - Algorithm in Api rest   
+    - Pageable
+    - Api documentation
+
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/11b9ac5ced58ea4eb26d10e204352fb6886d82c0)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/49717ebc4f8d14e0fd22c3b2230c27caeb568925)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b743513cbf66317b2ac462a423456b6a5bd50f6f)     
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/cb2fc22b07e9981bf22088cc3afe67288f540681)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b57f9ec853d0066181debe97806628e42963c196)
+		
+  - TOP 5 MOST MODIFIED FILES:
+    1. [PostControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/PostControllerApi.java) 
+    2. [MaterialControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/MaterialControllerApi.java)
+    3. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
+    5. [LoginControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/LoginControllerApi.java)
+    
+- Alba Sevillano Portilla:
+  - TASKS:
+    - Admin Course Controller Api
+    - Admin User Controller Api
+    - Material Controller Api
+    - Algorithm in Api rest
+    - Pageable
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/11b9ac5ced58ea4eb26d10e204352fb6886d82c0)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/49717ebc4f8d14e0fd22c3b2230c27caeb568925)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/eae6997d00fd13f223c177ebd8287cf57e98088b)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4f7d77ae1728225991ec1860664434dec01715ab)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/778204617bb2e34ff29d693e8f4cdb9aa0071d56)
+ 
+  - TOP 5 MOST MODIFIED FILES:
+    1. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java) 
+    2. [MaterialControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/MaterialControllerApi.java)
+    3. [PostControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/PostControllerApi.java)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
+    5. [LoginControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/LoginControllerApi.java)
+    
+     
+- Jesús Sebastián Tocas Atarama:
+  - TASKS:
+    - Docker and Docker-compose (Documentation)
+    - Security
+    - Graphic in Api rest
+    - Comment Controller Api
+    - Login COntroller Api
+    
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/f059512bfb78d0e47437b46b5d85339a2e77648a)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4a72103498f129a2af797903ab83e8f35b7c29a1)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8740606d9cd9e5f8f6acccd8744ad70951fef20d)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/e8378e3201a35f52be2de8161eabf26a8517966e)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b588f67f5b991af07498cd8b2eb93e902a1b05d5)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [Dockerfile](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/Dockerfile) 
+    2. [create_image](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/create_image.sh)
+    3. [docker-compose](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/docker-compose.yml)
+    4. [SNAPSHOT.jar](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/webapp7-0.0.1-SNAPSHOT.jar)
+    5. [SNAPSHOT.jar.original](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/webapp7-0.0.1-SNAPSHOT.jar.original)
+  
+- Deborah Israel Villanueva:
+  - TASKS:
+    - Api rest disponibilty
+    - Postman collection
+    - Docker and Docker-compose (Documentation)
+    - Security
+    - Graphic in Api rest
+    - Comment Controller Api
+    - Login COntroller Api
+        
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE'
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8a14bde995b9b81485fd0a66190d974c18a098a5)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/eabf23f1581de912172eefacd28b2335046b0c6c)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b743513cbf66317b2ac462a423456b6a5bd50f6f)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/48fbc92347141995726ffba93340114d940161d9)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/bdb7e1e0ad04ef1c6cd2286388bc7cdb7f38e8a0)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [Dockerfile](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/Dockerfile) 
+    2. [create_image](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/create_image.sh)
+    3. [docker-compose](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/docker-compose.yml)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
+    5. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java)
+
