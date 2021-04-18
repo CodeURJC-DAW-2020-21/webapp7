@@ -317,7 +317,7 @@ To run the app follow the next steps
 - Step 6: Build image in docker```docker build -t webapp7/webapp7 . ```
 - Step 7: Push previous image in dockerHub```docker push webapp7/webapp7:latest ```
 - Step 8: ```docker-compose up ```
-- Step 9: Type in your browser [click here](https://localhost:8443/ ) and voilà you should be able to see the app!
+- Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app!
 
 ### Building docker image:
 - Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)  
