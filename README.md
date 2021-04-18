@@ -300,8 +300,9 @@ Springboot starter security.
     
 ## Phase 3:  API REST and deployment with docker.
 In this phase 
+
 ### Classes and templates Diagram:
-![Class Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase30.jpeg)
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase30.png)
 
 ## Authors' Participation:
 - Caridad Arias Pradas
