@@ -16,8 +16,10 @@ import java.util.List;
 @Entity
 public class User {
 
-    public interface Basic {
-    }
+    public interface Basic {}
+
+    public interface NumberMaterial{}
+
 
     @JsonView(User.Basic.class)
     @Id
@@ -27,7 +29,7 @@ public class User {
     @JsonView(User.Basic.class)
     private String email;
 
-    @JsonView(User.Basic.class)
+    @JsonView({User.Basic.class,NumberMaterial.class})
     @Column(length = 135, nullable = false, unique = true)
     private String name;
 
@@ -48,7 +50,7 @@ public class User {
     @JsonIgnore
     private List<Material> finishedMaterials;
 
-    @JsonView(User.Basic.class)
+    @JsonView({User.Basic.class,NumberMaterial.class})
     private int numberMaterial;
 
 
