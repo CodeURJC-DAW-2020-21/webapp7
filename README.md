@@ -301,6 +301,15 @@ Springboot starter security.
 ## Phase 3:  API REST and deployment with docker.
 In this phase, we implemented all of our web functionality as an API REST. We tested everything with Postman and then, we deployed the app with Docker.
 
+Step 1: Install docker desktop for windows
+Step 2: download project in github https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip
+Step 3: Open terminal
+Step 4: ```docker run --rm -e MYSQL_ROOT_PASSWORD=webapp7 -e MYSQL_DATABASE=kiddyshouse -p 3306:3306 -d mysql:8.0.22```
+Step 5: Get into directory DockerFiles ```cd C:\{path de descarga}\webapp7\DockerFiles```
+Step 6: ```docker build -t webapp7/webapp7 . ```
+Step 7: ```docker push webapp7/webapp7:latest ```
+Step 8: ```docker-compose up  ``
+
 ### Classes and templates Diagram:
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase30.png)
 
