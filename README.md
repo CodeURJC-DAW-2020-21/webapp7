@@ -302,25 +302,26 @@ Springboot starter security.
 In this phase, we implemented all of our web functionality as an API REST. We tested everything with Postman and then, we deployed the app with Docker.
 
 ### API REST documentation :
-[api-docs.html](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.html)
-[api-docs.yaml](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.yaml)
+- [HTML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.html)
+- [YAML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.yaml)
+
 
 
 ### Executing Dockerized app :
 To run the app follow the next steps
-- Step 1: Install docker desktop and docker compose https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header
-- Step 2: download project in github https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)
+- Step 2: download project in github [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip )
 - Step 3: Open terminal
 - Step 4: Login dockerized database```docker run --rm -e MYSQL_ROOT_PASSWORD=webapp7 -e MYSQL_DATABASE=kiddyshouse -p 3306:3306 -d mysql:8.0.22```
 - Step 5: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
 - Step 6: Build image in docker```docker build -t webapp7/webapp7 . ```
 - Step 7: Push previous image in dockerHub```docker push webapp7/webapp7:latest ```
 - Step 8: ```docker-compose up ```
-- Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app!
+- Step 9: Type in your browser [click here](https://localhost:8443/ ) and voilà you should be able to see the app!
 
 ### Building docker image:
-- Step 1: Install docker desktop and docker compose  https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header
-- Step 2: Clone project https://github.com/CodeURJC-DAW-2020-21/webapp7.git
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)  
+- Step 2: Clone project [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7.git)
 - Step 3: Open terminal
 - Step 4: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
 - Step 5: Execute ``` create_image.sh```
