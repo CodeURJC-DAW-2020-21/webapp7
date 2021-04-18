@@ -419,6 +419,6 @@ In this phase
     1. [Dockerfile](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/Dockerfile) 
     2. [create_image](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/create_image.sh)
     3. [docker-compose](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/docker-compose.yml)
-    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7	/Api/AdminCourseControllerApi.java)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
     5. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java)
 
