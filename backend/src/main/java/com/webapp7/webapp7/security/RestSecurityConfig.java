@@ -49,22 +49,27 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 
         //  Permitted only to administrador
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/posts/").hasRole("administrador");
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/admin/users/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/posts/**/image").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/admin/users/").hasRole("administrador");
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/admin/users/").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/admin/users/**/image").hasRole("administrador");
         http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/admin/users/**").hasRole("administrador");
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/admin/users/**/course/**").hasRole("administrador");
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/admin/users/**/course/**").hasRole("administrador");
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/courses/").hasRole("administrador");
-        http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/courses/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/courses/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/courses/**/image").hasRole("administrador");
         http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/courses/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/admin/users/**/course/**").hasRole("administrador");
+        http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/admin/users/**/course/**").hasRole("administrador");
+
 
         //  Permitted only to instructor
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/materials/").hasRole("profesor");
         http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/materials/**").hasRole("profesor");
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/materials/graph").hasRole("profesor");
 
         //  Permitted only to student
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/comments/").hasRole("alumno");
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/materials/").hasRole("alumno");
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/materials/recommendations").hasRole("alumno");
 
         // Permitted to every user
         http.authorizeRequests().anyRequest().permitAll();
