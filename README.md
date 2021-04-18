@@ -313,7 +313,7 @@ To run the app follow the next steps
 - Step 8: ```docker-compose up  ``
 - Step 9: Type in your browser https://localhost:8443/ and you should be able to see the app!
 
-###Building docker image:
+### Building docker image:
 - Step 1: Install docker desktop and docker compose 
 - Step 2: Clone project https://github.com/CodeURJC-DAW-2020-21/webapp7.git
 - Step 3: Open terminal
