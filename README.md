@@ -299,7 +299,7 @@ Springboot starter security.
     5. [PostController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/PostController.java)
     
 ## Phase 3:  API REST and deployment with docker.
-In this phase 
+In this phase, we implemented all of our web functionality as an API REST. We tested everything with Postman and then, we deployed the app with Docker.
 
 ### Classes and templates Diagram:
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase30.png)
