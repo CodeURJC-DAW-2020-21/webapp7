@@ -304,7 +304,7 @@ In this phase, we implemented all of our web functionality as an API REST. We te
 ### API REST documentation :
 - [HTML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.html)
 - [YAML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.yaml)
-- [RAW](http://raw.githack.com/CodeURJC-DAW-2020-21/webapp7/main/api-docs/api-docs.html)
+- [Interpreted HTML documentation](http://raw.githack.com/CodeURJC-DAW-2020-21/webapp7/main/api-docs/api-docs.html)
 
 
 
