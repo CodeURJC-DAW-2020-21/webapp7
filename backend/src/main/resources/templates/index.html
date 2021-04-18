@@ -1,0 +1,128 @@
+{{>header}}
+
+<!--START BODY-->
+<body>
+
+    {{>navbar}}
+
+    <div class="hero-wrap js-fullheight" style="background-image: url('images/ULTIMATE2.png');">
+        <div class="overlay"></div>
+    </div>
+
+    <!--START PART OF COURSES-->
+    <section class="ftco-section" style="background-image: url(images/fondo_nuevo.jpg);">
+        <div class="container">
+            <div class="row justify-content-center pb-4">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <span class="subheading">EMPIEZA A APRENDER CON NOSOTROS JUGANDO</span>
+                    <h2 class="mb-4">Explora La Sección De Cursos Online</h2>
+                </div>
+            </div>
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h3 class="mb-4">Nuestros alumnos se dividen en diferentes grupos por edades, 
+                    que son "Jolly Kids", "Explorer Kids" y "Keen Kids". Todos los rggupos no 
+                    superan los 12 niños, para que el la atención a los niños sea más personalizada</h3>
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <a href="course" class="btn btn-secondary">Ver Todos Nuestros Cursos</a>
+            </div>
+        </div>
+    </section>
+    <!--END PART OF COURSES-->
+
+    <!--START PURPLE STRIPE-->
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/FinPagina.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
+                    <div class="block-18 d-flex align-items-center">
+                        <div class="icon"><span class="flaticon-online"></span></div>
+                        <div class="text">
+                            <strong class="number" >{{courses_size}}</strong>
+                            <span>Cursos Online</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
+                    <div class="block-18 d-flex align-items-center">
+                        <div class="icon"><span class="flaticon-graduated"></span></div>
+                        <div class="text">
+                            <strong class="number" >{{students}}</strong>
+                            <span>Estudiantes Matriculados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
+                    <div class="block-18 d-flex align-items-center">
+                        <div class="icon"><span class="flaticon-instructor"></span></div>
+                        <div class="text">
+                            <strong class="number" >{{instructors}}</strong>
+                            <span>Profesores</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--END PURPLE STRIPE-->
+
+    <!--START CONTACT US-->
+    <section class="ftco-section ftco-about img">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-12 about-intro">
+                    <div class="row">
+                        <div class="col-md-6 d-flex">
+                            <div class="d-flex about-wrap">
+                                <div class="img d-flex align-items-center justify-content-center" style="background-image:url(images/background_green.png);"></div>
+                                <div class="img-2 d-flex align-items-center justify-content-center" style="background-image:url(images/AprendeIdioma.png);"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-md-5 py-5">
+                            <div class="row justify-content-start pb-3">
+                                <div class="col-md-12 heading-section ftco-animate">
+                                    <span class="subheading">Mejora las habilidades de tus hijos</span>
+                                    <h2 class="mb-4">Consúltanos cualquier duda, y estaremos encantados de responderle.</h2>
+                                    <p><a href="contact" class="btn btn-primary">Contacta Con Nosotros</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--END CONTACT US-->
+
+    <!--START RECENT POST OF OUR BLOG-->
+    <section class="ftco-section" style="background-image: url('images/fondo_nuevo.jpg');">
+        <div class="container">
+            <div class="row justify-content-center pb-4">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <span class="subheading">NUESTRO BLOG</span>
+                    <h2 class="mb-4">Entradas Recientes</h2>
+                </div>
+            </div>
+            <div class="row d-flex">
+                {{#posts}}
+                <div class="col-lg-4 ftco-animate">
+                    <div class="blog-entry">
+                        <img src="/post/{{id}}/image" class="block-20" >
+                        <div class="text d-block">
+                            <h3 class="heading"><a href="post/{{id}}">{{title}}</a></h3>
+                            <p>{{description}}</p>
+                            <p><a href="post/{{id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
+                        </div>
+                    </div>
+                </div>
+                {{/posts}}
+
+
+            </div>
+        </div>
+    </section>
+    <!--END RECENT POST OF OUR BLOG-->
+
+
+{{>footer}}

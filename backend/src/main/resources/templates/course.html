@@ -1,0 +1,51 @@
+{{>header}}
+
+<!--START BODY-->
+<body>
+
+	{{>navbar}}
+	
+	<!--START FIRST PART-->
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/fondo.jpg');">
+		<div class="overlayCourses"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<p class="breadcrumbs"><span class="mr-2"><a href="index">Inicio <i class="fa fa-chevron-right"></i></a></span> <span>Cursos <i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">Cursos</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--END FIRST PART-->
+
+	<!--START SECOND PART-->
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<div class="row d-flex">
+				<!--START COURSES-->
+
+						<!--START FIRST COURSE-->
+						{{#courses}}
+						<div class="col-lg-4  ftco-animate">
+							<div class="project-wrap">
+								<img src="/course/{{id}}/image" class="block-20" >
+								<div class="text p-4">
+									<h3><a>Curso "{{category}}" para niños entre {{ageStart}}-{{ageEnd}} años</a></h3>
+									<p class="advisor">{{instructor}}</span></p>
+									<ul class="d-flex justify-content-between">
+										<li class="price">{{price}} €/mes</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						{{/courses}}
+						<!--END FIRST COURSE-->
+
+				<!--END COURSES-->
+			</div>
+		</div>
+	</section>
+	<!--END SECOND PART-->
+
+	{{>footer}}
