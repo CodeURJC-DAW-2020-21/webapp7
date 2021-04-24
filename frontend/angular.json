@@ -24,9 +24,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap/bootstrap-grid.css",
+              "src/assets/css/bootstrap/bootstrap-reboot.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/bootstrap-datepicker.css",
+              "src/assets/css/flaticon.css",
+              "src/assets/css/jquery.timepicker.css",
+              "src/assets/css/magnific-popup.css",
+              "src/assets/css/owl.carousel.css",
+              "src/assets/css/owl.theme.default.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              //poner aqui todos los scripts usados
+            ]
           },
           "configurations": {
             "production": {
@@ -120,5 +132,8 @@
         }
       }
     }},
-  "defaultProject": "frontend"
+  "defaultProject": "frontend",
+  "cli": {
+    "analytics": "393ad6bd-c93c-4797-abd8-192cf2118bb3"
+  }
 }
