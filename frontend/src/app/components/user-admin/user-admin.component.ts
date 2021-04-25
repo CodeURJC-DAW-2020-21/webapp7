@@ -5,7 +5,7 @@ import {Course} from '../../models/Course/course.model';
 import {Post} from '../../models/Post/post.model';
 import {UserService} from '../../services/user/user.service';
 import {CourseService} from '../../services/course/course.service';
-//import {PostService} from '../../services/post/post.service';
+// import {PostService} from '../../services/post/post.service';
 import {environment} from '../../../environments/environment';
 
 
@@ -27,7 +27,8 @@ export class UserAdminComponent {
   constructor(private router,
               private userService: UserService,
               private courseService: CourseService,
-              private postService: PostService) {
+              // private postService: PostService
+  ) {
     this.userData = new FormData();
     this.courseData = new FormData();
     this.postData = new FormData();
@@ -105,7 +106,7 @@ export class UserAdminComponent {
     }
   }
 
-  // tslint:disable-next-line:typedef
+  /* // tslint:disable-next-line:typedef
   createPost( formulary: NgForm ) {
     if ( formulary.invalid ) {
 
@@ -130,5 +131,7 @@ export class UserAdminComponent {
       );
     }
   }
+
+   */
 }
 
