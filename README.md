@@ -63,7 +63,7 @@ System that compares the download content from the course and recomends new mate
 It is observable the possibility given to the user to log-in by just typing in their email and password, consequently depending on wether the dominion of the email , the app will differentiate wether they are a student user or an instructor forwarding them to their corresponding user interfaces.
 
 #### Home
-![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Home.gif)
+![Home](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Index.gif)
 
 This is the main page which shows a review about all website’s sections and a place where a user can sign up or log in if it’s registered already.
 
@@ -73,17 +73,17 @@ This is the main page which shows a review about all website’s sections and a 
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Courses
-![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/courses3.png)
+![Courses](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Course.gif)
 
 This tab describes main info about Kiddy’s House academy, what is offerted and signed-up users ratings.
 
 #### Instructor
-![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Instructor.gif)
+![Instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Instructor2.gif)
 
 It contains all teachers description.
 
 #### Blog
-![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/blog3.png)
+![Blog](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Blog.gif)
 
 This page has all news and updates about everything related to academy stuff.
 
@@ -102,23 +102,19 @@ Whenever the user needs to contact the academy for any reason there is tab with 
 
 Whenthe user sents a doubt or concern via the contact page, this page will appear, making sure that the user knows that their question is sent.
 
-#### Email
-![Email](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/email.png)
-
-Every user, student as well as instructor have this tab where they can see the new emails in the right part of the tab, time charge ilustrated with a  progress bar, and on the left the chance of writting a new email including files if desired. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their class material page.
 
 #### User-instructor
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_instructor.png)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserInstructor.gif)
 
 Every student user has their own personalized tab with their material(checked whenever has been downloaded and  seeen), personalized recommendations  and graph portraying the progress of the course.On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
 #### User student
-![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/user_student.png)
+![User-instructor](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserStudent.gif)
 
 Each instructor has their own class content with the possibility of adding any type of files: from pdfs, text, titles, to  videos. It is observable in to their right a series of classes they have with their timetables and a progress graph of the course. On the dropdown menu of the upper-rigth side of the tab the user can log-out as well as go to their email.
 
 ### User admin
-![User-admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/admin3.png)
+![User-admin](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/UserAdmin.gif)
 This page was created to manage all users, courses and posts within the organization.
 
 ### Error
@@ -174,10 +170,10 @@ Springboot starter security.
 10.Next >> Execute >> Finnish till installation ends.
 
 ### Navigation Diagram:
-![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase3.png)
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase31.png)
 
 ### Entity Diagram:
-![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Entity_Diagram.jpeg)
+![Entity Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/EntityDiagram.png)
 
 ### Classes and templates Diagram:
 ![Class Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Class_Diagram.jpeg)
@@ -187,6 +183,8 @@ Springboot starter security.
   - TASKS:
     - Login: HTML, Controller, Service, Repository.
     - Error control system: ErrorWebController.
+    - Algorithm 
+    - Ajax
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/366531d7e57513a6a43bdbfeded0db3f7ffc635a)
@@ -209,6 +207,9 @@ Springboot starter security.
     - Create the ability to post new content to those pages.
     - Create the ability to download said content, also deleting it.
     - Fix bugs and errors.
+    - Algorithm 
+    - Graph
+    - Queries
     -
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b8067f59a16ce9e60c7109aec995e263dfbf2bd9)
@@ -231,6 +232,9 @@ Springboot starter security.
     - Create HTML of error, loginerror, error 404.
     - Instructor: Controller, Service, Repository.
     - Do the SQL Query
+    - Algorithm
+    - Graph
+    - Queries
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4e96792fea4b945bafd7d42ca642c75d20ae25d3)
@@ -253,6 +257,8 @@ Springboot starter security.
     - Show courses posted in /courses
     - Delete courses
     - Support some teammates with some errors and bugs fixed
+    - Ajax 
+    - Graph
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE':
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/1d5685338933319f9b15049e3a8236e04ccb4787)
@@ -275,6 +281,8 @@ Springboot starter security.
     - Email with SMPT
     - Message feedback html
     - Sample data embedded on MYSQL database
+    - Ajax
+    - Graph
     
   - TOP 5 MOST IMPORTANT COMMITS IN 'SECOND PHASE'
     - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/908daab33a8f323f1502a2a3e818a51cc8c9ca34)
@@ -289,3 +297,155 @@ Springboot starter security.
     3. [ErrorWebControl](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/ErrorWebController.java)
     4. [LoginWebController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/LoginWebController.java)
     5. [PostController](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/src/main/java/com/webapp7/webapp7/controller/PostController.java)
+    
+## Phase 3:  API REST and deployment with docker.
+In this phase, we implemented all of our web functionality as an API REST. We tested everything with Postman and then, we deployed the app with Docker.
+
+### API REST documentation :
+- [HTML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.html)
+- [YAML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.yaml)
+- [Interpreted HTML documentation](http://raw.githack.com/CodeURJC-DAW-2020-21/webapp7/main/api-docs/api-docs.html)
+
+
+
+### Executing Dockerized app :
+To run the app follow the next steps
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)
+- Step 2: download project in github [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip )
+- Step 3: Open terminal
+- Step 4: Login dockerized database```docker run --rm -e MYSQL_ROOT_PASSWORD=webapp7 -e MYSQL_DATABASE=kiddyshouse -p 3306:3306 -d mysql:8.0.22```
+- Step 5: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
+- Step 6: Build image in docker```docker build -t webapp7/webapp7 . ```
+- Step 7: Push previous image in dockerHub```docker push webapp7/webapp7:latest ```
+- Step 8: ```docker-compose up ```
+- Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app!
+
+### Building docker image:
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)  
+- Step 2: Clone project [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7.git)
+- Step 3: Open terminal
+- Step 4: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
+- Step 5: Execute ``` create_image.sh```
+
+### Classes and templates Diagram:
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase30.png)
+
+## Authors' Participation:
+- Caridad Arias Pradas
+  - TASKS:
+    - Admin User Controller Api
+    - Material Controller Api
+    - Graphic in Api rest
+    - Comment Controller Api
+    - Pageable
+    - Api documentation
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/778204617bb2e34ff29d693e8f4cdb9aa0071d56)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/778204617bb2e34ff29d693e8f4cdb9aa0071d56)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/49717ebc4f8d14e0fd22c3b2230c27caeb568925)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8a14bde995b9b81485fd0a66190d974c18a098a5)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/9a86fb87897391ff2fec5cbc974383d47144e76e)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java) 
+    2. [MaterialControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/MaterialControllerApi.java)
+    3. [PostControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/PostControllerApi.java)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
+    5. [LoginControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/LoginControllerApi.java)
+   
+  - Miriam de Francisco Alonso
+  - TASKS:
+    - Admin Course Controller Api
+    - Post Controller Api
+    - Admin User Controller Api
+    - Material Controller Api
+    - Algorithm in Api rest   
+    - Pageable
+    - Api documentation
+
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/11b9ac5ced58ea4eb26d10e204352fb6886d82c0)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/49717ebc4f8d14e0fd22c3b2230c27caeb568925)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b743513cbf66317b2ac462a423456b6a5bd50f6f)     
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/cb2fc22b07e9981bf22088cc3afe67288f540681)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b57f9ec853d0066181debe97806628e42963c196)
+		
+  - TOP 5 MOST MODIFIED FILES:
+    1. [PostControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/PostControllerApi.java) 
+    2. [MaterialControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/MaterialControllerApi.java)
+    3. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
+    5. [LoginControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/LoginControllerApi.java)
+    
+- Alba Sevillano Portilla:
+  - TASKS:
+    - Admin Course Controller Api
+    - Admin User Controller Api
+    - Material Controller Api
+    - Algorithm in Api rest
+    - Pageable
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/11b9ac5ced58ea4eb26d10e204352fb6886d82c0)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/49717ebc4f8d14e0fd22c3b2230c27caeb568925)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/eae6997d00fd13f223c177ebd8287cf57e98088b)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4f7d77ae1728225991ec1860664434dec01715ab)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/778204617bb2e34ff29d693e8f4cdb9aa0071d56)
+ 
+  - TOP 5 MOST MODIFIED FILES:
+    1. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java) 
+    2. [MaterialControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/MaterialControllerApi.java)
+    3. [PostControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/PostControllerApi.java)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
+    5. [LoginControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/LoginControllerApi.java)
+    
+     
+- Jesús Sebastián Tocas Atarama:
+  - TASKS:
+    - Docker and Docker-compose (Documentation)
+    - Security
+    - Graphic in Api rest
+    - Comment Controller Api
+    - Login COntroller Api
+    
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/f059512bfb78d0e47437b46b5d85339a2e77648a)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4a72103498f129a2af797903ab83e8f35b7c29a1)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8740606d9cd9e5f8f6acccd8744ad70951fef20d)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/e8378e3201a35f52be2de8161eabf26a8517966e)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b588f67f5b991af07498cd8b2eb93e902a1b05d5)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [Dockerfile](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/Dockerfile) 
+    2. [create_image](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/create_image.sh)
+    3. [docker-compose](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/docker-compose.yml)
+    4. [SNAPSHOT.jar](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/webapp7-0.0.1-SNAPSHOT.jar)
+    5. [SNAPSHOT.jar.original](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/webapp7-0.0.1-SNAPSHOT.jar.original)
+  
+- Deborah Israel Villanueva:
+  - TASKS:
+    - Api rest disponibilty
+    - Postman collection
+    - Docker and Docker-compose (Documentation)
+    - Security
+    - Graphic in Api rest
+    - Comment Controller Api
+    - Login COntroller Api
+        
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE'
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8a14bde995b9b81485fd0a66190d974c18a098a5)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/eabf23f1581de912172eefacd28b2335046b0c6c)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/b743513cbf66317b2ac462a423456b6a5bd50f6f)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/48fbc92347141995726ffba93340114d940161d9)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/bdb7e1e0ad04ef1c6cd2286388bc7cdb7f38e8a0)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [Dockerfile](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/Dockerfile) 
+    2. [create_image](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/create_image.sh)
+    3. [docker-compose](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/DockerFiles/docker-compose.yml)
+    4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
+    5. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java)
+
