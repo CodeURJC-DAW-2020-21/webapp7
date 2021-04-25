@@ -1,8 +1,8 @@
 
 export interface Post{
-  id:number;
-  title:string;
-  description:string;
-  //imageFile:string;
-  image:boolean;
+  id: number;
+  title: string;
+  description: string;
+  // imageFile:string;
+  image: boolean;
 }
