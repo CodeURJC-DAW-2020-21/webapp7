@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-const BASE_URL = environment.apiBase + '/courses/';
+const BASE_URL = environment.apiBase + '/posts/';
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +18,6 @@ export class PostService {
     return this.http.post(BASE_URL, postData).pipe(
       catchError(error => this.handleError(error))
     );
-  }
-  // tslint:disable-next-line:typedef
-  public getPost(id: number) {
-    const url = environment.apiBase + '/posts/' + id;
-    return this.http.get(url);
-  }
-  // tslint:disable-next-line:typedef
-  public getPostPage(page: number){
-    const url = environment.apiBase + '/posts?page=' + page;
-    return this.http.get(url);
   }
 
   // tslint:disable-next-line:typedef
