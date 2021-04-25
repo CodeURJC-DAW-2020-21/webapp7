@@ -6,6 +6,7 @@ import {Post} from '../../models/Post/post.model';
 import {UserService} from '../../services/user/user.service';
 import {CourseService} from '../../services/course/course.service';
 import {PostService} from '../../services/post/post.service';
+import {environment} from '../../../environments/environment';
 
 
 @Component({
@@ -22,8 +23,6 @@ export class UserAdminComponent {
   userData: FormData;
   courseData: FormData;
   postData: FormData;
-  alert: boolean;
-  alertText: string;
 
   constructor(private router,
               private userService: UserService,
@@ -51,24 +50,19 @@ export class UserAdminComponent {
       description: '',
       image: false
     };
-    this.alert = false;
+
   }
 
   // tslint:disable-next-line:typedef
   createUser( formulary: NgForm ) {
 
     if ( formulary.invalid ) {
-      this.alertText = 'Todos los campos se deben rellenar';
-      this.alert = true;
-
       Object.values(formulary.controls).forEach( control => {
         control.markAsTouched();
       });
     }
 
     else {
-      this.alert = false;
-
       this.userData.append('jsondata', JSON.stringify(this.user));
       this.userData.append('password', this.user.password);
 
@@ -77,9 +71,7 @@ export class UserAdminComponent {
           this.router.navigate(['index']);
         },
         error => {
-          this.alertText = `El usuario no se pudo crear. Contacte al servicio técnico.`;
-          this.alert = true;
-          this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+            this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
             this.router.navigate(['user-admin']);
           });
         }
@@ -87,11 +79,11 @@ export class UserAdminComponent {
     }
   }
 
+
+
   // tslint:disable-next-line:typedef
   createCourse( formulary: NgForm ) {
     if ( formulary.invalid ) {
-      this.alertText = 'Todos los campos se deben rellenar';
-      this.alert = true;
 
       Object.values(formulary.controls).forEach( control => {
         control.markAsTouched();
@@ -99,8 +91,6 @@ export class UserAdminComponent {
     }
 
     else {
-      this.alert = false;
-
       this.courseData.append('jsondata', JSON.stringify(this.course));
 
       this.courseService.createCourse(this.courseData).subscribe(
@@ -108,8 +98,6 @@ export class UserAdminComponent {
           this.router.navigate(['index']);
         },
         error => {
-          this.alertText = 'El usuario no se pudo crear. Contacte al servicio técnico.';
-          this.alert = true;
           this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
             this.router.navigate(['/user-admin']);
           });
@@ -121,8 +109,6 @@ export class UserAdminComponent {
   // tslint:disable-next-line:typedef
   createPost( formulary: NgForm ) {
     if ( formulary.invalid ) {
-      this.alertText = 'Todos los campos se deben rellenar';
-      this.alert = true;
 
       Object.values(formulary.controls).forEach( control => {
         control.markAsTouched();
@@ -130,7 +116,6 @@ export class UserAdminComponent {
     }
 
     else {
-      this.alert = false;
 
       this.postData.append('jsondata', JSON.stringify(this.post));
 
@@ -139,8 +124,6 @@ export class UserAdminComponent {
           this.router.navigate(['index']);
         },
         error => {
-          this.alertText = 'El post no se pudo crear. Contacte al servicio técnico.';
-          this.alert = true;
           this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
             this.router.navigate(['/user-admin']);
           });

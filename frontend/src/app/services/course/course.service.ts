@@ -19,6 +19,11 @@ export class CourseService {
       catchError(error => this.handleError(error))
     );
   }
+  // tslint:disable-next-line:typedef
+  public getCourse(id: number) {
+    const url = environment.apiBase + '/courses/' + id;
+    return this.http.get(url);
+  }
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {

@@ -19,6 +19,11 @@ export class UserService {
       catchError(error => this.handleError(error))
     );
   }
+  // tslint:disable-next-line:typedef
+  public getUser(id: number) {
+    const url = environment.apiBase + '/users/' + id;
+    return this.http.get(url);
+  }
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
