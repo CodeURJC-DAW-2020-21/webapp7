@@ -105,3 +105,13 @@ public class KiddysController {
 		return "login_error";
 	}
 }
+
+	//Connecting to Angular
+	@RequestMapping("/new")
+	public String AngularConnection() {
+		return "new/index.html";
+	}
+	@RequestMapping("/new/")
+	public String AngularConnection2() {
+		return "new/index.html";
+	}
