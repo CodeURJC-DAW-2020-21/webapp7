@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/User/user.model';
 import {Course} from '../../models/Course/course.model';
-import {UserService} from '../../services/user.service';
+import {UserService} from '../../services/user/user.service';
 import {NgForm} from '@angular/forms';
-import {CourseService} from '../../services/course.service';
+import {CourseService} from '../../services/course/course.service';
 
 @Component({
   selector: 'app-admin',
