@@ -24,6 +24,11 @@ export class PostService {
     const url = environment.apiBase + '/posts/' + id;
     return this.http.get(url);
   }
+  // tslint:disable-next-line:typedef
+  public getPostPage(page: number){
+    const url = environment.apiBase + '/posts?page=' + page;
+    return this.http.get(url);
+  }
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {

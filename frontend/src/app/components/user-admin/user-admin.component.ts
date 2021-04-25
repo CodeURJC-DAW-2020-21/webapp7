@@ -80,7 +80,6 @@ export class UserAdminComponent {
   }
 
 
-
   // tslint:disable-next-line:typedef
   createCourse( formulary: NgForm ) {
     if ( formulary.invalid ) {
