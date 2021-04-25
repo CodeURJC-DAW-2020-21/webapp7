@@ -5,7 +5,7 @@ import {Course} from '../../models/Course/course.model';
 import {Post} from '../../models/Post/post.model';
 import {UserService} from '../../services/user/user.service';
 import {CourseService} from '../../services/course/course.service';
-import {PostService} from '../../services/post/post.service';
+//import {PostService} from '../../services/post/post.service';
 import {environment} from '../../../environments/environment';
 
 
