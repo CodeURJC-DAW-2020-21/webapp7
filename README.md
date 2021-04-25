@@ -301,15 +301,31 @@ Springboot starter security.
 ## Phase 3:  API REST and deployment with docker.
 In this phase, we implemented all of our web functionality as an API REST. We tested everything with Postman and then, we deployed the app with Docker.
 
-### Docker steps:
-- Step 1: Install docker desktop for windows
-- Step 2: download project in github https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip
+### API REST documentation :
+- [HTML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.html)
+- [YAML file](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/api-docs/api-docs.yaml)
+- [Interpreted HTML documentation](http://raw.githack.com/CodeURJC-DAW-2020-21/webapp7/main/api-docs/api-docs.html)
+
+
+
+### Executing Dockerized app :
+To run the app follow the next steps
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)
+- Step 2: download project in github [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip )
 - Step 3: Open terminal
-- Step 4: ```docker run --rm -e MYSQL_ROOT_PASSWORD=webapp7 -e MYSQL_DATABASE=kiddyshouse -p 3306:3306 -d mysql:8.0.22```
-- Step 5: Get into directory DockerFiles ```cd C:\{path de descarga}\webapp7\DockerFiles```
-- Step 6: ```docker build -t webapp7/webapp7 . ```
-- Step 7: ```docker push webapp7/webapp7:latest ```
-- Step 8: ```docker-compose up  ``
+- Step 4: Login dockerized database```docker run --rm -e MYSQL_ROOT_PASSWORD=webapp7 -e MYSQL_DATABASE=kiddyshouse -p 3306:3306 -d mysql:8.0.22```
+- Step 5: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
+- Step 6: Build image in docker```docker build -t webapp7/webapp7 . ```
+- Step 7: Push previous image in dockerHub```docker push webapp7/webapp7:latest ```
+- Step 8: ```docker-compose up ```
+- Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app!
+
+### Building docker image:
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)  
+- Step 2: Clone project [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7.git)
+- Step 3: Open terminal
+- Step 4: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
+- Step 5: Execute ``` create_image.sh```
 
 ### Classes and templates Diagram:
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase30.png)
@@ -329,7 +345,7 @@ In this phase, we implemented all of our web functionality as an API REST. We te
     - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/778204617bb2e34ff29d693e8f4cdb9aa0071d56)
     - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/49717ebc4f8d14e0fd22c3b2230c27caeb568925)
     - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8a14bde995b9b81485fd0a66190d974c18a098a5)
-    - [Commit 5]()
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/9a86fb87897391ff2fec5cbc974383d47144e76e)
     
   - TOP 5 MOST MODIFIED FILES:
     1. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java) 
