@@ -3,6 +3,7 @@ import { User } from '../../models/User/user.model';
 import {Course} from '../../models/Course/course.model';
 import {UserService} from '../../services/user.service';
 import {NgForm} from '@angular/forms';
+import {CourseService} from '../../services/course.service';
 
 @Component({
   selector: 'app-admin',
@@ -14,11 +15,14 @@ export class UserAdminComponent {
 
   user: User;
   course: Course;
-  data: FormData;
+  userData: FormData;
+  courseData: FormData;
   alert: boolean;
   alertText: string;
 
-  constructor(private router, private userService: UserService) {
+  constructor(private router, private userService: UserService, private courseService: CourseService) {
+    this.userData = new FormData();
+    this.courseData = new FormData();
     this.user = {
       email: '',
       name: '',
@@ -27,13 +31,20 @@ export class UserAdminComponent {
       image: false,
       numberMaterials: 0
     };
+    this.course = {
+      category: '',
+      ageStart: 0,
+      ageEnd: 0,
+      instructor: '',
+    };
+    this.alert = false;
   }
 
   // tslint:disable-next-line:typedef
   createUser( formulary: NgForm ) {
 
     if ( formulary.invalid ) {
-      this.alertText = 'All fields must be Completed';
+      this.alertText = 'Todos los campos se deben rellenar';
       this.alert = true;
 
       Object.values(formulary.controls).forEach( control => {
@@ -44,15 +55,15 @@ export class UserAdminComponent {
     else {
       this.alert = false;
 
-      this.data.append('jsondata', JSON.stringify(this.user));
-      this.data.append('password', this.user.password);
+      this.userData.append('jsondata', JSON.stringify(this.user));
+      this.userData.append('password', this.user.password);
 
-      this.userService.createUser(this.data).subscribe(
+      this.userService.createUser(this.userData).subscribe(
         response => {
           this.router.navigate(['home']);
         },
         error => {
-          this.alertText = `El usuario no se pudo crear. \nContacte al servicio técnico.`;
+          this.alertText = `El usuario no se pudo crear. Contacte al servicio técnico.`;
           this.alert = true;
           this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
             this.router.navigate(['user-admin']);
@@ -62,4 +73,34 @@ export class UserAdminComponent {
     }
   }
 
+  // tslint:disable-next-line:typedef
+  createCourse( formulary: NgForm ) {
+    if ( formulary.invalid ) {
+      this.alertText = 'Todos los campos se deben rellenar';
+      this.alert = true;
+
+      Object.values(formulary.controls).forEach( control => {
+        control.markAsTouched();
+      });
+    }
+
+    else {
+      this.alert = false;
+
+      this.courseData.append('jsondata', JSON.stringify(this.course));
+
+      this.courseService.createCourse(this.courseData).subscribe(
+        response => {
+          this.router.navigate(['home']);
+        },
+        error => {
+          this.alertText = 'El usuario no se pudo crear. Contacte al servicio técnico.';
+          this.alert = true;
+          this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/shelterform']);
+          });
+        }
+      );
+    }
+  }
 }
