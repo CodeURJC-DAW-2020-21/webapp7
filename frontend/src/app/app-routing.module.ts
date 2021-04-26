@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent} from './components/index/index.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
+import {AboutComponent} from './components/about/about.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,18 @@ const routes: Routes = [
   },
   {
     path: 'footer', component: FooterComponent,
+  },
+  {
+  path: 'about', component: AboutComponent,
+  },
+  {
+  path: 'blogSingle2', component: BlogSingle2Component,
+  },
+  {
+  path: 'blogSingle', component: BlogSingle2Component,
+  },
+  {
+  path: 'blogSingle3', component: BlogSingle2Component,
   },
 ];
 
