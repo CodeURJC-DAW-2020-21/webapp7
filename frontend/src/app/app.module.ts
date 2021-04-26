@@ -8,6 +8,7 @@ import { IndexComponent} from './components/index/index.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {FormsModule} from '@angular/forms';
+import {UserInstructorComponent} from './components/user-instructor/user-instructor.component';
 
 
 
@@ -16,7 +17,8 @@ import {FormsModule} from '@angular/forms';
     AppComponent,
     IndexComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserInstructorComponent
   ],
   imports: [
     BrowserModule,

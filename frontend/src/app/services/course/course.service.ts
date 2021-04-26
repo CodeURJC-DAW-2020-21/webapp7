@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import {Course} from '../../models/Course/course.model';
 
 const BASE_URL = environment.apiBase + '/courses/';
 
@@ -24,6 +25,13 @@ export class CourseService {
     const url = environment.apiBase + '/courses/' + id;
     return this.http.get(url);
   }
+  /*getCourseById(id: number): Observable<Course>{
+    return this.httpClient.get(BASE_URL + id).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<Course>;
+  }
+
+   */
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
