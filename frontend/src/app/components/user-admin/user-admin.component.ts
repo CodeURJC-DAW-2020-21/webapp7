@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { User } from '../../models/User/user.model';
 import {Course} from '../../models/Course/course.model';
@@ -68,7 +68,7 @@ export class UserAdminComponent {
 
       this.userService.createUser(this.userData).subscribe(
         response => {
-          this.router.navigate(['index']);
+          this.router.navigate(['user-admin']);
         },
         error => {
             this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
@@ -130,5 +130,7 @@ export class UserAdminComponent {
       );
     }
   }
+
+
 }
 
