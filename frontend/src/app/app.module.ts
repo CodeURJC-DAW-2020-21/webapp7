@@ -9,7 +9,7 @@ import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import {UserInstructorComponent} from './components/user-instructor/user-instructor.component';
-
+import {AboutComponent} from './components/about/about.component';
 
 
 @NgModule({
@@ -18,7 +18,11 @@ import {UserInstructorComponent} from './components/user-instructor/user-instruc
     IndexComponent,
     HeaderComponent,
     FooterComponent,
-    UserInstructorComponent
+    UserInstructorComponent,
+    AboutComponent,
+    BlogSingleComponent;
+    BlogSingle2Component;
+    BlogSingle3Component;
   ],
   imports: [
     BrowserModule,

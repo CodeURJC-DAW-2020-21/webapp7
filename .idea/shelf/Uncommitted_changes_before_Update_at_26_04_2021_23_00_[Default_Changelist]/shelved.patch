@@ -1,0 +1,38 @@
+Index: frontend/src/app/app.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><h1>prueba 5</h1>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/app/app.component.html b/frontend/src/app/app.component.html
+--- a/frontend/src/app/app.component.html	(revision ab78682bcc92e7da0837b632e4e505383095bfbe)
++++ b/frontend/src/app/app.component.html	(date 1619346892170)
+@@ -1,1 +1,1 @@
+-<h1>prueba 5</h1>
++<h1>hola</h1>
+Index: frontend/angular.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"$schema\": \"./node_modules/@angular/cli/lib/config/schema.json\",\r\n  \"version\": 1,\r\n  \"newProjectRoot\": \"projects\",\r\n  \"projects\": {\r\n    \"frontend\": {\r\n      \"projectType\": \"application\",\r\n      \"schematics\": {},\r\n      \"root\": \"\",\r\n      \"sourceRoot\": \"src\",\r\n      \"prefix\": \"app\",\r\n      \"architect\": {\r\n        \"build\": {\r\n          \"builder\": \"@angular-devkit/build-angular:browser\",\r\n          \"options\": {\r\n            \"outputPath\": \"dist/frontend\",\r\n            \"index\": \"src/index.html\",\r\n            \"main\": \"src/main.ts\",\r\n            \"polyfills\": \"src/polyfills.ts\",\r\n            \"tsConfig\": \"tsconfig.app.json\",\r\n            \"aot\": true,\r\n            \"assets\": [\r\n              \"src/favicon.ico\",\r\n              \"src/assets\"\r\n            ],\r\n            \"styles\": [\r\n              \"src/styles.css\",\r\n              \"src/assets/css/bootstrap/bootstrap-grid.css\",\r\n              \"src/assets/css/bootstrap/bootstrap-reboot.css\",\r\n              \"src/assets/css/animate.css\",\r\n              \"src/assets/css/bootstrap.min.css\",\r\n              \"src/assets/css/bootstrap-datepicker.css\",\r\n              \"src/assets/css/flaticon.css\",\r\n              \"src/assets/css/jquery.timepicker.css\",\r\n              \"src/assets/css/magnific-popup.css\",\r\n              \"src/assets/css/owl.carousel.css\",\r\n              \"src/assets/css/owl.theme.default.min.css\"\r\n            ],\r\n            \"scripts\": [\r\n              //poner aqui todos los scripts usados\r\n            ]\r\n          },\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"fileReplacements\": [\r\n                {\r\n                  \"replace\": \"src/environments/environment.ts\",\r\n                  \"with\": \"src/environments/environment.prod.ts\"\r\n                }\r\n              ],\r\n              \"optimization\": true,\r\n              \"outputHashing\": \"all\",\r\n              \"sourceMap\": false,\r\n              \"extractCss\": true,\r\n              \"namedChunks\": false,\r\n              \"extractLicenses\": true,\r\n              \"vendorChunk\": false,\r\n              \"buildOptimizer\": true,\r\n              \"budgets\": [\r\n                {\r\n                  \"type\": \"initial\",\r\n                  \"maximumWarning\": \"2mb\",\r\n                  \"maximumError\": \"5mb\"\r\n                },\r\n                {\r\n                  \"type\": \"anyComponentStyle\",\r\n                  \"maximumWarning\": \"6kb\",\r\n                  \"maximumError\": \"10kb\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        },\r\n        \"serve\": {\r\n          \"builder\": \"@angular-devkit/build-angular:dev-server\",\r\n          \"options\": {\r\n            \"browserTarget\": \"frontend:build\"\r\n          },\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"browserTarget\": \"frontend:build:production\"\r\n            }\r\n          }\r\n        },\r\n        \"extract-i18n\": {\r\n          \"builder\": \"@angular-devkit/build-angular:extract-i18n\",\r\n          \"options\": {\r\n            \"browserTarget\": \"frontend:build\"\r\n          }\r\n        },\r\n        \"test\": {\r\n          \"builder\": \"@angular-devkit/build-angular:karma\",\r\n          \"options\": {\r\n            \"main\": \"src/test.ts\",\r\n            \"polyfills\": \"src/polyfills.ts\",\r\n            \"tsConfig\": \"tsconfig.spec.json\",\r\n            \"karmaConfig\": \"karma.conf.js\",\r\n            \"assets\": [\r\n              \"src/favicon.ico\",\r\n              \"src/assets\"\r\n            ],\r\n            \"styles\": [\r\n              \"src/styles.css\"\r\n            ],\r\n            \"scripts\": []\r\n          }\r\n        },\r\n        \"lint\": {\r\n          \"builder\": \"@angular-devkit/build-angular:tslint\",\r\n          \"options\": {\r\n            \"tsConfig\": [\r\n              \"tsconfig.app.json\",\r\n              \"tsconfig.spec.json\",\r\n              \"e2e/tsconfig.json\"\r\n            ],\r\n            \"exclude\": [\r\n              \"**/node_modules/**\"\r\n            ]\r\n          }\r\n        },\r\n        \"e2e\": {\r\n          \"builder\": \"@angular-devkit/build-angular:protractor\",\r\n          \"options\": {\r\n            \"protractorConfig\": \"e2e/protractor.conf.js\",\r\n            \"devServerTarget\": \"frontend:serve\"\r\n          },\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"devServerTarget\": \"frontend:serve:production\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }},\r\n  \"defaultProject\": \"frontend\",\r\n  \"cli\": {\r\n    \"analytics\": \"393ad6bd-c93c-4797-abd8-192cf2118bb3\"\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/angular.json b/frontend/angular.json
+--- a/frontend/angular.json	(revision ab78682bcc92e7da0837b632e4e505383095bfbe)
++++ b/frontend/angular.json	(date 1619346292505)
+@@ -30,14 +30,11 @@
+               "src/assets/css/animate.css",
+               "src/assets/css/bootstrap.min.css",
+               "src/assets/css/bootstrap-datepicker.css",
+-              "src/assets/css/flaticon.css",
+               "src/assets/css/jquery.timepicker.css",
+               "src/assets/css/magnific-popup.css",
+-              "src/assets/css/owl.carousel.css",
+               "src/assets/css/owl.theme.default.min.css"
+             ],
+             "scripts": [
+-              //poner aqui todos los scripts usados
+             ]
+           },
+           "configurations": {
