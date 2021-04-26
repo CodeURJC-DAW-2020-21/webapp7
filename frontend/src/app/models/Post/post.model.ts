@@ -1,6 +1,6 @@
 
 export interface Post{
-  id: number;
+  id?: number;
   title: string;
   description: string;
   // imageFile:string;
