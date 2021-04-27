@@ -31,6 +31,7 @@ import {BlogComponent} from './components/blog/blog.component';
     BlogSingle3Component,
     BlogComponent,
     ContactComponent
+    BlogSingle3Component
   ],
   imports: [
     BrowserModule,
