@@ -7,6 +7,7 @@ import {UserService} from '../../services/user/user.service';
 import {CourseService} from '../../services/course/course.service';
 import {PostService} from '../../services/post/post.service';
 import {environment} from '../../../environments/environment';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class UserAdminComponent {
   courseData: FormData;
   postData: FormData;
 
-  constructor(private router,
+  constructor(private router: Router,
               private userService: UserService,
               private courseService: CourseService,
               private postService: PostService) {
