@@ -9,8 +9,8 @@ import {BlogSingle2Component} from './components/blogSingle2/blogSingle2.compone
 import {BlogSingle3Component} from './components/blogSingle3/blogSingle3.component';
 import {BlogComponent} from './components/blog/blog.component';
 import {ContactComponent} from './components/contact/contact.component';
-
-
+import {CourseComponent} from './components/course/course.component';
+import {InstructorComponent} from './components/instructor/instructor.component';
 
 const routes: Routes = [
   {
@@ -40,6 +40,12 @@ const routes: Routes = [
   {
     path: 'contact', component: ContactComponent,
   },
+  {
+    path: 'course', component: CourseComponent,
+  },
+  {
+    path: 'instructor', component: InstructorComponent,
+  }
 ];
 
 @NgModule({

@@ -15,7 +15,8 @@ import {BlogSingle2Component} from './components/blogSingle2/blogSingle2.compone
 import {BlogSingle3Component} from './components/blogSingle3/blogSingle3.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {BlogComponent} from './components/blog/blog.component';
-
+import {CourseComponent} from './components/course/course.component';
+import {InstructorComponent} from './components/instructor/instructor.component';
 
 
 @NgModule({
@@ -30,8 +31,10 @@ import {BlogComponent} from './components/blog/blog.component';
     BlogSingle2Component,
     BlogSingle3Component,
     BlogComponent,
-    ContactComponent
-    BlogSingle3Component
+    ContactComponent,
+    BlogSingle3Component,
+    CourseComponent,
+    InstructorComponent
   ],
   imports: [
     BrowserModule,
