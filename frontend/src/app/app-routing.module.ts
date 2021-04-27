@@ -4,9 +4,13 @@ import { IndexComponent} from './components/index/index.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {AboutComponent} from './components/about/about.component';
-import {BlogSingle3Component} from "./components/blogSingle3/blogSingle3.component";
-import {BlogSingleComponent} from "./components/blogSingle/blogSingle.component";
-import {BlogSingle2Component} from "./components/blogSingle2/blogSingle2.component";
+import {BlogSingleComponent} from './components/blogSingle/blogSingle.component';
+import {BlogSingle2Component} from './components/blogSingle2/blogSingle2.component';
+import {BlogSingle3Component} from './components/blogSingle3/blogSingle3.component';
+import {BlogComponent} from './components/blog/blog.component';
+import {ContactComponent} from './components/contact/contact.component';
+import {CourseComponent} from './components/course/course.component';
+import {InstructorComponent} from './components/instructor/instructor.component';
 
 const routes: Routes = [
   {
@@ -30,6 +34,18 @@ const routes: Routes = [
   {
   path: 'blogSingle3', component: BlogSingle3Component,
   },
+  {
+    path: 'blog', component: BlogComponent,
+  },
+  {
+    path: 'contact', component: ContactComponent,
+  },
+  {
+    path: 'course', component: CourseComponent,
+  },
+  {
+    path: 'instructor', component: InstructorComponent,
+  }
 ];
 
 @NgModule({
