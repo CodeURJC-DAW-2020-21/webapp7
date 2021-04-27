@@ -10,6 +10,12 @@ import {FooterComponent} from './components/footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import {UserInstructorComponent} from './components/user-instructor/user-instructor.component';
 import {AboutComponent} from './components/about/about.component';
+import {BlogSingleComponent} from './components/blogSingle/blogSingle.component';
+import {BlogSingle2Component} from './components/blogSingle2/blogSingle2.component';
+import {BlogSingle3Component} from './components/blogSingle3/blogSingle3.component';
+import {ContactComponent} from './components/contact/contact.component';
+import {BlogComponent} from './components/blog/blog.component';
+
 
 
 @NgModule({
@@ -22,6 +28,9 @@ import {AboutComponent} from './components/about/about.component';
     AboutComponent,
     BlogSingleComponent,
     BlogSingle2Component,
+    BlogSingle3Component,
+    BlogComponent,
+    ContactComponent
     BlogSingle3Component
   ],
   imports: [
