@@ -13,17 +13,35 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  // tslint:disable-next-line:typedef
-  createPost(postData: FormData){
-    return this.http.post(BASE_URL, postData).pipe(
+  getPosts(): Observable<Post[]> {
+    return this.httpClient.get(BASE_URL).pipe(
+            catchError(error => this.handleError(error))
+        ) as Observable<Post[]>;
+  }
+
+  getPost(id: number): Observable<Post> {
+    return this.httpClient.get(BASE_URL + id).pipe(
       catchError(error => this.handleError(error))
-    );
+    ) as Observable<Post>;
+  }
+
+  addPost(post: Post){
+    if (!post.id) {
+      return this.httpClient.post(BASE_URL, post)
+        .pipe(
+          catchError(error => this.handleError(error))
+        );
+    } else {
+      return this.httpClient.put(BASE_URL + post.id, post).pipe(
+        catchError(error => this.handleError(error))
+      );
+    }
   }
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
+    console.log('ERROR:');
     console.error(error);
-    return Observable.throw('Server error (' + error.status + '): ' + error.text());
+    return throwError('Server error (" + error.status + "): ' + error.text());
   }
-
 }
