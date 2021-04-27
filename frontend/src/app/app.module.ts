@@ -20,9 +20,9 @@ import {AboutComponent} from './components/about/about.component';
     FooterComponent,
     UserInstructorComponent,
     AboutComponent,
-    BlogSingleComponent;
-    BlogSingle2Component;
-    BlogSingle3Component;
+    BlogSingleComponent,
+    BlogSingle2Component,
+    BlogSingle3Component
   ],
   imports: [
     BrowserModule,
