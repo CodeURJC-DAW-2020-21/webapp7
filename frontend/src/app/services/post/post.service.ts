@@ -11,7 +11,8 @@ const BASE_URL = environment.apiBase + '/posts/';
 })
 export class PostService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
+
 
   getPosts(): Observable<Post[]> {
     return this.httpClient.get(BASE_URL).pipe(
