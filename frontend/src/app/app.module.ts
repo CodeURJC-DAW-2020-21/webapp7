@@ -21,7 +21,13 @@ import {BlogSingle2Component} from "./components/blogSingle2/blogSingle2.compone
     HeaderComponent,
     FooterComponent,
     UserInstructorComponent,
+    UserStudentComponent,
+    InstructorComponent,
+    UserAdminComponent,
     AboutComponent,
+    BlogComponent,
+    ContactComponent,
+    CourseComponent,
     BlogSingleComponent,
     BlogSingle2Component,
     BlogSingle3Component
