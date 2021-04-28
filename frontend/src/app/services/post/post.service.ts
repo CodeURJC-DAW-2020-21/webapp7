@@ -14,6 +14,7 @@ export class PostService {
 
   constructor(private httpClient: HttpClient) { }
 
+
   getPosts(): Observable<Post[]> {
     return this.httpClient.get(BASE_URL).pipe(
             catchError(error => this.handleError(error))
