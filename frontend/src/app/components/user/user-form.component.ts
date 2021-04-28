@@ -1,28 +1,18 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/User/user.model';
-import {Course} from '../../models/Course/course.model';
-import {Post} from '../../models/Post/post.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../services/user/user.service';
 import {HttpClient} from '@angular/common/http';
 
-
 @Component({
-  selector: 'app-admin',
-  templateUrl: './user-admin.component.html',
+  selector: 'app-userform',
+  templateUrl: './user-form.component.html',
   styleUrls: ['../../../assets/css/style.css']
 })
 
-export class UserAdminComponent {
-  courses: Course[];
-  users: User[];
+export class UserFormComponent {
   user: User;
   newUser: boolean;
-  post: Post;
-  newPost: boolean;
-  course: Course;
-  newCourse:boolean;
-
 
   constructor(
     private router: Router,
@@ -46,17 +36,14 @@ export class UserAdminComponent {
   cancel() {
     window.history.back();
   }
-
+/*
   save() {
-    this.userService.addUser(this.user).subscribe(
+    this.userService.addUserToACourse(this.user,this.course).subscribe(
       (user: User) => this.router.navigate(['/users/', user.id]),
       error => alert('Error creating new book: ' + error)
     );
 
   }
 
+ */
 }
-
-
-
-

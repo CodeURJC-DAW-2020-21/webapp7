@@ -1,0 +1,39 @@
+<!--Start register user-->
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold" style="color: black;">REGISTRA A UN NUEVO ALUMNO/PROFESOR</h6>
+      </div>
+      <div class="card-body">
+        <form action="/register" method = "post" modelAttribute="user" enctype="multipart/form-data">
+          <div class="form-group">
+            <label >Nombre Completo</label>
+            <input [(ngModel)]="user.name" type="text" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label >Correo Electrónico</label>
+            <input  [(ngModel)]="user.email"  type="text" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label  >Contraseña</label>
+            <input  [(ngModel)]="user.password"  type="text" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label  >Profesor o alumno</label>
+            <input  [(ngModel)]="user.role"  type="text" class="form-control" >
+
+          </div>
+
+          <input type='file' name='imageField' accept=".jpg, .jpeg" />
+
+          <div class="form-group">
+            <input type="submit" value="Registrar" class="btn py-3 px-4 btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--End register user-->

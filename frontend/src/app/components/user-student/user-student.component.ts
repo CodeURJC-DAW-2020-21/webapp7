@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../../models/User/user.model';
+import {Material} from '../../models/Material/material.model';
 
 @Component({
   selector: 'app-student',
@@ -7,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class UserStudentComponent implements OnInit {
+  user: User;
+  materials: Material[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
