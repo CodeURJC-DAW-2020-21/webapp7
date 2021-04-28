@@ -1,3 +1,4 @@
+// @ts-ignore
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserAdminComponent } from './user-admin.component';
