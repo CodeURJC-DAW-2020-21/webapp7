@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import {Observable, throwError} from 'rxjs';
+import {Post} from '../../models/Post/post.model';
 
 const BASE_URL = environment.apiBase + '/posts/';
 
@@ -12,7 +13,6 @@ const BASE_URL = environment.apiBase + '/posts/';
 export class PostService {
 
   constructor(private httpClient: HttpClient) { }
-
 
   getPosts(): Observable<Post[]> {
     return this.httpClient.get(BASE_URL).pipe(
