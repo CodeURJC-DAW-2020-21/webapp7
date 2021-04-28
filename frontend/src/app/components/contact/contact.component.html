@@ -1,9 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <app-header></app-header>
-
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container">
@@ -24,14 +20,13 @@
     </div>
   </div>
 </nav>
-<!-- END nav -->
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('../../../assets/images/fondo.jpg'); background-size:cover; background-position: -20px;">
   <div class="overlayContact"></div>
   <div class="container">
     <div class="row no-gutters slider-text align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 text-center">
-        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio <i class="fa fa-chevron-right"></i></a></span> <span>Contáctanos <i class="fa fa-chevron-right"></i></span></p>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index">Inicio <i class="fa fa-chevron-right"></i></a></span> <span>Contáctanos <i class="fa fa-chevron-right"></i></span></p>
         <h1 class="mb-0 bread">Contáctanos</h1>
       </div>
     </div>
@@ -49,30 +44,30 @@
             <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
               <div class="contact-wrap w-100 p-md-5 p-4">
                 <h3 class="mb-4">¿En qué podemos ayudarte?</h3>
-                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                <form action="/contactUs" method = "post" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="name">Nombre y apellidos</label>
+                        <label for="name">Nombre y apellidos</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="Name">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="label" for="email">Dirección de email </label>
+                        <label for="email">Dirección de email </label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label class="label" for="subject">Asunto</label>
+                        <label for="subject">Asunto</label>
                         <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label class="label" >Mensaje</label>
-                        <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                        <label class="label" for="content">Mensaje</label>
+                        <textarea name="content" class="form-control" id="content" cols="30" rows="4" placeholder="Message"></textarea>
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -212,7 +207,6 @@
 </section>
 <!--End of frequent questions -->
 
-<!--START "END PAGE"-->
 <app-footer></app-footer>
 </body>
 </html>

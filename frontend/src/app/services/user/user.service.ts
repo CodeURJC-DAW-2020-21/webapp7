@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 import {User} from '../../models/User/user.model';
 import {Course} from '../../models/Course/course.model';
 
+
 const BASE_URL = environment.apiBase + '/users/';
 
 @Injectable({
@@ -28,9 +29,17 @@ export class UserService {
 
  */
   // tslint:disable-next-line:typedef
-  public getUser(id: number) {
-    const url = environment.apiBase + '/users/' + id;
-    return this.http.get(url);
+  public getUser(id: number | string): Observable<User> {
+    const url = BASE_URL + id;
+    return this.http.get(url).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<User>;
+  }
+
+  public getUsers(): Observable<User[]> {
+    return this.http.get(BASE_URL).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<User[]>;
   }
 
   getUsers(): Observable<User[]> {

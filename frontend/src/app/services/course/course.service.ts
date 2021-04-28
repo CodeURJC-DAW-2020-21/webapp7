@@ -22,9 +22,17 @@ export class CourseService {
     );
   }
   // tslint:disable-next-line:typedef
-  public getCourse(id: number) {
-    const url = environment.apiBase + '/courses/' + id;
-    return this.http.get(url);
+  public getCourse(id: number | string): Observable<Course> {
+    const url = BASE_URL + id;
+    return this.http.get(url).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<Course>;
+  }
+
+  public getCourses(): Observable<Course[]> {
+    return this.http.get(BASE_URL).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<Course[]>;
   }
   /*getCourseById(id: number): Observable<Course>{
     return this.httpClient.get(BASE_URL + id).pipe(
