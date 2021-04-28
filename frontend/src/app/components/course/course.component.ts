@@ -12,13 +12,30 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class CourseComponent implements OnInit {
 
   course: Course;
+  newCourse: boolean;
 
   constructor(private router: Router, public service: CourseService, activatedRoute: ActivatedRoute) {
     const id = activatedRoute.snapshot.params['id'];
-    service.getCourse(id).subscribe(
-      course => this.course = course,
-      error => console.error(error)
-    );
+
+
+    if (id){
+      service.getCourse(id).subscribe(
+        course => this.course = course,
+        error => console.error(error)
+      );
+      this.newCourse = false;
+    } else {
+      this.course = {
+        category: 'Piruleta',
+        ageStart: 0,
+        ageEnd: 0,
+        instructor: 'Garzás cabrón',
+        price: 0
+      };
+      this.newCourse = true;
+    }
+
+
   }
 
   ngOnInit(): void {
