@@ -42,133 +42,32 @@
 <!--START SECOND PART-->
 <section class="ftco-section bg-light">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-3 sidebar">
-        <div class="sidebar-box bg-white ftco-animate">
-          <form action="#" class="search-form">
-            <div class="form-group">
-              <span class="icon fa fa-search"></span>
-              <input type="text" class="form-control" placeholder="Buscar...">
-            </div>
-          </form>
-        </div>
-
-        <!--START "CATEGORÍAS"-->
-        <div class="sidebar-box bg-white p-4 ftco-animate">
-          <h3 class="heading-sidebar">Categorías</h3>
-          <form action="#" class="browse-form">
-            <label for="option-category-1"><input type="checkbox" id="option-category-1" name="vehicle" value=""> Jolly Kids </label><br>
-            <label for="option-category-2"><input type="checkbox" id="option-category-2" name="vehicle" value=""> Explorer Kids</label><br>
-            <label for="option-category-3"><input type="checkbox" id="option-category-3" name="vehicle" value=""> Keen Kids</label><br>
-          </form>
-        </div>
-        <!--END "CATEGORÍAS"-->
-
-        <!--START "PROFESOR"-->
-        <div class="sidebar-box bg-white p-4 ftco-animate">
-          <h3 class="heading-sidebar">Profesor</h3>
-          <form action="#" class="browse-form">
-            <label for="option-instructor-1"><input type="checkbox" id="option-instructor-1" name="vehicle" value=""> Profesor 1</label><br>
-            <label for="option-instructor-2"><input type="checkbox" id="option-instructor-2" name="vehicle" value=""> Profesor 2</label><br>
-            <label for="option-instructor-3"><input type="checkbox" id="option-instructor-3" name="vehicle" value=""> Profesor 3</label><br>
-          </form>
-        </div>
-        <!--END "PROFESOR"-->
-
-        <!--START "EDAD"-->
-        <div class="sidebar-box bg-white p-4 ftco-animate">
-          <h3 class="heading-sidebar">Edad</h3>
-          <form action="#" class="browse-form">
-            <label for="option-course-type-1"><input type="checkbox" id="option-course-type-1" name="vehicle" value=""> 5 Años</label><br>
-            <label for="option-course-type-2"><input type="checkbox" id="option-course-type-2" name="vehicle" value=""> 6 Años</label><br>
-            <label for="option-course-type-3"><input type="checkbox" id="option-course-type-3" name="vehicle" value=""> 7 Años</label><br>
-            <label for="option-course-type-3"><input type="checkbox" id="option-course-type-3" name="vehicle" value=""> 8 Años</label><br>
-            <label for="option-course-type-3"><input type="checkbox" id="option-course-type-3" name="vehicle" value=""> 9 Años</label><br>
-            <label for="option-course-type-3"><input type="checkbox" id="option-course-type-3" name="vehicle" value=""> 10 Años</label><br>
-          </form>
-        </div>
-        <!--END "EDAD"-->
-      </div>
-
+    <div class="row d-flex">
       <!--START COURSES-->
-      <div class="col-lg-9">
-        <div class="row">
 
-          <!--START FIRST COURSE-->
-          <div class="col-md-6 d-flex align-items-stretch ftco-animate">
-            <div class="project-wrap">
-              <a class="img" style="background-image: url(../../../assets/images/Niño_5a6.png);">
-                <span class="price">G1</span>
-              </a>
-              <div class="text p-4">
-                <h3><a>Curso "Jolly Kids" para niños entre 5-6 años</a></h3>
-                <p class="advisor">Mercedes Huasaquiche</p>
-                <ul class="d-flex justify-content-between">
-                  <li class="price">120 €/mes</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!--END FIRST COURSE-->
-
-          <!--START SECOND COURSE-->
-          <div class="col-md-6 d-flex align-items-stretch ftco-animate">
-            <div class="project-wrap">
-              <a class="img" style="background-image: url(../../../assets/images/Niño_7a8.png);">
-                <span class="price">G2</span>
-              </a>
-              <div class="text p-4">
-                <h3><a>Curso "Explorer Kids" para niños entre 7-8 años</a></h3>
-                <p class="advisor">Mercedes Huasaquiche</p>
-                <ul class="d-flex justify-content-between">
-                  <li class="price">120 €/mes</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!--END SECOND COURSE-->
-
-          <!--START THIRD COURSE-->
-          <div class="col-md-6 d-flex align-items-stretch ftco-animate">
-            <div class="project-wrap">
-              <a class="img" style="background-image: url(../../../assets/images/Niño_9a10.png);">
-                <span class="price">G3</span>
-              </a>
-              <div class="text p-4">
-                <h3><a>Curso "Keen Kids" para niños entre 9-10 años </a></h3>
-                <p class="advisor">Mercedes Huasaquiche</p>
-                <ul class="d-flex justify-content-between">
-                  <li class="price">120 €/mes</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!--END THIRD COURSE-->
-
-        </div>
-
-        <!--TO INTRODUCE MORE COURSES-->
-        <!--<div class="row mt-5">
-          <div class="col">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
+      <!--START FIRST COURSE-->
+      <div *ngIf="course">
+      <div class="col-lg-4  ftco-animate">
+        <div class="project-wrap">
+          <img src="/course/{{course.id}}/image" class="block-20" >
+          <div class="text p-4">
+            <h3><a>Curso "{{course.category}}" para niños entre {{course.ageStart}}-{{course.ageEnd}} años</a></h3>
+            <p class="advisor">{{course.instructor}}</p>
+            <ul class="d-flex justify-content-between">
+              <li class="price">{{course.price}} €/mes</li>
+            </ul>
           </div>
         </div>
-        -->
       </div>
+      </div>
+      <!--END FIRST COURSE-->
+
       <!--END COURSES-->
     </div>
   </div>
 </section>
 <!--END SECOND PART-->
+
 <app-footer></app-footer>
 
 </body>
