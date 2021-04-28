@@ -10,9 +10,15 @@ import {FooterComponent} from './components/footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import {UserInstructorComponent} from './components/user-instructor/user-instructor.component';
 import {AboutComponent} from './components/about/about.component';
-import {BlogSingle3Component} from "./components/blogSingle3/blogSingle3.component";
-import {BlogSingleComponent} from "./components/blogSingle/blogSingle.component";
-import {BlogSingle2Component} from "./components/blogSingle2/blogSingle2.component";
+import {UserStudentComponent} from './components/user-student/user-student.component';
+import {InstructorComponent} from './components/instructor/instructor.component';
+import {BlogComponent} from './components/blog/blog.component';
+import {ContactComponent} from './components/contact/contact.component';
+import {CourseComponent} from './components/course/course.component';
+import {UserAdminComponent} from './components/user-admin/user-admin.component';
+import {BlogSingleComponent} from './components/blogSingle/blogSingle.component';
+import {BlogSingle2Component} from './components/blogSingle2/blogSingle2.component';
+import {BlogSingle3Component} from './components/blogSingle3/blogSingle3.component';
 
 @NgModule({
   declarations: [
