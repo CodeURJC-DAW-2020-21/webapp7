@@ -11,6 +11,9 @@ import {BlogComponent} from './components/blog/blog.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {CourseComponent} from './components/course/course.component';
 import {InstructorComponent} from './components/instructor/instructor.component';
+import {UserStudentComponent} from './components/user-student/user-student.component';
+import {UserInstructorComponent} from './components/user-instructor/user-instructor.component';
+import {UserAdminComponent} from './components/user-admin/user-admin.component';
 
 const routes: Routes = [
   {
@@ -45,6 +48,15 @@ const routes: Routes = [
   },
   {
     path: 'instructor', component: InstructorComponent,
+  },
+  {
+    path: 'user-student', component: UserStudentComponent,
+  },
+  {
+    path: 'user-instructor', component: UserInstructorComponent,
+  },
+  {
+    path: 'user-admin', component: UserAdminComponent,
   }
 ];
 
