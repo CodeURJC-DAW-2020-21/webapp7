@@ -42,12 +42,8 @@ export class UserService {
     ) as Observable<User[]>;
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get(BASE_URL).pipe(
-      catchError(error => this.handleError(error))
-    ) as Observable<User[]>;
-  }
 
+  // tslint:disable-next-line:typedef
   removeUser(user: User) {
     return this.http.delete(BASE_URL + user.id).pipe(
       catchError(error => this.handleError(error))

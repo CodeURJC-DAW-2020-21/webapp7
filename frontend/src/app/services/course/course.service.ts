@@ -42,20 +42,18 @@ export class CourseService {
 
    */
 
-  getCourses(): Observable<Course[]> {
-    return this.http.get(BASE_URL).pipe(
-      catchError(error => this.handleError(error))
-    ) as Observable<Course[]>;
-  }
 
 
+  // tslint:disable-next-line:typedef
   removeCourse(course: Course) {
     return this.http.delete(BASE_URL + course.id).pipe(
       catchError(error => this.handleError(error))
     );
   }
 
-  // tslint:disable-ne  xt-line:typedef
+
+
+  // tslint:disable-next-line:typedef
   private handleError(error: any) {
     console.error(error);
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
