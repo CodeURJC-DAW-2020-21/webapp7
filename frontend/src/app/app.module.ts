@@ -32,6 +32,7 @@ import {UserStudentListComponent} from './components/user/user-student-list.comp
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {LoginComponent} from './components/login/login.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserDetailsComponent,
     UserStudentListComponent,
     UserInstructorListComponent,
-    CourseListComponent
+    CourseListComponent,
+    LoginComponent
 
 
   ],
