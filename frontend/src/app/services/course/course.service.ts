@@ -42,11 +42,6 @@ export class CourseService {
 
    */
 
-  getCourses(): Observable<Course[]> {
-    return this.http.get(BASE_URL).pipe(
-      catchError(error => this.handleError(error))
-    ) as Observable<Course[]>;
-  }
 
 
   removeCourse(course: Course) {

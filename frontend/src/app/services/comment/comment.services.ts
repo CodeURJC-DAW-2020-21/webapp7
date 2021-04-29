@@ -1,13 +1,14 @@
+// @ts-ignore
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+// @ts-ignore
 import { HttpClient } from '@angular/common/http';
+// @ts-ignore
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import {Comment} from '../../models/Comment/comment.model';
-
-
 const BASE_URL = environment.apiBase + '/comment/';
-
+// @ts-ignore
 @Injectable({
   providedIn: 'root'
 })
