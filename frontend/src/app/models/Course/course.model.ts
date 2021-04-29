@@ -7,7 +7,7 @@ export interface Course{
   ageStart: number;
   ageEnd: number;
   instructor: string;
-  price: number;
+  price:number;
   // students: List<User>;
   //  materials: List<Material>;
 }

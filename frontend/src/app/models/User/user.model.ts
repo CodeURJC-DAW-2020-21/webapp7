@@ -1,4 +1,3 @@
-import { Material } from '../Material/material.model';
 
 export interface User{
   id?: number;
