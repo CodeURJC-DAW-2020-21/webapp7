@@ -32,6 +32,8 @@
               "src/assets/css/bootstrap-datepicker.css",
               "src/assets/css/jquery.timepicker.css",
               "src/assets/css/magnific-popup.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
             ],
             "scripts": [
             ]

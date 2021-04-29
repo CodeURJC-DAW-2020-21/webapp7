@@ -1,4 +1,6 @@
+// @ts-ignore
 import { NgModule } from '@angular/core';
+// @ts-ignore
 import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent} from './components/index/index.component';
 import {HeaderComponent} from './components/header/header.component';
@@ -14,6 +16,15 @@ import {InstructorComponent} from './components/instructor/instructor.component'
 import {UserStudentComponent} from './components/user-student/user-student.component';
 import {UserInstructorComponent} from './components/user-instructor/user-instructor.component';
 import {UserAdminComponent} from './components/user-admin/user-admin.component';
+import {UserFooterComponent} from './components/footer/userFooter.component';
+import {UserFormComponent} from './components/user/user-form.component';
+import {BlogFormComponent} from './components/blog/blog-form.component';
+import {CourseFormComponent} from './components/course/course-form.component';
+import {CourseDetailsComponent} from './components/course/course-details.component';
+import {UserDetailsComponent} from './components/user/user-details.component';
+import {UserStudentListComponent} from './components/user/user-student-list.component';
+import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
+import {CourseListComponent} from './components/course/course-list-component';
 
 const routes: Routes = [
   {
@@ -24,6 +35,9 @@ const routes: Routes = [
   },
   {
     path: 'footer', component: FooterComponent,
+  },
+  {
+    path: 'user-footer', component: UserFooterComponent,
   },
   {
   path: 'about', component: AboutComponent,
@@ -57,7 +71,33 @@ const routes: Routes = [
   },
   {
     path: 'user-admin', component: UserAdminComponent,
-  }
+  },
+  {
+    path: 'user-form', component: UserFormComponent,
+  },
+  {
+    path: 'blog-form', component: BlogFormComponent,
+  },
+  {
+    path: 'course-form', component: CourseFormComponent,
+  },
+  {
+    path: 'course-details', component: CourseDetailsComponent,
+  },
+  {
+    path: 'user-details', component: UserDetailsComponent,
+  },
+  {
+    path: 'user-student-list', component: UserStudentListComponent,
+  },
+  {
+    path: 'course-list', component: CourseListComponent,
+  },
+  {
+    path: 'user-instructor-list', component: UserInstructorListComponent,
+  },
+  { path: '', redirectTo: 'index', pathMatch: 'full' }
+
 ];
 
 @NgModule({

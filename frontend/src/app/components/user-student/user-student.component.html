@@ -1,32 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeLeaf.org">
 
-<!--START HEAD-->
-<head>
-  <title>Inicio - Kiddy's House</title>
+<app-header></app-header>
 
-  <script src="js/login.js"></script>
-  <link rel="shortcut icon" href="../../../assets/images/Icon.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <link rel="stylesheet" href="/css/animate.css">
-
-  <link rel="stylesheet" href="/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="/css/magnific-popup.css">
-
-  <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="/css/jquery.timepicker.css">
-
-  <link rel="stylesheet" href="/css/flaticon.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<!--END HEAD-->
 
 <!--START BODY-->
 <body style="background-image: url('../../../assets/images/fondo_nuevo.jpg');" xmlns:th="http://www.w3.org/1999/xhtml">
@@ -46,17 +22,15 @@
           <li class="nav-item dropdown no-arrow mx-1">
             <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <a href="email">
-                <i class="fas fa-envelope fa-2x fa-fw" style="color: white;"></i>
-              </a>
-
             </a>
           </li>
           <div class="topbar-divider d-none d-sm-block"></div>
           <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">Nombre de Usuario</span>
+
+              <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{user.name}}</span>
+
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
@@ -87,35 +61,18 @@
                     <h6 class="m-0 font-weight-bold" style="color: black;">MATERIAL CLASE: Pre A1 Starters</h6>
                   </div>
                   <div class="card-body">
-                    <h3>Tema1</h3>
-                    <h5> &nbsp; Tema1-Parte I-Home</h5>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../../assets/images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Speaking.pdf</a></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../../assets/images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Reading.pdf</a></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../../assets/images/PDF_logo.png" width="50px" height="30px"><a href="info.pdf">Listening.pdf</a></p>
-                    <h5> &nbsp; Tema1-Parte II-Games</h5>
+
+                    <li *ngFor="let material of materials">
+                      <a href="/download/{{material.id}}">{{material.name}</a>
+                      <a href="/checkbox/{{material.id}}"  class="btn py-2 px-2 btn-primary">¡Hecho!</a>
+                    </li>
+                    <br/>
                   </div>
                 </div>
               </div>
             </div>
             <!--END PDF'S-->
 
-            <!--START COURSE-->
-            <div class="row">
-              <div class="col-xl-12 col-lg-12">
-                <div class="card shadow mb-4">
-                  <div
-                    class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold" style="color: black;">AVANCE DEL CURSO</h6>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <canvas id="myAreaChart"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--END COURSE-->
 
             <!--START OPINIONS-->
             <div class="row">
@@ -159,45 +116,11 @@
                   </div>
                   <div class="card-body">
                     <div class="list-group">
-                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"href="#" data-toggle="modal" data-target="#class">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">5 Questionarios divertidos!</h5>
-                          <small>pdf</small>
-                        </div>
-                        <p class="mb-1">Reading</p>
-                        <small class="text-muted">Pre A1 Starters</small>
-                      </a>
+                      <li *ngFor="let material of materials">
                       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
                         <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">Un listening interestante!</h5>
-                          <small class="text-muted">pdf</small>
+                          <h5 class="mb-1">{{material.name}}</h5>
                         </div>
-                        <p class="mb-1">Listening</p>
-                        <small class="text-muted">Pre A1 Starters</small>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">Colorea y aprende!</h5>
-                          <small class="text-muted">pdf</small>
-                        </div>
-                        <p class="mb-1">Reading</p>
-                        <small class="text-muted">Pre A1 Starters</small>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">Juega a leer!</h5>
-                          <small class="text-muted">pdf</small>
-                        </div>
-                        <p class="mb-1">Reading.pdf</p>
-                        <small class="text-muted">Pre A1 Starters</small>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">Puzle divertido!</h5>
-                          <small class="text-muted">pdf</small>
-                        </div>
-                        <p class="mb-1">Reading</p>
-                        <small class="text-muted">Pre A1 Starters</small>
                       </a>
                     </div>
                   </div>
@@ -261,7 +184,9 @@
 
         </div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Si</button>
+          <form action="/logout" method="post">
+            <input type="submit" value="Sí" class="btn btn-secondary"/>
+          </form>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
 
         </div>
@@ -270,22 +195,8 @@
   </div>
 </div>
 
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+<app-userfooter></app-userfooter>
 
 </body>
 </html>
