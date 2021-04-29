@@ -43,7 +43,7 @@ export class UserService {
   }
 
 
-
+  // tslint:disable-next-line:typedef
   removeUser(user: User) {
     return this.http.delete(BASE_URL + user.id).pipe(
       catchError(error => this.handleError(error))

@@ -3,10 +3,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../../models/User/user.model';
 import {UserService} from '../../services/user/user.service';
-import {LoginService} from '../../services/login/login.service';
+import {LoginService} from '../../services/login/login.services';
 
 @Component({
-  template:`<!--START STUDENTS LIST-->
+  template: `<!--START STUDENTS LIST-->
   <!--START TEACHERS LIST-->
   <div class="row">
     <div class="col-lg-12 mb-12">
@@ -30,6 +30,7 @@ import {LoginService} from '../../services/login/login.service';
   </div>
   <!--END TEACHERS LIST-->
   `,
+  // tslint:disable-next-line:component-selector
   selector: 'app-userInstructorList',
   styleUrls: ['../../../assets/css/style.css']
 })
@@ -38,8 +39,9 @@ export class UserInstructorListComponent  implements OnInit{
   user: User;
   users: User[];
 
-  constructor(private router: Router, private userService:UserService, public loginService: LoginService) { }
+  constructor(private router: Router, private userService: UserService, public loginService: LoginService) { }
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.userService.getUsers().subscribe(
       users => this.users = users,
@@ -47,6 +49,7 @@ export class UserInstructorListComponent  implements OnInit{
     );
   }
 
+  // tslint:disable-next-line:typedef
   newUser() {
     this.router.navigate(['/users/new']);
   }
