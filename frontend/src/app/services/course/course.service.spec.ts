@@ -1,3 +1,4 @@
+// @ts-ignore
 import { TestBed } from '@angular/core/testing';
 
 import { CourseService } from './course.service';

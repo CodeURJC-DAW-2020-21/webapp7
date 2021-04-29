@@ -4,8 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import {Course} from '../../models/Course/course.model';
+import {User} from '../../models/User/user.model';
 
-const BASE_URL = environment.apiBase + '/courses/';
+const BASE_URL =  '/api/courses/';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +16,23 @@ export class CourseService {
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line:typedef
-  createCourse(courseData: FormData){
-    return this.http.post(BASE_URL, courseData).pipe(
+  addCourse(course: Course){
+    return this.http.post(BASE_URL, course).pipe(
       catchError(error => this.handleError(error))
     );
   }
   // tslint:disable-next-line:typedef
-  public getCourse(id: number) {
-    const url = environment.apiBase + '/courses/' + id;
-    return this.http.get(url);
+  public getCourse(id: number | string): Observable<Course> {
+    const url = BASE_URL + id;
+    return this.http.get(url).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<Course>;
+  }
+
+  public getCourses(): Observable<Course[]> {
+    return this.http.get(BASE_URL).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<Course[]>;
   }
   /*getCourseById(id: number): Observable<Course>{
     return this.httpClient.get(BASE_URL + id).pipe(
@@ -32,6 +41,17 @@ export class CourseService {
   }
 
    */
+
+
+
+  // tslint:disable-next-line:typedef
+  removeCourse(course: Course) {
+    return this.http.delete(BASE_URL + course.id).pipe(
+      catchError(error => this.handleError(error))
+    );
+  }
+
+
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
