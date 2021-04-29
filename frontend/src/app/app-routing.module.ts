@@ -96,6 +96,7 @@ const routes: Routes = [
   {
     path: 'user-instructor-list', component: UserInstructorListComponent,
   },
+  { path: '', redirectTo: 'index', pathMatch: 'full' }
 
 ];
 

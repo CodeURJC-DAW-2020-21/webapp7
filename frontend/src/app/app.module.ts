@@ -31,6 +31,7 @@ import {UserDetailsComponent} from './components/user/user-details.component';
 import {UserStudentListComponent} from './components/user/user-student-list.component';
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import {CourseListComponent} from './components/course/course-list-component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule
     // NgbModule
   ],
   providers: [],
