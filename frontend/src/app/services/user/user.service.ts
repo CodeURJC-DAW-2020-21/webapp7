@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {User} from '../../models/User/user.model';
 import {Course} from '../../models/Course/course.model';
+import {Comment} from '../../models/Comment/comment.model';
 
 
 const BASE_URL = '/api/users/';
@@ -36,10 +37,10 @@ export class UserService {
     ) as Observable<User>;
   }
 
-  public getUsers(): Observable<User[]> {
-    return this.http.get(BASE_URL).pipe(
+  public getUsers(): Observable<Comment[]> {
+    return this.http.get('/api/comments/').pipe(
       catchError(error => this.handleError(error))
-    ) as Observable<User[]>;
+    ) as Observable<Comment[]>;
   }
 
 
