@@ -21,7 +21,7 @@ export class UserAdminComponent {
   post: Post;
   newPost: boolean;
   course: Course;
-  newCourse:boolean;
+  newCourse: boolean;
 
 
   constructor(
@@ -43,10 +43,12 @@ export class UserAdminComponent {
     }
   }
 
+  // tslint:disable-next-line:typedef
   cancel() {
     window.history.back();
   }
 
+  // tslint:disable-next-line:typedef
   save() {
     this.userService.addUser(this.user).subscribe(
       (user: User) => this.router.navigate(['/users/', user.id]),
@@ -56,7 +58,5 @@ export class UserAdminComponent {
   }
 
 }
-
-
 
 
