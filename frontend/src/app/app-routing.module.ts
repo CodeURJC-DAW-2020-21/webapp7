@@ -25,6 +25,7 @@ import {UserDetailsComponent} from './components/user/user-details.component';
 import {UserStudentListComponent} from './components/user/user-student-list.component';
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
+import {LoginComponent} from './components/login/login.component';
 
 const routes: Routes = [
   {
@@ -40,16 +41,16 @@ const routes: Routes = [
     path: 'user-footer', component: UserFooterComponent,
   },
   {
-  path: 'about', component: AboutComponent,
+    path: 'about', component: AboutComponent,
   },
   {
-  path: 'blogSingle2', component: BlogSingle2Component,
+    path: 'blogSingle2', component: BlogSingle2Component,
   },
   {
-  path: 'blogSingle', component: BlogSingleComponent,
+    path: 'blogSingle', component: BlogSingleComponent,
   },
   {
-  path: 'blogSingle3', component: BlogSingle3Component,
+    path: 'blogSingle3', component: BlogSingle3Component,
   },
   {
     path: 'blog', component: BlogComponent,
@@ -97,7 +98,10 @@ const routes: Routes = [
     path: 'user-instructor-list', component: UserInstructorListComponent,
   },
   { path: '', redirectTo: 'index', pathMatch: 'full' }
-
+  ,
+  {
+    path: 'login', component: LoginComponent,
+  }
 ];
 
 @NgModule({
