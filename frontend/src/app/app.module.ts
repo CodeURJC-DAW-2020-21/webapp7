@@ -33,6 +33,9 @@ import {UserInstructorListComponent} from './components/user/user-instructor-lis
 import {CourseListComponent} from './components/course/course-list-component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {LoginComponent} from './components/login/login.component';
+import {Error404Component} from './components/error/error404.component';
+import {ErrorComponent} from './components/error/error.component';
+import {LoginErrorComponent} from './components/error/loginError.component';
 
 
 @NgModule({
@@ -61,7 +64,10 @@ import {LoginComponent} from './components/login/login.component';
     UserStudentListComponent,
     UserInstructorListComponent,
     CourseListComponent,
-    LoginComponent
+    LoginComponent,
+    Error404Component,
+    ErrorComponent,
+    LoginErrorComponent
 
 
   ],
