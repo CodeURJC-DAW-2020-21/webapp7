@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import {Comment} from '../../models/Comment/comment.model';
-const BASE_URL = environment.apiBase + '/comment/';
+const BASE_URL =  '/api/comment/';
 // @ts-ignore
 @Injectable({
   providedIn: 'root'

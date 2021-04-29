@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import {Course} from '../../models/Course/course.model';
 import {User} from '../../models/User/user.model';
 
-const BASE_URL = environment.apiBase + '/courses/';
+const BASE_URL =  '/api/courses/';
 
 @Injectable({
   providedIn: 'root'

@@ -5,7 +5,7 @@ import { catchError } from 'rxjs/operators';
 import {Observable, throwError} from 'rxjs';
 import {Post} from '../../models/Post/post.model';
 
-const BASE_URL = environment.apiBase + '/posts/';
+const BASE_URL =  '/api/posts/';
 
 @Injectable({
   providedIn: 'root'
