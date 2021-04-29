@@ -7,7 +7,7 @@ import {User} from '../../models/User/user.model';
 import {Course} from '../../models/Course/course.model';
 
 
-const BASE_URL = environment.apiBase + '/users/';
+const BASE_URL = '/api/users/';
 
 @Injectable({
   providedIn: 'root'

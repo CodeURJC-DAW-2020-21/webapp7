@@ -1,5 +1,6 @@
 // @ts-ignore
 import { NgModule } from '@angular/core';
+// @ts-ignore
 import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent} from './components/index/index.component';
 import {HeaderComponent} from './components/header/header.component';
@@ -95,6 +96,7 @@ const routes: Routes = [
   {
     path: 'user-instructor-list', component: UserInstructorListComponent,
   },
+  { path: '', redirectTo: 'index', pathMatch: 'full' }
 
 ];
 
