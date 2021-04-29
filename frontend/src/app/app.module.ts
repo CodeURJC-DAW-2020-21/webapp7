@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-//comentario ejemplo
+
 import { AppComponent } from './app.component';
 // import {Router} from '@angular/router';
 // import {RouterModule} from '@angular/router';
@@ -32,6 +32,7 @@ import {UserStudentListComponent} from './components/user/user-student-list.comp
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {LoginComponent} from './components/login/login.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserDetailsComponent,
     UserStudentListComponent,
     UserInstructorListComponent,
-    CourseListComponent
+    CourseListComponent,
+    LoginComponent
 
 
   ],
