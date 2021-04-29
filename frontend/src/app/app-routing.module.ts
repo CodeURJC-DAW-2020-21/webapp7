@@ -1,5 +1,5 @@
 // @ts-ignore
-import { NgModule } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 // @ts-ignore
 import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent} from './components/index/index.component';
@@ -26,6 +26,9 @@ import {UserStudentListComponent} from './components/user/user-student-list.comp
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
 import {LoginComponent} from './components/login/login.component';
+import {Error404Component} from './components/error/error404.component';
+import {LoginErrorComponent} from './components/error/loginError.component';
+import {ErrorComponent} from './components/error/error.component';
 
 const routes: Routes = [
   {
@@ -97,10 +100,18 @@ const routes: Routes = [
   {
     path: 'user-instructor-list', component: UserInstructorListComponent,
   },
-  { path: '', redirectTo: 'index', pathMatch: 'full' }
-  ,
+  { path: '', redirectTo: 'index', pathMatch: 'full' },
   {
     path: 'login', component: LoginComponent,
+  },
+  {
+    path: 'error-404', component: Error404Component,
+  },
+  {
+    path: 'login-error', component: LoginErrorComponent,
+  },
+  {
+    path: 'error', component: ErrorComponent,
   }
 ];
 
