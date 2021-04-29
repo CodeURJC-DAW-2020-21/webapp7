@@ -7,7 +7,7 @@ import {User} from '../../models/User/user.model';
 import {Course} from '../../models/Course/course.model';
 
 
-const BASE_URL = environment.apiBase + '/users/';
+const BASE_URL = '/api/users/';
 
 @Injectable({
   providedIn: 'root'
@@ -42,11 +42,7 @@ export class UserService {
     ) as Observable<User[]>;
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get(BASE_URL).pipe(
-      catchError(error => this.handleError(error))
-    ) as Observable<User[]>;
-  }
+
 
   removeUser(user: User) {
     return this.http.delete(BASE_URL + user.id).pipe(
