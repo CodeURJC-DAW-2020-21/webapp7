@@ -29,7 +29,7 @@ export class CourseComponent implements OnInit {
         category: 'Piruleta',
         ageStart: 0,
         ageEnd: 0,
-        instructor: 'Garzás cabrón',
+        instructor: 'Don Comedia',
         price: 0
       };
       this.newCourse = true;

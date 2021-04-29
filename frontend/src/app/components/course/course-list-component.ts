@@ -3,12 +3,12 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../../models/User/user.model';
 import {UserService} from '../../services/user/user.service';
-import {LoginService} from '../../services/login/login.service';
+import {LoginService} from '../../services/login/login.services';
 import {Course} from '../../models/Course/course.model';
 import {CourseService} from '../../services/course/course.service';
 
 @Component({
-  template:`
+  template: `
   <!--START COURSES LIST-->
   <div class="row">
     <div class="col-lg-12 mb-12">
@@ -32,6 +32,7 @@ import {CourseService} from '../../services/course/course.service';
   </div>
   <!--END COURSES LIST-->
   `,
+  // tslint:disable-next-line:component-selector
   selector: 'app-courseList',
   styleUrls: ['../../../assets/css/style.css']
 })
@@ -40,8 +41,9 @@ export class CourseListComponent {
   course: Course;
   courses: Course[];
 
-  constructor(private router: Router, private courseService:CourseService, public loginService: LoginService) { }
+  constructor(private router: Router, private courseService: CourseService, public loginService: LoginService) { }
 
+  // tslint:disable-next-line:typedef use-lifecycle-interface
   ngOnInit() {
     this.courseService.getCourses().subscribe(
       courses => this.courses = courses,
@@ -49,6 +51,7 @@ export class CourseListComponent {
     );
   }
 
+  // tslint:disable-next-line:typedef
   newUser() {
     this.router.navigate(['/courses/new']);
   }
