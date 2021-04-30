@@ -7,10 +7,9 @@ export interface Course{
   ageStart: number;
   ageEnd: number;
   instructor: string;
-  image?:boolean;
-  imageFile?:any;
-  price:number;
-
+  price: number;
+  image?: boolean;
+  imageFile?: any;
   // students: List<User>;
   //  materials: List<Material>;
 }
