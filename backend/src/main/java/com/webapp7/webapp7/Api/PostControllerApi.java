@@ -4,14 +4,18 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.webapp7.webapp7.Service.ImageService;
 import com.webapp7.webapp7.Service.PostService;
 import com.webapp7.webapp7.Service.UserService;
+import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Post;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,8 +24,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.sql.Blob;
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
@@ -90,8 +96,19 @@ public class PostControllerApi {
     }
     @JsonView(PostBasic.class)
     @GetMapping("/{id}/image")
-    public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
-        return this.imgService.createResponseFromImage(POSTS_FOLDER, id);
+    public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException, SQLException {
+        Optional<Post> post = postService.findById(id);
+        if (post.isPresent() && post.get().getImageFile() != null) {
+
+            Resource file = new InputStreamResource(post.get().getImageFile().getBinaryStream());
+
+            return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+                    .contentLength(post.get().getImageFile().length()).body(file);
+
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
     }
 
     @PostMapping("/")

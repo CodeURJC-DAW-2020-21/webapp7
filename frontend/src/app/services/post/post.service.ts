@@ -27,7 +27,8 @@ export class PostService {
     ) as Observable<Post>;
   }
 
-  addPost(post: Post){
+  // tslint:disable-next-line:typedef
+    addPost(post: Post){
     if (!post.id) {
       return this.httpClient.post(BASE_URL, post, { withCredentials: true })
         .pipe(
