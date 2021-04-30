@@ -7,6 +7,9 @@ import com.webapp7.webapp7.model.Post;
 import com.webapp7.webapp7.model.User;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,8 +17,11 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
@@ -119,11 +125,31 @@ public class AdminCourseControllerApi {
         }
     }
 
-    @JsonView(CourseBasic.class)
+   /* @JsonView(CourseBasic.class)
     @GetMapping("/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
         return this.imgService.createResponseFromImage(COURSES_FOLDER, id);
 
 
+    }*/
+    @JsonView(CourseBasic.class)
+    @GetMapping("/{id}/image")
+    public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException, SQLException {
+        Optional<Course> course = courseService.findById(id);
+        if (course.isPresent() && course.get().getImageFile() != null) {
+
+            Resource file = new InputStreamResource(course.get().getImageFile().getBinaryStream());
+
+            return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+                    .contentLength(course.get().getImageFile().length()).body(file);
+
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
     }
+
+
+
+
 }

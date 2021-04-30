@@ -38,4 +38,5 @@ public class CommentControllerApi {
 
     interface CommentBasic extends Comment.Basic {
     }
+
 }
