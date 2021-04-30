@@ -40,3 +40,4 @@ export class InstructorComponent implements OnInit {
   }
 
 }
+

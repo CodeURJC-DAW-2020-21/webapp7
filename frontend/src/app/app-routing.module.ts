@@ -29,6 +29,7 @@ import {LoginComponent} from './components/login/login.component';
 import {Error404Component} from './components/error/error404.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
 import {ErrorComponent} from './components/error/error.component';
+import { BarChartComponent } from './components/barChart/barChart.component';
 
 const routes: Routes = [
   {
@@ -112,6 +113,9 @@ const routes: Routes = [
   },
   {
     path: 'error', component: ErrorComponent,
+  },
+  {
+    path: 'barChart', component: BarChartComponent,
   }
 ];
 

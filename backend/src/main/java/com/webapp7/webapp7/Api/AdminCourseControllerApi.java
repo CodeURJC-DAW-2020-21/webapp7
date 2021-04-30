@@ -37,7 +37,7 @@ public class AdminCourseControllerApi {
 
     @JsonView(CourseBasic.class)
     @GetMapping("/")
-    public ResponseEntity<Collection<Course>> getCourse() {
+    public ResponseEntity<Collection<Course>> getCourses() {
         List<Course> courses = courseService.listCourse();
         if (!courses.isEmpty()) {
             return ResponseEntity.ok(courses);
@@ -55,7 +55,7 @@ public class AdminCourseControllerApi {
 
     @JsonView(CourseBasic.class)
     @PutMapping("/{id}")
-    public ResponseEntity<Course> replacePost(@PathVariable long id,
+        public ResponseEntity<Course> replaceCourse(@PathVariable long id,
                                               @RequestBody Course newCourse) {
         Course course = courseService.findById(id).orElse(null);
         if (course != null) {

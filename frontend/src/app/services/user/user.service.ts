@@ -37,7 +37,7 @@ export class UserService {
   }
 
   public getUsers(): Observable<User[]> {
-    return this.http.get(BASE_URL).pipe(
+    return this.http.get(BASE_URL, {withCredentials:true}).pipe(
       catchError(error => this.handleError(error))
     ) as Observable<User[]>;
   }
