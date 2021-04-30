@@ -22,14 +22,14 @@ export class PostService {
   }
 
   getPost(id: number): Observable<Post> {
-    return this.httpClient.get(BASE_URL + id).pipe(
+    return this.httpClient.get(BASE_URL + id ).pipe(
       catchError(error => this.handleError(error))
     ) as Observable<Post>;
   }
 
   addPost(post: Post){
     if (!post.id) {
-      return this.httpClient.post(BASE_URL, post)
+      return this.httpClient.post(BASE_URL, post, { withCredentials: true })
         .pipe(
           catchError(error => this.handleError(error))
         );

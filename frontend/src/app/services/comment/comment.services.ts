@@ -25,7 +25,7 @@ export class CommentService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.httpClient.get(BASE_URL).pipe(
+    return this.httpClient.get(BASE_URL, {withCredentials:true}).pipe(
       catchError(error => this.handleError(error))
     ) as Observable<User[]>;
   }
@@ -34,12 +34,12 @@ export class CommentService {
 
   addComment(comment: Comment){
     if (!comment.id) {
-      return this.httpClient.post(BASE_URL, comment)
+      return this.httpClient.post(BASE_URL, comment, {withCredentials:true})
         .pipe(
           catchError(error => this.handleError(error))
         );
     } else {
-      return this.httpClient.put(BASE_URL + comment.id, comment).pipe(
+      return this.httpClient.put(BASE_URL + comment.id, comment, {withCredentials:true}).pipe(
         catchError(error => this.handleError(error))
       );
     }
