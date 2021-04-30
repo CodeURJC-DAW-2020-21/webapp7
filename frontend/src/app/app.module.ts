@@ -36,6 +36,7 @@ import {LoginComponent} from './components/login/login.component';
 import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
+import { BarChartComponent } from './components/barChart/barChart.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import {LoginErrorComponent} from './components/error/loginError.component';
     LoginComponent,
     Error404Component,
     ErrorComponent,
-    LoginErrorComponent
+    LoginErrorComponent,
+    BarChartComponent
 
 
   ],
@@ -76,7 +78,8 @@ import {LoginErrorComponent} from './components/error/loginError.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    
     // NgbModule
   ],
   providers: [],

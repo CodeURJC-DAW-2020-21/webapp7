@@ -13,7 +13,7 @@ import {CourseService} from '../../services/course/course.service';
 export class CourseFormComponent {
   course: Course;
   newCourse: boolean;
-
+/*
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
@@ -44,4 +44,6 @@ export class CourseFormComponent {
     );
 
   }
+
+ */
 }

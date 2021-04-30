@@ -46,10 +46,10 @@
       <!--START COURSES-->
 
       <!--START FIRST COURSE-->
-      <div *ngIf="course">
+      <div *ngFor="let course of courses">
       <div class="col-lg-4  ftco-animate">
         <div class="project-wrap">
-          <img src="/course/{{course.id}}/image" class="block-20" >
+          <img src="/api/courses/{{course.id}}/image" class="block-20" >
           <div class="text p-4">
             <h3><a>Curso "{{course.category}}" para niños entre {{course.ageStart}}-{{course.ageEnd}} años</a></h3>
             <p class="advisor">{{course.instructor}}</p>

@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import {Comment} from '../../models/Comment/comment.model';
+import { User } from 'src/app/models/User/user.model';
 const BASE_URL =  '/api/comment/';
 // @ts-ignore
 @Injectable({
@@ -17,17 +18,19 @@ export class CommentService {
   constructor(private httpClient: HttpClient) { }
 
 
-  getPosts(): Observable<Comment[]> {
+  getComments(): Observable<Comment[]> {
     return this.httpClient.get(BASE_URL).pipe(
       catchError(error => this.handleError(error))
     ) as Observable<Comment[]>;
   }
 
-  getComment(id: number): Observable<Comment> {
-    return this.httpClient.get(BASE_URL + id).pipe(
+  getUsers(): Observable<User[]> {
+    return this.httpClient.get(BASE_URL).pipe(
       catchError(error => this.handleError(error))
-    ) as Observable<Comment>;
+    ) as Observable<User[]>;
   }
+
+
 
   addComment(comment: Comment){
     if (!comment.id) {

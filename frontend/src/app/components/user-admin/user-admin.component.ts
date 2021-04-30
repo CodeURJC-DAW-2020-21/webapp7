@@ -30,6 +30,12 @@ export class UserAdminComponent {
     private userService: UserService,
     httpClient: HttpClient) {
 
+
+
+
+    //get course id
+    //return http.put en servicio que corresponde con AdminUserController Api
+
     const id = activatedRoute.snapshot.params['id'];
     if (id) {
       userService.getUser(id).subscribe(

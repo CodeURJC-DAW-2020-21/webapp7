@@ -24,35 +24,37 @@ import {CourseService} from '../../services/course/course.service';
 export class CourseDetailsComponent {
   course: Course;
   newCourse: boolean;
+  /*
+    constructor(
+      private router: Router,
+      activatedRoute: ActivatedRoute,
+      private courseService: CourseService,
+      httpClient: HttpClient) {
 
-  constructor(
-    private router: Router,
-    activatedRoute: ActivatedRoute,
-    private courseService: CourseService,
-    httpClient: HttpClient) {
-
-    const id = activatedRoute.snapshot.params['id'];
-    if (id) {
-      courseService.getCourse(id).subscribe(
-        course => course = course,
-        error => console.error(error)
-      );
-      this.newCourse = false;
-    } else {
-      this.course = { category: '', ageStart: 0, ageEnd:0, instructor:'',price:0 };
-      this.newCourse = true;
+      const id = activatedRoute.snapshot.params['id'];
+      if (id) {
+        courseService.getCourse(id).subscribe(
+          course => course = course,
+          error => console.error(error)
+        );
+        this.newCourse = false;
+      } else {
+        this.course = { category: '', ageStart: 0, ageEnd:0, instructor:'',price:0 };
+        this.newCourse = true;
+      }
     }
-  }
 
-  removeCourse() {
-    const okResponse = window.confirm('Do you want to remove this course?');
-    if (okResponse) {
-      this.courseService.removeCourse(this.course).subscribe(
-        _ => this.router.navigate(['/courses']),
-        error => console.error(error)
-      );
+    removeCourse() {
+      const okResponse = window.confirm('Do you want to remove this course?');
+      if (okResponse) {
+        this.courseService.removeCourse(this.course).subscribe(
+          _ => this.router.navigate(['/courses']),
+          error => console.error(error)
+        );
+      }
     }
-  }
+
+   */
 
 }
 
