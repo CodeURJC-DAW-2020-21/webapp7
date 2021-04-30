@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { ChartOptions, ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-barChart',

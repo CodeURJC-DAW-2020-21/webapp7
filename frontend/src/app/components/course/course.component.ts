@@ -12,7 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class CourseComponent implements OnInit {
 
   course: Course;
-  courses:Course[];
+  courses: Course[];
   newCourse: boolean;
 
   constructor(private router: Router, public courseService: CourseService, activatedRoute: ActivatedRoute) {
