@@ -17,7 +17,7 @@ export class CourseService {
 
   // tslint:disable-next-line:typedef
   addCourse(course: Course){
-    return this.http.post(BASE_URL, course).pipe(
+    return this.http.post(BASE_URL, course, {withCredentials:true}).pipe(
       catchError(error => this.handleError(error))
     );
   }
@@ -30,7 +30,7 @@ export class CourseService {
 
   // tslint:disable-next-line:typedef
   deleteCourse(course: Course) {
-    return this.http.delete(BASE_URL + course.id).pipe(
+    return this.http.delete(BASE_URL + course.id, {withCredentials:true}).pipe(
       catchError(error => this.handleError(error))
     );
   }
@@ -38,7 +38,7 @@ export class CourseService {
   public downloadImage(): Observable<Blob> {
     return this.http.get('/api/courses', responseType, 'blob') as unknown as Observable<Blob>;
   }
-  
+
  */
 
   // tslint:disable-next-line:typedef
