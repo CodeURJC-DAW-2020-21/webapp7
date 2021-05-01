@@ -13,11 +13,11 @@ import { UserService } from 'src/app/services/user/user.service';
 
 export class AboutComponent implements OnInit {
 
-  comments:Comment[];
+  comments: Comment[];
   comment: Comment;
   newComment: boolean;
-  users:User[];
-  users_size:number;
+  users: User[];
+  users_size: number;
 
   constructor(private router: Router,
               public commentService: CommentService,

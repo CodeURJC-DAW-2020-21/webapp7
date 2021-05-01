@@ -6,7 +6,7 @@ import {User} from '../../models/User/user.model';
 
 
 @Component({
-  template:`<!--DELETE STUDENT/TEACHER-->
+  template: `<!--DELETE STUDENT/TEACHER-->
   <div class="form-group">
     <label class="label" >Borrar alumno/profesor de la academia</label>
     <form action="/admin/user/delete" method="get" enctype="multipart/form-data">
