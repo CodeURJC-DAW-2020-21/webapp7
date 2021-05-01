@@ -56,6 +56,17 @@ public class AdminUserControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
+    @GetMapping("/me")
+    public ResponseEntity<User> me(HttpServletRequest request) {
+
+        Principal principal = request.getUserPrincipal();
+
+        if(principal != null) {
+            return ResponseEntity.ok(userService.findByName(principal.getName()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @JsonView(UserBasic.class)
     @PostMapping("/")

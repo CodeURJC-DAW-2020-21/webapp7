@@ -4,7 +4,7 @@ export interface User{
   email: string;
   name: string;
   password: string;
-  role: string;
+  rol: string;
   // imageFile:string;
   image: boolean;
   // finishedMaterials:List<Material>

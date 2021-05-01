@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {User} from '../../models/User/user.model';
 import { Observable } from 'rxjs';
@@ -63,23 +63,21 @@ export class LoginService {
   }
 
   isAdmin() {
-   // console.log(this.user.rol);
-  //  console.log(this.user.id);
+    console.log(this.user.rol);
+    console.log(this.user.id);
     return this.user.rol =='administrador';
 
   }
 
   isInstructor() {
-    return this.user.rol =='profesor';
+    return this.user && this.user.rol.indexOf('profesor') !== -1;
   }
 
   isStudent() {
-    return this.user.rol =='alumno';
+    return this.user && this.user.rol.indexOf('alumno') !== -1;
   }
 
   currentUser() {
     return this.user;
   }
-
-
-}
+ */

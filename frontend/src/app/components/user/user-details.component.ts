@@ -41,7 +41,7 @@ export class UserDetailsComponent {
       );
       this.newUser = false;
     } else {
-      this.user = {email: '', name: '', password: '', role: '', image: false, numberMaterials: 0};
+      this.user = {email: '', name: '', password: '', rol: '', image: false, numberMaterials: 0};
       this.newUser = true;
     }
   }

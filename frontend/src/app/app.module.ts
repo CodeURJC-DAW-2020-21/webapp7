@@ -36,6 +36,8 @@ import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { BarChartComponent } from './components/barChart/barChart.component';
+import { ChartsModule } from 'ng2-charts'; // <- HERE
 //import { BarChartComponent } from './components/barChart/barChart.component';
 
 
@@ -70,7 +72,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     ErrorComponent,
     LoginErrorComponent,
     UploadFileComponent,
-  //  BarChartComponent
+    BarChartComponent
 
 
   ],
@@ -81,7 +83,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-   // ChartsModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
