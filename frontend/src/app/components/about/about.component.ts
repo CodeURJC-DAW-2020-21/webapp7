@@ -32,7 +32,6 @@ export class AboutComponent implements OnInit {
     );
 
 
-    //users_size = getUsers().
 
   }
 

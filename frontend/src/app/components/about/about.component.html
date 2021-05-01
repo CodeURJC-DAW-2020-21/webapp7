@@ -126,7 +126,7 @@
       <div class="col-md-12">
         <div class="carousel-testimony owl-carousel">
 
-        <div *ngIf="comment">
+        <div *ngFor="let comment of comments">
           <div class="item">
             <div class="testimony-wrap py-4">
               <div class="text">

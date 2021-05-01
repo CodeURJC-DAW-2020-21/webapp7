@@ -43,6 +43,8 @@ public class AdminUserControllerApi {
     @Autowired
     private com.webapp7.webapp7.Service.UserService userService;
 
+
+
     @Autowired
     private ImageService imgService;
 
@@ -56,13 +58,24 @@ public class AdminUserControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
-    @GetMapping("/me")
-    public ResponseEntity<User> me(HttpServletRequest request) {
 
-        Principal principal = request.getUserPrincipal();
+    @JsonView(UserBasic.class)
+    @GetMapping("/students")
+    public ResponseEntity<Collection<User>> getStudents() {
+        List<User> users = userService.findByRol("alumno");
+        if (!users.isEmpty()) {
+            return ResponseEntity.ok(users);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
-        if(principal != null) {
-            return ResponseEntity.ok(userService.findByName(principal.getName()));
+    @JsonView(UserBasic.class)
+    @GetMapping("/instructors")
+    public ResponseEntity<Collection<User>> getInstructors() {
+        List<User> users = userService.findByRol("profesor");
+        if (!users.isEmpty()) {
+            return ResponseEntity.ok(users);
         } else {
             return ResponseEntity.notFound().build();
         }

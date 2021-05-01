@@ -43,7 +43,7 @@ export class UserStudentListComponent {
 
   // tslint:disable-next-line:typedef use-lifecycle-interface
   ngOnInit() {
-    this.userService.getUsers().subscribe(
+    this.userService.getStudents().subscribe(
       users => this.users = users,
       error => console.log(error)
     );

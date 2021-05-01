@@ -14,7 +14,7 @@ const BASE_URL = '/api/admin/users/';
 })
 export class UserService implements OnInit{
 
-  users:User[]=[];
+  users: User [] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -59,13 +59,23 @@ export class UserService implements OnInit{
   }
 
  */
-
   public getUsers(): Observable<User[]> {
     return this.http.get(BASE_URL, {withCredentials:true}).pipe(
       catchError(error => this.handleError(error))
     ) as Observable<User[]>;
   }
 
+  public getStudents(): Observable<User[]> {
+    return this.http.get(BASE_URL + 'students', {withCredentials:true}).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<User[]>;
+  }
+
+  public getInstructors(): Observable<User[]> {
+    return this.http.get(BASE_URL + 'instructors', {withCredentials:true}).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<User[]>;
+  }
 
   // tslint:disable-next-line:typedef
   removeUser(user: User) {

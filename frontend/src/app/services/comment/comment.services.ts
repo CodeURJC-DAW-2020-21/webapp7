@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import {Comment} from '../../models/Comment/comment.model';
 import { User } from 'src/app/models/User/user.model';
-const BASE_URL =  '/api/comment/';
+const BASE_URL =  '/api/comments/';
 // @ts-ignore
 @Injectable({
   providedIn: 'root'

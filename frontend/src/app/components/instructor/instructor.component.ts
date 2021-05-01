@@ -12,28 +12,15 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class InstructorComponent implements OnInit {
 
   user: User;
+  users: User[];
   newUser: boolean;
 
   constructor(private router: Router, public service: UserService, activatedRoute: ActivatedRoute) {
     const id = activatedRoute.snapshot.params['id'];
-
-    if (id){
-      service.getUser(id).subscribe(
-        user => this.user = user,
+    service.getInstructors().subscribe(
+        users => this.users = users,
         error => console.error(error)
       );
-      this.newUser = false;
-    } else {
-      this.user = {
-        email: '',
-        name: 'asfda',
-        password: 'asdfa',
-        rol: 'profesor',
-        image: false,
-        numberMaterials: 0
-      };
-      this.newUser = true;
-    }
   }
 
   ngOnInit(): void {

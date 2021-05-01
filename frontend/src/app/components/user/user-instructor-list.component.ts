@@ -43,7 +43,7 @@ export class UserInstructorListComponent  implements OnInit{
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.userService.getUsers().subscribe(
+    this.userService.getInstructors().subscribe(
       users => this.users = users,
       error => console.log(error)
     );
