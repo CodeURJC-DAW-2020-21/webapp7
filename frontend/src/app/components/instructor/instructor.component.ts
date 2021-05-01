@@ -28,7 +28,7 @@ export class InstructorComponent implements OnInit {
         email: '',
         name: 'asfda',
         password: 'asdfa',
-        role: 'profesor',
+        rol: 'profesor',
         image: false,
         numberMaterials: 0
       };
