@@ -15,9 +15,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.security.Principal;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
@@ -63,6 +65,17 @@ public class AdminUserControllerApi {
         user.setPassword(password);
         userService.save(user);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(user.getId()).toUri()).body(user);
+    }
+    @GetMapping("/me")
+    public ResponseEntity<User> me(HttpServletRequest request) {
+
+        Principal principal = request.getUserPrincipal();
+
+        if(principal != null) {
+            return ResponseEntity.ok(userService.findByName(principal.getName()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
     @JsonView(AdminCourseControllerApi.CourseBasic.class)
     @GetMapping("/{id}/image")
