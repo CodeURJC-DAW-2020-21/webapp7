@@ -89,21 +89,7 @@
             <!--End PDF'S-->
 
             <!--START GRAPH-->
-            <div class="row">
-              <div class="col-xl-12 col-lg-12">
-                <div class="card shadow mb-4">
-                  <div
-                    class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold" style="color: black;">AVANCE DEL CURSO</h6>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <canvas height="400" id="myChart" width="400"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <app-bar-chart></app-bar-chart>
             <!--END GRAPH-->
 
           </div>
@@ -115,7 +101,9 @@
               <div class="col-lg-12 mb-12">
                 <div class="card shadow">
                   <div class="card-header2 py-3">
+                    <div *ngIf="course">
                     <h6 class="m-0 font-weight-bold" style="color: black;">CLASE : {{course.category}}</h6>
+                    </div>
                   </div>
                   <div class="card-body">
                     <div class="list-group">
@@ -175,81 +163,6 @@
 
 
 
-<div class="d-none">
-  <li *ngFor="let user of users">
-    <div class="user" id="{{user.id}}">
-      <span class="name">{{user.name}}</span>
-      <span class="numberMaterial">{{user.numberMaterials}}</span>
-    </div>
-  </li>
-
-</div>
-
-<script>
-  const users = [];
-
-  $(".user").each(function () {
-    const parent = $(this);
-    const userId = parent.attr('id');
-
-    const name = $("#" + userId + " > .name").text();
-    const numberMaterial = $("#" + userId + " > .numberMaterial").text();
-
-    const user = {
-      name: name,
-      numberMaterial: numberMaterial
-    };
-
-    users.push(user);
-
-  });
-
-  const names = users.map(user => user.name);
-  const numberMaterials = users.map((user => user.numberMaterial));
-
-  //variables o const o let nunca var
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: names,
-
-      datasets: [{
-        label: '# of Votes',
-        data: numberMaterials,
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(16, 134, 28, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(16,134,28, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true,
-            precision: 0
-          }
-        }]
-      }
-    }
-  });
-</script>
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

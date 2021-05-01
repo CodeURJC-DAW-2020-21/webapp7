@@ -3,9 +3,9 @@ import {FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { ChartsModule } from 'ng2-charts'; // <- HERE
 // import {Router} from '@angular/router';
 // import {RouterModule} from '@angular/router';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent} from './components/index/index.component';
 import {UserInstructorComponent} from './components/user-instructor/user-instructor.component';
@@ -78,8 +78,7 @@ import { BarChartComponent } from './components/barChart/barChart.component';
     AppRoutingModule,
     FormsModule,
     NgbModule,
-
-    // NgbModule
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
