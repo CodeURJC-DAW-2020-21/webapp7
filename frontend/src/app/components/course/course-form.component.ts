@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Course} from '../../models/Course/course.model';
 import {CourseService} from '../../services/course/course.service';
 
+
 @Component({
   selector: 'app-courseForm',
   templateUrl: './course-form.component.html',
@@ -20,11 +21,14 @@ export class CourseFormComponent {
     private courseService: CourseService,
     httpClient: HttpClient) {}
 
-  createCourse(event: any, category: string, ageStart: number, ageEnd: number, instructor:string, price:number){
+  createCourse(event: any, category: string, ageStart: string, ageEnd: string, instructor: string, price: string){
     event.preventDefault();
-    this.courseService.addCourse(category,ageStart, ageEnd, instructor, price).subscribe(
+    const start = Number(ageStart);
+    const end = Number(ageEnd);
+    const pr = Number(price);
+    this.courseService.addCourse(category, start, end, instructor, pr).subscribe(
       response => console.log(response),
-      error =>console.log(error)
+      error => console.log(error)
     );
   }
 

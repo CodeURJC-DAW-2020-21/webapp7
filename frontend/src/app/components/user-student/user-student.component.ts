@@ -3,7 +3,7 @@ import {User} from '../../models/User/user.model';
 import {Material} from '../../models/Material/material.model';
 
 @Component({
-  selector: 'app-student',
+  selector: 'app-userstudent',
   templateUrl: './user-student.component.html',
   styleUrls: ['../../../assets/css/style.css']
 })

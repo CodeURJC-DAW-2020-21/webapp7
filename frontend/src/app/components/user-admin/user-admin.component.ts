@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../services/user/user.service';
 import {HttpClient} from '@angular/common/http';
 import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
+import {LoginService} from '../../services/login/login.services';
 
 
 
@@ -31,7 +32,7 @@ export class UserAdminComponent{
     private router: Router,
     activatedRoute: ActivatedRoute,
     private userService: UserService,
-    httpClient: HttpClient) {}
+    httpClient: HttpClient, public loginService: LoginService) {}
 
 
 

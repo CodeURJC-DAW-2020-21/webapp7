@@ -88,6 +88,7 @@ public class AdminUserControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
+
     @JsonView(AdminCourseControllerApi.CourseBasic.class)
     @GetMapping("/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException, SQLException {

@@ -38,7 +38,6 @@ export class CourseService implements OnInit{
       }
     );
   }
-
   getCourse(category: string) {
     this.http.get<any>(BASE_URL + category).subscribe(
       response => {

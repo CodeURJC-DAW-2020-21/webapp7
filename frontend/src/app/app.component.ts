@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {LoginService} from './services/login/login.services';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent {
   title = 'frontend';
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, public loginService: LoginService) {}
   // search(title: string){
     // this.httpClient.get()
   // }

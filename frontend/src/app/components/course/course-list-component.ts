@@ -21,7 +21,7 @@ import {CourseService} from '../../services/course/course.service';
             <div class="input-group-append">
               <div class="card-body">
                 <li *ngFor="let course of courses">
-                  <a>[routerLink]="['/course', category.id]">{{course.category}}</a>
+                  <a>{{course.category}}</a>
                 </li>
               </div>
             </div>
@@ -45,10 +45,9 @@ export class CourseListComponent {
 
   // tslint:disable-next-line:typedef use-lifecycle-interface
   ngOnInit() {
-    this.courseService.getCourses().subscribe(
-      courses => this.courses = courses,
-      error => console.log(error)
-    );
+    this.courseService.getCoursesList();
+    this.courses = this.courseService.courses;
+
   }
 
   // tslint:disable-next-line:typedef

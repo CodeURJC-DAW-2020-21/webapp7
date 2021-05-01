@@ -52,7 +52,6 @@ export class CourseDetailsComponent {
     event.preventDefault();
     const okResponse = window.confirm('Do you want to remove this course?');
     if (okResponse) {
-      this.courseService.getCourse(id);
       let list = this.courseService.courses;
       for (let i = 0; i < list.length; i++){
         if (list[i].category === id){

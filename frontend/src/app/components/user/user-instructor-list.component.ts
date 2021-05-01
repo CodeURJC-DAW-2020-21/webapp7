@@ -19,7 +19,7 @@ import {LoginService} from '../../services/login/login.services';
             <div class="input-group-append">
               <div class="card-body">
                 <li *ngFor="let user of users">
-                  <a>[routerLink]="['/instructor', category.id]">{{user.email}}</a>
+                  <a>{{user.name}}</a>
                 </li>
               </div>
             </div>
