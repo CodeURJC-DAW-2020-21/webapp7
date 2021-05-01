@@ -16,10 +16,10 @@ export class CourseService {
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line:typedef
-  addCourse(course: Course){
-    return this.http.post(BASE_URL, course, {withCredentials:true}).pipe(
+  addCourse(category: string, ageStart: number,ageEnd: number, instructor: string, price: number): Observable<Course>{
+    return this.http.post(BASE_URL, {category,ageStart, ageEnd, instructor, price}, {withCredentials:true}).pipe(
       catchError(error => this.handleError(error))
-    );
+    ) as Observable<Course>;
   }
 
   public getCourses(): Observable<Course[]> {
@@ -46,5 +46,11 @@ export class CourseService {
     console.error(error);
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
   }
+  postImage (idCourse: number, form: FormData){
 
+    return this.http.post(BASE_URL + idCourse + '/image', form).pipe(
+      catchError(error => this.handleError(error))
+    );
+
+  }
 }

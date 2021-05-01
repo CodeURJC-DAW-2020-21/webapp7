@@ -18,8 +18,16 @@ export class BlogFormComponent {
     private router: Router,
     activatedRoute: ActivatedRoute,
     private postService: PostService,
-    httpClient: HttpClient) {
+    httpClient: HttpClient) {}
 
+  createPost(event: any, title: string, description:string){
+    event.preventDefault();
+    this.postService.addPost(title, description).subscribe(
+      response => console.log(response),
+      error =>console.log(error)
+    );
+  }
+/* ESTO SE QUITA
     const id = activatedRoute.snapshot.params['id'];
     if (id) {
       postService.getPost(id).subscribe(
@@ -43,5 +51,5 @@ export class BlogFormComponent {
       error => alert('Error creating new post: ' + error)
     );
 
-  }
+  }*/
 }

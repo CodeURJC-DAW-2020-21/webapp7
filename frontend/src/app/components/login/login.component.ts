@@ -9,11 +9,11 @@ export class LoginComponent {
 
   constructor(public loginService: LoginService) { }
 
-  logIn(event: any, user: string, pass: string) {
+  logIn(event: any, user: string, password: string) {
 
     event.preventDefault();
 
-    this.loginService.logIn(user, pass);
+    this.loginService.logIn(user, password);
   }
 
   logOut() {

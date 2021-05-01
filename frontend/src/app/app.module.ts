@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { ChartsModule } from 'ng2-charts'; // <- HERE
+//import { ChartsModule } from 'ng2-charts'; // <- HERE
 // import {Router} from '@angular/router';
 // import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,7 +35,8 @@ import {LoginComponent} from './components/login/login.component';
 import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
-import { BarChartComponent } from './components/barChart/barChart.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
+//import { BarChartComponent } from './components/barChart/barChart.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { BarChartComponent } from './components/barChart/barChart.component';
     Error404Component,
     ErrorComponent,
     LoginErrorComponent,
-    BarChartComponent
+    UploadFileComponent,
+  //  BarChartComponent
 
 
   ],
@@ -77,8 +79,9 @@ import { BarChartComponent } from './components/barChart/barChart.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule,
-    ChartsModule,
+   // ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

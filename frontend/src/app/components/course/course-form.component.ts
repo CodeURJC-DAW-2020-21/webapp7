@@ -13,37 +13,19 @@ import {CourseService} from '../../services/course/course.service';
 export class CourseFormComponent {
   course: Course;
   newCourse: boolean;
-/*
+
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
     private courseService: CourseService,
-    httpClient: HttpClient) {
+    httpClient: HttpClient) {}
 
-    const id = activatedRoute.snapshot.params['id'];
-    if (id) {
-      courseService.getCourse(id).subscribe(
-        course => course = course,
-        error => console.error(error)
-      );
-      this.newCourse = false;
-    } else {
-      this.course = { category: '', ageStart: 0, ageEnd:0, instructor:'',price:0 };
-      this.newCourse = true;
-    }
-  }
-
-  cancel() {
-    window.history.back();
-  }
-
-  save() {
-    this.courseService.addCourse(this.course).subscribe(
-      (course: Course) => this.router.navigate(['/courses/', course.id]),
-      error => alert('Error creating new course: ' + error)
+  createCourse(event: any, category: string, ageStart: number, ageEnd: number, instructor:string, price:number){
+    event.preventDefault();
+    this.courseService.addCourse(category,ageStart, ageEnd, instructor, price).subscribe(
+      response => console.log(response),
+      error =>console.log(error)
     );
-
   }
 
- */
 }

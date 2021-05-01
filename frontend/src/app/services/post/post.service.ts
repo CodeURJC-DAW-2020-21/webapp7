@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import {Observable, throwError} from 'rxjs';
 import {Post} from '../../models/Post/post.model';
+import {Course} from '../../models/Course/course.model';
 
 const BASE_URL =  '/api/posts/';
 
@@ -28,6 +29,13 @@ export class PostService {
   }
 
   // tslint:disable-next-line:typedef
+  addPost(title: string, description: string): Observable<Course>{
+      return this.httpClient.post(BASE_URL, {title, description}, {withCredentials:true}).pipe(
+        catchError(error => this.handleError(error))
+      ) as Observable<Course>;
+  }
+  /* METODO ANTIGUO
+  // tslint:disable-next-line:typedef
     addPost(post: Post){
     if (!post.id) {
       return this.httpClient.post(BASE_URL, post, { withCredentials: true })
@@ -39,12 +47,19 @@ export class PostService {
         catchError(error => this.handleError(error))
       );
     }
-  }
+  }*/
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
     console.log('ERROR:');
     console.error(error);
     return throwError('Server error (" + error.status + "): ' + error.text());
+  }
+  postImage (idPost: number, form: FormData){
+
+    return this.httpClient.post(BASE_URL + idPost + '/image', form).pipe(
+      catchError(error => this.handleError(error))
+    );
+
   }
 }

@@ -66,11 +66,11 @@
                   </div>
                   <div class="card-body">
                     <div class="form-group">
-
+                      <!--Form to create a course-->
                       <app-courseForm></app-courseForm>
 
                     </div>
-
+                    <!--Form to delete a course-->
                       <app-courseDetails></app-courseDetails>
 
                     <!--ADD STUDENT/TEACHER TO A COURSE-->
@@ -78,11 +78,11 @@
                       <label class="label" >Añadir alumno/profesor a curso</label>
                       <form action="/admin/user/addcourse" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                          <!--<input  [(ngModel)]="course.category" type="text" class="form-control"/>-->
+                          <input  #course type="text" class="form-control"/>
                         </div>
 
                         <div class="form-group">
-                          <!--<input  [(ngModel)]="user.email" type="text"class="form-control"/>-->
+                         <input  #user type="text"class="form-control"/>
                         </div>
                         <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
                       </form>
@@ -93,12 +93,14 @@
                       <label class="label" >Borrar alumno/profesor del curso</label>
                       <form action="/admin/user/deletecourse" method="get" enctype="multipart/form-data">
                         <div class="form-group">
-                         <!-- <input  [(ngModel)]="course.category" type="text"  class="form-control"/>-->
+                         <input  #course type="text"  class="form-control"/>
                         </div>
                         <div class="form-group">
-                          <!--<input  [(ngModel)]="user.email" type="text" class="form-control"/>-->
+                          <input #user type="text" class="form-control"/>
                         </div>
-                        <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary">
+                        <div class="form-group">
+                          <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary" >
+                        </div>
                       </form>
                     </div>
                   <!--delete user-->
@@ -132,10 +134,11 @@
             </div>
             <!--END TIMETABLE-->
 
+            <!--Created a list of course-->
             <app-courseList></app-courseList>
-
+            <!--Created a list of instructor-->
             <app-userInstructorList></app-userInstructorList>
-
+            <!--Created a list of student-->
            <app-userStudentList></app-userStudentList>
 
           </div>

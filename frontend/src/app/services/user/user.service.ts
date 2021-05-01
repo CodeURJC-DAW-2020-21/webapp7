@@ -17,17 +17,12 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line:typedef
- addUser( user: User ) {
-    return this.http.post(BASE_URL, user).pipe(
+  addUser(name: string, email: string, password: string, role:string): Observable<Course>{
+    return this.http.post(BASE_URL, {name, email, password, role}, {withCredentials:true}).pipe(
       catchError(error => this.handleError(error))
-    );
-  }
-/*
-  addUserToACourse(user: User,course:Course){
-    course.
+    ) as Observable<Course>;
   }
 
- */
   // tslint:disable-next-line:typedef
   public getUser(id: number | string): Observable<User> {
     const url = BASE_URL + id;
@@ -53,6 +48,13 @@ export class UserService {
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
+  }
+  postImage (idUser: number, form: FormData){
+
+    return this.http.post(BASE_URL + idUser + '/image', form).pipe(
+      catchError(error => this.handleError(error))
+    );
+
   }
 
 }

@@ -18,32 +18,13 @@ export class UserFormComponent {
     private router: Router,
     activatedRoute: ActivatedRoute,
     private userService: UserService,
-    httpClient: HttpClient) {
+    httpClient: HttpClient) {}
 
-    const id = activatedRoute.snapshot.params['id'];
-    if (id) {
-      userService.getUser(id).subscribe(
-        user => user = user,
-        error => console.error(error)
-      );
-      this.newUser = false;
-    } else {
-      this.user = {email: '', name: '', password: '', role: '', image: false, numberMaterials: 0};
-      this.newUser = true;
-    }
-  }
-
-  cancel() {
-    window.history.back();
-  }
-/*
-  save() {
-    this.userService.addUserToACourse(this.user,this.course).subscribe(
-      (user: User) => this.router.navigate(['/users/', user.id]),
-      error => alert('Error creating new book: ' + error)
+  createUser(event: any, name: string, email: string, password: string, role:string){
+    event.preventDefault();
+    this.userService.addUser(name, email, password, role).subscribe(
+      response => console.log(response),
+      error =>console.log(error)
     );
-
   }
-
- */
 }
