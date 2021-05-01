@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ChartDataSets } from 'chart.js';
 import { ChartOptions, ChartType } from 'chart.js';

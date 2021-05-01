@@ -16,6 +16,8 @@ import java.util.List;
 @Entity
 public class User {
 
+
+
     public interface Basic {}
 
     public interface NumberMaterial{}
