@@ -5,6 +5,7 @@ import com.webapp7.webapp7.Service.ImageService;
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.Post;
 import com.webapp7.webapp7.model.User;
+import org.hibernate.Hibernate;
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -13,6 +14,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -54,9 +57,10 @@ public class AdminCourseControllerApi {
 
     @JsonView(CourseBasic.class)
     @PostMapping("/")
-    public ResponseEntity<Course> addCourse(@RequestBody Course course) {
-        courseService.save(course);
-        return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(course.getId()).toUri()).body(course);
+    public ResponseEntity<Course> addCourse(@RequestBody Course course, UriComponentsBuilder uriComponentsBuilder) {
+        Course savedCurse = courseService.save(course);
+        UriComponents components = uriComponentsBuilder.path("/api/courses/{id}").buildAndExpand(savedCurse.getId());
+        return ResponseEntity.created(components.toUri()).body(savedCurse);
     }
 
     @JsonView(CourseBasic.class)
@@ -102,7 +106,7 @@ public class AdminCourseControllerApi {
     @JsonView(CourseBasic.class)
     @PostMapping("/{id}/image")
     public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
-            throws IOException {
+            throws IOException, SQLException {
 
         Course course = courseService.findById(id).orElseThrow(null);
 
@@ -116,6 +120,9 @@ public class AdminCourseControllerApi {
             }
 
             imgService.saveImage(COURSES_FOLDER, course.getId(), imageFile);
+            byte[] bytes = imageFile.getBytes();
+            Blob blob = new javax.sql.rowset.serial.SerialBlob(bytes);
+            course.setImageFile(blob);
             courseService.save(course);
             return ResponseEntity.created(location).build();
 

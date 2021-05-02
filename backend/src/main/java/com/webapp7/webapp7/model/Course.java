@@ -52,7 +52,9 @@ public class Course {
 
     @Lob
     @JsonIgnore
+    @Column(name = "image_file", nullable = true)
     private Blob imageFile;
+
     @JsonIgnore
     private boolean image;
 

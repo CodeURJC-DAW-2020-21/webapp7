@@ -3,38 +3,29 @@
 <form action="/api/courses/" method="post" enctype="multipart/form-data">
   <div>
       <div >
-        <label>Category: </label>
-        <input [(ngModel)]="course.category" />
+        <input type="text" name="category" id="category" [(ngModel)]="course.category"  placeholder="Categoria"/>
+      </div>
+
+      <div>
+        <input type="number" name="ageStart" id="ageStart" [(ngModel)]="course.ageStart"  placeholder="Edad inicio" />
       </div>
 
       <div >
-        <label>Age Start: </label>
-        <input [(ngModel)]="course.ageStart" />
-      </div>
-
-      <div >
-        <label>Age End: </label>
-        <input [(ngModel)]="course.ageEnd"  />
+        <input type="number" name="ageEnd" id="ageEnd" [(ngModel)]="course.ageEnd"   placeholder="Edad Fin" />
       </div>
 
       <div>
-        <label>Instructor: </label>
-        <input [(ngModel)]="course.instructor"  />
+        <input type="text" name="instructor" id="instructor" [(ngModel)]="course.instructor" placeholder="Profesor" />
       </div>
 
       <div>
-        <label>Price: </label>
-        <input [(ngModel)]="course.price"  />
+        <input type="number" name="price" id="price" [(ngModel)]="course.price" placeholder="precio"  />
       </div>
       <div>
-        <label>Imagen: </label>
-        <img [src]="courseImage()"><br>
-
         <ng-template [ngIf]="course.id">
           <label>Upload image: </label><br>
         </ng-template>
-
-        <input #file type='file' name='imageFile' accept=".jpg, .jpeg" />
+        <input #file type='file' name='imageFile' accept=".jpg, .jpeg"  placeholder="Imagen"/>
       </div>
       <div >
         <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary" (click)="createCourse()">

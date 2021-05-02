@@ -57,12 +57,12 @@
 
                     <!--Insert any type of material-->
                     <div class="input-group">
-                      <form enctype="multipart/form-data" method="post" th:action="@{/admin}">
+                      <form enctype="multipart/form-data" method="post" action="/api/materials">
                         <p>
-                          <input name="material" required type="file"/>
+                          <input #file type='file' name='material' accept=".jpg, .jpeg, .pdf"  placeholder="Material"/>
                         </p>
                         <p>
-                          <input class="btn btn-primary" type="submit" value="Upload">
+                          <input type="submit" value="Subir" class="btn py-3 px-4 btn-primary" (click)="updateMaterial()">
                         </p>
                       </form>
                     </div>

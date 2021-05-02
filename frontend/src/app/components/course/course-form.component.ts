@@ -1,6 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
 import {Course} from '../../models/Course/course.model';
 import {CourseService} from '../../services/course/course.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -12,15 +11,19 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 
 export class CourseFormComponent {
-  course: Course;
+
+  public course: Course = new Course() ;
+  public category = 'hols';
   newCourse: boolean;
+
   @ViewChild("file")
   file: any;
+
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
     private courseService: CourseService,
-    public fb: FormBuilder,)
+    public fb: FormBuilder)
     {}
 
     // tslint:disable-next-line:typedef
@@ -40,12 +43,14 @@ export class CourseFormComponent {
     if (imageFile) {
       let formData = new FormData();
       formData.append("imageFile", imageFile);
+      console.log(formData);
       this.courseService.postImage(course, formData).subscribe(
         _ => this.afterUploadImage(course),
         error => alert('Error uploading course image: ' + error)
       );
-    }
+    } else {
       this.afterUploadImage(course);
+    }
 
   }
 
@@ -53,7 +58,14 @@ export class CourseFormComponent {
     this.router.navigate(['/', course.id]);
   }
 
+
   courseImage() {
-    return this.course.imageFile ? '/api/courses/' + this.course.id + '/image' : '/assets/images/no_image.png';
+    let imageUrl = '';
+    if(this.course.imageFile) {
+      imageUrl = '/api/courses/' + this.course.id + '/image';
+    } else {
+      imageUrl = '/assets/images/no_image.png';
+    }
+    return imageUrl;
   }
 }

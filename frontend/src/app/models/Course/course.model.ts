@@ -1,15 +1,20 @@
-import { User } from '../User/user.model';
-import { Material } from '../Material/material.model';
 
-export interface Course{
-  id?: number;
-  category?: string;
-  ageStart?: number;
-  ageEnd?: number;
-  instructor?: string;
-  price?: number;
-  image?: boolean;
-  imageFile: any;
+export class Course{
+
+  constructor(
+    public id ?: number,
+    public image ?: boolean,
+    public imageFile ?: any ,
+    public category: string = '',
+    public ageStart: number = 0,
+    public ageEnd: number = 0,
+    public instructor: string = '',
+    public price: number = 0,
+
+  ) {
+  }
+
+
   // students: List<User>;
   //  materials: List<Material>;
 }

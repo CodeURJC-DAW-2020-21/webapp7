@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Material} from '../../models/Material/material.model';
 import {User} from '../../models/User/user.model';
 import {Course} from '../../models/Course/course.model';
@@ -20,6 +20,9 @@ export class UserInstructorComponent implements OnInit {
   display = false;
   course: Course;
   materialDelete: Material;
+  @ViewChild("file")
+  file: any;
+
   constructor(private router: Router, public materialService: MaterialService, activatedRoute: ActivatedRoute,
               public loginService: LoginService) {
     const id = activatedRoute.snapshot.params['id'];
@@ -30,6 +33,42 @@ export class UserInstructorComponent implements OnInit {
     console.log('materials ' + this.materials);
   }
   ngOnInit(): void {
+  }
+
+  updateMaterial() {
+    this.materialService.addMaterial(this.material).subscribe(
+      (material: Material) => this.uploadElement(material),
+      error => alert('Error creating new course: ' + error)
+    );
+  }
+  uploadElement(material: Material): void {
+
+    const content = this.file.nativeElement.files[0];
+    if (content) {
+      let formData = new FormData();
+      formData.append("imageFile", content);
+      console.log(formData);
+      this.materialService.postElement(material, formData).subscribe(
+        _ => this.afterUploadElement(material),
+        error => alert('Error uploading course image: ' + error)
+      );
+    } else {
+      this.afterUploadElement(material);
+    }
+
+  }
+
+  private afterUploadElement(material: Material){
+    this.router.navigate(['/', material.id]);
+  }
+  materialElement() {
+    let imageUrl = '';
+    if(this.material.content) {
+      imageUrl = '/api/materials/' + this.material.id + '/file';
+    } else {
+      imageUrl = '/assets/images/no_image.png';
+    }
+    return imageUrl;
   }
 
   deleteMaterial(event: any, id: number){

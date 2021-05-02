@@ -9,27 +9,29 @@
         <form action="/register" method = "post" modelAttribute="user" enctype="multipart/form-data">
           <div class="form-group">
             <label >Nombre Completo</label>
-            <input #name type="text" class="form-control" >
+            <input type="text" name="fullNname" id="fullName" [(ngModel)]="user.name"  placeholder="Nombre Completo" />
           </div>
           <div class="form-group">
             <label >Correo Electrónico</label>
-            <input  #email  type="text" class="form-control" >
+            <input type="text" name="mail" id="mail" [(ngModel)]="user.email"  placeholder="Correo Electronico" />
           </div>
           <div class="form-group">
             <label  >Contraseña</label>
-            <input  #password  type="text" class="form-control" >
+            <input type="text" name="password" id="pasword" [(ngModel)]="user.password"  placeholder="Contraseña" />
           </div>
           <div class="form-group">
             <label  >Profesor o alumno</label>
-            <input  #role  type="text" class="form-control" >
+            <input type="text" name="role" id="role" [(ngModel)]="user.rol"  placeholder="Rol" />
 
           </div>
-
-
-         <!-- <app-upload-file></app-upload-file>-->
-
-          <div class="form-group">
-            <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary" (click)="createUser($event, name.value, email.value, password.value,role.value)">
+          <div>
+            <ng-template [ngIf]="user.id">
+              <label>Upload image: </label><br>
+            </ng-template>
+            <input #file type='file' name='imageFile' accept=".jpg, .jpeg"  placeholder="Imagen"/>
+          </div>
+          <div >
+            <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary" (click)="createUser()">
           </div>
         </form>
       </div>

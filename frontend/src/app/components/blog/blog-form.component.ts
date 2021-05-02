@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
 import {PostService} from '../../services/post/post.service';
+import {FormBuilder} from '@angular/forms';
 import {Post} from '../../models/Post/post.model';
 
 @Component({
@@ -11,45 +11,57 @@ import {Post} from '../../models/Post/post.model';
 })
 
 export class BlogFormComponent {
-  post: Post;
   newPost: boolean;
+  public post: Post = new Post() ;
+
+  @ViewChild("file")
+  file: any;
 
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
     private postService: PostService,
-    httpClient: HttpClient) {}
+    public fb: FormBuilder) {}
 
-  createPost(event: any, title: string, description:string){
-    event.preventDefault();
-    this.postService.addPost(title, description).subscribe(
-      response => console.log(response),
-      error =>console.log(error)
-    );
-  }
-/* ESTO SE QUITA
-    const id = activatedRoute.snapshot.params['id'];
-    if (id) {
-      postService.getPost(id).subscribe(
-        post => this.post = post,
-        error => console.error(error)
-      );
-      this.newPost = false;
-    } else {
-      this.post = { title: '', description:'',image:false };
-      this.newPost = true;
-    }
-  }
+  // tslint:disable-next-line:typedef
+  ngOnInit(){}
 
-  cancel() {
-    window.history.back();
-  }
-
-  save() {
+  createPost() {
     this.postService.addPost(this.post).subscribe(
-      (post: Post) => this.router.navigate(['/posts/', post.id]),
+      (post: Post) => this.uploadImage(post),
       error => alert('Error creating new post: ' + error)
     );
+  }
 
-  }*/
+  uploadImage(post: Post): void {
+
+    const imageFile = this.file.nativeElement.files[0];
+    if (imageFile) {
+      let formData = new FormData();
+      formData.append("imageFile", imageFile);
+      console.log(formData);
+      this.postService.postImage(post, formData).subscribe(
+        _ => this.afterUploadImage(post),
+        error => alert('Error uploading post image: ' + error)
+      );
+    } else {
+      this.afterUploadImage(post);
+    }
+
+  }
+
+  private afterUploadImage(post: Post){
+    this.router.navigate(['/', post.id]);
+  }
+
+
+  PostImage() {
+    let imageUrl = '';
+    if(this.post.imageFile) {
+      imageUrl = '/api/post/' + this.post.id + '/image';
+    } else {
+      imageUrl = '/assets/images/no_image.png';
+    }
+    return imageUrl;
+  }
 }

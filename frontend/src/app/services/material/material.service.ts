@@ -1,5 +1,4 @@
 import { Injectable, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -54,6 +53,22 @@ export class MaterialService implements OnInit{
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
   }
 
+  postElement (material: Material, form: FormData) {
+    const ROUTE = BASE_URL + material.id + '/file';
+    console.log(ROUTE);
+    return this.http.post(ROUTE, form)
+      .pipe(
+        catchError(error => this.handleError(error))
+      );
+  }
   ngOnInit() {
+  }
+  addMaterial(material: Material){
+
+    return this.http.post(BASE_URL, material)
+      .pipe(
+        catchError(error => this.handleError(error))
+      );
+
   }
 }

@@ -1,12 +1,15 @@
+export class User{
 
-export interface User{
-  id?: number;
-  email: string;
-  name: string;
-  password: string;
-  rol: string;
-  // imageFile:string;
-  image: boolean;
+  constructor(
+    public id?: number,
+    public imageFile ?:any,
+    public  image ?: boolean,
+    public email: string = '',
+    public name: string = '',
+    public password: string = '',
+    public rol: string = '',
   // finishedMaterials:List<Material>
-  numberMaterial: number;
+    public numberMaterial: number =0,
+) {
+}
 }

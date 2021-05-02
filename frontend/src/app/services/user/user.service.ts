@@ -1,5 +1,4 @@
 import { Injectable, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -16,12 +15,7 @@ export class UserService implements OnInit{
   users: User [] = [];
   user: User;
 
-  // @ts-ignore
-  @Injectable({
-    providedIn: 'root'
-  })
-
-  constructor(private http: HttpClient) { }
+   constructor(private http: HttpClient) { }
 
   //cuando iniciamos app guardamos la lista de  usuarios
   ngOnInit(){
@@ -29,9 +23,13 @@ export class UserService implements OnInit{
   }
 
   // tslint:disable-next-line:typedef
-  addUser(name: string, email: string, password: string, role:string): Observable<Course>{
-    return this.http.post(BASE_URL, {name, email, password, role}, {withCredentials:true}).pipe(
-    ) as Observable<Course>;
+  addUser(user: User){
+
+    return this.http.post(BASE_URL, user)
+      .pipe(
+        catchError(error => this.handleError(error))
+      );
+
   }
 
   addUserToCourse(user: User, course: Course){
@@ -90,13 +88,15 @@ export class UserService implements OnInit{
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
-    console.error(error);
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
   }
 
-  postImage (idUser: number, form: FormData){
-    return this.http.post(BASE_URL + idUser + '/image', form).pipe(
-    );
-
+  postImage (user: User, form: FormData) {
+    const ROUTE = BASE_URL + user.id + '/image';
+    console.log(ROUTE);
+    return this.http.post(ROUTE, form)
+      .pipe(
+        catchError(error => this.handleError(error))
+      );
   }
 }

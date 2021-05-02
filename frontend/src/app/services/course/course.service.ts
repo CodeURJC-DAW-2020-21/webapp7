@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -68,8 +68,10 @@ export class CourseService implements OnInit{
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
   }
 
-  postImage (course: Course, form: FormData){
-    return this.http.post(BASE_URL + course.id + '/image', form)
+  postImage (course: Course, form: FormData) {
+    const ROUTE = BASE_URL + course.id + '/image';
+    console.log(ROUTE);
+    return this.http.post(ROUTE, form)
       .pipe(
         catchError(error => this.handleError(error))
       );
