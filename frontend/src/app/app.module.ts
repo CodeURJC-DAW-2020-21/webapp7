@@ -3,7 +3,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-//import { ChartsModule } from 'ng2-charts'; // <- HERE
 // import {Router} from '@angular/router';
 // import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -73,7 +72,6 @@ import { ChartsModule } from "ng2-charts"; // <- HERE
     LoginErrorComponent,
     BarChartComponent
 
-
   ],
   imports: [
     BrowserModule,
@@ -82,7 +80,8 @@ import { ChartsModule } from "ng2-charts"; // <- HERE
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    ChartsModule,
+    ChartsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

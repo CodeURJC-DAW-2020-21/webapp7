@@ -9,7 +9,7 @@ const BASE_URL = '/api/auth';
 @Injectable({ providedIn: 'root' })
 export class LoginService {
 
-  role:string;
+  rol:string;
   logged: boolean;
   user: User;
 
