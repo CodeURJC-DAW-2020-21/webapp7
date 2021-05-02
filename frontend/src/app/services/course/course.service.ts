@@ -1,10 +1,9 @@
-import {Injectable, OnInit} from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+
 import {Course} from '../../models/Course/course.model';
-import {User} from '../../models/User/user.model';
 
 const BASE_URL =  '/api/courses/';
 
@@ -21,9 +20,13 @@ export class CourseService implements OnInit{
   }
 
   // tslint:disable-next-line:typedef
-  addCourse(category: string, ageStart: number,ageEnd: number, instructor: string, price: number): Observable<Course>{
-    return this.http.post(BASE_URL, {category,ageStart, ageEnd, instructor, price}, {withCredentials:true}).pipe(
-    ) as Observable<Course>;
+  addCourse(course: Course){
+
+      return this.http.post(BASE_URL, course)
+        .pipe(
+          catchError(error => this.handleError(error))
+        );
+
   }
 
   getCoursesList() {
@@ -60,13 +63,15 @@ export class CourseService implements OnInit{
   }
 
   // tslint:disable-next-line:typedef
+
   private handleError(error: any) {
-    console.error(error);
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
   }
 
-  postImage (idCourse: number, form: FormData){
-    return this.http.post(BASE_URL + idCourse + 'image', form).pipe(
-    );
+  postImage (course: Course, form: FormData){
+    return this.http.post(BASE_URL + course.id + '/image', form)
+      .pipe(
+        catchError(error => this.handleError(error))
+      );
   }
 }
