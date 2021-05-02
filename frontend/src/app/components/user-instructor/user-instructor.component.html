@@ -4,44 +4,28 @@
 <app-header></app-header>
 
 <!--START BODY-->
-<body style="background-image: url('../../../assets/images/fondo_nuevo.jpg');">
+<body style="background-image: url('../../../assets/images/fondo_nuevo.jpg');" xmlns:th="http://www.w3.org/1999/xhtml">
 <div id="wrapper">
-  <div class="d-flex flex-column" id="content-wrapper">
+  <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
       <nav class="navbar navbar-expand navbar-light bg-white2 topbar mb-4 static-top shadow" id="linea">
         <a class="block-10">
           <a href="index">
-            <img height="80" src="../../../assets/images/LogoMorado.png" width="200">
+            <img src="../../../assets/images/LogoMorado.png" width="200" height="80">
           </a>
         </a>
-        <button aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-                data-target="#ftco-nav" data-toggle="collapse" type="button">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown no-arrow mx-1">
-            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle2" data-toggle="dropdown"
-               href="index" id="messagesDropdown" role="button">
-            </a>
-          </li>
+
+          <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{loginService.user.name}}</span>
           <div class="topbar-divider d-none d-sm-block"></div>
-          <li class="nav-item dropdown no-arrow">
-            <div *ngIf="user">
-              <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle3" data-toggle="dropdown"
-                 href="#" id="userDropdown" role="button">
-                <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{user.name}}</span>
-              </a>
-            </div>
-            <div aria-labelledby="userDropdown"
-                 class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
-              <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="#">
-                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Cerrar Sesión
-              </a>
-            </div>
-          </li>
+          <input type="button" routerLink="/" value="Cerrar sesión" (click)="loginService.logOut()" class="btn btn-secondary"/>
+
         </ul>
       </nav>
+
 
       <!--Start global content-->
       <div class="container-fluid2">
