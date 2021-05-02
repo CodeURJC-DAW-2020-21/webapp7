@@ -25,7 +25,7 @@ export class UserService implements OnInit{
 
   //cuando iniciamos app guardamos la lista de  usuarios
   ngOnInit(){
-    this.getUsersList()
+    this.getUsersList();
   }
 
   // tslint:disable-next-line:typedef

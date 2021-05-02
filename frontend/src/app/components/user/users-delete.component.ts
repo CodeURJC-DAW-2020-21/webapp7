@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
@@ -23,7 +23,7 @@ import {UserService} from '../../services/user/user.service';
   styleUrls: ['../../../assets/css/style.css']
 })
 
-export class UsersDeleteComponent {
+export class UsersDeleteComponent implements OnInit{
   user: User;
   newUser: boolean;
 
@@ -39,14 +39,17 @@ export class UsersDeleteComponent {
     const okResponse = window.confirm('Do you want to remove this user?');
     if (okResponse) {
       let list = this.userService.users;
+      console.log('lista list: ' + list);
       for (let i = 0; i < list.length; i++){
-        if (list[i].email === id){
+        if (list[i].name === id){
           this.userService.removeUser(this.userService.users[i].id);
         }
       }
     }
   }
-
+  ngOnInit() {
+    this.userService.getUsersList();
+  }
 
 }
 
