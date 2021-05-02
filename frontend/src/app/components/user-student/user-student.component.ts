@@ -17,6 +17,7 @@ export class UserStudentComponent implements OnInit {
   materials: Material[];
   recomendation: Material;
   recomendations: Material[];
+  materialDo: Material;
 
   constructor(private router: Router, public materialService: MaterialService, activatedRoute: ActivatedRoute,
               public loginService: LoginService) {
@@ -26,9 +27,26 @@ export class UserStudentComponent implements OnInit {
       error => console.error(error)
     );
     console.log('recomendaciones ' + this.recomendations);
+
+    materialService.getMaterial().subscribe(
+      materials => this.materials = materials,
+      error => console.error(error),
+    );
+    console.log('materials ' + this.materials);
   }
 
   ngOnInit(): void {
+  }
+  doMaterial(event: any, id: number){
+    event.preventDefault();
+    let materialsCheck = this.materials;
+
+    for (let i = 0; i < materialsCheck.length; i++) {
+      if (materialsCheck[i].id === id) {
+        this.materialDo = materialsCheck[i];
+      }
+    }
+    this.materialService.checkMaterial(this.materialDo.id);
   }
 
 }

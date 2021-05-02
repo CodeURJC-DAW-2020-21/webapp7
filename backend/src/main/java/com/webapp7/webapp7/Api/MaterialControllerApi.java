@@ -10,13 +10,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URI;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
@@ -33,8 +36,19 @@ public class MaterialControllerApi {
 
     @JsonView(MaterialBasic.class)
     @GetMapping("/")
-    public ResponseEntity<Collection<Material>> getMaterials() {
+    public ResponseEntity<Collection<Material>> getMaterials(HttpServletRequest request) {
+        Principal principal = request.getUserPrincipal();
+        User user = userService.findByName(principal.getName());
+        Course course = user.getCourse();;
         List<Material> materials = materialService.listMaterials();
+        int i = 0;
+        while (i<materials.size() && !materials.isEmpty()){
+            if (!materials.get(i).getCourse().equals(course)){
+                materials.remove(i);
+            }else{
+                i++;
+            }
+        }
         if (!materials.isEmpty()) {
             return ResponseEntity.ok(materials);
         } else {
@@ -51,6 +65,21 @@ public class MaterialControllerApi {
         material.setCourse(course);
         materialService.save(material);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(material.getId()).toUri()).body(material);
+    }
+    @JsonView(MaterialBasic.class)
+    @GetMapping("/download/{id}")
+    public void downloadImageAdmin(@PathVariable long id, HttpServletResponse response) throws IOException {
+        Optional<Material> result = materialService.findById(id);
+        if (result.isPresent() && result.get().getContent() != null) {
+            Material material = result.get();
+            response.setContentType("application/octet-stream");
+            String headerKey = "Content-Disposition";
+            String headerValue = "attachment; filename=" + material.getName();
+            response.setHeader(headerKey, headerValue);
+            ServletOutputStream outputStream = response.getOutputStream();
+            outputStream.write(material.getContent());
+            outputStream.close();
+        }
     }
 
     @JsonView(MaterialBasic.class)

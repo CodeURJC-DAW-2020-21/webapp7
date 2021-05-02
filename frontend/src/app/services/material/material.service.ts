@@ -29,6 +29,26 @@ export class MaterialService implements OnInit{
       catchError(error => this.handleError(error))
     ) as Observable<Material[]>;
   }
+  public downloadMaterial(id: number){
+    return this.http.get(BASE_URL + 'download/' + id, {withCredentials:true}).pipe(
+      catchError(error => this.handleError(error))
+    ).subscribe(response => {
+      const data: any = response; } );
+  }
+
+  public deleteMaterial(id: number){
+    return this.http.delete(BASE_URL + id, {withCredentials:true}).pipe(
+      catchError(error => this.handleError(error))
+    ).subscribe(response => {
+      const data: any = response; } );
+  }
+
+  public checkMaterial(id: number){
+    return this.http.put(BASE_URL + id, {withCredentials:true}).pipe(
+      catchError(error => this.handleError(error))
+    ).subscribe(response => {
+      const data: any = response; } );
+  }
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
     return Observable.throw('Server error (' + error.status + '): ' + error.text());

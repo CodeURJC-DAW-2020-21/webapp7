@@ -49,8 +49,9 @@
 
                     <li *ngFor="let material of materials">
 
-                      <a routerLink="/download/{{material.id}}">{{material.name}}</a>
-                      <a class="btn py-2 px-2 btn-primary" routerLink="/delete/{{material.id}}">Eliminar</a>
+                      <input type="submit" class="btn py-3 px-4 btn-primary"(click)="downloadMaterial($event,material.id)" value="{{material.name}}" >
+                      <input type="submit" value="Eliminar" class="btn py-3 px-4 btn-primary"
+                             (click)="deleteMaterial($event, material.id)">
                     </li>
                     <br/>
 

@@ -47,8 +47,10 @@
                   <div class="card-body">
 
                     <li *ngFor="let material of materials">
-                      <a href="/download/{{material.id}}">{{material.name}</a>
-                      <a href="/checkbox/{{material.id}}"  class="btn py-2 px-2 btn-primary">¡Hecho!</a>
+
+                      <input type="submit" class="btn py-3 px-4 btn-primary" value="{{material.name}}" >
+                      <input type="submit" value="Hecho!" class="btn py-3 px-4 btn-primary"
+                             (click)="doMaterial($event, material.id)">
                     </li>
                     <br/>
                   </div>
