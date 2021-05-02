@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2442a3b-d4a1-4cd6-ad7e-25cff143b689" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/course/course.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/course/course.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/user-admin/user-admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/user-admin/user-admin.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/comment/comment.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/comment/comment.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/course/course.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/course/course.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/post.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/post/post.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/post/post.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/post/post.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/user/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_04_2021_23_00__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_04_2021_23_00__Default_Changelist_.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

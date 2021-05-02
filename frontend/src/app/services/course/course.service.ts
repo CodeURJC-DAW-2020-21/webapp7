@@ -58,23 +58,15 @@ export class CourseService implements OnInit{
     ).subscribe(response => {
       const data: any = response; } );
   }
-/*
-  public downloadImage(): Observable<Blob> {
-    return this.http.get('/api/courses', responseType, 'blob') as unknown as Observable<Blob>;
-  }
-
- */
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
     console.error(error);
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
   }
+
   postImage (idCourse: number, form: FormData){
-
-    return this.http.post(BASE_URL + idCourse + "/image", form).pipe(
-
+    return this.http.post(BASE_URL + idCourse + 'image', form).pipe(
     );
-
   }
 }

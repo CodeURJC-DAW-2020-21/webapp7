@@ -20,16 +20,14 @@ export class CourseFormComponent {
     private router: Router,
     activatedRoute: ActivatedRoute,
     private courseService: CourseService,
-    public fb: FormBuilder,
-    httpClient: HttpClient)
-  {this.form = this.fb.group({imageFile: [null]});}
+    public fb: FormBuilder,)
+    {this.form = this.fb.group({imageFile: [null]}); }
 
-  ngOnInit(){}
+    // tslint:disable-next-line:typedef
+    ngOnInit(){}
 
-  reLoad(){
-    window.location.reload();
-  }
 
+  // tslint:disable-next-line:typedef
   createCourse(event: any, category: string, ageStart: string, ageEnd: string, instructor: string, price: string){
     event.preventDefault();
     const start = Number(ageStart);
@@ -41,21 +39,23 @@ export class CourseFormComponent {
     );
   }
 
+  // tslint:disable-next-line:typedef
   uploadFile(event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({
       imageFile: file
     });
-    this.form.get('imageFile').updateValueAndValidity()
+    this.form.get('imageFile').updateValueAndValidity();
   }
 
+  // tslint:disable-next-line:typedef
   submitForm() {
-    var formData: any = new FormData();
-    formData.append("imageFile", this.form.get('imageFile').value);
+    const formData: any = new FormData();
+    formData.append('imageFile', this.form.get('imageFile').value);
 
     this.courseService.postImage( 20 , formData).subscribe(
-      (response) =>console.log(this.form.value),
+      (response) => console.log(this.form.value),
       (error) => console.log(error)
-    )
+    );
   }
 }

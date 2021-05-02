@@ -35,19 +35,6 @@ export class CourseDetailsComponent {
       httpClient: HttpClient) {
     }
 
-  // tslint:disable-next-line:typedef
-  /*  removeCourse(event: any, id: string) {
-      event.preventDefault();
-      const okResponse = window.confirm('Do you want to remove this course?');
-      if (okResponse) {
-        const stringToConvert = id;
-        const numberValue = Number(stringToConvert);
-        this.courseService.deleteCourse(numberValue).subscribe(
-          _ => this.router.navigate(['/user-admin']),
-          error => console.error(error)
-        );
-      }
-    }*/
   removeCourse(event: any, id: string) {
     event.preventDefault();
     const okResponse = window.confirm('Do you want to remove this course?');

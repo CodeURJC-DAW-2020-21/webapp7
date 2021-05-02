@@ -26,7 +26,7 @@ import {UserFormComponent} from './components/user/user-form.component';
 import {BlogFormComponent} from './components/blog/blog-form.component';
 import {CourseFormComponent} from './components/course/course-form.component';
 import {CourseDetailsComponent} from './components/course/course-details.component';
-import {UserDetailsComponent} from './components/user/user-details.component';
+import {UsersDeleteComponent} from './components/user/users-delete.component';
 import {UserStudentListComponent} from './components/user/user-student-list.component';
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
@@ -36,8 +36,9 @@ import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
 import { BarChartComponent } from './components/barChart/barChart.component';
-import { ChartsModule } from 'ng2-charts'; // <- HERE
-//import { BarChartComponent } from './components/barChart/barChart.component';
+// @ts-ignore
+import { ChartsModule } from "ng2-charts"; // <- HERE
+
 
 
 @NgModule({
@@ -62,7 +63,7 @@ import { ChartsModule } from 'ng2-charts'; // <- HERE
     BlogFormComponent,
     CourseFormComponent,
     CourseDetailsComponent,
-    UserDetailsComponent,
+    UsersDeleteComponent,
     UserStudentListComponent,
     UserInstructorListComponent,
     CourseListComponent,

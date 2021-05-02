@@ -73,20 +73,7 @@
                     </div>
 
                   <!--DELETE STUDENT/TEACHER FROM COURSE-->
-                    <div class="form-group">
-                      <label class="label" >Borrar alumno/profesor del curso</label>
-                      <form action="/admin/user/deletecourse" method="get" enctype="multipart/form-data">
-                        <div class="form-group">
-                         <input  #course type="text"  class="form-control"/>
-                        </div>
-                        <div class="form-group">
-                          <input #user type="text" class="form-control"/>
-                        </div>
-                        <div class="form-group">
-                          <input type="submit" value="Borrar" class="btn py-3 px-4 btn-primary" >
-                        </div>
-                      </form>
-                    </div>
+                    <app-usersDelete></app-usersDelete>
                   <!--delete user-->
 
                   </div>
