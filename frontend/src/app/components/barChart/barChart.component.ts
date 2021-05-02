@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BarChartService} from 'src/app/services/barChart/barChart.service';
 import {HttpClient} from '@angular/common/http';
-import { User } from 'src/app/models/User/user.model';
+import {User} from 'src/app/models/User/user.model';
+
+const BASE_URL = '/api/materials/';
 
 @Component({
   selector: 'app-bar-chart',
@@ -25,6 +26,7 @@ import { User } from 'src/app/models/User/user.model';
                         [chartType]="chartType">
                       </canvas>
                 </div>
+
               </div>
           </div>
       </div>
@@ -33,55 +35,44 @@ import { User } from 'src/app/models/User/user.model';
   styleUrls: ['../../../assets/css/style.css']
 })
 
-export class BarChartComponent implements OnInit{
-  student:User;
-  students:User[];
+
+export class BarChartComponent implements OnInit {
+  usersData: User[] = [];
+  studentsData: string[] = [];
+  numberMaterialsData: number[] = [];
 
   constructor(
-    private router: Router, activatedRoute: ActivatedRoute, public barChartService: BarChartService,httpClient: HttpClient) {
-
-    /*
-    materialService.getRecomendations().subscribe(
-      recomendations => this.recomendations = recomendations,
-    error => console.error(error)
-  );
-    console.log('recomendaciones ' + this.recomendations);
+    private router: Router, activatedRoute: ActivatedRoute, private http: HttpClient) {
   }
-  */
-     const id = activatedRoute.snapshot.params['id'];
-     barChartService.getStudentsInCourseList().subscribe(
-     users => this.students = users,
-     error => console.error(error)
-   );
-     console.log('users ' + this.students);
-     console.log(this.students)
-   }
 
-   ngOnInit():void{}
-
-  /*printChartStuff(event: any) {
-    event.preventDefault();
-    let list = this.barChartService.users;
-    console.log(list);
-    /*
-    for (let i = 0; i < list.length; i++) {
-      console.log(list[i]);
-      if (list[i].category === id){
-        this.courseService.deleteCourse(this.courseService.courses[i].id);
-    }
-
-
+  ngOnInit() {
+    this.getStudentsInCourseList();
   }
-  */
 
+  public getStudentsInCourseList() {
+    this.http.get<any>(BASE_URL + 'graph').subscribe(
+      response => {
+        let data: any = response;
+        for (var i = 0; i < data.length; i++) {
+          let newUserList = data[i];
+          this.usersData.push(newUserList);
+
+        }
+        for (var i = 0; i < this.usersData.length; i++) {
+          this.numberMaterialsData.push(this.usersData[i].numberMaterial);
+          this.studentsData.push(this.usersData[i].name);
+        }
+      }
+    );
+  }
 
   public chartType: string = 'bar';
 
   public chartDatasets: Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Nº de materiales resueltos'}
+    {data: this.numberMaterialsData, label: 'Nº de materiales resueltos'}
   ];
 
-  public chartLabels: Array<any> = ['student1', 'student2', 'student3', 'student4', 'student5', 'student6'];
+  public chartLabels: Array<any> = this.studentsData;
 
   public chartColors: Array<any> = [
     {

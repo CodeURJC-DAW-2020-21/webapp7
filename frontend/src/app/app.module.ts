@@ -34,9 +34,9 @@ import {LoginComponent} from './components/login/login.component';
 import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
-import { BarChartComponent } from './components/barChart/barChart.component';
 // @ts-ignore
 import { ChartsModule } from "ng2-charts"; // <- HERE
+import { BarChartComponent } from './components/barChart/barChart.component';
 
 
 

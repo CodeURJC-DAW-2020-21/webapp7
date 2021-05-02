@@ -8,5 +8,5 @@ export interface User{
   // imageFile:string;
   image: boolean;
   // finishedMaterials:List<Material>
-  numberMaterials: number;
+  numberMaterial: number;
 }
