@@ -3,6 +3,7 @@ package com.webapp7.webapp7.Api;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.webapp7.webapp7.Service.ImageService;
 import com.webapp7.webapp7.Service.PostService;
+import com.webapp7.webapp7.model.Comment;
 import com.webapp7.webapp7.model.Post;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.hibernate.engine.jdbc.BlobProxy;
@@ -23,6 +24,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
@@ -54,7 +56,16 @@ public class PostControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @JsonView(PostBasic.class)
+    @GetMapping("/all")
+    public ResponseEntity<Collection<Post>> getAllPosts() {
+        List<Post> posts = postService.findAll();
+        if (!posts.isEmpty()) {
+            return ResponseEntity.ok(posts);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
     @JsonView(PostBasic.class)
     @GetMapping("/{id}")
     public ResponseEntity<Post> getPost(@PathVariable long id) {

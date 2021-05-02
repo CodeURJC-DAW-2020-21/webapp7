@@ -13,6 +13,8 @@ const BASE_URL =  '/api/posts/';
 })
 export class PostService {
 
+
+
   constructor(private httpClient: HttpClient) { }
 
 
@@ -20,6 +22,13 @@ export class PostService {
     return this.httpClient.get(BASE_URL).pipe(
             catchError(error => this.handleError(error))
         ) as Observable<Post[]>;
+
+  }
+
+  getNextPosts(): Observable<Post[]> {
+    return this.httpClient.get('/api/posts/all').pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<Post[]>;
   }
 
   getPost(id: number): Observable<Post> {
