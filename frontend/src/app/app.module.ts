@@ -3,7 +3,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-//import { ChartsModule } from 'ng2-charts'; // <- HERE
 // import {Router} from '@angular/router';
 // import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +25,7 @@ import {UserFormComponent} from './components/user/user-form.component';
 import {BlogFormComponent} from './components/blog/blog-form.component';
 import {CourseFormComponent} from './components/course/course-form.component';
 import {CourseDetailsComponent} from './components/course/course-details.component';
-import {UserDetailsComponent} from './components/user/user-details.component';
+import {UsersDeleteComponent} from './components/user/users-delete.component';
 import {UserStudentListComponent} from './components/user/user-student-list.component';
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
@@ -35,9 +34,10 @@ import {LoginComponent} from './components/login/login.component';
 import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
+// @ts-ignore
+import { ChartsModule } from "ng2-charts"; // <- HERE
 import { BarChartComponent } from './components/barChart/barChart.component';
-import { ChartsModule } from 'ng2-charts'; // <- HERE
-//import { BarChartComponent } from './components/barChart/barChart.component';
+
 
 
 @NgModule({
@@ -62,7 +62,7 @@ import { ChartsModule } from 'ng2-charts'; // <- HERE
     BlogFormComponent,
     CourseFormComponent,
     CourseDetailsComponent,
-    UserDetailsComponent,
+    UsersDeleteComponent,
     UserStudentListComponent,
     UserInstructorListComponent,
     CourseListComponent,
@@ -72,7 +72,6 @@ import { ChartsModule } from 'ng2-charts'; // <- HERE
     LoginErrorComponent,
     BarChartComponent
 
-
   ],
   imports: [
     BrowserModule,
@@ -81,7 +80,8 @@ import { ChartsModule } from 'ng2-charts'; // <- HERE
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    ChartsModule,
+    ChartsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

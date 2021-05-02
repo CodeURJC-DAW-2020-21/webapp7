@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Course} from '../../models/Course/course.model';
@@ -14,48 +14,46 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class CourseFormComponent {
   course: Course;
   newCourse: boolean;
-  form: FormGroup;
-
+  @ViewChild("file")
+  file: any;
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
     private courseService: CourseService,
-    public fb: FormBuilder,
-    httpClient: HttpClient)
-  {this.form = this.fb.group({imageFile: [null]});}
+    public fb: FormBuilder,)
+    {}
 
-  ngOnInit(){}
+    // tslint:disable-next-line:typedef
+    ngOnInit(){}
 
-  reLoad(){
-    window.location.reload();
-  }
-
-  createCourse(event: any, category: string, ageStart: string, ageEnd: string, instructor: string, price: string){
-    event.preventDefault();
-    const start = Number(ageStart);
-    const end = Number(ageEnd);
-    const pr = Number(price);
-    this.courseService.addCourse(category, start, end, instructor, pr).subscribe(
-      response => console.log(response),
-      error => console.log(error)
+  // tslint:disable-next-line:typedef
+  createCourse() {
+    this.courseService.addCourse(this.course).subscribe(
+      (course: Course) => this.uploadImage(course),
+      error => alert('Error creating new course: ' + error)
     );
   }
 
-  uploadFile(event) {
-    const file = (event.target as HTMLInputElement).files[0];
-    this.form.patchValue({
-      imageFile: file
-    });
-    this.form.get('imageFile').updateValueAndValidity()
+  uploadImage(course: Course): void {
+
+    const imageFile = this.file.nativeElement.files[0];
+    if (imageFile) {
+      let formData = new FormData();
+      formData.append("imageFile", imageFile);
+      this.courseService.postImage(course, formData).subscribe(
+        _ => this.afterUploadImage(course),
+        error => alert('Error uploading course image: ' + error)
+      );
+    }
+      this.afterUploadImage(course);
+
   }
 
-  submitForm() {
-    var formData: any = new FormData();
-    formData.append("imageFile", this.form.get('imageFile').value);
+  private afterUploadImage(course: Course){
+    this.router.navigate(['/', course.id]);
+  }
 
-    this.courseService.postImage( 20 , formData).subscribe(
-      (response) =>console.log(this.form.value),
-      (error) => console.log(error)
-    )
+  courseImage() {
+    return this.course.imageFile ? '/api/courses/' + this.course.id + '/image' : '/assets/images/no_image.png';
   }
 }

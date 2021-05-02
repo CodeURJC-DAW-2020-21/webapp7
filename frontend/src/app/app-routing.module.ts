@@ -21,7 +21,6 @@ import {UserFormComponent} from './components/user/user-form.component';
 import {BlogFormComponent} from './components/blog/blog-form.component';
 import {CourseFormComponent} from './components/course/course-form.component';
 import {CourseDetailsComponent} from './components/course/course-details.component';
-import {UserDetailsComponent} from './components/user/user-details.component';
 import {UserStudentListComponent} from './components/user/user-student-list.component';
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
@@ -30,6 +29,7 @@ import {Error404Component} from './components/error/error404.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
 import {ErrorComponent} from './components/error/error.component';
 import { BarChartComponent } from './components/barChart/barChart.component';
+import { UsersDeleteComponent } from './components/user/users-delete.component';
 //import { BarChartComponent } from './components/barChart/barChart.component';
 
 const routes: Routes = [
@@ -91,7 +91,7 @@ const routes: Routes = [
     path: 'course-details', component: CourseDetailsComponent,
   },
   {
-    path: 'user-details', component: UserDetailsComponent,
+    path: 'user-delete', component: UsersDeleteComponent,
   },
   {
     path: 'user-student-list', component: UserStudentListComponent,

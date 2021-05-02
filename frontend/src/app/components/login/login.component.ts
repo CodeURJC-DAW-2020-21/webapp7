@@ -21,21 +21,7 @@ user:User;
 
     this.loginService.logIn(user, pass);
 
-    console.log(this.loginService.isAdmin());
-/*
-    //lista de usuarios
-    this.userService.getUser(this.user.id);
-    let users=this.userService.users;
-    for (let i = 0; i < users.length; i++){
-      if (users[i].id === this.loginService.returnId()){
-        this.rol = users[i].rol;
-      }
-    }
-
- */
-
-    //console.log(this.rol);
-    //console.log(this.rol==='administrador');
+    console.log('is student?: ' + this.loginService.isStudent());
 
     if (this.loginService.isAdmin()){
       this.router.navigate(['/user-admin']);
@@ -47,6 +33,9 @@ user:User;
       this.router.navigate(['/user-student']);
     }
 
+  }
+  logOut() {
+    this.loginService.logOut();
   }
 
 }

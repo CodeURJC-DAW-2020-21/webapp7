@@ -9,7 +9,7 @@ const BASE_URL = '/api/auth';
 @Injectable({ providedIn: 'root' })
 export class LoginService {
 
-  role:string;
+  rol:string;
   logged: boolean;
   user: User;
 
@@ -19,7 +19,7 @@ export class LoginService {
 
   reqIsLogged() {
 
-    this.http.get('/api/admin/users/me', { withCredentials: true }).subscribe(
+    this.http.get('/api/auth/me', { withCredentials: true }).subscribe(
       response => {
         this.user = response as User;
         this.logged = true;

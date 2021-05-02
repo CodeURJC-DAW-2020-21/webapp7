@@ -19,27 +19,11 @@
           <span class="oi oi-menu"></span> Menu
         </button>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown no-arrow mx-1">
-            <a class="nav-link dropdown-toggle2" href="index" id="messagesDropdown" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </a>
-          </li>
+
+              <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{loginService.user.name}}</span>
           <div class="topbar-divider d-none d-sm-block"></div>
-          <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <input type="button" routerLink="/" value="Cerrar sesión" (click)="loginService.logOut()" class="btn btn-secondary"/>
 
-              <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{user.name}}</span>
-
-            </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                 aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Cerrar Sesión
-              </a>
-            </div>
-          </li>
         </ul>
       </nav>
 
@@ -116,12 +100,10 @@
                   </div>
                   <div class="card-body">
                     <div class="list-group">
-                      <li *ngFor="let material of materials">
-                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
+                      <li *ngFor="let recomendation of recomendations">
                         <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">{{material.name}}</h5>
+                          <h5 class="mb-1">{{recomendation.name}}</h5>
                         </div>
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -175,13 +157,6 @@
           <p><BR></p>
           <p>¿Estás seguro de querer cerrar sesión?</p>
           <p><BR></p>
-
-        </div>
-        <div class="modal-footer">
-          <form action="/logout" method="post">
-            <input type="submit" value="Sí" class="btn btn-secondary"/>
-          </form>
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
 
         </div>
       </div>
