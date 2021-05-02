@@ -22,10 +22,25 @@
        <input #price type="text"class="form-control"/>
       </div>
 
-      <app-upload-file></app-upload-file>
-
+    <div class="form-group">
+      <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary" (click)="createCourse($event, category.value, ageStart.value, ageEnd.value,instructor.value, price.value)">
+    </div>
       <div class="form-group">
-        <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary" (click)="createCourse($event, category.value, ageStart.value, ageEnd.value,instructor.value, price.value)">
+
+
+        <div class="container">
+          <form [formGroup]="form" (ngSubmit)="submitForm()">
+            <div class="form-group">
+              <input type="file" (change)="uploadFile($event)">
+            </div>
+
+
+
+            <div class="form-group">
+              <button class="btn btn-danger btn-block btn-lg">Create</button>
+            </div>
+          </form>
+        </div>
       </div>
 
   </div>

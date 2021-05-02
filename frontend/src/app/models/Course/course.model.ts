@@ -9,7 +9,7 @@ export interface Course{
   instructor?: string;
   price?: number;
   image?: boolean;
-  imageFile?: any;
+  imageFile: any;
   // students: List<User>;
   //  materials: List<Material>;
 }

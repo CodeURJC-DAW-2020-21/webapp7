@@ -23,7 +23,6 @@ export class CourseService implements OnInit{
   // tslint:disable-next-line:typedef
   addCourse(category: string, ageStart: number,ageEnd: number, instructor: string, price: number): Observable<Course>{
     return this.http.post(BASE_URL, {category,ageStart, ageEnd, instructor, price}, {withCredentials:true}).pipe(
-      catchError(error => this.handleError(error))
     ) as Observable<Course>;
   }
 
@@ -73,8 +72,8 @@ export class CourseService implements OnInit{
   }
   postImage (idCourse: number, form: FormData){
 
-    return this.http.post(BASE_URL + idCourse + '/image', form).pipe(
-      catchError(error => this.handleError(error))
+    return this.http.post(BASE_URL + idCourse + "/image", form).pipe(
+
     );
 
   }
