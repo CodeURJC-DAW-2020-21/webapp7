@@ -30,6 +30,8 @@ import {LoginErrorComponent} from './components/error/loginError.component';
 import {ErrorComponent} from './components/error/error.component';
 import { BarChartComponent } from './components/barChart/barChart.component';
 import { UsersDeleteComponent } from './components/user/users-delete.component';
+import {UserStudentCommentComponent} from './components/user-student/user-student-comment.component';
+import {AdminAddToCourseComponent} from './components/user-admin/user-admin-add.component';
 //import { BarChartComponent } from './components/barChart/barChart.component';
 
 const routes: Routes = [
@@ -117,6 +119,12 @@ const routes: Routes = [
   },
   {
     path: 'bar-chart', component: BarChartComponent,
+  },
+  {
+    path: 'comment', component: UserStudentCommentComponent,
+  },
+  {
+    path: 'add-to-course', component: AdminAddToCourseComponent,
   }
 ];
 

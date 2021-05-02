@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import {Comment} from '../../models/Comment/comment.model';
 import { User } from 'src/app/models/User/user.model';
+import {Course} from '../../models/Course/course.model';
 const BASE_URL =  '/api/comments/';
 // @ts-ignore
 @Injectable({
@@ -31,19 +32,11 @@ export class CommentService {
   }
 
 
-
-  addComment(comment: Comment){
-    if (!comment.id) {
-      return this.httpClient.post(BASE_URL, comment, {withCredentials:true})
-        .pipe(
-          catchError(error => this.handleError(error))
-        );
-    } else {
-      return this.httpClient.put(BASE_URL + comment.id, comment, {withCredentials:true}).pipe(
-        catchError(error => this.handleError(error))
-      );
-    }
+  addComment(name: string, comment: string): Observable<Course>{
+    return this.httpClient.post(BASE_URL, {name, comment}, {withCredentials:true}).pipe(
+    ) as Observable<Course>;
   }
+
 
   // tslint:disable-next-line:typedef
   private handleError(error: any) {

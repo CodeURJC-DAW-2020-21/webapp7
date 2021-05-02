@@ -58,20 +58,7 @@
                       <app-courseDetails></app-courseDetails>
 
                     <!--ADD STUDENT/TEACHER TO A COURSE-->
-                    <div class="form-group">
-                      <label class="label" >Añadir alumno/profesor a curso</label>
-                      <form action="/admin/user/addcourse" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                          <input  #course type="text" class="form-control"/>
-                        </div>
-
-                        <div class="form-group">
-                         <input  #user type="text"class="form-control"/>
-                        </div>
-                        <input type="submit" value="Añadir" class="btn py-3 px-4 btn-primary">
-                      </form>
-                    </div>
-
+                    <app-addToCourse></app-addToCourse>
                   <!--DELETE STUDENT/TEACHER FROM COURSE-->
                     <app-usersDelete></app-usersDelete>
                   <!--delete user-->
@@ -105,12 +92,6 @@
             </div>
             <!--END TIMETABLE-->
 
-            <!--Created a list of course-->
-            <app-courseList></app-courseList>
-            <!--Created a list of instructor-->
-            <app-userInstructorList></app-userInstructorList>
-            <!--Created a list of student-->
-           <app-userStudentList></app-userStudentList>
 
           </div>
           <!--End right side-->

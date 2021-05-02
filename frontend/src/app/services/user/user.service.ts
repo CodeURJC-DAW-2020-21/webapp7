@@ -34,6 +34,14 @@ export class UserService implements OnInit{
     ) as Observable<Course>;
   }
 
+  addUserToCourse(user: User, course: Course){
+    return this.http.put(BASE_URL + user.id + '/course/' + course.id,{withCredentials:true}).pipe(
+    );
+  }
+  deleteFromCourse(user: User, course: Course){
+    return this.http.delete(BASE_URL + user.id + '/course/' + course.id,{withCredentials:true}).pipe(
+    );
+  }
   getUsersList() {
     this.http.get<any>(BASE_URL).subscribe(
       response => {

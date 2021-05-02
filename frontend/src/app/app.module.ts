@@ -35,8 +35,10 @@ import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
 // @ts-ignore
-import { ChartsModule } from "ng2-charts"; // <- HERE
+import { ChartsModule } from 'ng2-charts';
+import {UserStudentCommentComponent} from './components/user-student/user-student-comment.component'; // <- HERE
 import { BarChartComponent } from './components/barChart/barChart.component';
+import {AdminAddToCourseComponent} from './components/user-admin/user-admin-add.component';
 
 
 
@@ -70,7 +72,9 @@ import { BarChartComponent } from './components/barChart/barChart.component';
     Error404Component,
     ErrorComponent,
     LoginErrorComponent,
-    BarChartComponent
+    BarChartComponent,
+    UserStudentCommentComponent,
+    AdminAddToCourseComponent
 
   ],
   imports: [

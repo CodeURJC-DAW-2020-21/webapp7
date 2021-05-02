@@ -59,33 +59,7 @@
 
 
             <!--START OPINIONS-->
-            <div class="row">
-              <div class="col-xl-12 col-lg-12">
-                <div class="card shadow mb-4">
-                  <div class="card-header2 py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold" style="color: black;">¡ESCRIBE TU OPINIÓN DE NUESTRA ACADEMIA!</h6>
-                  </div>
-                  <div class="card-body">
-
-                    <form action="/student/comment/createNew" method="post" enctype="multipart/form-data">
-                      <div class="form-group">
-                        <label for="name">Nombre *</label>
-                        <input class="form-control" id="name" name="name" type="text" placeholder="Nombre de Usuario" />
-                      </div>
-
-                      <div class="form-group">
-                        <label for="opinion"> Comentario *</label>
-                        <input class="form-control" type="text" id="opinion" name="opinion" placeholder="Escribe aqui tu comentario"/>
-                      </div>
-                      <div class="form-group">
-                        <button class="btn btn-primary" type="submit">Publicar</button>
-                      </div>
-                    </form>
-
-                  </div>
-                </div>
-              </div>
-            </div>
+          <app-userStudentComment></app-userStudentComment>
             <!--END OPINIONS-->
           </div>
           <!--END LEFT SIDE-->

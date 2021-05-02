@@ -23,6 +23,12 @@ export class MaterialService implements OnInit{
       catchError(error => this.handleError(error))
     ) as Observable<Material[]>;
   }
+
+  public getMaterial(): Observable<Material[]> {
+    return this.http.get(BASE_URL, {withCredentials:true}).pipe(
+      catchError(error => this.handleError(error))
+    ) as Observable<Material[]>;
+  }
   // tslint:disable-next-line:typedef
   private handleError(error: any) {
     return Observable.throw('Server error (' + error.status + '): ' + error.text());
