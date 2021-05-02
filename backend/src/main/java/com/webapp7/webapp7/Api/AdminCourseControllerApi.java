@@ -110,14 +110,13 @@ public class AdminCourseControllerApi {
 
             URI location = fromCurrentRequest().build().toUri();
 
-            if (!imageFile.isEmpty()) {
+            if (imageFile.isEmpty()) {
                 course.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
                 course.setImage(true);
             }
-            courseService.save(course);
 
             imgService.saveImage(COURSES_FOLDER, course.getId(), imageFile);
-
+            courseService.save(course);
             return ResponseEntity.created(location).build();
 
         } else {

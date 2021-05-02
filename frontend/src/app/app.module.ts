@@ -35,7 +35,6 @@ import {LoginComponent} from './components/login/login.component';
 import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
-import { UploadFileComponent } from './upload-file/upload-file.component';
 import { BarChartComponent } from './components/barChart/barChart.component';
 import { ChartsModule } from 'ng2-charts'; // <- HERE
 //import { BarChartComponent } from './components/barChart/barChart.component';
@@ -71,7 +70,6 @@ import { ChartsModule } from 'ng2-charts'; // <- HERE
     Error404Component,
     ErrorComponent,
     LoginErrorComponent,
-    UploadFileComponent,
     BarChartComponent
 
 
