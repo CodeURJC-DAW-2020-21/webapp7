@@ -90,17 +90,7 @@ public class AdminUserControllerApi {
         userService.save(user);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(user.getId()).toUri()).body(user);
     }
-    @GetMapping("/me")
-    public ResponseEntity<User> me(HttpServletRequest request) {
 
-        Principal principal = request.getUserPrincipal();
-
-        if(principal != null) {
-            return ResponseEntity.ok(userService.findByName(principal.getName()));
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
 
     @JsonView(AdminCourseControllerApi.CourseBasic.class)
     @GetMapping("/{id}/image")

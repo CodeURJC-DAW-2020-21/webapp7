@@ -1,8 +1,10 @@
 import { Course } from '../Course/course.model';
+import {User} from '../User/user.model';
 
 export interface Material{
-  id: number;
+  id?: number;
   name: string;
-  // content:bytes;
+  users: User[];
+  content: any;
   course: Course;
 }

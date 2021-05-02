@@ -46,5 +46,15 @@ public class LoginControllerApi {
         return ResponseEntity.ok(new AuthResponse(Status.SUCCESS, userService.logout(request, response)));
     }
 
+    @GetMapping("/me")
+    public ResponseEntity<User> me(HttpServletRequest request) {
 
+        Principal principal = request.getUserPrincipal();
+
+        if(principal != null) {
+            return ResponseEntity.ok(service.findByName(principal.getName()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

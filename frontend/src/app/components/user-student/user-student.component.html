@@ -29,7 +29,7 @@
             <a class="nav-link dropdown-toggle3" href="#" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-              <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{user.name}}</span>
+              <span class="mr-2 d-inline d-lg-inline text-black-600" style="color: white;">{{loginService.user.name}}</span>
 
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -116,12 +116,10 @@
                   </div>
                   <div class="card-body">
                     <div class="list-group">
-                      <li *ngFor="let material of materials">
-                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"href="#" data-toggle="modal" data-target="#class">
+                      <li *ngFor="let recomendation of recomendations">
                         <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">{{material.name}}</h5>
+                          <h5 class="mb-1">{{recomendation.name}}</h5>
                         </div>
-                      </a>
                     </div>
                   </div>
                 </div>

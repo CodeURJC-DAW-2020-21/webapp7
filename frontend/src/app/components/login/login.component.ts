@@ -21,7 +21,7 @@ user:User;
 
     this.loginService.logIn(user, pass);
 
-    console.log(this.loginService.isAdmin());
+    console.log('is student?: ' + this.loginService.isStudent());
 /*
     //lista de usuarios
     this.userService.getUser(this.user.id);
