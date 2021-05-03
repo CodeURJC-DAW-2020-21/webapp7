@@ -49,30 +49,32 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="name">Nombre y apellidos</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                        <!-- <input type="text" name="fullNname" id="fullName" [(ngModel)]="user.name"  placeholder="Nombre Completo" />-->
+                        <input #nombre type="text" class="form-control" name="name" id="name" placeholder="Name">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="email">Dirección de email </label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        <input #email type="email" class="form-control" name="email" id="email" placeholder="Email">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="subject">Asunto</label>
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                        <input #asunto type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="label" for="content">Mensaje</label>
-                        <textarea name="content" class="form-control" id="content" cols="30" rows="4" placeholder="Message"></textarea>
+                        <input #contenido name="content" class="form-control" id="content" cols="30" rows="4" placeholder="Message">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
+                        <input type="submit" value="Enviar Mensaje" class="btn btn-primary"
+                        (click)="createEmail($event,nombre.value,email.value,asunto.value,contenido.value)">
                         <div class="submitting"></div>
                       </div>
                     </div>

@@ -22,6 +22,7 @@ export class UserStudentComponent implements OnInit {
   constructor(private router: Router, public materialService: MaterialService, activatedRoute: ActivatedRoute,
               public loginService: LoginService) {
     const id = activatedRoute.snapshot.params['id'];
+
     materialService.getRecomendations().subscribe(
       recomendations => this.recomendations = recomendations,
       error => console.error(error)

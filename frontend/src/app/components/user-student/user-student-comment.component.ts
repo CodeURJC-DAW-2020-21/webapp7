@@ -1,10 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
-import {User} from '../../models/User/user.model';
-import {UserService} from '../../services/user/user.service';
-import {LoginService} from '../../services/login/login.services';
-import {CourseService} from '../../services/course/course.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {CommentService} from '../../services/comment/comment.services';
 
@@ -49,14 +44,16 @@ export class UserStudentCommentComponent {
   comment: Comment;
   newComment: boolean;
   form: FormGroup;
+
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
     private commentService: CommentService,
-    public fb: FormBuilder)
-  { }
+    public fb: FormBuilder) {
+  }
+
   // tslint:disable-next-line:typedef
-  createComment(event: any, name: string, comment: string){
+  createComment(event: any, name: string, comment: string) {
     event.preventDefault();
     this.commentService.addComment(name, comment).subscribe(
       response => console.log(response),
