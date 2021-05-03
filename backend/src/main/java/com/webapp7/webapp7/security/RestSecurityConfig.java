@@ -62,8 +62,6 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         //  Permitted only to instructor
-        //http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/materials/").hasRole("profesor");
-        //http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/materials/**").hasRole("profesor");
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/materials/graph").hasRole("profesor");
 
         //  Permitted only to student

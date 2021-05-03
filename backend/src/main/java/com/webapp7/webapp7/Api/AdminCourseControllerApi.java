@@ -131,13 +131,7 @@ public class AdminCourseControllerApi {
         }
     }
 
-   /* @JsonView(CourseBasic.class)
-    @GetMapping("/{id}/image")
-    public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException {
-        return this.imgService.createResponseFromImage(COURSES_FOLDER, id);
 
-
-    }*/
     @JsonView(CourseBasic.class)
     @GetMapping("/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException, SQLException {

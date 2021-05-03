@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.security.Principal;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
@@ -104,16 +105,27 @@ public class AdminUserControllerApi {
     }
 
 
-    @JsonView(AdminCourseControllerApi.CourseBasic.class)
+    @JsonView(UserBasic.class)
     @GetMapping("/{id}/image")
-    public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException, SQLException {
-        Optional<User> user = userService.findById(id);
-        if (user.isPresent() && user.get().getImageFile() != null) {
+    public ResponseEntity<Object> downloadImage(@PathVariable long id, @RequestParam MultipartFile imageFile) throws IOException, SQLException {
 
-            Resource file = new InputStreamResource(user.get().getImageFile().getBinaryStream());
+        User user = userService.findById(id).orElseThrow(null);
 
-            return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
-                    .contentLength(user.get().getImageFile().length()).body(file);
+        if (user != null) {
+
+            URI location = fromCurrentRequest().build().toUri();
+
+            if (imageFile.isEmpty()) {
+                user.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
+                user.setImage(true);
+            }
+
+            imgService.saveImage(USERS_FOLDER, user.getId(), imageFile);
+            byte[] bytes = imageFile.getBytes();
+            Blob blob = new javax.sql.rowset.serial.SerialBlob(bytes);
+            user.setImageFile(blob);
+            userService.save(user);
+            return ResponseEntity.created(location).build();
 
         } else {
             return ResponseEntity.notFound().build();
