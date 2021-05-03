@@ -459,7 +459,7 @@ To run the app follow the next steps
 - Step 3: Open terminal
 - Step 4: Get into directory webapp7 ```cd C:\{your download path}\webapp7```
 - Step 5: Build image in docker container typing in your cmd ```.\DockerFiles\create_image.bat ```
-- Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app! & to check it out on angular type https://localhost:8443/new !
+- Step 6: Type in your browser https://localhost:8443/ and voilà you should be able to see the app! & to check it out on angular type https://localhost:8443/new !
 
 ### Classes and templates Diagram:
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/diagramPhase4.jpg)
