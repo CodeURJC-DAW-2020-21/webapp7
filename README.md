@@ -465,7 +465,7 @@ To run the app follow the next steps
 - Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app!
 
 ### Classes and templates Diagram:
-![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/Nav_Diagram_Fase30.png)
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/diagramPhase4.jpg)
 
 ### Demo video:
 
