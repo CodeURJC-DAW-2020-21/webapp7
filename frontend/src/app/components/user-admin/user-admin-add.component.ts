@@ -21,7 +21,7 @@ template: `<!--START STUDENTS LIST-->
     <div class="form-group">
       <input  #user type="text"class="form-control" placeholder="nombre del usuario"/>
     </div>
-    <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary"
+    <input type="submit" value="añadir" class="btn py-3 px-4 btn-primary"
            (click)="addToCourse($event, course.value, user.value)">
   </form>
 </div>
@@ -35,7 +35,7 @@ template: `<!--START STUDENTS LIST-->
     <div class="form-group">
       <input  #userDelete type="text"class="form-control" placeholder="nombre del usuario"/>
     </div>
-    <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary"
+    <input type="submit" value="borrar" class="btn py-3 px-4 btn-primary"
            (click)="deleteFromCourse($event, courseDelete.value, userDelete.value)">
   </form>
 </div>

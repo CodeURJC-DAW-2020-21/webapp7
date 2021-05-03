@@ -48,7 +48,7 @@
 
                     <li *ngFor="let material of materials">
 
-                      <input type="submit" class="btn py-3 px-4 btn-primary" value="{{material.name}}" >
+                      <a>{{material.name}}</a>
                       <input type="submit" value="Hecho!" class="btn py-3 px-4 btn-primary"
                              (click)="doMaterial($event, material.id)">
                     </li>
