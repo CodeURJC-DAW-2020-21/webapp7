@@ -19,8 +19,9 @@ export class BlogComponent  {
   posts: Post[];
   restOfPosts: Post[];
   copy:Post[];
-  done:boolean;
-
+  onlyPost:Post;
+  id:number;
+  nextPage:number=1;
 
   public showLoadMore = false;
   public postNumber: number;
@@ -37,12 +38,18 @@ export class BlogComponent  {
       posts => this.posts = posts,
       error => console.error(error)
     );
-    this.done=false;
+
+  }
+
+  getPost(id:number){
+    this.postService.getPost(id).subscribe(
+      onlyPost => this.onlyPost = onlyPost,
+      error => console.error(error)
+    );
   }
 
   loadMore():void {
-    if(this.done==false){
-      this.http.get<any>('/api/posts/all').subscribe(
+      this.http.get<any>('/api/posts/?Page='+this.nextPage).subscribe(
         response => {
           let data: any = response;
           for (var i = 0; i < data.length; i++) {
@@ -51,35 +58,6 @@ export class BlogComponent  {
           }
         }
       );
-      this.done=true;
-    }
-    /*
-      this.copy=this.posts;
-      for (var i = 3; i <= this.copy.length; i++) {
-        this.posts.pop();
-      }
-      console.log(this.posts);
-
-     */
-
-
-    /*
-    let printContents, popupWin;
-    printContents = document.getElementById('loadArea').innerHTML;
-    printContents.write(`
-      <div  *ngFor="let post of restOfPosts">
-          <div class="col-lg-4 ftco-animate" >
-            <div class="blog-entry">
-              <img src="/post/{{post.id}}/image" class="block-20" >
-              <div class="text d-block">
-                <h3 class="heading"><a href="post/{{post.id}}">{{morePostsData.title}}</a></h3>
-                <p>{{morePostsData.description}}</p>
-                <p><a href="post/{{post.id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
-              </div>
-            </div>
-          </div>
-        </div>`
-    );
-    */
+    this.nextPage++;
   }
 }

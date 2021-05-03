@@ -36,7 +36,7 @@ export class UserInstructorComponent implements OnInit {
   }
 
   updateMaterial() {
-    this.materialService.addMaterial(this.material).subscribe(
+    this.materialService.addMaterial({name:" "}).subscribe(
       (material: Material) => this.uploadElement(material),
       error => alert('Error creating new course: ' + error)
     );
@@ -46,7 +46,7 @@ export class UserInstructorComponent implements OnInit {
     const content = this.file.nativeElement.files[0];
     if (content) {
       let formData = new FormData();
-      formData.append("imageFile", content);
+      formData.append("multipartFile", content);
       console.log(formData);
       this.materialService.postElement(material, formData).subscribe(
         _ => this.afterUploadElement(material),

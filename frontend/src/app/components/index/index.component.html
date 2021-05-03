@@ -7,19 +7,19 @@
 <!--START NAVBAR-->
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container">
-    <a class="block-10"href="index.html"><img src="../../../assets/images/LogoMorado.png" width="200" height="80"></a>
+    <a class="block-10"routerLink="index.html"><img src="../../../assets/images/LogoMorado.png" width="200" height="80"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> Menu
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto pl-auto">
-        <li class="nav-item active"><a href="index" class="nav-link">Inicio</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link">Sobre Nosotros</a></li>
-        <li class="nav-item"><a href="/course" class="nav-link">Cursos</a></li>
-        <li class="nav-item"><a href="/instructor" class="nav-link">Profesores</a></li>
-        <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link">Contáctanos</a></li>
-        <li class="nav-item"><a href="/login" class="nav-link">Inicio de Sesión</a></li>
+        <li class="nav-item active"><a routerLink="index" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a routerLink="/about" class="nav-link">Sobre Nosotros</a></li>
+        <li class="nav-item"><a routerLink="/course" class="nav-link">Cursos</a></li>
+        <li class="nav-item"><a routerLink="/instructor" class="nav-link">Profesores</a></li>
+        <li class="nav-item"><a routerLink="/blog" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a routerLink="/contact" class="nav-link">Contáctanos</a></li>
+        <li class="nav-item"><a routerLink="/login" class="nav-link">Inicio de Sesión</a></li>
       </ul>
     </div>
   </div>
@@ -73,7 +73,7 @@
         superan los 12 niños, para que el la atención a los niños sea más personalizada</h3>
     </div>
     <div class="col-md-12 text-center mt-5">
-      <a href="course" class="btn btn-secondary">Ver Todos Nuestros Cursos</a>
+      <a routerLink="course" class="btn btn-secondary">Ver Todos Nuestros Cursos</a>
     </div>
   </div>
 </section>
@@ -100,7 +100,7 @@
               <div class="col-md-12 heading-section ftco-animate">
                 <span class="subheading">Mejora las habilidades de tus hijos</span>
                 <h2 class="mb-4">Consúltanos cualquier duda, y estaremos encantados de responderle.</h2>
-                <p><a href="contact" class="btn btn-primary">Contacta Con Nosotros</a></p>
+                <p><a routerLink="contact" class="btn btn-primary">Contacta Con Nosotros</a></p>
               </div>
             </div>
           </div>
@@ -129,9 +129,9 @@
           <div class="blog-entry">
             <img src="/api/posts/{{post.id}}/image" class="block-20" >
             <div class="text d-block">
-              <h3 class="heading"><a href="post/{{post.id}}">{{post.title}}</a></h3>
+              <h3 class="heading"><a routerLink="post/{{post.id}}">{{post.title}}</a></h3>
               <p>{{post.description}}</p>
-              <p><a href="post/{{post.id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
+              <p><a routerLink="post/{{post.id}}" class="btn btn-secondary py-2 px-3">Leer más</a></p>
             </div>
           </div>
         </div>

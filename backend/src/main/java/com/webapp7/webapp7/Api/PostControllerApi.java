@@ -57,26 +57,9 @@ public class PostControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
-    @JsonView(PostBasic.class)
-    @GetMapping("/all")
-    public ResponseEntity<Collection<Post>> getAllPosts() {
-        List<Post> posts = postService.listPosts();
-        ArrayList<Post> copy = new ArrayList<>();
-        copy.addAll(posts);
-        if (!posts.isEmpty() && copy.size()>3) {
-            copy.remove(0);
-            copy.remove(0);
-            copy.remove(0);
-            return ResponseEntity.ok(copy);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-        /*while(!copy.isEmpty()){
-            copy.remove(0);
-        }
 
-         */
-    }
+
+
     @JsonView(PostBasic.class)
     @GetMapping("/{id}")
     public ResponseEntity<Post> getPost(@PathVariable long id) {
