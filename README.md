@@ -457,12 +457,9 @@ To run the app follow the next steps
 - Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)
 - Step 2: download project in github [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip )
 - Step 3: Open terminal
-- Step 4: Login dockerized database```docker run --rm -e MYSQL_ROOT_PASSWORD=webapp7 -e MYSQL_DATABASE=kiddyshouse -p 3306:3306 -d mysql:8.0.22```
-- Step 5: Get into directory DockerFiles ```cd C:\{your download path}\webapp7\DockerFiles```
-- Step 6: Build image in docker```docker build -t webapp7/webapp7 . ```
-- Step 7: Push previous image in dockerHub```docker push webapp7/webapp7:latest ```
-- Step 8: ```docker-compose up ```
-- Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app!
+- Step 4: Get into directory webapp7 ```cd C:\{your download path}\webapp7```
+- Step 5: Build image in docker container typing in your cmd ```.\DockerFiles\create_image.bat ```
+- Step 9: Type in your browser https://localhost:8443/ and voilà you should be able to see the app! & to check it out on angular type https://localhost:8443/new !
 
 ### Classes and templates Diagram:
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/diagramPhase4.jpg)
