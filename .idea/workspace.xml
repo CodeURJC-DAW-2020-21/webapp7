@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c2442a3b-d4a1-4cd6-ad7e-25cff143b689" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_04_2021_23_00__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_04_2021_23_00__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DockerFiles/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/DockerFiles/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DockerFiles/Dockerfile.1" beforeDir="false" afterPath="$PROJECT_DIR$/DockerFiles/Dockerfile.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DockerFiles/create_image.bat" beforeDir="false" afterPath="$PROJECT_DIR$/DockerFiles/create_image.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DockerFiles/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/DockerFiles/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/webapp7/webapp7/controller/SPAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/webapp7/webapp7/controller/SPAController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/user-instructor/user-instructor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/user-instructor/user-instructor.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -60,6 +68,19 @@
       <recent name="C:\Users\Pc\IdeaProjects\webapp7\frontend\src\assets\images" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,6 +92,7 @@
       <workItem from="1619713043924" duration="505000" />
       <workItem from="1619713578205" duration="63000" />
       <workItem from="1619813082301" duration="12000" />
+      <workItem from="1620055215267" duration="20556000" />
     </task>
     <servers />
   </component>
