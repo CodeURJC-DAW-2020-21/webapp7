@@ -14,15 +14,17 @@ import { catchError } from 'rxjs/operators';
   styleUrls: ['../../../assets/css/style.css']
 })
 
-export class BlogComponent implements OnInit {
+export class BlogComponent  {
   post: Post;
   posts: Post[];
   restOfPosts: Post[];
-  morePostsData: Post[];
-  otherPost:Post;
+  copy:Post[];
+  done:boolean;
+
+
   public showLoadMore = false;
   public postNumber: number;
-  public htmlYouWantToAdd:string;
+  public load:string;
 
   constructor(private router: Router,
               public postService: PostService,
@@ -35,43 +37,32 @@ export class BlogComponent implements OnInit {
       posts => this.posts = posts,
       error => console.error(error)
     );
-  }
-
-  ngOnInit(): void { this.getNextPosts();
-  console.log( this.morePostsData);
-  }
-
-  getNextPosts()  {
-    this.http.get<any>('/api/posts/all').subscribe(
-      response => {
-        let data: any = response;
-        for (var i = 0; i < data.length; i++) {
-          let newUserList = data[i];
-          this.morePostsData.push(newUserList);
-        }
-      }
-    );
+    this.done=false;
   }
 
   loadMore():void {
-    //cargamos los datos de la api rest
+    if(this.done==false){
+      this.http.get<any>('/api/posts/all').subscribe(
+        response => {
+          let data: any = response;
+          for (var i = 0; i < data.length; i++) {
+            let newUserList = data[i];
+            this.posts.push(newUserList);
+          }
+        }
+      );
+      this.done=true;
+    }
     /*
-    */
+      this.copy=this.posts;
+      for (var i = 3; i <= this.copy.length; i++) {
+        this.posts.pop();
+      }
+      console.log(this.posts);
 
-    //los incrustamos en el #load area del html
+     */
 
-    this.htmlYouWantToAdd = "<div  *ngFor=\"let otherPost of morePostsData\">\n" +
-      "          <div class=\"col-lg-4 ftco-animate\" >\n" +
-      "            <div class=\"blog-entry\">\n" +
-      "              <img src=\"/post/{{otherPost.id}}/image\" class=\"block-20\" >\n" +
-      "              <div class=\"text d-block\">\n" +
-      "                <h3 class=\"heading\"><a href=\"post/{{otherPost.id}}\">{{otherPost.title}}</a></h3>\n" +
-      "                <p>{{otherPost.description}}</p>\n" +
-      "                <p><a href=\"post/{{otherPost.id}}\" class=\"btn btn-secondary py-2 px-3\">Leer más</a></p>\n" +
-      "              </div>\n" +
-      "            </div>\n" +
-      "          </div>\n" +
-      "        </div>"
+
     /*
     let printContents, popupWin;
     printContents = document.getElementById('loadArea').innerHTML;
