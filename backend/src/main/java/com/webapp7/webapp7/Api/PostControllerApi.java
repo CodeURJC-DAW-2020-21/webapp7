@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -59,12 +60,22 @@ public class PostControllerApi {
     @JsonView(PostBasic.class)
     @GetMapping("/all")
     public ResponseEntity<Collection<Post>> getAllPosts() {
-        List<Post> posts = postService.findAll();
-        if (!posts.isEmpty()) {
-            return ResponseEntity.ok(posts);
+        List<Post> posts = postService.listPosts();
+        ArrayList<Post> copy = new ArrayList<>();
+        copy.addAll(posts);
+        if (!posts.isEmpty() && copy.size()>3) {
+            copy.remove(0);
+            copy.remove(0);
+            copy.remove(0);
+            return ResponseEntity.ok(copy);
         } else {
             return ResponseEntity.notFound().build();
         }
+        /*while(!copy.isEmpty()){
+            copy.remove(0);
+        }
+
+         */
     }
     @JsonView(PostBasic.class)
     @GetMapping("/{id}")
