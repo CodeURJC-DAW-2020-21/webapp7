@@ -5,10 +5,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../services/user/user.service';
 import {HttpClient} from '@angular/common/http';
 import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
-import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
-import { of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-import { UploadService} from '../../services/upload.service';
+import {LoginService} from '../../services/login/login.services';
+
 
 
 
@@ -32,14 +30,14 @@ export class UserAdminComponent{
   @ViewChild("fileUpload", {static: false}) fileUpload: ElementRef;files  = [];
   constructor(
     private router: Router,
-    private uploadService: UploadService,
     activatedRoute: ActivatedRoute,
     private userService: UserService,
-    httpClient: HttpClient) {
+    httpClient: HttpClient, public loginService: LoginService) {}
 
 
 
-
+/*
+  ESTO ES ANTIGUOO
     //get course id
     //return http.put en servicio que corresponde con AdminUserController Api
 
@@ -68,48 +66,8 @@ export class UserAdminComponent{
       error => alert('Error creating new book: ' + error)
     );
 
-  }
-  uploadFile(file) {
-    const formData = new FormData();
-    formData.append('file', file.data);
-    file.inProgress = true;
-    this.uploadService.upload(formData).pipe(
-      map(event => {
-        switch (event.type) {
-          case HttpEventType.UploadProgress:
-            file.progress = Math.round(event.loaded * 100 / event.total);
-            break;
-          case HttpEventType.Response:
-            return event;
-        }
-      }),
-      catchError((error: HttpErrorResponse) => {
-        file.inProgress = false;
-        return of(`${file.data.name} upload failed.`);
-      })).subscribe((event: any) => {
-      if (typeof (event) === 'object') {
-        console.log(event.body);
-      }
-    });
-  }
-  private uploadFiles() {
-    this.fileUpload.nativeElement.value = '';
-    this.files.forEach(file => {
-      this.uploadFile(file);
-    });
-  }
+  }*/
 
-  onClick() {
-    const fileUpload = this.fileUpload.nativeElement;fileUpload.onchange = () => {
-      for (let index = 0; index < fileUpload.files.length; index++)
-      {
-        const file = fileUpload.files[index];
-        this.files.push({ data: file, inProgress: false, progress: 0});
-      }
-      this.uploadFiles();
-    };
-    fileUpload.click();
-  }
 
 
 }

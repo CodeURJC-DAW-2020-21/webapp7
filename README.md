@@ -449,3 +449,130 @@ To run the app follow the next steps
     4. [AdminCourseControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminCourseControllerApi.java)
     5. [AdminUserControllerApi](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/backend/src/main/java/com/webapp7/webapp7/Api/AdminUserControllerApi.java)
 
+## Phase 4:  Web SPA.
+In this last phase, we have created the frontend of the application using Angular and SPA. We have divided each template in components that interact with their corresponding services. This services communicate with the backend of the application, making the frontend have all of the API resources. We have also changed the DockerFiles to adapt them to this new frontend.
+
+### Executing Dockerized app :
+To run the app follow the next steps
+- Step 1: Install docker desktop and docker compose [click here](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)
+- Step 2: download project in github [click here](https://github.com/CodeURJC-DAW-2020-21/webapp7/archive/refs/heads/main.zip )
+- Step 3: Open terminal
+- Step 4: Get into directory webapp7 ```cd C:\{your download path}\webapp7```
+- Step 5: Build image in docker container typing in your cmd ```.\DockerFiles\create_image.bat ```
+- Step 6: Type in your browser https://localhost:8443/ and voilà you should be able to see the app! & to check it out on angular type https://localhost:8443/new !
+
+### Classes and templates Diagram:
+![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/diagramPhase4.jpg)
+
+### Demo video: https://www.youtube.com/watch?v=hcWhpcZk8SE
+
+## Authors' Participation:
+- Caridad Arias Pradas
+  - TASKS:
+    - Login
+    - withCredentials: true/false
+    - Upload images
+    - Upload material
+    - Create angular form
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/ad79d8c1292773c0238df08ebfc389f3cd7679b2)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/de8049cc4a7ab2ab67dcdd048e71455d66002215)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/3be9e9bbb6d54fa2e3a942e12389ce117bb458c6)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/39733c8f75c9ea53726296e87facaaba9ebddc74)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/e23d986da94926fa547b0dd322ad949853356485)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [Comment.services.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/comment/comment.services.ts) 
+    2. [Course.service.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blame/main/frontend/src/app/services/course/course.service.ts)
+    3. [User-admin.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/user-admin/user-admin.component.ts)
+    4. [User-form.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/user/user-form.component.ts)
+    5. [Login.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/login/login.component.ts)
+   
+  - Miriam de Francisco Alonso
+   - TASKS:
+     - Add and delete users from courses
+     - Delete courses and users
+     - Fix errors in API files
+     - Delete and show material and recommendations
+     - Check finished material by users 
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/7093b56e623afcdac0700881e6f41b041b797c4e)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/5916bfa8dd3bf727ecff5f5d6504cf22cf7a5fe2)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/f7aa20088ecb22e8aaaccd94ceb122a5c2dee269)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/773f8cf7eb13fe5d3abba60bc34b8dee4bc283fc)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/44d8094634ea06e18b65fbe2fa424b640d81fc2c)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [User-instructor.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/user-instructor/user-instructor.component.ts) 
+    2. [User-instructor.component.html](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/user-instructor/user-instructor.component.html)
+    3. [Material.service.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/material/material.service.ts)
+    4. [Users-delete.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/user/users-delete.component.ts)
+    5. [Blog.component](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/blog/blog.component.html)
+    
+- Alba Sevillano Portilla:
+  - TASKS:
+    - Login
+    - Delete users 
+    - Upload images
+    - Upload material
+    - Create angular form
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/949467f406822f121f499c69967431b7564f61c4)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/062d1920cf37742491f7ef29473298a15826be01)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/a71f954664c46dae13abf21a4835b62be93c19a4)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/ad79d8c1292773c0238df08ebfc389f3cd7679b2)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/ad4ad9c01809580baf70602e720e0d129d1bc747)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [Material.service.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/material/material.service.ts) 
+    2. [BlogSingle.component.html](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/blogSingle/blogSingle.component.html)
+    3. [BlogSingle.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/blogSingle/blogSingle.component.ts)
+    4. [User.service.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/user/user.service.ts)
+    5. [Post.service.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/post/post.service.ts)
+     
+- Jesús Sebastián Tocas Atarama:
+  - TASKS:
+    - BarChart
+    - Index
+    - Comments on about
+    - Ajax
+    - Dockerize app
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/e4454d5b9289d901fdd4994d0da779b046fe834a)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/4190558a723f84d374058441c39e2b72b0aa4427)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/c72ee81d40c9c13d69160f6d7b340769559e7c19)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/7096006bd8339b484ce76ba28fa1b747b8438fe8)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/5386866aaa8c03652ae83b89cd0d4d2bbd643ae6)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [User.service.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/user/user.service.ts) 
+    2. [Instructor.component.html](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/instructor/instructor.component.html)
+    3. [Instructor.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/instructor/instructor.component.ts)
+    4. [Index.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/index/index.component.ts)
+    5. [About.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/about/about.component.ts)
+  
+- Deborah Israel Villanueva:
+   - TASKS:
+     - BarChart
+     - Ajax
+     - Dockerize app
+     - Login
+     - Create users
+    
+  - TOP 5 MOST IMPORTANT COMMITS IN 'THIRD PHASE':
+    - [Commit 1](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/f2193063e7a353a35620c0a6794f03c6fc3fe603)
+    - [Commit 2](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/8544ed515ed641367bd61c2b7e800c813e9e9406)
+    - [Commit 3](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/2c2e8d93c1a804915d8ff2b0d1763226a8fba642)
+    - [Commit 4](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/50e8235546aca1c14639d26aafae77dd4ad5c844)
+    - [Commit 5](https://github.com/CodeURJC-DAW-2020-21/webapp7/commit/5386866aaa8c03652ae83b89cd0d4d2bbd643ae6)
+    
+  - TOP 5 MOST MODIFIED FILES:
+    1. [Email.service.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/email/email.service.ts) 
+    2. [Comment.services.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/comment/comment.services.ts)
+    3. [User-instructor.component.html](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/user-instructor/user-instructor.component.html)
+    4. [User-instructor.component.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/components/user-instructor/user-instructor.component.ts)
+    5. [Post.service.ts](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/frontend/src/app/services/post/post.service.ts)

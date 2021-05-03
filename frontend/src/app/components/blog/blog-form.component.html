@@ -7,22 +7,26 @@
       </div>
       <div class="card-body">
         <form action="/admin/post/createNew" method = "post"  enctype="multipart/form-data">
-          <div *ngIf="post">
+          <div>
 
-            <div class="form-group">
+            <div>
               <label >Título</label>
-              <input  [(ngModel)]="post.title" type="text" class="form-control" >
+              <input type="string" name="title" id="title" [(ngModel)]="post.title" placeholder="Titulo"  />
             </div>
-            <div class="form-group">
+            <div>
               <label class="label" >Descripción</label>
-              <input  [(ngModel)]="post.description"  type="text" class="form-control" >
+              <input type="string" name="description" id="description" [(ngModel)]="post.description" placeholder="Descripcion"  />
             </div>
 
           </div>
-          <input type='file' name='imageField' accept=".jpg, .jpeg" />
-
-          <div class="form-group">
-            <input type="submit" value="Post" class="btn py-3 px-4 btn-primary">
+          <div>
+            <ng-template [ngIf]="post.id">
+              <label>Upload image: </label><br>
+            </ng-template>
+            <input #file type='file' name='imageFile' accept=".jpg, .jpeg"  placeholder="Imagen"/>
+          </div>
+          <div >
+            <input type="submit" value="Crear" class="btn py-3 px-4 btn-primary" (click)="createPost()">
           </div>
         </form>
       </div>

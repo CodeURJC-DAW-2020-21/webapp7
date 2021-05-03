@@ -61,4 +61,8 @@ public class PostService {
             }
         }
     }
+
+    public List<Post>  findAll() {
+        return posts.findAll();
+    }
 }

@@ -13,6 +13,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -20,6 +21,8 @@ public class UserService {
     public Optional<User> findById(long id) {
         return userRepository.findById(id);
     }
+
+    public List<User> findByRol(String rol){return userRepository.findByRol(rol);}
 
     public User findByName(String name) {
         return userRepository.selectByName(name);

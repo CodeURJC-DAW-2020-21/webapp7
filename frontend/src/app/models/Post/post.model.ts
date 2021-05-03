@@ -1,8 +1,12 @@
 
-export interface Post{
-  id?: number;
-  title: string;
-  description: string;
-  // imageFile:string;
-  image: boolean;
+export class Post{
+
+  constructor(
+    public id?: number,
+  public imageFile ?:any,
+  public image ?: boolean,
+  public title: string = '',
+  public description: string='',
+  )
+  {}
 }

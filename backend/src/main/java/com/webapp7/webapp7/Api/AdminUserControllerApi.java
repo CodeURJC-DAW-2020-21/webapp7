@@ -15,9 +15,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.security.Principal;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
@@ -41,6 +44,8 @@ public class AdminUserControllerApi {
     @Autowired
     private com.webapp7.webapp7.Service.UserService userService;
 
+
+
     @Autowired
     private ImageService imgService;
 
@@ -48,6 +53,41 @@ public class AdminUserControllerApi {
     @GetMapping("/")
     public ResponseEntity<Collection<User>> getUsers() {
         List<User> users = userService.findAllUsers();
+        if (!users.isEmpty()) {
+            return ResponseEntity.ok(users);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+    @GetMapping("/me")
+    public ResponseEntity<User> me(HttpServletRequest request) {
+
+        Principal principal = request.getUserPrincipal();
+
+        if(principal != null) {
+            return ResponseEntity.ok(userService.findByName(principal.getName()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @JsonView(UserBasic.class)
+    @GetMapping("/students")
+    public ResponseEntity<Collection<User>> getStudents() {
+        List<User> users = userService.findByRol("alumno");
+        if (!users.isEmpty()) {
+            return ResponseEntity.ok(users);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @JsonView(UserBasic.class)
+    @GetMapping("/instructors")
+    public ResponseEntity<Collection<User>> getInstructors() {
+        List<User> users = userService.findByRol("profesor");
         if (!users.isEmpty()) {
             return ResponseEntity.ok(users);
         } else {
@@ -64,6 +104,8 @@ public class AdminUserControllerApi {
         userService.save(user);
         return ResponseEntity.created(fromCurrentRequest().path("/").buildAndExpand(user.getId()).toUri()).body(user);
     }
+
+
     @JsonView(AdminCourseControllerApi.CourseBasic.class)
     @GetMapping("/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException, SQLException {
@@ -79,6 +121,32 @@ public class AdminUserControllerApi {
             return ResponseEntity.notFound().build();
         }
 
+    }
+
+    @JsonView(UserBasic.class)
+    @PostMapping("/{id}/image")
+    public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
+            throws IOException {
+
+        User user = userService.findById(id).orElseThrow(null);
+
+        if (user != null) {
+
+            URI location = fromCurrentRequest().build().toUri();
+
+            if (!imageFile.isEmpty()) {
+                user.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
+                user.setImage(true);
+            }
+            userService.save(user);
+
+            imgService.saveImage(USERS_FOLDER, user.getId(), imageFile);
+
+            return ResponseEntity.created(location).build();
+
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @JsonView(UserBasic.class)

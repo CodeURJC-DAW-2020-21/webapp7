@@ -3,8 +3,7 @@ package com.webapp7.webapp7.Api;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.webapp7.webapp7.Service.ImageService;
 import com.webapp7.webapp7.Service.PostService;
-import com.webapp7.webapp7.Service.UserService;
-import com.webapp7.webapp7.model.Course;
+import com.webapp7.webapp7.model.Comment;
 import com.webapp7.webapp7.model.Post;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.hibernate.engine.jdbc.BlobProxy;
@@ -23,8 +22,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -58,6 +57,8 @@ public class PostControllerApi {
             return ResponseEntity.notFound().build();
         }
     }
+
+
 
     @JsonView(PostBasic.class)
     @GetMapping("/{id}")

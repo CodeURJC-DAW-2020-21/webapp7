@@ -23,8 +23,8 @@ public class CourseService {
         return courses.findById(id);
     }
 
-    public void save(Course course){
-        courses.save(course);
+    public Course save(Course course){
+        return courses.save(course);
     }
 
     public void deleteById(long id){

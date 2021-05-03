@@ -3,19 +3,19 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container">
-    <a class="block-10"href="index.html"><img src="../../../assets/images/LogoMorado.png" width="200" height="80"></a>
+    <a class="block-10"routerLink="/index"><img src="../../../assets/images/LogoMorado.png" width="200" height="80"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> Menu
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto pl-auto">
-        <li class="nav-item active"><a href="index" class="nav-link">Inicio</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link">Sobre Nosotros</a></li>
-        <li class="nav-item"><a href="/course" class="nav-link">Cursos</a></li>
-        <li class="nav-item"><a href="/instructor" class="nav-link">Profesores</a></li>
-        <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link">Contáctanos</a></li>
-        <li class="nav-item"><a href="/login" class="nav-link">Inicio de Sesión</a></li>
+        <li class="nav-item active"><a routerLink="/index" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a routerLink="/about" class="nav-link">Sobre Nosotros</a></li>
+        <li class="nav-item"><a routerLink="/course" class="nav-link">Cursos</a></li>
+        <li class="nav-item"><a routerLink="/instructor" class="nav-link">Profesores</a></li>
+        <li class="nav-item"><a routerLink="/blog" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a routerLink="/contact" class="nav-link">Contáctanos</a></li>
+        <li class="nav-item"><a routerLink="/login" class="nav-link">Inicio de Sesión</a></li>
       </ul>
     </div>
   </div>
@@ -26,7 +26,7 @@
   <div class="container">
     <div class="row no-gutters slider-text align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 text-center">
-        <p class="breadcrumbs"><span class="mr-2"><a href="index">Inicio <i class="fa fa-chevron-right"></i></a></span> <span>Contáctanos <i class="fa fa-chevron-right"></i></span></p>
+        <p class="breadcrumbs"><span class="mr-2"><a routerLink="index">Inicio <i class="fa fa-chevron-right"></i></a></span> <span>Contáctanos <i class="fa fa-chevron-right"></i></span></p>
         <h1 class="mb-0 bread">Contáctanos</h1>
       </div>
     </div>
@@ -49,30 +49,32 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="name">Nombre y apellidos</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                        <!-- <input type="text" name="fullNname" id="fullName" [(ngModel)]="user.name"  placeholder="Nombre Completo" />-->
+                        <input #nombre type="text" class="form-control" name="name" id="name" placeholder="Name">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="email">Dirección de email </label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        <input #email type="email" class="form-control" name="email" id="email" placeholder="Email">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="subject">Asunto</label>
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                        <input #asunto type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="label" for="content">Mensaje</label>
-                        <textarea name="content" class="form-control" id="content" cols="30" rows="4" placeholder="Message"></textarea>
+                        <input #contenido name="content" class="form-control" id="content" cols="30" rows="4" placeholder="Message">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
+                        <input type="submit" value="Enviar Mensaje" class="btn btn-primary"
+                        (click)="createEmail($event,nombre.value,email.value,asunto.value,contenido.value)">
                         <div class="submitting"></div>
                       </div>
                     </div>

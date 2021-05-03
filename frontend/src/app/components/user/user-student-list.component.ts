@@ -19,7 +19,7 @@ import {LoginService} from '../../services/login/login.services';
             <div class="input-group-append">
               <div class="card-body">
                 <li *ngFor="let user of users">
-                  <a routerLink="['/instructor', user.id]">{{user.email}}></a>
+                  <a >{{user.name}}</a>
                 </li>
               </div>
             </div>
@@ -43,7 +43,7 @@ export class UserStudentListComponent {
 
   // tslint:disable-next-line:typedef use-lifecycle-interface
   ngOnInit() {
-    this.userService.getUsers().subscribe(
+    this.userService.getStudents().subscribe(
       users => this.users = users,
       error => console.log(error)
     );

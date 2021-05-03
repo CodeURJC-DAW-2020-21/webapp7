@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <app-header></app-header>
+
 <body style="background-image: url('../../../assets/images/fondo_nuevo.jpg');">
 
 <nav class="navbar navbar-expand navbar-light bg-white2 topbar mb-4 static-top shadow" id="linea">
@@ -13,6 +12,7 @@
       <img src="../../../assets/images/LogoMorado.png" width="200" height="80">
     </a>
   </a>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="oi oi-menu"></span> Menu
@@ -26,22 +26,21 @@
         <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 mx-auto px-5 mb-2 d-flex align-items-center justify-content-center">
           <div class="centered-box card w-100">
             <div class="card-body">
-              <h3 class="mb-4">Inicio De Sesión</h3>
-              <form *ngIf="!loginService.isLogged()" class="signup-form" role="search">
+              <h3 class="mb-4">Inicio De Sesion</h3>
+              <form  class="signup-form" id="login-form">
                 <div class="input-group mb-3 px-4">
                   <label class="input-group-text bg-transparent text-white" for="email" >
                   </label>
-                  <input #user id="email" type="text" class="form-control" name="username" placeholder="Username">
+                  <input #user id="email" type="text" class="form-control" placeholder="Email" name="username">
                 </div>
 
                 <div class="input-group mb-3 px-4">
                   <label class="input-group-text bg-transparent text-white" for="password">
                   </label>
-                  <input #pass id="password" type="password" class="form-control" name="password" placeholder="Password">
+                  <input #password id="password" type="password" class="form-control" placeholder="Password" name="password">
                 </div>
 
-                <button type="submit" (click)="logIn($event, user.value, pass.value)" class="btn btn-primary submit">Sign In</button>
-
+                <button type="submit" (click)="logIn($event, user.value, password.value)" class="btn btn-primary submit">Sign In</button>
               </form>
             </div><!-- / body -->
 
@@ -59,6 +58,3 @@
 
 </body>
 </html>
-
-
-

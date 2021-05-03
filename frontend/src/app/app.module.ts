@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 // import {Router} from '@angular/router';
 // import {RouterModule} from '@angular/router';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent} from './components/index/index.component';
 import {UserInstructorComponent} from './components/user-instructor/user-instructor.component';
@@ -26,7 +25,7 @@ import {UserFormComponent} from './components/user/user-form.component';
 import {BlogFormComponent} from './components/blog/blog-form.component';
 import {CourseFormComponent} from './components/course/course-form.component';
 import {CourseDetailsComponent} from './components/course/course-details.component';
-import {UserDetailsComponent} from './components/user/user-details.component';
+import {UsersDeleteComponent} from './components/user/users-delete.component';
 import {UserStudentListComponent} from './components/user/user-student-list.component';
 import {UserInstructorListComponent} from './components/user/user-instructor-list.component';
 import {CourseListComponent} from './components/course/course-list-component';
@@ -35,7 +34,12 @@ import {LoginComponent} from './components/login/login.component';
 import {Error404Component} from './components/error/error404.component';
 import {ErrorComponent} from './components/error/error.component';
 import {LoginErrorComponent} from './components/error/loginError.component';
+// @ts-ignore
+import { ChartsModule } from 'ng2-charts';
+import {UserStudentCommentComponent} from './components/user-student/user-student-comment.component'; // <- HERE
 import { BarChartComponent } from './components/barChart/barChart.component';
+import {AdminAddToCourseComponent} from './components/user-admin/user-admin-add.component';
+
 
 
 @NgModule({
@@ -60,7 +64,7 @@ import { BarChartComponent } from './components/barChart/barChart.component';
     BlogFormComponent,
     CourseFormComponent,
     CourseDetailsComponent,
-    UserDetailsComponent,
+    UsersDeleteComponent,
     UserStudentListComponent,
     UserInstructorListComponent,
     CourseListComponent,
@@ -68,8 +72,9 @@ import { BarChartComponent } from './components/barChart/barChart.component';
     Error404Component,
     ErrorComponent,
     LoginErrorComponent,
-    BarChartComponent
-
+    BarChartComponent,
+    UserStudentCommentComponent,
+    AdminAddToCourseComponent
 
   ],
   imports: [
@@ -77,9 +82,10 @@ import { BarChartComponent } from './components/barChart/barChart.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule,
+    ChartsModule
 
-    // NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

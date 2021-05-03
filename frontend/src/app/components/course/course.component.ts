@@ -23,18 +23,7 @@ export class CourseComponent implements OnInit {
       error => console.error(error)
     );
   }
-  /*
-      courseService.deleteCourse(number:id) {
-        const okResponse = window.confirm('Do you want to remove this book?');
-        if (okResponse) {
-          this.service.removeBook(this.book).subscribe(
-            _ => this.router.navigate(['/books']),
-            error => console.error(error)
-          );
-        }
-      }
-    }
-   */
+
 
   ngOnInit(): void {
 

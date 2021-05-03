@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../../models/User/user.model';
@@ -6,6 +6,9 @@ import {UserService} from '../../services/user/user.service';
 import {LoginService} from '../../services/login/login.services';
 import {Course} from '../../models/Course/course.model';
 import {CourseService} from '../../services/course/course.service';
+import {Observable} from 'rxjs';
+import {catchError} from 'rxjs/operators';
+import {MaterialService} from '../../services/material/material.service';
 
 @Component({
   template: `
@@ -21,7 +24,7 @@ import {CourseService} from '../../services/course/course.service';
             <div class="input-group-append">
               <div class="card-body">
                 <li *ngFor="let course of courses">
-                  <a>[routerLink]="['/course', category.id]">{{course.category}}</a>
+                  <a>{{course.category}}</a>
                 </li>
               </div>
             </div>
@@ -37,23 +40,21 @@ import {CourseService} from '../../services/course/course.service';
   styleUrls: ['../../../assets/css/style.css']
 })
 
-export class CourseListComponent {
+export class CourseListComponent implements OnInit {
   course: Course;
-  courses: Course[];
+  courses: Course[] = [];
 
-  constructor(private router: Router, private courseService: CourseService, public loginService: LoginService) { }
-
-  // tslint:disable-next-line:typedef use-lifecycle-interface
-  ngOnInit() {
-    this.courseService.getCourses().subscribe(
+  constructor(private router: Router, public courseService: CourseService, activatedRoute: ActivatedRoute,
+              public loginService: LoginService) {
+    const id = activatedRoute.snapshot.params['id'];
+    courseService.getCourses().subscribe(
       courses => this.courses = courses,
-      error => console.log(error)
+      error => console.error(error)
     );
+    console.log('cursos: ' + this.courses);
   }
 
-  // tslint:disable-next-line:typedef
-  newUser() {
-    this.router.navigate(['/courses/new']);
+  ngOnInit(): void {
   }
 }
 

@@ -1,9 +1,9 @@
 package com.webapp7.webapp7.controller;
 
 import com.webapp7.webapp7.Service.CourseService;
+import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.model.Course;
 import com.webapp7.webapp7.model.User;
-import com.webapp7.webapp7.Service.UserService;
 import com.webapp7.webapp7.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
