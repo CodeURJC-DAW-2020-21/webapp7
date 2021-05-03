@@ -60,6 +60,7 @@ public class AdminUserControllerApi {
         }
     }
 
+
     @GetMapping("/me")
     public ResponseEntity<User> me(HttpServletRequest request) {
 
@@ -105,9 +106,27 @@ public class AdminUserControllerApi {
     }
 
 
-    @JsonView(UserBasic.class)
+    @JsonView(AdminCourseControllerApi.CourseBasic.class)
     @GetMapping("/{id}/image")
-    public ResponseEntity<Object> downloadImage(@PathVariable long id, @RequestParam MultipartFile imageFile) throws IOException, SQLException {
+    public ResponseEntity<Object> downloadImage(@PathVariable long id) throws MalformedURLException, SQLException {
+        Optional<User> user = userService.findById(id);
+        if (user.isPresent() && user.get().getImageFile() != null) {
+
+            Resource file = new InputStreamResource(user.get().getImageFile().getBinaryStream());
+
+            return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+                    .contentLength(user.get().getImageFile().length()).body(file);
+
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+
+    @JsonView(UserBasic.class)
+    @PostMapping("/{id}/image")
+    public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile)
+            throws IOException {
 
         User user = userService.findById(id).orElseThrow(null);
 
@@ -115,22 +134,19 @@ public class AdminUserControllerApi {
 
             URI location = fromCurrentRequest().build().toUri();
 
-            if (imageFile.isEmpty()) {
+            if (!imageFile.isEmpty()) {
                 user.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
                 user.setImage(true);
             }
+            userService.save(user);
 
             imgService.saveImage(USERS_FOLDER, user.getId(), imageFile);
-            byte[] bytes = imageFile.getBytes();
-            Blob blob = new javax.sql.rowset.serial.SerialBlob(bytes);
-            user.setImageFile(blob);
-            userService.save(user);
+
             return ResponseEntity.created(location).build();
 
         } else {
             return ResponseEntity.notFound().build();
         }
-
     }
 
     @JsonView(UserBasic.class)
