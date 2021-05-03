@@ -467,7 +467,7 @@ To run the app follow the next steps
 ### Classes and templates Diagram:
 ![Navigation Diagram](https://github.com/CodeURJC-DAW-2020-21/webapp7/blob/main/ReadmePictures/diagramPhase4.jpg)
 
-### Demo video:(https://www.youtube.com/watch?v=hcWhpcZk8SE)
+### Demo video: https://www.youtube.com/watch?v=hcWhpcZk8SE
 
 ## Authors' Participation:
 - Caridad Arias Pradas
